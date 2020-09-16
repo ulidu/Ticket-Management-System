@@ -50,7 +50,7 @@
                                     </label>
 
                                 </div>
-                                  </div>
+                            </div>
                         </div>
 
                         <label class="col-lg-1 col-form-label">First Name <span
@@ -188,7 +188,9 @@
                             <div class="row">
                                 <div class="col-lg-5"></div>
                                 <div class="col-lg-7">
-                                    <button onclick="return Validate()" type="submit" name="submitUser" class="btn btn-brand">Submit</button>
+                                    <button onclick="return Validate()" type="submit" name="submitUser"
+                                            class="btn btn-brand">Submit
+                                    </button>
                                     <button type="reset" class="btn btn-secondary">Cancel</button>
                                 </div>
                             </div>
