@@ -19,6 +19,10 @@
                 <div class="kt-portlet__head-wrapper">
                     <div class="kt-portlet__head-actions">
                         <div class="dropdown dropdown-inline">
+                            <a href="add_user.php" class="btn btn-brand btn-elevate btn-icon-sm">
+                                <i class="la la-user-plus"></i>
+                                Add a New User
+                            </a>
                             <button type="button"
                                     class="btn btn-default btn-icon-sm dropdown-toggle"
                                     data-toggle="dropdown"
@@ -96,7 +100,6 @@
                     <tr>
 
                         <td>
-
 
 
                             <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="View">

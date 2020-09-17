@@ -122,11 +122,11 @@
 
                             </span>
 
-                            <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="View">
+                            <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Approve">
                                 <i style="font-size: 18px; color: #007bff;" class="la la-check"></i>
                             </a>
 
-                            <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="View">
+                            <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Delete">
                                 <i style="font-size: 18px; color: #dc3545;" class="la la-trash"></i>
                             </a>
                         </td>

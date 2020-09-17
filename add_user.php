@@ -21,7 +21,23 @@
                         Add a New User</h3>&nbsp;
 
                 </div>
+                <div class="kt-portlet__head-toolbar">
+                    <div class="kt-portlet__head-wrapper">
+                        <div class="kt-portlet__head-actions">
+                            <div class="dropdown dropdown-inline">
+                                <a href="user_list.php" class="btn btn-brand btn-elevate btn-icon-sm">
+                                    <i class="la la-users"></i>
+                                    View all Users
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
 
             <!--begin::Form-->
             <form autocomplete="off" method="post" action="" class="kt-form kt-form--label-right">

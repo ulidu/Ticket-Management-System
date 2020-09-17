@@ -21,16 +21,16 @@
                     <center><img width="20%" src="assets\media\logos\user.gif"></center>
                     <br>
                     <center>
-                        <h3 class="kt-iconbox__title">New User Created Successfully.</h3>
+                        <h3 class="kt-iconbox__title">User Account for Mr. Staff Created Successfully.</h3>
 
 
                         <p style=" font-size: 14px">Now administrators can assign tasks to Mr. Staff</p>
-                        <a href="user_list.php" class="btn btn-brand btn-elevate btn-icon-sm">
+                        <a href="user_list.php" class="btn btn-success btn-elevate btn-icon-sm">
                             <i class="la la-chevron-circle-left"></i>
                             Users List
                         </a>
                         <a href="user_list.php" class="btn btn-brand btn-elevate btn-icon-sm">
-                            <i class="la la"></i>
+                            <i class="la la-user-plus"></i>
                             Add Another User
                         </a>
                     </center>
