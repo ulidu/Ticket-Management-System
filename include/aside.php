@@ -95,7 +95,7 @@
 
         <?php
 
-    }elseif ($page == "add_user.php"||$page == "user_list.php"||$page == "user_success.php"){
+    }elseif ($page == "add_user.php"||$page == "user_list.php"||$page == "user_success.php"||$page == "profile.php"){
         ?>
         <!-- begin:: Aside Menu -->
         <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
@@ -347,8 +347,11 @@
 
             <!--begin: User Bar -->
             <div class="kt-header__topbar-item kt-header__topbar-item--user">
+
                 <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+
                     <div class="kt-header__topbar-user">
+
                         <span class="kt-hidden kt-header__topbar-welcome kt-hidden-mobile">Hi,</span>
                         <span class="kt-hidden kt-header__topbar-username kt-hidden-mobile">Admin</span>
                         <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg"/>
@@ -362,6 +365,7 @@
                     <!--begin: Head -->
                     <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
                          style="background-image: url(assets/media/misc/bg-1.jpg)">
+
                         <div class="kt-user-card__avatar">
                             <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg"/>
 
@@ -455,7 +459,7 @@
                 </div>
                 <div class="kt-subheader__toolbar">
                     <div class="kt-subheader__wrapper">
-
+                        <a href="reports.php"><img class="pointerImageChart" onclick="" style="width: 30px" src="assets/media/icons/chart.gif"></a>
                         <a class="btn kt-subheader__btn-daterange" id="" data-placement="left">
                                     <span class="kt-subheader__btn-daterange-title"
                                           id="kt_dashboard_daterangepicker_title">Today</span>&nbsp;

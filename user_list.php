@@ -71,9 +71,10 @@
                     <th>Employee Code</th>
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>Division</th>
                     <th>Email</th>
-                    <th>Admin</th>
+                    <th>Account Type</th>
+                    <th>Status</th>
+                    <th>Created Date</th>
                     <th>Password</th>
                 </tr>
                 </thead>
@@ -90,9 +91,10 @@
                     $employeeCode = $row['employeeCode'];
                     $firstName = $row['firstName'];
                     $lastName = $row['lastName'];
-                    $division = $row['division'];
+                    $date = $row['date_created'];
                     $email = $row['email'];
-                    $admin = $row['admin'];
+                    $type = $row['acc_type'];
+                    $status = $row['status'];
                     $password = $row['password'];
 
                     ?>
@@ -103,9 +105,11 @@
 
 
                             <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="View">
-                                <i style="font-size: 18px; color: #007bff;" class="la la-check"></i>
+                                <i style="font-size: 18px; color: #007bff;" class="la la-edit"></i>
                             </a>
-
+                            <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="View">
+                                <i style="font-size: 18px; color: #ffb822;" class="la la-minus-circle"></i>
+                            </a>
                             <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="View">
                                 <i style="font-size: 18px; color: #dc3545;" class="la la-trash"></i>
                             </a>
@@ -117,10 +121,11 @@
                         <td><?php echo $employeeCode; ?></td>
                         <td><?php echo $firstName; ?></td>
                         <td><?php echo $lastName; ?></td>
-                        <td><?php echo $division; ?></td>
-                        <td><?php echo $email; ?></td>
-                        <td><?php echo $admin; ?></td>
-                        <td><?php echo $password; ?></td>
+                        <td><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></td>
+                        <td><?php echo $type; ?></td>
+                        <td><span class="kt-badge kt-badge--success kt-badge--dot"></span>&nbsp;<span class="kt-font-bold kt-font-success"><?php echo $status; ?></span></td>
+                        <td><?php echo $date; ?></td>
+                        <td><a href="profile.php"><span style="font-weight: 500" class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Reset</span></a>  </td>
 
                     </tr>
 

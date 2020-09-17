@@ -99,12 +99,20 @@
 								</div>
 
 								<!--begin::Form-->
-								<form class="kt-form" action="" novalidate="novalidate" id="kt_login_form">
+								<form class="kt-form" action="" id="kt_login_form">
 									<div class="form-group">
-										<input class="form-control" type="text" placeholder="Username" name="username" autocomplete="off">
+
+
+                                        <select id="priority" name="priority" class="form-control" required>
+                                            <option value="" hidden="true">Select Account</option>
+                                            <option value="a">Abc</option>
+                                            <option value="a">xy</option>
+                                            <option value="a">a</option>
+                                        </select>
+
 									</div>
 									<div class="form-group">
-										<input class="form-control" type="password" placeholder="Password" name="password" autocomplete="off">
+										<input class="form-control" type="password" placeholder="Password" name="password" required>
 									</div>
 
 									<!--begin::Action-->
