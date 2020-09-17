@@ -53,7 +53,7 @@ var KTLoginV1 = function () {
 					// similate 2s delay
 					setTimeout(function () {
 						KTApp.unprogress(btn[0]);
-						showErrorMsg(form, 'danger', 'Incorrect username or password. Please try again.');
+						showErrorMsg(form, 'danger', 'Incorrect password. Please try again.');
 					}, 2000);
 				}
 			});

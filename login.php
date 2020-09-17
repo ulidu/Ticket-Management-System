@@ -1,3 +1,33 @@
+<?php
+
+include 'include/db.php';
+session_start();
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // username and password sent from form
+    $myusername = mysqli_real_escape_string($con,$_POST['username']);
+    $mypassword = mysqli_real_escape_string($con,$_POST['password']);
+
+    $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
+    $result = mysqli_query($db,$sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $active = $row['active'];
+
+    $count = mysqli_num_rows($result);
+
+    // If result matched $myusername and $mypassword, table row must be 1 row
+
+    if($count == 1) {
+        session_register("myusername");
+        $_SESSION['login_user'] = $myusername;
+
+        header("location: welcome.php");
+    }else {
+        $error = "Your Login Name or Password is invalid";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +35,8 @@
 	<head>
         <base href="">
         <meta charset="utf-8"/>
-        <title>Task Management System</title>
-        <meta name="description" content="Latest updates and statistic charts">
+        <title>Ticket Management System</title>
+        <meta name="description" content="Ticket Management System - Urban Development Authority">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!--begin::Fonts -->
@@ -50,8 +80,8 @@
 						</div>
 						<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver">
 							<div class="kt-grid__item kt-grid__item--middle">
-								<h3 class="kt-login__title">Task Management System</h3>
-								<h4 class="kt-login__subtitle">The ultimate Bootstrap & Angular 6 admin theme framework for next generation web apps.</h4>
+								<h3 style="font-size: 50px" class="kt-login__title">TICKET MANAGEMENT SYSTEM</h3>
+								<h4 class="kt-login__subtitle">Manage all the troubleshooting tickets among divisions in<br> Urban Development Authority</h4>
 							</div>
 						</div>
 						<div class="kt-grid__item">
@@ -94,25 +124,51 @@
 
 							<!--begin::Signin-->
 							<div class="kt-login__form">
+
 								<div class="kt-login__title">
+
+                                    <img width="60%" src="assets/media/logos/giphy.gif">
+                                    <br> <br>
 									<h3>Sign In</h3>
-								</div>
+                                    <h5 style="font-weight: lighter; font-size: medium;">Select your account and enter the password to get started.</h5>
+
+                                </div>
 
 								<!--begin::Form-->
-								<form class="kt-form" action="" id="kt_login_form">
+								<form style="margin-top: -20px;" class="kt-form" action="" id="kt_login_form">
 									<div class="form-group">
 
 
-                                        <select id="priority" name="priority" class="form-control" required>
-                                            <option value="" hidden="true">Select Account</option>
-                                            <option value="a">Abc</option>
-                                            <option value="a">xy</option>
-                                            <option value="a">a</option>
+                                        <select id="name" name="name" class="form-control bg-secondary" required>
+                                            <option value="" hidden="true">Select an Account</option>
+
+                                            <?php
+
+                                            $query="select * from user";
+                                            $run_query=mysqli_query($con,$query);
+                                            while ($row = mysqli_fetch_assoc($run_query)) {
+                                            $userID = $row['userID'];
+                                            $employeeCode = $row['employeeCode'];
+                                            $firstName = $row['firstName'];
+                                            $lastName = $row['lastName'];
+                                            $email = $row['email'];
+                                            $password = $row['password'];
+                                            $date_created = $row['date_created'];
+                                            $status = $row['status'];
+                                            $acc_type = $row['acc_type'];
+
+
+                                            ?>
+                                                <option value="<?php echo $employeeCode; ?>"><?php echo $firstName." ".$lastName." "."-"." ".$acc_type; ?></option>
+                                            <?php
+                                            }
+                                            ?>
+
                                         </select>
 
 									</div>
 									<div class="form-group">
-										<input class="form-control" type="password" placeholder="Password" name="password" required>
+										<input class="form-control bg-secondary" type="password" placeholder="Enter the Password" name="password" required>
 									</div>
 
 									<!--begin::Action-->
@@ -120,7 +176,7 @@
 										<a href="#" class="kt-link kt-login__link-forgot">
 											Forgot Password ?
 										</a>
-										<button onclick="location.href='index.php';" id="kt_login_signin_submit" class="btn btn-primary btn-elevate kt-login__btn-primary">Sign In</button>
+										<button type="submit" class="btn btn-primary btn-elevate kt-login__btn-primary">Sign In</button>
 									</div>
 
 									<!--end::Action-->
