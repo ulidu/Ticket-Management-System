@@ -58,8 +58,10 @@ include 'include/db.php';
                 </div>
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver">
                     <div class="kt-grid__item kt-grid__item--middle">
-                        <h3 style="font-size: 50px; color: #595d6e;" class="kt-login__title">TICKET MANAGEMENT SYSTEM</h3>
-                        <h4 style="color: #595d6e;" class="kt-login__subtitle">Manage all the troubleshooting tickets among divisions in<br>
+                        <h3 style="font-size: 50px; color: #595d6e;" class="kt-login__title">TICKET MANAGEMENT
+                            SYSTEM</h3>
+                        <h4 style="color: #595d6e;" class="kt-login__subtitle">Manage all the troubleshooting tickets
+                            among divisions in<br>
                             Urban Development Authority</h4>
                     </div>
                 </div>
@@ -109,9 +111,7 @@ include 'include/db.php';
                             <img width="60%" src="assets/media/logos/giphy.gif">
                             <br> <br>
                             <h3>Sign In</h3>
-                            <h5 style="font-weight: lighter; font-size: medium;">Select your account and enter the
-                                password to get started.</h5>
-
+                            <h5 style="font-weight: lighter; font-size: medium;">Sign In, Or just click on the <a href="task_add.php"><span class="btn-font-success" style="font-weight: 500">Submit Ticket</span></a> button to submit a ticket without signing in.</h5>
                             <?php
 
                             if ($_GET['error'] == "verify") {
@@ -176,6 +176,11 @@ include 'include/db.php';
                                 <a href="#" class="kt-link kt-login__link-forgot">
                                     Forgot Password ?
                                 </a>
+
+                                <button style="margin-right: -30px" onclick="location.href='task_add.php'" type="button" name="login_btn"
+                                        class="btn btn-success btn-elevate kt-login__btn-primary">Submit Ticket
+                                </button>
+
                                 <button type="submit" name="login_btn"
                                         class="btn btn-primary btn-elevate kt-login__btn-primary">Sign In
                                 </button>
