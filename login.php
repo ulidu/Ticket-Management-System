@@ -50,7 +50,7 @@ include 'include/db.php';
 
             <!--begin::Aside-->
             <div class="kt-grid__item kt-grid__item--order-tablet-and-mobile-2 kt-grid kt-grid--hor kt-login__aside"
-                 style="background-image: url(assets/media/bg/bg-4.jpg);">
+                 style="background-image: url(assets/media/bg/bg.jpg);">
                 <div class="kt-grid__item">
                     <a href="#" class="kt-login__logo">
                         <img src="assets/media/logos/logo-4.png">
@@ -58,19 +58,19 @@ include 'include/db.php';
                 </div>
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver">
                     <div class="kt-grid__item kt-grid__item--middle">
-                        <h3 style="font-size: 50px" class="kt-login__title">TICKET MANAGEMENT SYSTEM</h3>
-                        <h4 class="kt-login__subtitle">Manage all the troubleshooting tickets among divisions in<br>
+                        <h3 style="font-size: 50px; color: #595d6e;" class="kt-login__title">TICKET MANAGEMENT SYSTEM</h3>
+                        <h4 style="color: #595d6e;" class="kt-login__subtitle">Manage all the troubleshooting tickets among divisions in<br>
                             Urban Development Authority</h4>
                     </div>
                 </div>
                 <div class="kt-grid__item">
                     <div class="kt-login__info">
-                        <div class="kt-login__copyright">
+                        <div style="color: #595d6e;" class="kt-login__copyright">
                             <?php echo date("Y"); ?> &copy URBAN DEVELOPMENT AUTHORITY
                         </div>
                         <div class="kt-login__menu">
 
-                            <a href="#" class="kt-link">Contact</a>
+                            <a style="color: #595d6e;" href="#" class="kt-link">Contact</a>
                         </div>
                     </div>
                 </div>
