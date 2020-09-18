@@ -52,15 +52,15 @@
                                 <div class="kt-radio-list">
 
                                     <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                        <input type="radio" value="IT Staff" name="title" checked> Mr.
+                                        <input type="radio" value="Mr." name="title" checked> Mr.
                                         <span></span>
                                     </label>
                                     <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                        <input type="radio" value="Administrator" name="title"> Mrs.
+                                        <input type="radio" value="Mrs." name="title"> Mrs.
                                         <span></span>
                                     </label>
                                     <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                        <input type="radio" value="Administrative Officer" name="title">
+                                        <input type="radio" value="Miss." name="title">
                                         Miss.
                                         <span></span>
                                     </label>
@@ -228,9 +228,10 @@
                 $password = $_POST['password'];
                 $date = date("l jS \of F Y h:i:s A");
                 $status = "Active";
+                $title = $_POST['title'];
 
 
-                $query = "INSERT INTO user(firstName, lastName, employeeCode, email, acc_type, password, date_created, status) VALUES('$firstName','$lastName','$empCode','$email','$acc_type','$password','$date','$status')";
+                $query = "INSERT INTO user(firstName, lastName, employeeCode, email, acc_type, password, date_created, status, title) VALUES('$firstName','$lastName','$empCode','$email','$acc_type','$password','$date','$status','$title')";
 
                 $create_query = mysqli_query($con, $query);
 

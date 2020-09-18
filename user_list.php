@@ -69,6 +69,7 @@
                     <th>Actions</th>
                     <th>User ID</th>
                     <th>Employee Code</th>
+                    <th>Title</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
@@ -96,7 +97,7 @@
                     $type = $row['acc_type'];
                     $status = $row['status'];
                     $password = $row['password'];
-
+                    $title = $row['title'];
                     ?>
 
                     <tr>
@@ -119,6 +120,7 @@
 
                         <td><?php echo $userID; ?></td>
                         <td><?php echo $employeeCode; ?></td>
+                        <td><?php echo $title; ?></td>
                         <td><?php echo $firstName; ?></td>
                         <td><?php echo $lastName; ?></td>
                         <td><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></td>
