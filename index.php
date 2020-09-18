@@ -1,10 +1,6 @@
 <?php include 'include/header.php'; ?>
 <?php include 'include/aside.php'; ?>
-<?php
 
-$logged_user_id=$_SESSION['logged_user_id'];
-echo 'aa'.$logged_user_id;
-?>
 <!-- begin:: Content -->
 
 

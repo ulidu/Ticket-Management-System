@@ -173,7 +173,7 @@ include 'include/db.php';
 
                             <!--begin::Action-->
                             <div class="kt-login__actions">
-                                <a href="#" class="kt-link kt-login__link-forgot">
+                                <a href="" class="kt-link kt-login__link-forgot">
                                     Forgot Password ?
                                 </a>
 
@@ -213,6 +213,7 @@ include 'include/db.php';
 
 <!-- begin::Global Config(global config for global JS sciprts) -->
 <script>
+
     var KTAppOptions = {
         "colors": {
             "state": {

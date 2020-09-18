@@ -21,7 +21,7 @@
     $link_array = explode('/', $link);
     $page = end($link_array);
 
-    if ($page == "task_add.php"||$page == "task_list.php"||$page == "ticket_success.php") {
+    if ($page == "task_add.php" || $page == "task_list.php" || $page == "ticket_success.php") {
 
 
         ?>
@@ -32,7 +32,7 @@
                  data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
                 <ul class="kt-menu__nav ">
                     <li class="kt-menu__item" aria-haspopup="true"><a href="index.php"
-                                                                                             class="kt-menu__link "><i
+                                                                      class="kt-menu__link "><i
                                     class="kt-menu__link-icon flaticon2-architecture-and-city"></i><span
                                     class="kt-menu__link-text">Home</span></a></li>
 
@@ -95,7 +95,7 @@
 
         <?php
 
-    }elseif ($page == "add_user.php"||$page == "user_list.php"||$page == "user_success.php"||$page == "profile.php"){
+    } elseif ($page == "add_user.php" || $page == "user_list.php" || $page == "user_success.php" || $page == "profile.php") {
         ?>
         <!-- begin:: Aside Menu -->
         <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
@@ -164,7 +164,7 @@
 
         <!-- end:: Aside Menu -->
         <?php
-    }elseif ($page == "reports.php"){
+    } elseif ($page == "reports.php") {
 
         ?>
 
@@ -225,7 +225,7 @@
                     </li>
 
 
-                    <li class="kt-menu__item kt-menu__item--active" ><a href="reports.php" class="kt-menu__link "><i
+                    <li class="kt-menu__item kt-menu__item--active"><a href="reports.php" class="kt-menu__link "><i
                                     class="kt-menu__link-icon flaticon2-graph"></i><span
                                     class="kt-menu__link-text">Reports</span></a>
                     </li>
@@ -235,7 +235,7 @@
 
         <!-- end:: Aside Menu -->
 
-<?php
+        <?php
     } else {
 
         ?>
@@ -351,7 +351,8 @@
                 <div class="kt-header__topbar-wrapper">
 
                     <div class="kt-header__topbar-user">
-                        <a href="login.php" class="btn btn-brand btn-bold"><i class="la la-user font-weight-bold"></i> Login</a>
+                        <a href="login.php" class="btn btn-brand btn-bold"><i class="la la-user font-weight-bold"></i>
+                            Login</a>
                     </div>
                 </div>
 
@@ -364,9 +365,9 @@
                         <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg"/>
 
 
-
                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-                        <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bolder"><i style="font-size: 20px" class="la la-user font-weight-bold"></i></span>
+                        <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bolder"><i
+                                    style="font-size: 20px" class="la la-user font-weight-bold"></i></span>
                     </div>
                 </div>
                 <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
@@ -407,11 +408,10 @@
                         </a>
 
                         <div class="kt-notification__custom kt-space-between">
-                            <a href="logout.php"
-                               class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
+                            <a href="logout.php" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
                         </div>
-                    </div>
 
+                    </div>
                     <!--end: Navigation -->
                 </div>
             </div>
@@ -423,25 +423,20 @@
     </div>
 
 
+    <?php
+
+    $link = $_SERVER['PHP_SELF'];
+    $link_array = explode('/', $link);
+    $page = end($link_array);
+
+    if ($page == "task_add.php" || $page == "ticket_success.php") {
+
+    }else{
 
 
-
-        <?php
-
-        $link = $_SERVER['PHP_SELF'];
-        $link_array = explode('/', $link);
-        $page = end($link_array);
-
-        if ($page == "task_add.php" || $page == "ticket_success.php") {
-
-        }else{
-
-
-
-
-            ?>
-        <!-- end:: Header -->
-        <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+    ?>
+    <!-- end:: Header -->
+    <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
         <!-- begin:: Content Head -->
         <div class="kt-subheader  kt-grid__item" id="kt_subheader">
@@ -449,15 +444,15 @@
                 <div class="kt-subheader__main">
                     <h3 class="kt-subheader__title"> <?php
 
-        $link = $_SERVER['PHP_SELF'];
-        $link_array = explode('/', $link);
-        $page = end($link_array);
+                        $link = $_SERVER['PHP_SELF'];
+                        $link_array = explode('/', $link);
+                        $page = end($link_array);
 
-        if ($page == "task_list.php") { ?>
-            Manage Tickets
-            <?php
+                        if ($page == "task_list.php") { ?>
+                            Manage Tickets
+                            <?php
 
-                        }else{ ?>Dashboard<?php } ?></h3>
+                        } else { ?>Dashboard<?php } ?></h3>
                     <span class="kt-subheader__separator kt-subheader__separator--v"></span>
                     <h3 style=" font-size: small"
                         class="kt-animate-fade-in-up kt-subheader__title text-success">Welcome,
@@ -468,7 +463,8 @@
                 </div>
                 <div class="kt-subheader__toolbar">
                     <div class="kt-subheader__wrapper">
-                        <a href="reports.php"><img class="pointerImageChart" onclick="" style="width: 30px" src="assets/media/icons/chart.gif"></a>
+                        <a href="reports.php"><img class="pointerImageChart" onclick="" style="width: 30px"
+                                                   src="assets/media/icons/chart.gif"></a>
                         <a class="btn kt-subheader__btn-daterange" id="" data-placement="left">
                                     <span class="kt-subheader__btn-daterange-title"
                                           id="kt_dashboard_daterangepicker_title">Today</span>&nbsp;
@@ -490,8 +486,8 @@
 
         <!-- end:: Content Head -->
 
-<?php
+        <?php
 
 
-}
-    ?>
+        }
+        ?>

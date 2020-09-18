@@ -1,6 +1,9 @@
 <?php include 'include/db.php'; ?>
 <?php session_start();
 
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +69,17 @@
 
     </style>
 </head>
+<?php
+$logged_user_id = $_SESSION['logged_user_id'];
 
+
+if ($logged_user_id == '') {
+echo "<script type='text/javascript'> document.location = 'login.php'; </script>";
+
+}
+
+echo $logged_user_id;
+?>
 <!-- end::Head -->
 
 <!-- begin::Body -->
