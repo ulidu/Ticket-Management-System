@@ -7,7 +7,7 @@ $expireAfter = 60;
 
 //Check to see if our "last action" session
 //variable has been set.
-if(isset($_SESSION['last_action'])){
+if (isset($_SESSION['last_action'])) {
 
     //Figure out how many seconds have passed
     //since the user was last active.
@@ -17,7 +17,7 @@ if(isset($_SESSION['last_action'])){
     $expireAfterSeconds = $expireAfter * 60;
 
     //Check to see if they have been inactive for too long.
-    if($secondsInactive >= $expireAfterSeconds){
+    if ($secondsInactive >= $expireAfterSeconds) {
         //User has been inactive for too long.
         //Kill their session.
         session_unset();
@@ -60,8 +60,8 @@ $_SESSION['last_action'] = time();
     <!--begin::Page Custom Styles(used by this page) -->
     <link href="assets/css/pages/wizard/wizard-4.css" rel="stylesheet" type="text/css"/>
     <!--begin::Page Custom Styles(used by this page) -->
-    <link href="assets/css/pages/support-center/faq-3.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/pages/support-center/feedback.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/pages/support-center/faq-3.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/pages/support-center/feedback.css" rel="stylesheet" type="text/css"/>
 
     <!--begin::Global Theme Styles(used by all pages) -->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
@@ -124,14 +124,41 @@ $link3 = $_SERVER['PHP_SELF'];
 $link_array4 = explode('/', $link3);
 $page4 = end($link_array4);
 
-if ($logged_user_id == '' && $page4 !='task_add.php' && $page4 !='ticket_success.php' && $page4 !='feedback.php') {
+if ($logged_user_id == '' && $page4 != 'task_add.php' && $page4 != 'ticket_success.php' && $page4 != 'feedback.php') {
 
     echo "<script type='text/javascript'> document.location = 'login.php'; </script>";
 
 }
 
 
+$Row = "SELECT * FROM user where userID='$logged_user_id'";
+$run_query = mysqli_query($con, $Row);
 
+while ($rw = mysqli_fetch_assoc($run_query)) {
+
+    $userID = $rw['userID'];
+    $employeeCode = $rw['employeeCode'];
+    $firstName = $rw['firstName'];
+    $lastName = $rw['lastName'];
+    $email = $rw['email'];
+    $password = $rw['password'];
+    $date_created = $rw['date_created'];
+    $status = $rw['status'];
+    $acc_type = $rw['acc_type'];
+    $title = $rw['title'];
+
+    $_SESSION['userID'] = $userID;
+    $_SESSION['employeeCode'] = $employeeCode;
+    $_SESSION['firstName'] = $firstName;
+    $_SESSION['lastName'] = $lastName;
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $password;
+    $_SESSION['date_created'] = $date_created;
+    $_SESSION['status'] = $status;
+    $_SESSION['acc_type'] = $acc_type;
+    $_SESSION['title'] = $title;
+
+}
 ?>
 
 <!-- end::Head -->

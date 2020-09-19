@@ -17,6 +17,17 @@
 
     <?php
 
+    $userID = $_SESSION['userID'];
+    $employeeCode = $_SESSION['employeeCode'];
+    $firstName = $_SESSION['firstName'];
+    $lastName = $_SESSION['lastName'];
+    $email = $_SESSION['email'];
+    $password = $_SESSION['password'];
+    $date_created = $_SESSION['date_created'];
+    $status = $_SESSION['status'];
+    $acc_type = $_SESSION['acc_type'];
+    $title = $_SESSION['title'];
+
     $link = $_SERVER['PHP_SELF'];
     $link_array = explode('/', $link);
     $page = end($link_array);
@@ -547,7 +558,7 @@
                         <div class="kt-header__topbar-user">
 
                             <span class="kt-hidden kt-header__topbar-welcome kt-hidden-mobile">Hi,</span>
-                            <span class="kt-hidden kt-header__topbar-username kt-hidden-mobile">Admin</span>
+                            <span class="kt-hidden kt-header__topbar-username kt-hidden-mobile"><?php $firstName = $_SESSION['firstName']; $lastName = $_SESSION['lastName']; echo $firstName." ".$lastName; ?></span>
                             <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg"/>
 
 
@@ -571,10 +582,17 @@
                             <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg"/>
 
                             <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-                            <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">A</span>
+                            <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success"><?php
+
+                                $firstName = $_SESSION['firstName'];
+                                //Use mb_substr to get the first character.
+                                $firstChar = mb_substr($firstName, 0, 1, "UTF-8");
+
+                                //Print out the first character.
+                                echo $firstChar; ?></span>
                         </div>
                         <div class="kt-user-card__name">
-                            Administrator
+                            <?php $firstName = $_SESSION['firstName']; $lastName = $_SESSION['lastName']; echo $firstName." ".$lastName; ?>
                         </div>
 
                     </div>
@@ -646,8 +664,7 @@
                         } else { ?>Dashboard<?php } ?></h3>
                     <span class="kt-subheader__separator kt-subheader__separator--v"></span>
                     <h3 style=" font-size: small"
-                        class="kt-animate-fade-in-up kt-subheader__title text-success">Welcome,
-                        Administrator</h3>
+                        class="kt-animate-fade-in-up kt-subheader__title text-success">Welcome, <?php if ($userID == 12){echo $firstName." ".$lastName;}else{ echo $title." ".$firstName." ".$lastName; }?></h3>
                     <span class="kt-subheader__separator kt-subheader__separator--v"></span>
 
 
