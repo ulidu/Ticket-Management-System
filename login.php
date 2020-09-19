@@ -2,8 +2,19 @@
 
 include 'include/db.php';
 
-?>
+session_start();
 
+
+$logged_user_id = $_SESSION['logged_user_id'];
+
+if ($logged_user_id != '') {
+
+    echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
