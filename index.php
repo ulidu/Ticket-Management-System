@@ -147,72 +147,125 @@
 
     <div class="row">
 
-        <div class="col-lg-12">
+<div class="col-12">
+        <!--Begin::Section-->
+        <div class="kt-portlet">
+            <div class="kt-portlet__body  kt-portlet__body--fit">
+                <div class="row row-no-padding row-col-separator-xl">
+                    <div class="col-xl-4">
 
-        <div class="kt-portlet kt-portlet--mobile">
-            <div class="kt-portlet__head kt-portlet__head--lg">
-                <div class="kt-portlet__head-label">
-										<span class="kt-portlet__head-icon">
-											<i class="kt-font-brand flaticon2-list-3"></i>
-										</span>
-                    <h3 class="kt-portlet__head-title">
-                        Recent Tasks
-                    </h3>
-                </div>
-                <div class="kt-portlet__head-toolbar">
-                    <div class="kt-portlet__head-wrapper">
-                        <div class="kt-portlet__head-actions">
-
-                            &nbsp;
-                            <a href="task_add.php" class="btn btn-brand btn-elevate btn-icon-sm">
-                                <i class="la la-plus"></i>
-                                New Ticket
-                            </a>
+                        <!--begin:: Widgets/Daily Sales-->
+                        <div class="kt-portlet kt-portlet--height-fluid">
+                            <div class="kt-widget14">
+                                <div class="kt-widget14__header kt-margin-b-30">
+                                    <h3 class="kt-widget14__title">
+                                        Daily Sales
+                                    </h3>
+                                    <span class="kt-widget14__desc">
+															Check out each collumn for more details
+														</span>
+                                </div>
+                                <div class="kt-widget14__chart" style="height:120px;">
+                                    <canvas id="kt_chart_daily_sales"></canvas>
+                                </div>
+                            </div>
                         </div>
+
+                        <!--end:: Widgets/Daily Sales-->
                     </div>
+                    <div class="col-xl-4">
+
+                        <!--begin:: Widgets/Profit Share-->
+                        <div class="kt-portlet kt-portlet--height-fluid">
+                            <div class="kt-widget14">
+                                <div class="kt-widget14__header">
+                                    <h3 class="kt-widget14__title">
+                                        Profit Share
+                                    </h3>
+                                    <span class="kt-widget14__desc">
+															Profit Share between customers
+														</span>
+                                </div>
+                                <div class="kt-widget14__content">
+                                    <div class="kt-widget14__chart">
+                                        <div class="kt-widget14__stat">45</div>
+                                        <canvas id="kt_chart_profit_share" style="height: 140px; width: 140px;"></canvas>
+                                    </div>
+                                    <div class="kt-widget14__legends">
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-success"></span>
+                                            <span class="kt-widget14__stats">37% Sport Tickets</span>
+                                        </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-warning"></span>
+                                            <span class="kt-widget14__stats">47% Business Events</span>
+                                        </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                            <span class="kt-widget14__stats">19% Others</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--end:: Widgets/Profit Share-->
+                    </div>
+                    <div class="col-xl-4">
+
+                        <!--begin:: Widgets/Revenue Change-->
+                        <div class="kt-portlet kt-portlet--height-fluid">
+                            <div class="kt-widget14">
+                                <div class="kt-widget14__header">
+                                    <h3 class="kt-widget14__title">
+                                        Revenue Change
+                                    </h3>
+                                    <span class="kt-widget14__desc">
+															Revenue change breakdown by cities
+														</span>
+                                </div>
+                                <div class="kt-widget14__content">
+                                    <div class="kt-widget14__chart">
+                                        <div id="kt_chart_revenue_change" style="height: 150px; width: 150px;"></div>
+                                    </div>
+                                    <div class="kt-widget14__legends">
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-success"></span>
+                                            <span class="kt-widget14__stats">+10% New York</span>
+                                        </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-warning"></span>
+                                            <span class="kt-widget14__stats">-7% London</span>
+                                        </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                            <span class="kt-widget14__stats">+20% California</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--end:: Widgets/Revenue Change-->
+
+
+
+
+                    </div>
+
+
                 </div>
-            </div>
-            <div class="kt-portlet__body">
 
-                <!--begin: Datatable -->
-                <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
-                    <thead>
-                    <tr>
-                        <th>Record ID</th>
-                        <th>Order ID</th>
-                        <th>Country</th>
-                        <th>Ship City</th>
-                        <th>Ship Address</th>
-                        <th>Company Agent</th>
-                        <th>Company Name</th>
-                        <th>Ship Date</th>
-                        <th>Status</th>
-                        <th>Type</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>61715-075</td>
-                        <td>China</td>
-                        <td>Tieba</td>
-                        <td>746 Pine View Junction</td>
-                        <td>Nixie Sailor</td>
-                        <td>Gleichner, Ziemann and Gutkowski</td>
-                        <td>2/12/2018</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td nowrap></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-
-                <!--end: Datatable -->
             </div>
         </div>
-    </div>
+
+        <!--End::Section-->
+
+
+</div>
+
+
     </div>
 
 </div>

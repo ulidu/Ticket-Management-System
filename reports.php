@@ -5,165 +5,275 @@
 <!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
-    <div class="kt-portlet kt-portlet--mobile">
-        <div class="kt-portlet__head kt-portlet__head--lg">
-            <div class="kt-portlet__head-label">
-										<span class="kt-portlet__head-icon">
-											<i class="kt-font-brand flaticon2-list-3"></i>
-										</span>
-                <h3 class="kt-portlet__head-title kt-font-brand">
-                    All Tickets</h3>&nbsp;
+    <!--Begin::Section-->
+    <div class="row">
+        <div class="col-xl-4">
 
-            </div>
-            <div class="kt-portlet__head-toolbar">
-                <div class="kt-portlet__head-wrapper">
-                    <div class="kt-portlet__head-actions">
-                        <div class="dropdown dropdown-inline">
-                            <button type="button"
-                                    class="btn btn-default btn-icon-sm dropdown-toggle"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false">
-                                <i class="la la-download"></i>
-                                Export
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <ul class="kt-nav">
-                                    <li class="kt-nav__section kt-nav__section--first">
-                                        <span class="kt-nav__section-text">Choose an option</span>
-                                    </li>
-                                    <li class="kt-nav__item">
-                                        <a onclick="window.print()"
-                                           class="kt-nav__link">
-                                            <i class="kt-nav__link-icon la la-print"></i>
-                                            <span class="kt-nav__link-text">Print</span>
-                                        </a>
-                                    </li>
-                                    <li class="kt-nav__item">
-                                        <a onclick="generate()"
-                                           class="kt-nav__link">
-                                            <i class="kt-nav__link-icon la la-file-pdf-o"></i>
-                                            <span class="kt-nav__link-text">PDF</span>
-                                        </a>
-                                    </li>
-                                </ul>
+            <!--begin:: Widgets/Personal Income-->
+            <div class="kt-portlet kt-portlet--fit kt-portlet--head-lg kt-portlet--head-overlay kt-portlet--height-fluid">
+                <div class="kt-portlet__head kt-portlet__space-x">
+                    <div class="kt-portlet__head-label">
+                        <h3 class="kt-portlet__head-title kt-font-light">
+                            Personal Income
+                        </h3>
+                    </div>
+                    <div class="kt-portlet__head-toolbar">
+                        <a href="#" class="btn btn-outline-light btn-sm btn-bold dropdown-toggle" data-toggle="dropdown">
+                            March, 2019
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right">
+                            <ul class="kt-nav">
+                                <li class="kt-nav__item">
+                                    <a href="#" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-line-chart"></i>
+                                        <span class="kt-nav__link-text">Reports</span>
+                                    </a>
+                                </li>
+                                <li class="kt-nav__item">
+                                    <a href="#" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-send"></i>
+                                        <span class="kt-nav__link-text">Messages</span>
+                                    </a>
+                                </li>
+                                <li class="kt-nav__item">
+                                    <a href="#" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-pie-chart-1"></i>
+                                        <span class="kt-nav__link-text">Charts</span>
+                                    </a>
+                                </li>
+                                <li class="kt-nav__item">
+                                    <a href="#" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-avatar"></i>
+                                        <span class="kt-nav__link-text">Members</span>
+                                    </a>
+                                </li>
+                                <li class="kt-nav__item">
+                                    <a href="#" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-settings"></i>
+                                        <span class="kt-nav__link-text">Settings</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="kt-portlet__body">
+                    <div class="kt-widget27">
+                        <div class="kt-widget27__visual">
+                            <img src="assets/media/bg/bg-4.jpg" alt="">
+                            <h3 class="kt-widget27__title">
+                                <span><span>$</span>256,100</span>
+                            </h3>
+                            <div class="kt-widget27__btn">
+                                <a href="#" class="btn btn-pill btn-light btn-elevate btn-bold">Inclusive All Earnings</a>
                             </div>
                         </div>
+                        <div class="kt-widget27__container kt-portlet__space-x">
+                            <ul class="nav nav-pills nav-fill" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="pill" href="#kt_personal_income_quater_1">Quater 1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#kt_personal_income_quater_2">Quater 2</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#kt_personal_income_quater_3">Quater 3</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#kt_personal_income_quater_4">Quater 4</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="kt_personal_income_quater_1" class="tab-pane active">
+                                    <div class="kt-widget11">
+                                        <div class="table-responsive">
 
+                                            <!--begin::Table-->
+                                            <table class="table">
+
+                                                <!--begin::Thead-->
+                                                <thead>
+                                                <tr>
+                                                    <td>Application</td>
+                                                    <td>Status</td>
+                                                    <td class="kt-align-right">Total</td>
+                                                </tr>
+                                                </thead>
+
+                                                <!--end::Thead-->
+
+                                                <!--begin::Tbody-->
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#" class="kt-widget11__title">Vertex 2.0</a>
+                                                        <span class="kt-widget11__sub">Vertex To By Again</span>
+                                                    </td>
+                                                    <td><span class="kt-badge kt-badge--success kt-badge--inline">pending</span></td>
+                                                    <td class="kt-align-right kt-font-brand kt-font-bold">$14,740</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#" class="kt-widget11__title">Metronic</a>
+                                                        <span class="kt-widget11__sub">Powerful Admin Theme</span>
+                                                    </td>
+                                                    <td><span class="kt-badge kt-badge--brand kt-badge--inline">new</span></td>
+                                                    <td class="kt-align-right kt-font-brand kt-font-bold">$16,010</td>
+                                                </tr>
+                                                </tbody>
+
+                                                <!--end::Tbody-->
+                                            </table>
+
+                                            <!--end::Table-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="kt_personal_income_quater_2" class="tab-pane fade">
+                                    <div class="kt-widget11">
+                                        <div class="table-responsive">
+
+                                            <!--begin::Table-->
+                                            <table class="table">
+
+                                                <!--begin::Thead-->
+                                                <thead>
+                                                <tr>
+                                                    <td>Application</td>
+                                                    <td>Status</td>
+                                                    <td class="kt-align-right">Total</td>
+                                                </tr>
+                                                </thead>
+
+                                                <!--end::Thead-->
+
+                                                <!--begin::Tbody-->
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#" class="kt-widget11__title">Vertex 2.0</a>
+                                                        <span class="kt-widget11__sub">Vertex To By Again</span>
+                                                    </td>
+                                                    <td><span class="kt-badge kt-badge--success kt-badge--inline">pending</span></td>
+                                                    <td class="kt-align-right kt-font-brand kt-font-bold">$14,740</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#" class="kt-widget11__title">Apex</a>
+                                                        <span class="kt-widget11__sub">The Best Selling App</span>
+                                                    </td>
+                                                    <td><span class="kt-badge kt-badge--warning kt-badge--inline">in process</span></td>
+                                                    <td class="kt-align-right kt-font-brand kt-font-bold">$37,200</td>
+                                                </tr>
+                                                </tbody>
+
+                                                <!--end::Tbody-->
+                                            </table>
+
+                                            <!--end::Table-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="kt_personal_income_quater_3" class="tab-pane fade">
+                                    <div class="kt-widget11">
+                                        <div class="table-responsive">
+
+                                            <!--begin::Table-->
+                                            <table class="table">
+
+                                                <!--begin::Thead-->
+                                                <thead>
+                                                <tr>
+                                                    <td>Application</td>
+                                                    <td>Status</td>
+                                                    <td class="kt-align-right">Total</td>
+                                                </tr>
+                                                </thead>
+
+                                                <!--end::Thead-->
+
+                                                <!--begin::Tbody-->
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#" class="kt-widget11__title">Metronic</a>
+                                                        <span class="kt-widget11__sub">Powerful Admin Theme</span>
+                                                    </td>
+                                                    <td><span class="kt-badge kt-badge--brand kt-badge--inline">new</span></td>
+                                                    <td class="kt-align-right kt-font-brand kt-font-bold">$16,010</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#" class="kt-widget11__title">Apex</a>
+                                                        <span class="kt-widget11__sub">The Best Selling App</span>
+                                                    </td>
+                                                    <td><span class="kt-badge kt-badge--warning kt-badge--inline">in process</span></td>
+                                                    <td class="kt-align-right kt-font-brand kt-font-bold">$37,200</td>
+                                                </tr>
+                                                </tbody>
+
+                                                <!--end::Tbody-->
+                                            </table>
+
+                                            <!--end::Table-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="kt_personal_income_quater_4" class="tab-pane fade">
+                                    <div class="kt-widget11">
+                                        <div class="table-responsive">
+
+                                            <!--begin::Table-->
+                                            <table class="table">
+
+                                                <!--begin::Thead-->
+                                                <thead>
+                                                <tr>
+                                                    <td>Application</td>
+                                                    <td>Status</td>
+                                                    <td class="kt-align-right">Total</td>
+                                                </tr>
+                                                </thead>
+
+                                                <!--end::Thead-->
+
+                                                <!--begin::Tbody-->
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#" class="kt-widget11__title">Vertex 2.0</a>
+                                                        <span class="kt-widget11__sub">Vertex To By Again</span>
+                                                    </td>
+                                                    <td><span class="kt-badge kt-badge--success kt-badge--inline">pending</span></td>
+                                                    <td class="kt-align-right kt-font-brand kt-font-bold">$14,740</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#" class="kt-widget11__title">Metronic</a>
+                                                        <span class="kt-widget11__sub">Powerful Admin Theme</span>
+                                                    </td>
+                                                    <td><span class="kt-badge kt-badge--brand kt-badge--inline">new</span></td>
+                                                    <td class="kt-align-right kt-font-brand kt-font-bold">$16,010</td>
+                                                </tr>
+                                                </tbody>
+
+                                                <!--end::Tbody-->
+                                            </table>
+
+                                            <!--end::Table-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="kt-portlet__body kt-font-dark">
-            <!--begin: Datatable -->
-            <table style="text-align: center"
-                   class="table table-striped- table-bordered table-hover"
-                   id="kt_table_1">
-                <thead>
-                <tr style="font-size: 14px;" class="kt-label-bg-color-1">
-                    <th>Actions</th>
-                    <th>Ticket ID</th>
-                    <th>Date Submitted</th>
-                    <th>Issue</th>
-                    <th>Issue Category</th>
-                    <th>Division</th>
-                    <th>Applicant Name</th>
-                    <th>Employee Code</th>
-                    <th>Designation</th>
-                    <th>Asset Code</th>
-                    <th>Extension No.</th>
-                    <th>Status</th>
-                    <th>Priority</th>
-                    <th>IP Address</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                <?php
-
-                $query = "select * from task";
-                $run_query = mysqli_query($con, $query);
-
-                while ($row = mysqli_fetch_assoc($run_query)) {
-
-                    $ticket_id = $row['task_id'];
-                    $name = $row['assigned_by'];
-                    $emp_code = $row['emp_code'];
-                    $designation = $row['designation'];
-                    $division = $row['division'];
-                    $ext = $row['extension_no'];
-                    $issue = $row['issue'];
-                    $cat_issue = $row['category'];
-                    $asst_code = $row['asset_code'];
-                    $priority = $row['priority'];
-                    $status = $row['status'];
-                    $date = $row['assigned_date'];
-                    $ip_add = $row['ip_address'];
-
-                    ?>
-
-
-                    <tr style="font-weight: 400; background-color: #f8f9fa;">
-
-                        <td style="color: #343a40;">
-
-
-                            <select style="width: 100px;" id="division" name="division"
-                                    class="ui-select form-control dropdown dropdown-menu-anim-down " required>
-                                <option value="" hidden="true">Assign</option>
-                                <option value="Project Management Division">Project Management Division</option>
-                                <option value="Finance Division">Finance Division</option>
-                                <option value="Landscape Division">Landscape Division</option>
-                                <option value="Western Province Division">Western Province Division</option>
-                                <option value="GIS Division">GIS Division</option>
-                            </select>
-
-
-                            </span>
-
-                            <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="View">
-                                <i style="font-size: 18px; color: #007bff;" class="la la-check"></i>
-                            </a>
-
-                            <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="View">
-                                <i style="font-size: 18px; color: #dc3545;" class="la la-trash"></i>
-                            </a>
-                        </td>
-
-                        <td><?php echo $ticket_id; ?></td>
-                        <td><?php echo $date; ?></td>
-                        <td><?php echo $issue; ?></td>
-                        <td><?php echo $cat_issue; ?></td>
-                        <td><?php echo $division; ?></td>
-                        <td><?php echo $name; ?></td>
-                        <td><?php echo $emp_code; ?></td>
-                        <td><?php echo $designation; ?></td>
-                        <td><?php echo $asst_code; ?></td>
-                        <td><?php echo $ext; ?></td>
-                        <td><?php if ($status == "Approval Required") { ?> <span style="font-weight: 500"
-                                                                                 class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">Approval Required</span>  <?php } elseif ($status == "Approved") { ?>
-                                <span style="font-weight: 500"
-                                      class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">Approved</span>  <?php } ?>
-                        </td>
-                        <td><?php if ($priority == "Medium") { ?><span
-                                    class="kt-badge kt-badge--warning kt-badge--dot"></span>&nbsp;<span
-                                    class="kt-font-bold kt-font-warning">Medium</span><?php } elseif ($priority == "Low") { ?>
-                                <span class="kt-badge kt-badge--success kt-badge--dot"></span>&nbsp;<span
-                                        class="kt-font-bold kt-font-success">Low</span> <?php } else { ?><span
-                                    class="kt-badge kt-badge--warning kt-badge--dot"></span>&nbsp;<span
-                                    class="kt-font-bold kt-font-danger">Critical</span><?php } ?> </td>
-                        <td style="font-family: 'Fira Code'"><?php echo $ip_add; ?></td>
-                    </tr>
-
-                <?php } ?>
-
-                </tbody>
-
-            </table>
-            <!--end: Datatable -->
+            <!--end:: Widgets/Personal Income-->
         </div>
     </div>
+
 </div>
 </div>
 

@@ -59,6 +59,9 @@ $_SESSION['last_action'] = time();
     <!--end::Page Vendors Styles -->
     <!--begin::Page Custom Styles(used by this page) -->
     <link href="assets/css/pages/wizard/wizard-4.css" rel="stylesheet" type="text/css"/>
+    <!--begin::Page Custom Styles(used by this page) -->
+    <link href="assets/css/pages/support-center/faq-3.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/pages/support-center/feedback.css" rel="stylesheet" type="text/css" />
 
     <!--begin::Global Theme Styles(used by all pages) -->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
@@ -121,7 +124,7 @@ $link3 = $_SERVER['PHP_SELF'];
 $link_array4 = explode('/', $link3);
 $page4 = end($link_array4);
 
-if ($logged_user_id == '' && $page4 !='task_add.php' && $page4 !='ticket_success.php') {
+if ($logged_user_id == '' && $page4 !='task_add.php' && $page4 !='ticket_success.php' && $page4 !='feedback.php') {
 
     echo "<script type='text/javascript'> document.location = 'login.php'; </script>";
 

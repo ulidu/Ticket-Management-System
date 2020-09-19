@@ -126,6 +126,11 @@
                 <?php } else {
 
                 } ?>
+                <li class="kt-menu__item "><a href="feedback.php" class="kt-menu__link "><i
+                                class="kt-menu__link-icon flaticon2-chat-1"></i><span
+                                class="kt-menu__link-text">Feedback</span></a>
+                </li>
+
             </ul>
         </div>
     </div>
@@ -196,6 +201,10 @@
                 <li class="kt-menu__item " aria-haspopup="true"><a href="reports.php" class="kt-menu__link "><i
                                 class="kt-menu__link-icon flaticon2-graph"></i><span
                                 class="kt-menu__link-text">Reports</span></a>
+                </li>
+                <li class="kt-menu__item "><a href="feedback.php" class="kt-menu__link "><i
+                                class="kt-menu__link-icon flaticon2-chat-1"></i><span
+                                class="kt-menu__link-text">Feedback</span></a>
                 </li>
             </ul>
         </div>
@@ -268,6 +277,11 @@
                                 class="kt-menu__link-icon flaticon2-graph"></i><span
                                 class="kt-menu__link-text">Reports</span></a>
                 </li>
+
+                <li class="kt-menu__item "><a href="feedback.php" class="kt-menu__link "><i
+                                class="kt-menu__link-icon flaticon2-chat-1"></i><span
+                                class="kt-menu__link-text">Feedback</span></a>
+                </li>
             </ul>
         </div>
     </div>
@@ -338,6 +352,10 @@
                 <li class="kt-menu__item "><a href="reports.php" class="kt-menu__link "><i
                                 class="kt-menu__link-icon flaticon2-graph"></i><span
                                 class="kt-menu__link-text">Reports</span></a>
+                </li>
+                <li class="kt-menu__item "><a href="feedback.php" class="kt-menu__link "><i
+                                class="kt-menu__link-icon flaticon2-chat-1"></i><span
+                                class="kt-menu__link-text">Feedback</span></a>
                 </li>
             </ul>
         </div>
@@ -489,7 +507,7 @@
     $link_array = explode('/', $link);
     $page = end($link_array);
 
-    if ($page == "task_add.php" || $page == "ticket_success.php") {
+    if ($page == "task_add.php" || $page == "ticket_success.php" || $page == "feedback.php") {
 
     }else{
 

@@ -63,7 +63,7 @@ if ($logged_user_id != '') {
             <div class="kt-grid__item kt-grid__item--order-tablet-and-mobile-2 kt-grid kt-grid--hor kt-login__aside"
                  style="background-image: url(assets/media/bg/bg.jpg);">
                 <div class="kt-grid__item">
-                    <a href="#" class="kt-login__logo">
+                    <a href="login.php" class="kt-login__logo">
                         <img src="assets/media/logos/logo-4.png">
                     </a>
                 </div>
