@@ -24,290 +24,329 @@
     if ($page == "task_add.php" || $page == "task_list.php" || $page == "ticket_success.php") {
 
 
-        ?>
-
-        <!-- begin:: Aside Menu -->
-        <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
-            <div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1"
-                 data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
-                <ul class="kt-menu__nav ">
-                    <li class="kt-menu__item" aria-haspopup="true"><a href="index.php"
-                                                                      class="kt-menu__link "><i
-                                    class="kt-menu__link-icon flaticon2-architecture-and-city"></i><span
-                                    class="kt-menu__link-text">Home</span></a></li>
-
-
-                    <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true"
-                        data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
-                                                              class="kt-menu__link kt-menu__toggle"><i
-                                    class="kt-menu__link-icon flaticon2-list-3"></i><span
-                                    class="kt-menu__link-text">Tickets</span></a>
-                        <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-                            <ul class="kt-menu__subnav">
-
-                                <li class="kt-menu__item "><a href="task_add.php"
-                                                              class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">Add New Ticket</span></a></li>
-
-                                <li class="kt-menu__item "><a href="task_list.php"
-                                                              class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">View all Tickets</span></a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
-                        data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
-                                                              class="kt-menu__link kt-menu__toggle"><i
-                                    class="kt-menu__link-icon flaticon2-user-1"></i><span
-                                    class="kt-menu__link-text">Users</span></a>
-                        <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-                            <ul class="kt-menu__subnav">
-                                <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span
-                                            class="kt-menu__link"><span class="kt-menu__link-text">Actions</span></span>
-                                </li>
-                                <li class="kt-menu__item " aria-haspopup="true"><a href="add_user.php"
-                                                                                   class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">Add New User</span></a></li>
-
-                                <li class="kt-menu__item " aria-haspopup="true"><a href="user_list.php"
-                                                                                   class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">View all Users</span></a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <li class="kt-menu__item " aria-haspopup="true"><a href="reports.php" class="kt-menu__link "><i
-                                    class="kt-menu__link-icon flaticon2-graph"></i><span
-                                    class="kt-menu__link-text">Reports</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- end:: Aside Menu -->
-
-        <?php
-
-    } elseif ($page == "add_user.php" || $page == "user_list.php" || $page == "user_success.php" || $page == "profile.php") {
-        ?>
-        <!-- begin:: Aside Menu -->
-        <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
-            <div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1"
-                 data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
-                <ul class="kt-menu__nav ">
-                    <li class="kt-menu__item" aria-haspopup="true"><a href="index.php"
-                                                                      class="kt-menu__link "><i
-                                    class="kt-menu__link-icon flaticon2-architecture-and-city"></i><span
-                                    class="kt-menu__link-text">Home</span></a></li>
-
-
-                    <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
-                        data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
-                                                              class="kt-menu__link kt-menu__toggle"><i
-                                    class="kt-menu__link-icon flaticon2-list-3"></i><span
-                                    class="kt-menu__link-text">Tickets</span></a>
-                        <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-                            <ul class="kt-menu__subnav">
-
-                                <li class="kt-menu__item "><a href="task_add.php"
-                                                              class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">Add New Ticket</span></a></li>
-
-                                <li class="kt-menu__item "><a href="task_list.php"
-                                                              class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">View all Tickets</span></a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true"
-                        data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
-                                                              class="kt-menu__link kt-menu__toggle"><i
-                                    class="kt-menu__link-icon flaticon2-user-1"></i><span
-                                    class="kt-menu__link-text">Users</span></a>
-                        <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-                            <ul class="kt-menu__subnav">
-                                <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span
-                                            class="kt-menu__link"><span class="kt-menu__link-text">Actions</span></span>
-                                </li>
-                                <li class="kt-menu__item " aria-haspopup="true"><a href="add_user.php"
-                                                                                   class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">Add New User</span></a></li>
-
-                                <li class="kt-menu__item " aria-haspopup="true"><a href="user_list.php"
-                                                                                   class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">View all Users</span></a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <li class="kt-menu__item " aria-haspopup="true"><a href="reports.php" class="kt-menu__link "><i
-                                    class="kt-menu__link-icon flaticon2-graph"></i><span
-                                    class="kt-menu__link-text">Reports</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- end:: Aside Menu -->
-        <?php
-    } elseif ($page == "reports.php") {
-
-        ?>
-
-        <!-- begin:: Aside Menu -->
-        <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
-            <div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1"
-                 data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
-                <ul class="kt-menu__nav ">
-                    <li class="kt-menu__item" aria-haspopup="true"><a href="index.php"
-                                                                      class="kt-menu__link "><i
-                                    class="kt-menu__link-icon flaticon2-architecture-and-city"></i><span
-                                    class="kt-menu__link-text">Home</span></a></li>
-
-
-                    <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
-                        data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
-                                                              class="kt-menu__link kt-menu__toggle"><i
-                                    class="kt-menu__link-icon flaticon2-list-3"></i><span
-                                    class="kt-menu__link-text">Tickets</span></a>
-                        <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-                            <ul class="kt-menu__subnav">
-
-                                <li class="kt-menu__item "><a href="task_add.php"
-                                                              class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">Add New Ticket</span></a></li>
-
-                                <li class="kt-menu__item "><a href="task_list.php"
-                                                              class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">View all Tickets</span></a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true"
-                        data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
-                                                              class="kt-menu__link kt-menu__toggle"><i
-                                    class="kt-menu__link-icon flaticon2-user-1"></i><span
-                                    class="kt-menu__link-text">Users</span></a>
-                        <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-                            <ul class="kt-menu__subnav">
-                                <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span
-                                            class="kt-menu__link"><span class="kt-menu__link-text">Actions</span></span>
-                                </li>
-                                <li class="kt-menu__item " aria-haspopup="true"><a href="add_user.php"
-                                                                                   class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">Add New User</span></a></li>
-
-                                <li class="kt-menu__item " aria-haspopup="true"><a href="user_list.php"
-                                                                                   class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">View all Users</span></a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <li class="kt-menu__item kt-menu__item--active"><a href="reports.php" class="kt-menu__link "><i
-                                    class="kt-menu__link-icon flaticon2-graph"></i><span
-                                    class="kt-menu__link-text">Reports</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- end:: Aside Menu -->
-
-        <?php
-    } else {
-
-        ?>
-        <!-- begin:: Aside Menu -->
-        <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
-            <div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1"
-                 data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
-                <ul class="kt-menu__nav ">
-                    <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="index.php"
-                                                                                             class="kt-menu__link "><i
-                                    class="kt-menu__link-icon flaticon2-architecture-and-city"></i><span
-                                    class="kt-menu__link-text">Home</span></a></li>
-
-
-                    <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
-                        data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
-                                                              class="kt-menu__link kt-menu__toggle"><i
-                                    class="kt-menu__link-icon flaticon2-list-3"></i><span
-                                    class="kt-menu__link-text">Tickets</span></a>
-                        <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-                            <ul class="kt-menu__subnav">
-
-                                <li class="kt-menu__item "><a href="task_add.php"
-                                                              class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">Add New Ticket</span></a></li>
-
-                                <li class="kt-menu__item "><a href="task_list.php"
-                                                              class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">View all Tickets</span></a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
-                        data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
-                                                              class="kt-menu__link kt-menu__toggle"><i
-                                    class="kt-menu__link-icon flaticon2-user-1"></i><span
-                                    class="kt-menu__link-text">Users</span></a>
-                        <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-                            <ul class="kt-menu__subnav">
-                                <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span
-                                            class="kt-menu__link"><span class="kt-menu__link-text">Actions</span></span>
-                                </li>
-                                <li class="kt-menu__item " aria-haspopup="true"><a href="add_user.php"
-                                                                                   class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">Add New User</span></a></li>
-
-                                <li class="kt-menu__item " aria-haspopup="true"><a href="user_list.php"
-                                                                                   class="kt-menu__link "><i
-                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
-                                                class="kt-menu__link-text">View all Users</span></a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <li class="kt-menu__item "><a href="reports.php" class="kt-menu__link "><i
-                                    class="kt-menu__link-icon flaticon2-graph"></i><span
-                                    class="kt-menu__link-text">Reports</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- end:: Aside Menu -->
-        <?php
-    }
     ?>
+
+    <!-- begin:: Aside Menu -->
+    <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+        <div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1"
+             data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
+            <ul class="kt-menu__nav ">
+                <?php
+
+                $logged_user_id = $_SESSION['logged_user_id'];
+
+                if ($logged_user_id != '') {
+
+                    ?>
+                    <li class="kt-menu__item" aria-haspopup="true"><a href="index.php"
+                                                                      class="kt-menu__link "><i
+                                    class="kt-menu__link-icon flaticon2-architecture-and-city"></i><span
+                                    class="kt-menu__link-text">Home</span></a></li>
+                <?php } else {
+
+                } ?>
+
+                <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true"
+                    data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
+                                                          class="kt-menu__link kt-menu__toggle"><i
+                                class="kt-menu__link-icon flaticon2-list-3"></i><span
+                                class="kt-menu__link-text">Tickets</span></a>
+                    <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
+                        <ul class="kt-menu__subnav">
+
+                            <li class="kt-menu__item "><a href="task_add.php"
+                                                          class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">Add New Ticket</span></a></li>
+
+                            <?php
+
+                            $logged_user_id = $_SESSION['logged_user_id'];
+
+                            if ($logged_user_id != '') {
+
+                                ?>
+
+                                <li class="kt-menu__item "><a href="task_list.php"
+                                                              class="kt-menu__link "><i
+                                                class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                                class="kt-menu__link-text">View all Tickets</span></a></li>
+
+                            <?php } else {
+
+                            } ?>
+                        </ul>
+                    </div>
+                </li>
+
+                <?php
+
+                $logged_user_id = $_SESSION['logged_user_id'];
+
+                if ($logged_user_id != '') {
+
+                ?>
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                    data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
+                                                          class="kt-menu__link kt-menu__toggle"><i
+                                class="kt-menu__link-icon flaticon2-user-1"></i><span
+                                class="kt-menu__link-text">Users</span></a>
+                    <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
+                        <ul class="kt-menu__subnav">
+                            <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span
+                                        class="kt-menu__link"><span class="kt-menu__link-text">Actions</span></span>
+                            </li>
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="add_user.php"
+                                                                               class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">Add New User</span></a></li>
+
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="user_list.php"
+                                                                               class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">View all Users</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <?php } else {
+
+                } ?>
+
+                <?php
+
+                $logged_user_id = $_SESSION['logged_user_id'];
+
+                if ($logged_user_id != '') {
+
+                ?>
+                <li class="kt-menu__item " aria-haspopup="true"><a href="reports.php" class="kt-menu__link "><i
+                                class="kt-menu__link-icon flaticon2-graph"></i><span
+                                class="kt-menu__link-text">Reports</span></a>
+                </li>
+                <?php } else {
+
+                } ?>
+            </ul>
+        </div>
+    </div>
+
+    <!-- end:: Aside Menu -->
+
+<?php
+
+} elseif ($page == "add_user.php" || $page == "user_list.php" || $page == "user_success.php" || $page == "profile.php") {
+    ?>
+    <!-- begin:: Aside Menu -->
+    <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+        <div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1"
+             data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
+            <ul class="kt-menu__nav ">
+                <li class="kt-menu__item" aria-haspopup="true"><a href="index.php"
+                                                                  class="kt-menu__link "><i
+                                class="kt-menu__link-icon flaticon2-architecture-and-city"></i><span
+                                class="kt-menu__link-text">Home</span></a></li>
+
+
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                    data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
+                                                          class="kt-menu__link kt-menu__toggle"><i
+                                class="kt-menu__link-icon flaticon2-list-3"></i><span
+                                class="kt-menu__link-text">Tickets</span></a>
+                    <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
+                        <ul class="kt-menu__subnav">
+
+                            <li class="kt-menu__item "><a href="task_add.php"
+                                                          class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">Add New Ticket</span></a></li>
+
+                            <li class="kt-menu__item "><a href="task_list.php"
+                                                          class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">View all Tickets</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+
+
+                <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true"
+                    data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
+                                                          class="kt-menu__link kt-menu__toggle"><i
+                                class="kt-menu__link-icon flaticon2-user-1"></i><span
+                                class="kt-menu__link-text">Users</span></a>
+                    <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
+                        <ul class="kt-menu__subnav">
+                            <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span
+                                        class="kt-menu__link"><span class="kt-menu__link-text">Actions</span></span>
+                            </li>
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="add_user.php"
+                                                                               class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">Add New User</span></a></li>
+
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="user_list.php"
+                                                                               class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">View all Users</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+
+
+                <li class="kt-menu__item " aria-haspopup="true"><a href="reports.php" class="kt-menu__link "><i
+                                class="kt-menu__link-icon flaticon2-graph"></i><span
+                                class="kt-menu__link-text">Reports</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- end:: Aside Menu -->
+    <?php
+} elseif ($page == "reports.php") {
+
+    ?>
+
+    <!-- begin:: Aside Menu -->
+    <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+        <div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1"
+             data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
+            <ul class="kt-menu__nav ">
+                <li class="kt-menu__item" aria-haspopup="true"><a href="index.php"
+                                                                  class="kt-menu__link "><i
+                                class="kt-menu__link-icon flaticon2-architecture-and-city"></i><span
+                                class="kt-menu__link-text">Home</span></a></li>
+
+
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                    data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
+                                                          class="kt-menu__link kt-menu__toggle"><i
+                                class="kt-menu__link-icon flaticon2-list-3"></i><span
+                                class="kt-menu__link-text">Tickets</span></a>
+                    <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
+                        <ul class="kt-menu__subnav">
+
+                            <li class="kt-menu__item "><a href="task_add.php"
+                                                          class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">Add New Ticket</span></a></li>
+
+                            <li class="kt-menu__item "><a href="task_list.php"
+                                                          class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">View all Tickets</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+
+
+                <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true"
+                    data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
+                                                          class="kt-menu__link kt-menu__toggle"><i
+                                class="kt-menu__link-icon flaticon2-user-1"></i><span
+                                class="kt-menu__link-text">Users</span></a>
+                    <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
+                        <ul class="kt-menu__subnav">
+                            <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span
+                                        class="kt-menu__link"><span class="kt-menu__link-text">Actions</span></span>
+                            </li>
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="add_user.php"
+                                                                               class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">Add New User</span></a></li>
+
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="user_list.php"
+                                                                               class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">View all Users</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+
+
+                <li class="kt-menu__item kt-menu__item--active"><a href="reports.php" class="kt-menu__link "><i
+                                class="kt-menu__link-icon flaticon2-graph"></i><span
+                                class="kt-menu__link-text">Reports</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- end:: Aside Menu -->
+
+    <?php
+} else {
+
+    ?>
+    <!-- begin:: Aside Menu -->
+    <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+        <div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1"
+             data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
+            <ul class="kt-menu__nav ">
+                <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="index.php"
+                                                                                         class="kt-menu__link "><i
+                                class="kt-menu__link-icon flaticon2-architecture-and-city"></i><span
+                                class="kt-menu__link-text">Home</span></a></li>
+
+
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                    data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
+                                                          class="kt-menu__link kt-menu__toggle"><i
+                                class="kt-menu__link-icon flaticon2-list-3"></i><span
+                                class="kt-menu__link-text">Tickets</span></a>
+                    <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
+                        <ul class="kt-menu__subnav">
+
+                            <li class="kt-menu__item "><a href="task_add.php"
+                                                          class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">Add New Ticket</span></a></li>
+
+                            <li class="kt-menu__item "><a href="task_list.php"
+                                                          class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">View all Tickets</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+
+
+                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
+                    data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
+                                                          class="kt-menu__link kt-menu__toggle"><i
+                                class="kt-menu__link-icon flaticon2-user-1"></i><span
+                                class="kt-menu__link-text">Users</span></a>
+                    <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
+                        <ul class="kt-menu__subnav">
+                            <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span
+                                        class="kt-menu__link"><span class="kt-menu__link-text">Actions</span></span>
+                            </li>
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="add_user.php"
+                                                                               class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">Add New User</span></a></li>
+
+                            <li class="kt-menu__item " aria-haspopup="true"><a href="user_list.php"
+                                                                               class="kt-menu__link "><i
+                                            class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span
+                                            class="kt-menu__link-text">View all Users</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+
+
+                <li class="kt-menu__item "><a href="reports.php" class="kt-menu__link "><i
+                                class="kt-menu__link-icon flaticon2-graph"></i><span
+                                class="kt-menu__link-text">Reports</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- end:: Aside Menu -->
+    <?php
+}
+?>
 
 </div>
 
@@ -344,31 +383,52 @@
         <!-- begin:: Header Topbar -->
         <div class="kt-header__topbar">
 
-
             <!--begin: User Bar -->
             <div class="kt-header__topbar-item kt-header__topbar-item--user">
 
                 <div class="kt-header__topbar-wrapper">
+                    <?php
 
-                    <div class="kt-header__topbar-user">
-                        <a href="login.php" class="btn btn-brand btn-bold"><i class="la la-user font-weight-bold"></i>
-                            Login</a>
-                    </div>
+                    $logged_user_id = $_SESSION['logged_user_id'];
+
+                    if ($logged_user_id == '') {
+
+                        ?>
+                        <div class="kt-header__topbar-user">
+                            <a href="login.php" class="btn btn-brand btn-bold"><i
+                                        class="la la-user font-weight-bold"></i>
+                                Login</a>
+                        </div>
+                    <?php } else {
+
+                    } ?>
                 </div>
 
                 <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
 
-                    <div class="kt-header__topbar-user">
+                    <?php
 
-                        <span class="kt-hidden kt-header__topbar-welcome kt-hidden-mobile">Hi,</span>
-                        <span class="kt-hidden kt-header__topbar-username kt-hidden-mobile">Admin</span>
-                        <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg"/>
+                    $logged_user_id = $_SESSION['logged_user_id'];
+
+                    if ($logged_user_id != '') {
+
+                        ?>
+                        <div class="kt-header__topbar-user">
+
+                            <span class="kt-hidden kt-header__topbar-welcome kt-hidden-mobile">Hi,</span>
+                            <span class="kt-hidden kt-header__topbar-username kt-hidden-mobile">Admin</span>
+                            <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg"/>
 
 
-                        <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-                        <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bolder"><i
-                                    style="font-size: 20px" class="la la-user font-weight-bold"></i></span>
-                    </div>
+                            <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
+                            <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bolder"><i
+                                        style="font-size: 20px" class="la la-user font-weight-bold"></i></span>
+                        </div>
+                    <?php } else {
+
+                    }
+                    ?>
+
                 </div>
                 <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
 
