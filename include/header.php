@@ -2,8 +2,6 @@
 <?php session_start();
 
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -28,11 +26,11 @@
     <!--begin::Page Vendors Styles(used by this page) -->
     <link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css"/>
 
-    <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css"/>
 
     <!--end::Page Vendors Styles -->
     <!--begin::Page Custom Styles(used by this page) -->
-    <link href="assets/css/pages/wizard/wizard-4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/pages/wizard/wizard-4.css" rel="stylesheet" type="text/css"/>
 
     <!--begin::Global Theme Styles(used by all pages) -->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
@@ -50,31 +48,53 @@
         @import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
 
 
-        .ui-select{
+        .ui-select {
             width: 100%;
+
         /* This is to remove the arrow of select element in IE */
-        select::-ms-expand {	display: none; }
+        select::-ms-expand {
+            display: none;
+        }
+
         select {
             font-family: 'FontAwesome';
         }
-        select{
+
+        select {
             -webkit-appearance: none;
             appearance: none;
         }
-        @-moz-document url-prefix(){
-            .ui-select{border: 1px solid #CCC; border-radius: 4px; box-sizing: border-box; position: relative; overflow: hidden;}
-            .ui-select select { width: 110%; background-position: right 30px center !important; border: none !important;}
+
+        @-moz-document url-prefix() {
+            .ui-select {
+                border: 1px solid #CCC;
+                border-radius: 4px;
+                box-sizing: border-box;
+                position: relative;
+                overflow: hidden;
+            }
+            .ui-select select {
+                width: 110%;
+                background-position: right 30px center !important;
+                border: none !important;
+            }
         }
+
         }
 
     </style>
 </head>
 <?php
+
 $logged_user_id = $_SESSION['logged_user_id'];
 
+$link3 = $_SERVER['PHP_SELF'];
+$link_array4 = explode('/', $link3);
+$page4 = end($link_array4);
 
-if ($logged_user_id == '') {
-echo "<script type='text/javascript'> document.location = 'login.php'; </script>";
+if ($logged_user_id == '' && $page4 !='task_add.php' && $page4 !='ticket_success.php') {
+
+    echo "<script type='text/javascript'> document.location = 'login.php'; </script>";
 
 }
 
