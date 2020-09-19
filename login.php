@@ -169,7 +169,7 @@ if ($logged_user_id != '') {
 
 
                                         ?>
-                                        <option value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName . " " . "-" . " " . $acc_type; ?></option>
+                                        <option <?php if ($userID == 12){ ?>style="font-weight: 500; color: #fd7e14;"<?php }else{} ?> value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName . " " . "-" . " " . $acc_type; ?></option>
                                         <?php
                                     }
                                     ?>

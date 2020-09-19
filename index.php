@@ -151,7 +151,7 @@
         <!--Begin::Section-->
         <div class="kt-portlet">
             <div class="kt-portlet__body  kt-portlet__body--fit">
-                <div class="row row-no-padding row-col-separator-xl">
+                <div class="row row-no-padding ">
                     <div class="col-xl-4">
 
                         <!--begin:: Widgets/Daily Sales-->
@@ -173,10 +173,10 @@
 
                         <!--end:: Widgets/Daily Sales-->
                     </div>
-                    <div class="col-xl-4">
+                    <div class="col-6">
 
                         <!--begin:: Widgets/Profit Share-->
-                        <div class="kt-portlet kt-portlet--height-fluid">
+
                             <div class="kt-widget14">
                                 <div class="kt-widget14__header">
                                     <h3 class="kt-widget14__title">
@@ -204,17 +204,22 @@
                                             <span class="kt-widget14__bullet kt-bg-brand"></span>
                                             <span class="kt-widget14__stats">19% Others</span>
                                         </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                            <span class="kt-widget14__stats">19% Others</span>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
+
 
                         <!--end:: Widgets/Profit Share-->
                     </div>
-                    <div class="col-xl-4">
+                    <div class="col-6">
 
                         <!--begin:: Widgets/Revenue Change-->
-                        <div class="kt-portlet kt-portlet--height-fluid">
+
                             <div class="kt-widget14">
                                 <div class="kt-widget14__header">
                                     <h3 class="kt-widget14__title">
@@ -245,7 +250,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+
 
                         <!--end:: Widgets/Revenue Change-->
 
