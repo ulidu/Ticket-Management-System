@@ -122,7 +122,9 @@ if ($logged_user_id != '') {
                             <img width="60%" src="assets/media/logos/giphy.gif">
                             <br> <br>
                             <h3>Sign In</h3>
-                            <h5 style="font-weight: lighter; font-size: medium;">Sign In, Or just click on the <a href="task_add.php"><span class="btn-font-success" style="font-weight: 500">Submit Ticket</span></a> button to submit a ticket without signing in.</h5>
+                            <h5 style="font-weight: lighter; font-size: medium;">Sign In, Or just click on the <a
+                                        href="task_add.php"><span class="btn-font-success" style="font-weight: 500">Submit Ticket</span></a>
+                                button to submit a ticket without signing in.</h5>
                             <?php
 
                             if ($_GET['error'] == "verify") {
@@ -169,7 +171,10 @@ if ($logged_user_id != '') {
 
 
                                         ?>
-                                        <option <?php if ($userID == 12){ ?>style="font-weight: 500; color: #fd7e14;"<?php }else{} ?> value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName . " " . "-" . " " . $acc_type; ?></option>
+                                        <option
+                                            <?php if ($userID == 12){ ?>style="font-weight: 500; color: #fd7e14;"<?php } else {
+                                        } ?>
+                                            value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName . " " . "-" . " " . $acc_type; ?></option>
                                         <?php
                                     }
                                     ?>
@@ -188,7 +193,8 @@ if ($logged_user_id != '') {
                                     Forgot Password ?
                                 </a>
 
-                                <button style="margin-right: -30px" onclick="location.href='task_add.php'" type="button" name="login_btn"
+                                <button style="margin-right: -30px" onclick="location.href='task_add.php'" type="button"
+                                        name="login_btn"
                                         class="btn btn-success btn-elevate kt-login__btn-primary">Submit Ticket
                                 </button>
 
