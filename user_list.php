@@ -74,6 +74,7 @@
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Account Type</th>
+                    <th>Division</th>
                     <th>Status</th>
                     <th>Created Date</th>
                     <th>Password</th>
@@ -98,6 +99,8 @@
                     $status = $row['status'];
                     $password = $row['password'];
                     $title = $row['title'];
+                    $division = $row['division'];
+
                     ?>
 
                     <tr>
@@ -125,6 +128,7 @@
                         <td><?php echo $lastName; ?></td>
                         <td><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></td>
                         <td><?php echo $type; ?></td>
+                        <td><?php echo $division; ?></td>
                         <td><span class="kt-badge kt-badge--success kt-badge--dot"></span>&nbsp;<span class="kt-font-bold kt-font-success"><?php echo $status; ?></span></td>
                         <td><?php echo $date; ?></td>
                         <td><a href="profile.php"><span style="font-weight: 500" class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Reset</span></a>  </td>

@@ -14,7 +14,7 @@
                 <div class="kt-portlet__head kt-portlet__space-x">
                     <div class="kt-portlet__head-label">
                         <h3 class="kt-portlet__head-title kt-font-light">
-                            Personal Income
+                            Total Tikcets
                         </h3>
                     </div>
                     <div class="kt-portlet__head-toolbar">
@@ -60,12 +60,12 @@
                 <div class="kt-portlet__body">
                     <div class="kt-widget27">
                         <div class="kt-widget27__visual">
-                            <img src="assets/media/bg/bg-4.jpg" alt="">
+                            <img src="assets/media/bg/bg-8.jpg" alt="">
                             <h3 class="kt-widget27__title">
-                                <span><span>$</span>256,100</span>
+                                <span><span></span>256 Tickets</span>
                             </h3>
                             <div class="kt-widget27__btn">
-                                <a href="#" class="btn btn-pill btn-light btn-elevate btn-bold">Inclusive All Earnings</a>
+                                <span class="btn btn-pill btn-light btn-elevate btn-bold">No. of all tickets submitted so far</span>
                             </div>
                         </div>
                         <div class="kt-widget27__container kt-portlet__space-x">

@@ -131,6 +131,7 @@ if ($logged_user_id == '' && $page4 != 'task_add.php' && $page4 != 'ticket_succe
 }
 
 
+
 $Row = "SELECT * FROM user where userID='$logged_user_id'";
 $run_query = mysqli_query($con, $Row);
 
@@ -146,6 +147,7 @@ while ($rw = mysqli_fetch_assoc($run_query)) {
     $status = $rw['status'];
     $acc_type = $rw['acc_type'];
     $title = $rw['title'];
+    $division = $rw['division'];
 
     $_SESSION['userID'] = $userID;
     $_SESSION['employeeCode'] = $employeeCode;
@@ -157,8 +159,17 @@ while ($rw = mysqli_fetch_assoc($run_query)) {
     $_SESSION['status'] = $status;
     $_SESSION['acc_type'] = $acc_type;
     $_SESSION['title'] = $title;
+    $_SESSION['division'] = $division;
 
 }
+
+if ($acc_type == 'Administrative Officer' && $page4 != 'task_add.php' && $page4 != 'ticket_success.php' && $page4 != 'feedback.php' && $page4 != 'task_list.php') {
+
+    echo "<script type='text/javascript'> document.location = 'task_list.php'; </script>";
+
+}
+
+
 ?>
 
 <!-- end::Head -->

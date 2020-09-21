@@ -14,7 +14,7 @@
                 <span class="kt-subheader__separator kt-subheader__separator--v"></span>
                 <div class="kt-subheader__group" id="kt_subheader_search">
 										<span class="kt-subheader__desc" id="kt_subheader_total">
-											Enter the following details and submit </span>
+											Submit any feedback or a problem with the system </span>
                 </div>
             </div>
 
@@ -30,7 +30,7 @@
         <!-- begin:: Section -->
         <div class="kt-sc-faq-3 kt-sc-feedback">
             <div class="kt-sc__title">
-                Looking for Help?
+                Any feedback on the System ?
             </div>
             <div class="kt-sc__subtitle">
                 Submit your help request to one of our Metronic Experts!

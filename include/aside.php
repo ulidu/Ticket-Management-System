@@ -46,7 +46,7 @@
 
                 $logged_user_id = $_SESSION['logged_user_id'];
 
-                if ($logged_user_id != '') {
+                if ($logged_user_id != '' && $acc_type=='Administrator') {
 
                     ?>
                     <li class="kt-menu__item" aria-haspopup="true"><a href="index.php"
@@ -94,7 +94,7 @@
 
                 $logged_user_id = $_SESSION['logged_user_id'];
 
-                if ($logged_user_id != '') {
+                if ($logged_user_id != '' && $acc_type=='Administrator') {
 
                 ?>
                 <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
@@ -127,7 +127,7 @@
 
                 $logged_user_id = $_SESSION['logged_user_id'];
 
-                if ($logged_user_id != '') {
+                if ($logged_user_id != '' && $acc_type=='Administrator') {
 
                 ?>
                 <li class="kt-menu__item " aria-haspopup="true"><a href="reports.php" class="kt-menu__link "><i
@@ -312,7 +312,7 @@
 
                 $logged_user_id = $_SESSION['logged_user_id'];
 
-                if ($logged_user_id != '') {
+                if ($logged_user_id != '' && $acc_type == 'Administrator') {
 
                 ?>
                 <li class="kt-menu__item" aria-haspopup="true"><a href="index.php"
@@ -358,7 +358,7 @@
 
                 $logged_user_id = $_SESSION['logged_user_id'];
 
-                if ($logged_user_id != '') {
+                if ($logged_user_id != '' && $acc_type=='Administrator') {
 
                 ?>
                 <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true"
@@ -391,7 +391,7 @@
 
                 $logged_user_id = $_SESSION['logged_user_id'];
 
-                if ($logged_user_id != '') {
+                if ($logged_user_id != '' && $acc_type=='Administrator') {
 
                 ?>
                 <li class="kt-menu__item "><a href="reports.php" class="kt-menu__link "><i

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Sep 20, 2020 at 07:16 AM
+-- Generation Time: Sep 21, 2020 at 04:00 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -122,16 +122,19 @@ CREATE TABLE IF NOT EXISTS `user` (
   `status` varchar(200) NOT NULL,
   `acc_type` varchar(200) NOT NULL,
   `title` varchar(200) NOT NULL,
+  `division` varchar(200) NOT NULL,
   PRIMARY KEY (`userID`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`userID`, `employeeCode`, `firstName`, `lastName`, `email`, `password`, `date_created`, `status`, `acc_type`, `title`) VALUES
-(14, '0868', 'Ulidu', 'Theerake', 'ulidutheerake@gmail.com', '333', 'Saturday 19th of September 2020 12:16:05 AM', 'Active', 'IT Staff', 'Mr.'),
-(12, '0000', 'System', 'Administrator', 'udatmsproject@gmail.com', 'admin', 'Saturday 19th of September 2020 12:14:48 AM', 'Active', 'Administrator', 'Mr.');
+INSERT INTO `user` (`userID`, `employeeCode`, `firstName`, `lastName`, `email`, `password`, `date_created`, `status`, `acc_type`, `title`, `division`) VALUES
+(14, '0868', 'Ulidu', 'Theerake', 'ulidutheerake@gmail.com', '333', 'Saturday 19th of September 2020 12:16:05 AM', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
+(12, '0000', 'System', 'Administrator', 'udatmsproject@gmail.com', 'admin', 'Saturday 19th of September 2020 12:14:48 AM', 'Active', 'Administrator', 'Mr.', 'ITS Division'),
+(15, '0155', 'Amarabandu', 'Rupasena', 'amare@gmail.com', '333', 'Sunday 20th of September 2020 01:08:59 PM', 'Active', 'Administrative Officer', 'Mr.', 'Project Management Division'),
+(22, '123e1er1q3req1r', 'fde', 'sfd', 'df@fedc.com', '123456', 'Sunday 20th of September 2020 05:10:20 PM', 'Active', 'IT Staff', 'Mr.', 'Project Management Division');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

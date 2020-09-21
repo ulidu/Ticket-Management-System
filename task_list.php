@@ -65,6 +65,7 @@
                     <th>Actions</th>
                     <th>Ticket ID</th>
                     <th>Date Submitted</th>
+                    <th>Status</th>
                     <th>Issue</th>
                     <th>Issue Category</th>
                     <th>Division</th>
@@ -73,7 +74,6 @@
                     <th>Designation</th>
                     <th>Asset Code</th>
                     <th>Extension No.</th>
-                    <th>Status</th>
                     <th>Priority</th>
                     <th>IP Address</th>
                 </tr>
@@ -82,8 +82,17 @@
 
                 <?php
 
-                $query = "select * from task";
-                $run_query = mysqli_query($con, $query);
+                if ($acc_type == 'Administrator'){
+
+                    $query = "select * from task order by task_id desc";
+                    $run_query = mysqli_query($con, $query);
+
+                }elseif ($acc_type == 'Administrative Officer'){
+
+                    $query = "select * from task where division='$division' order by task_id desc";
+                    $run_query = mysqli_query($con, $query);
+
+                }
 
                 while ($row = mysqli_fetch_assoc($run_query)) {
 
@@ -118,10 +127,16 @@
                                 <option value="Western Province Division">Western Province Division</option>
                                 <option value="GIS Division">GIS Division</option>
                             </select>
+<br>
+                            <select style="width: 100px;" id="status" name="status"
+                                    class="ui-select form-control dropdown dropdown-menu-anim-down " required>
+                                <option value="" hidden="true">Status</option>
+                                <option style="color: #fd7e14; font-weight: 500" value="Approved">New</option>
+                                <option style="color: #5867dd; font-weight: 500" value="In Progress">In Progress</option>
+                                <option style="color: #1dc9b7; font-weight: 500" value="Completed">Completed</option>
 
-
-                            </span>
-
+                            </select>
+<br>
                             <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Approve">
                                 <i style="font-size: 18px; color: #007bff;" class="la la-check"></i>
                             </a>
@@ -133,6 +148,11 @@
 
                         <td><?php echo $ticket_id; ?></td>
                         <td><?php echo $date; ?></td>
+                        <td><?php if ($status == "Approval Required") { ?> <span style="font-weight: 500"
+                                                                                 class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Approval Required</span>  <?php } elseif ($status == "Approved") { ?>
+                                <span style="font-weight: 500"
+                                      class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">Approved</span>  <?php }elseif ($status == 'Approved') ?>
+                        </td>
                         <td><?php echo $issue; ?></td>
                         <td><?php echo $cat_issue; ?></td>
                         <td><?php echo $division; ?></td>
@@ -141,11 +161,7 @@
                         <td><?php echo $designation; ?></td>
                         <td><?php echo $asst_code; ?></td>
                         <td><?php echo $ext; ?></td>
-                        <td><?php if ($status == "Approval Required") { ?> <span style="font-weight: 500"
-                                                                                 class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">Approval Required</span>  <?php } elseif ($status == "Approved") { ?>
-                                <span style="font-weight: 500"
-                                      class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">Approved</span>  <?php } ?>
-                        </td>
+
                         <td><?php if ($priority == "Medium") { ?><span
                                     class="kt-badge kt-badge--warning kt-badge--dot"></span>&nbsp;<span
                                     class="kt-font-bold kt-font-warning">Medium</span><?php } elseif ($priority == "Low") { ?>

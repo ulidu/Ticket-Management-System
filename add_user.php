@@ -1,5 +1,33 @@
 <?php include 'include/header.php'; ?>
 <?php include 'include/aside.php'; ?>
+<script type="text/javascript">
+
+    function checkForm(form)
+    {
+
+
+        if(form.password.value != "" && form.password.value == form.pw_cf.value) {
+            if(form.password.value.length < 6) {
+                swal.fire("Confirm Password !", "Your password must contain at least six characters.", "warning");
+                form.password.focus();
+                return false;
+            }
+            if(form.password.value == form.firstName.value) {
+                swal.fire("Confirm Password !", "Your password must be different from Username.", "warning");
+                form.password.focus();
+                return false;
+            }
+
+        } else {
+            swal.fire("Confirm Password !", "Passwords do not match !", "warning");
+            form.password.focus();
+            return false;
+        }
+
+        return true;
+    }
+
+</script>
 
 <!-- begin:: Content -->
 
@@ -40,7 +68,7 @@
 
 
             <!--begin::Form-->
-            <form autocomplete="off" method="post" action="" class="kt-form kt-form--label-right">
+            <form onsubmit="return checkForm(this);" autocomplete="off" name="user_add" id="user_add" method="post" action="" class="kt-form kt-form--label-right">
                 <div class="kt-portlet__body">
                     <div class="form-group row form-group-marginless kt-margin-t-20">
 
@@ -75,7 +103,7 @@
                             <div class="input-group">
                                 <div class="input-group-prepend"><span class="input-group-text"><i
                                                 class="la la-user"></i></span></div>
-                                <input name="firstName" type="text" class="form-control"
+                                <input name="firstName" id="firstName" type="text" class="form-control"
                                        placeholder="Enter User's First Name" required>
                             </div>
 
@@ -129,7 +157,7 @@
 
                         <label class="col-lg-1 col-form-label">Account Type <span
                                     style="color: #dc3545; font-size: 18px;">* </span>:</label>
-                        <div class="col-lg-7">
+                        <div class="col-lg-4">
                             <div class="form-group">
 
                                 <div class="kt-radio-list">
@@ -156,6 +184,30 @@
                             </div>
 
 
+                        </div><label class="col-lg-1 col-form-label">Division <span
+                                    style="color: #dc3545; font-size: 18px;">* </span>:</label>
+                        <div class="col-lg-3">
+                            <div class="input-group">
+                                <select id="division" name="division"
+                                        class="form-control" required>
+                                    <option value="" hidden="true">Select Applicant's
+                                        Division
+                                    </option>
+                                    <option value="Project Management Division">Project
+                                        Management Division
+                                    </option>
+                                    <option value="Finance Division">Finance Division
+                                    </option>
+                                    <option value="Landscape Division">Landscape
+                                        Division
+                                    </option>
+                                    <option value="Western Province Division">Western
+                                        Province Division
+                                    </option>
+                                    <option value="GIS Division">GIS Division</option>
+                                </select>
+                            </div>
+
                         </div>
 
 
@@ -169,7 +221,7 @@
                             <div class="input-group">
                                 <div class="input-group-prepend"><span class="input-group-text"><i
                                                 class="la la-unlock"></i></span></div>
-                                <input type="password" name="password" class="form-control"
+                                <input type="password" name="password" id="password" class="form-control"
                                        placeholder="Enter a Password" required>
                             </div>
 
@@ -204,7 +256,7 @@
                             <div class="row">
                                 <div class="col-lg-5"></div>
                                 <div class="col-lg-7">
-                                    <button onclick="return Validate()" type="submit" name="submitUser"
+                                    <button type="submit" name="submitUser"
                                             class="btn btn-brand">Submit
                                     </button>
                                     <button type="reset" class="btn btn-secondary">Cancel</button>
@@ -229,9 +281,9 @@
                 $date = date("l jS \of F Y h:i:s A");
                 $status = "Active";
                 $title = $_POST['title'];
+                $division = $_POST['division'];
 
-
-                $query = "INSERT INTO user(firstName, lastName, employeeCode, email, acc_type, password, date_created, status, title) VALUES('$firstName','$lastName','$empCode','$email','$acc_type','$password','$date','$status','$title')";
+                $query = "INSERT INTO user(firstName, lastName, employeeCode, email, acc_type, password, date_created, status, title, division) VALUES('$firstName','$lastName','$empCode','$email','$acc_type','$password','$date','$status','$title','$division')";
 
                 $create_query = mysqli_query($con, $query);
 

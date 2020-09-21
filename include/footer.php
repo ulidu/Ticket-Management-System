@@ -19,7 +19,6 @@
 </div>
 
 <!-- end:: Page -->
-
 <!-- begin::Global Config(global config for global JS sciprts) -->
 <script>
     var KTAppOptions = {
@@ -75,6 +74,7 @@
 
 <!--begin::Page Scripts(used by sweetalert) -->
 <script src="assets/js/pages/components/extended/sweetalert2.js" type="text/javascript"></script>
+
 </body>
 
 <!-- end::Body -->
