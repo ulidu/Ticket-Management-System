@@ -659,6 +659,7 @@
 
                         if ($page == "task_list.php") { ?>
                             Manage Tickets
+
                             <?php
 
                         } else { ?>Dashboard<?php } ?></h3>

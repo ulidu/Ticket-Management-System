@@ -17,7 +17,25 @@
 											Submit any feedback or a problem with the system </span>
                 </div>
             </div>
+            <div class="kt-subheader__toolbar">
+                <div class="kt-subheader__wrapper">
 
+                    <a class="btn kt-subheader__btn-daterange" id="" data-placement="left">
+                                    <span class="kt-subheader__btn-daterange-title"
+                                          id="kt_dashboard_daterangepicker_title">Today</span>&nbsp;
+                        <span class="kt-subheader__btn-daterange-date"
+                              id="kt_dashboard_daterangepicker_date">: <?php
+                            $string = date("Y-m-d");
+                            $date = DateTime::createFromFormat("Y-m-d", $string);
+                            echo $date->format(" M ");
+                            $date = DateTime::createFromFormat("Y-m-d", $string);
+                            echo $date->format("d");
+                            ?></span>
+                        <i class="flaticon2-calendar-1"></i>
+                    </a>
+
+                </div>
+            </div>
         </div>
     </div>
 

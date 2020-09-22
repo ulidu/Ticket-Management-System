@@ -62,6 +62,7 @@
                    id="kt_table_1">
                 <thead>
                 <tr style="font-size: 14px;" class="kt-label-bg-color-1">
+                    <th>No.</th>
                     <th>Actions</th>
                     <th>Ticket ID</th>
                     <th>Date Submitted</th>
@@ -82,61 +83,54 @@
 
                 <?php
 
-                if ($acc_type == 'Administrator'){
+                if ($acc_type == 'Administrator') {
 
                     $query = "select * from task order by task_id desc";
                     $run_query = mysqli_query($con, $query);
 
-                }elseif ($acc_type == 'Administrative Officer'){
+                } elseif ($acc_type == 'Administrative Officer') {
 
                     $query = "select * from task where division='$division' order by task_id desc";
                     $run_query = mysqli_query($con, $query);
 
                 }
 
+                $i = 1;
+
                 while ($row = mysqli_fetch_assoc($run_query)) {
 
-                    $ticket_id = $row['task_id'];
-                    $name = $row['assigned_by'];
-                    $emp_code = $row['emp_code'];
-                    $designation = $row['designation'];
-                    $division = $row['division'];
-                    $ext = $row['extension_no'];
-                    $issue = $row['issue'];
-                    $cat_issue = $row['category'];
-                    $asst_code = $row['asset_code'];
-                    $priority = $row['priority'];
-                    $status = $row['status'];
-                    $date = $row['assigned_date'];
-                    $ip_add = $row['ip_address'];
-
-                    ?>
+                $ticket_id = $row['task_id'];
+                $name = $row['assigned_by'];
+                $emp_code = $row['emp_code'];
+                $designation = $row['designation'];
+                $division = $row['division'];
+                $ext = $row['extension_no'];
+                $issue = $row['issue'];
+                $cat_issue = $row['category'];
+                $asst_code = $row['asset_code'];
+                $priority = $row['priority'];
+                $status12 = $row['status'];
+                $date = $row['assigned_date'];
+                $ip_add = $row['ip_address'];
 
 
-                    <tr style="font-weight: 400; background-color: #f8f9fa;">
-
-                        <td style="color: #343a40;">
+                ?>
 
 
-                            <select style="width: 100px;" id="division" name="division"
-                                    class="ui-select form-control dropdown dropdown-menu-anim-down " required>
-                                <option value="" hidden="true">Assign</option>
-                                <option value="Project Management Division">Project Management Division</option>
-                                <option value="Finance Division">Finance Division</option>
-                                <option value="Landscape Division">Landscape Division</option>
-                                <option value="Western Province Division">Western Province Division</option>
-                                <option value="GIS Division">GIS Division</option>
-                            </select>
-<br>
-                            <select style="width: 100px;" id="status" name="status"
-                                    class="ui-select form-control dropdown dropdown-menu-anim-down " required>
-                                <option value="" hidden="true">Status</option>
-                                <option style="color: #fd7e14; font-weight: 500" value="Approved">New</option>
-                                <option style="color: #5867dd; font-weight: 500" value="In Progress">In Progress</option>
-                                <option style="color: #1dc9b7; font-weight: 500" value="Completed">Completed</option>
+                <tr style="font-weight: 400; background-color: #f8f9fa;">
+                    <td><span style="font-weight: 500"
+                              class="kt-badge kt-badge--dark kt-badge--inline kt-badge--pill"><?php echo $i; ?></span>
+                    </td>
 
-                            </select>
-<br>
+
+                    <td style="color: #343a40;">
+
+                        <?php
+
+                        if ($acc_type == 'Administrative Officer') {
+
+                            ?>
+
                             <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Approve">
                                 <i style="font-size: 18px; color: #007bff;" class="la la-check"></i>
                             </a>
@@ -144,35 +138,130 @@
                             <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Delete">
                                 <i style="font-size: 18px; color: #dc3545;" class="la la-trash"></i>
                             </a>
-                        </td>
 
-                        <td><?php echo $ticket_id; ?></td>
-                        <td><?php echo $date; ?></td>
-                        <td><?php if ($status == "Approval Required") { ?> <span style="font-weight: 500"
-                                                                                 class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Approval Required</span>  <?php } elseif ($status == "Approved") { ?>
-                                <span style="font-weight: 500"
-                                      class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">Approved</span>  <?php }elseif ($status == 'Approved') ?>
-                        </td>
-                        <td><?php echo $issue; ?></td>
-                        <td><?php echo $cat_issue; ?></td>
-                        <td><?php echo $division; ?></td>
-                        <td><?php echo $name; ?></td>
-                        <td><?php echo $emp_code; ?></td>
-                        <td><?php echo $designation; ?></td>
-                        <td><?php echo $asst_code; ?></td>
-                        <td><?php echo $ext; ?></td>
+                        <?php }elseif ($acc_type == 'Administrator'){ ?>
+                        <select style="width: 100px;" id="staff1" name="staff1"
+                                class="ui-select form-control dropdown dropdown-menu-anim-down " required>
+                            <option value="" hidden="true">Assign</option>
 
-                        <td><?php if ($priority == "Medium") { ?><span
-                                    class="kt-badge kt-badge--warning kt-badge--dot"></span>&nbsp;<span
-                                    class="kt-font-bold kt-font-warning">Medium</span><?php } elseif ($priority == "Low") { ?>
-                                <span class="kt-badge kt-badge--success kt-badge--dot"></span>&nbsp;<span
-                                        class="kt-font-bold kt-font-success">Low</span> <?php } else { ?><span
-                                    class="kt-badge kt-badge--warning kt-badge--dot"></span>&nbsp;<span
-                                    class="kt-font-bold kt-font-danger">Critical</span><?php } ?> </td>
-                        <td style="font-family: 'Fira Code'"><?php echo $ip_add; ?></td>
-                    </tr>
+                            <?php
 
-                <?php } ?>
+                            $query3 = "select * from user where acc_type = 'IT Staff' or acc_type = 'Administrator'";
+                            $run_query3 = mysqli_query($con, $query3);
+                            while ($row3 = mysqli_fetch_assoc($run_query3)) {
+                                $userID = $row3['userID'];
+                                $employeeCode = $row3['employeeCode'];
+                                $firstName = $row3['firstName'];
+                                $lastName = $row3['lastName'];
+                                $email = $row3['email'];
+                                $password = $row3['password'];
+                                $date_created = $row3['date_created'];
+                                $status = $row3['status'];
+                                $acc_type = $row3['acc_type'];
+
+
+                                ?>
+                                <option
+                                    <?php if ($userID == 12){ ?>style="font-weight: 500; color: #fd7e14;"
+                                    hidden<?php } else {
+                                } ?>
+                                    value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName; ?></option>
+                                <?php
+                            }
+                            ?>
+
+
+                        </select>
+
+
+                        <br>
+
+
+                        <select style="width: 100px;" id="staff2" name="staff2"
+                                class="ui-select form-control dropdown dropdown-menu-anim-down " required>
+                            <option value="" hidden="true">Assign</option>
+
+                            <?php
+
+                            $query4 = "select * from user where acc_type = 'IT Staff' or acc_type = 'Administrator'";
+                            $run_query4 = mysqli_query($con, $query4);
+                            while ($row4 = mysqli_fetch_assoc($run_query4)) {
+                                $userID = $row4['userID'];
+                                $employeeCode = $row4['employeeCode'];
+                                $firstName = $row4['firstName'];
+                                $lastName = $row4['lastName'];
+                                $email = $row4['email'];
+                                $password = $row4['password'];
+                                $date_created = $row4['date_created'];
+                                $status = $row4['status'];
+                                $acc_type = $row4['acc_type'];
+
+
+                                ?>
+                                <option
+                                    <?php if ($userID == 12){ ?>style="font-weight: 500; color: #fd7e14;"
+                                    hidden<?php } else {
+                                } ?>
+                                    value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName; ?></option>
+                                <?php
+                            }
+                            ?>
+
+
+                        </select>
+
+                        <br>
+
+                        <select style="width: 100px;" id="status" name="status"
+                                class="ui-select form-control dropdown dropdown-menu-anim-down " required>
+                            <option value="" hidden="true">Status</option>
+                            <option style="color: #fd7e14; font-weight: 500" value="Approved">New</option>
+                            <option style="color: #5867dd; font-weight: 500" value="In Progress">In Progress
+                            </option>
+                            <option style="color: #1dc9b7; font-weight: 500" value="Completed">Completed</option>
+
+                        </select>
+                        <br>
+                        <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Approve">
+                            <i style="font-size: 18px; color: #007bff;" class="la la-check"></i>
+                        </a>
+
+                        <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="Delete">
+                            <i style="font-size: 18px; color: #dc3545;" class="la la-trash"></i>
+                        </a>
+
+                        <?php } ?>
+                    </td>
+
+                    <td><?php echo $ticket_id; ?></td>
+                    <td><?php echo $date; ?></td>
+                    <td><?php if ($status12 == "Approval Required") { ?> <span style="font-weight: 500"
+                                                                               class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Approval Required</span>  <?php } elseif ($status == "Approved") { ?>
+                            <span style="font-weight: 500"
+                                  class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">Approved</span>  <?php }
+                        elseif ($status12 == 'Approved') ?>
+                    </td>
+                    <td><?php echo $issue; ?></td>
+                    <td><?php echo $cat_issue; ?></td>
+                    <td class="kt-font-bold kt-font-brand"><?php echo $division; ?></td>
+                    <td><?php echo $name; ?></td>
+                    <td><?php echo $emp_code; ?></td>
+                    <td><?php echo $designation; ?></td>
+                    <td><?php echo $asst_code; ?></td>
+                    <td><?php echo $ext; ?></td>
+
+                    <td><?php if ($priority == "Medium") { ?><span
+                                class="kt-badge kt-badge--warning kt-badge--dot"></span>&nbsp;<span
+                                class="kt-font-bold kt-font-warning">Medium</span><?php } elseif ($priority == "Low") { ?>
+                            <span class="kt-badge kt-badge--success kt-badge--dot"></span>&nbsp;<span
+                                    class="kt-font-bold kt-font-success">Low</span> <?php } else { ?><span
+                                class="kt-badge kt-badge--warning kt-badge--dot"></span>&nbsp;<span
+                                class="kt-font-bold kt-font-danger">Critical</span><?php } ?> </td>
+                    <td style="font-family: 'Fira Code'"><?php echo $ip_add; ?></td>
+                </tr>
+
+                <?php $i++;
+                } ?>
 
                 </tbody>
 

@@ -10,7 +10,6 @@
     <div class="row">
 
 
-
         <div style="cursor: pointer;" onclick="location.href='task_add.php';" class="col-lg-3">
             <div class="kt-portlet kt-iconbox kt-iconbox--brand kt-iconbox--animate-slower">
                 <div class="kt-portlet__body">
@@ -71,12 +70,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
 
 
         <div style="cursor: pointer;" onclick="location.href='user_list.php';" class="col-lg-3">
@@ -147,131 +140,126 @@
 
     <div class="row">
 
-<div class="col-12">
-        <!--Begin::Section-->
-        <div class="kt-portlet">
-            <div class="kt-portlet__body  kt-portlet__body--fit">
-                <div class="row row-no-padding ">
-                    <div class="col-xl-4">
+        <div class="col-12">
+            <!--Begin::Section-->
+            <div class="kt-portlet">
+                <div class="kt-portlet__body  kt-portlet__body--fit">
+                    <div class="row row-no-padding ">
+                        <div class="col-12">
 
-                        <!--begin:: Widgets/Daily Sales-->
-                        <div class="kt-portlet kt-portlet--height-fluid">
-                            <div class="kt-widget14">
-                                <div class="kt-widget14__header kt-margin-b-30">
-                                    <h3 class="kt-widget14__title">
-                                        Daily Tickets
-                                    </h3>
-                                    <span class="kt-widget14__desc">
+                            <!--begin:: Widgets/Daily Sales-->
+                            <div class="kt-portlet kt-portlet--height-fluid">
+                                <div class="kt-widget14">
+                                    <div class="kt-widget14__header kt-margin-b-30">
+                                        <h3 class="kt-widget14__title">
+                                            Daily Tickets
+                                        </h3>
+                                        <span class="kt-widget14__desc">
 															Check out each column for more details
 														</span>
-                                </div>
-                                <div class="kt-widget14__chart" style="height:120px;">
-                                    <canvas id="kt_chart_daily_sales"></canvas>
+                                    </div>
+                                    <div class="kt-widget14__chart" style="height:120px;">
+                                        <canvas id="kt_chart_daily_sales"></canvas>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!--end:: Widgets/Daily Sales-->
+                            <!--end:: Widgets/Daily Sales-->
+                        </div>
                     </div>
                     <div class="col-6">
 
                         <!--begin:: Widgets/Profit Share-->
 
-                            <div class="kt-widget14">
-                                <div class="kt-widget14__header">
-                                    <h3 class="kt-widget14__title">
-                                        Profit Share
-                                    </h3>
-                                    <span class="kt-widget14__desc">
+                        <div class="kt-widget14">
+                            <div class="kt-widget14__header">
+                                <h3 class="kt-widget14__title">
+                                    Profit Share
+                                </h3>
+                                <span class="kt-widget14__desc">
 															Profit Share between customers
 														</span>
+                            </div>
+                            <div class="kt-widget14__content">
+                                <div class="kt-widget14__chart">
+                                    <div class="kt-widget14__stat">45</div>
+                                    <canvas id="kt_chart_profit_share" style="height: 140px; width: 140px;"></canvas>
                                 </div>
-                                <div class="kt-widget14__content">
-                                    <div class="kt-widget14__chart">
-                                        <div class="kt-widget14__stat">45</div>
-                                        <canvas id="kt_chart_profit_share" style="height: 140px; width: 140px;"></canvas>
+                                <div class="kt-widget14__legends">
+                                    <div class="kt-widget14__legend">
+                                        <span class="kt-widget14__bullet kt-bg-success"></span>
+                                        <span class="kt-widget14__stats">37% Sport Tickets</span>
                                     </div>
-                                    <div class="kt-widget14__legends">
-                                        <div class="kt-widget14__legend">
-                                            <span class="kt-widget14__bullet kt-bg-success"></span>
-                                            <span class="kt-widget14__stats">37% Sport Tickets</span>
-                                        </div>
-                                        <div class="kt-widget14__legend">
-                                            <span class="kt-widget14__bullet kt-bg-warning"></span>
-                                            <span class="kt-widget14__stats">47% Business Events</span>
-                                        </div>
-                                        <div class="kt-widget14__legend">
-                                            <span class="kt-widget14__bullet kt-bg-brand"></span>
-                                            <span class="kt-widget14__stats">19% Others</span>
-                                        </div>
-                                        <div class="kt-widget14__legend">
-                                            <span class="kt-widget14__bullet kt-bg-brand"></span>
-                                            <span class="kt-widget14__stats">19% Others</span>
-                                        </div>
+                                    <div class="kt-widget14__legend">
+                                        <span class="kt-widget14__bullet kt-bg-warning"></span>
+                                        <span class="kt-widget14__stats">47% Business Events</span>
+                                    </div>
+                                    <div class="kt-widget14__legend">
+                                        <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                        <span class="kt-widget14__stats">19% Others</span>
+                                    </div>
+                                    <div class="kt-widget14__legend">
+                                        <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                        <span class="kt-widget14__stats">19% Others</span>
+                                    </div>
 
-                                    </div>
                                 </div>
                             </div>
 
+                        </div>
 
                         <!--end:: Widgets/Profit Share-->
                     </div>
-                    <div class="col-6">
+                </div>
 
-                        <!--begin:: Widgets/Revenue Change-->
+                    <!--begin:: Widgets/Revenue Change-->
 
-                            <div class="kt-widget14">
-                                <div class="kt-widget14__header">
-                                    <h3 class="kt-widget14__title">
-                                        Revenue Change
-                                    </h3>
-                                    <span class="kt-widget14__desc">
+                    <div class="kt-widget14">
+                        <div class="kt-widget14__header">
+                            <h3 class="kt-widget14__title">
+                                Revenue Change
+                            </h3>
+                            <span class="kt-widget14__desc">
 															Revenue change breakdown by cities
 														</span>
-                                </div>
-                                <div class="kt-widget14__content">
-                                    <div class="kt-widget14__chart">
-                                        <div id="kt_chart_revenue_change" style="height: 150px; width: 150px;"></div>
-                                    </div>
-                                    <div class="kt-widget14__legends">
-                                        <div class="kt-widget14__legend">
-                                            <span class="kt-widget14__bullet kt-bg-success"></span>
-                                            <span class="kt-widget14__stats">+10% New York</span>
-                                        </div>
-                                        <div class="kt-widget14__legend">
-                                            <span class="kt-widget14__bullet kt-bg-warning"></span>
-                                            <span class="kt-widget14__stats">-7% London</span>
-                                        </div>
-                                        <div class="kt-widget14__legend">
-                                            <span class="kt-widget14__bullet kt-bg-brand"></span>
-                                            <span class="kt-widget14__stats">+20% California</span>
-                                        </div>
-
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="kt-widget14__content">
+                            <div class="kt-widget14__chart">
+                                <div id="kt_chart_revenue_change" style="height: 150px; width: 150px;"></div>
                             </div>
+                            <div class="kt-widget14__legends">
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-success"></span>
+                                    <span class="kt-widget14__stats">+10% New York</span>
+                                </div>
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-warning"></span>
+                                    <span class="kt-widget14__stats">-7% London</span>
+                                </div>
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                    <span class="kt-widget14__stats">+20% California</span>
+                                </div>
+
+                            </div>
+                        </div>
 
 
                         <!--end:: Widgets/Revenue Change-->
 
 
-
-
                     </div>
-
-
                 </div>
 
+
             </div>
-        </div>
-
-        <!--End::Section-->
-
-
-</div>
 
 
     </div>
+
+    <!--End::Section-->
+
+
 
 </div>
 
