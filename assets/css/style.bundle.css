@@ -30338,6 +30338,28 @@ strong {
     border: 1px solid #282a3c; }
     .kt-badge.kt-badge--outline.kt-badge--dark.kt-badge--outline-2x {
       border: 2px solid #282a3c; }
+
+.kt-badge.kt-badge--d22 {
+    color: #ffffff;
+    background: #D4E6F1; }
+.kt-badge.kt-badge--outline.kt-badge--d22 {
+    background: transparent;
+    color: #D4E6F1;
+    border: 1px solid #D4E6F1; }
+.kt-badge.kt-badge--outline.kt-badge--d22.kt-badge--outline-2x {
+    border: 2px solid #D4E6F1; }
+
+
+.kt-badge.kt-badge--33 {
+    color: #ffffff;
+    background: #FADBD8; }
+.kt-badge.kt-badge--outline.kt-badge--33 {
+    background: transparent;
+    color: #FADBD8;
+    border: 1px solid #FADBD8; }
+.kt-badge.kt-badge--outline.kt-badge--33.kt-badge--outline-2x {
+    border: 2px solid #FADBD8; }
+
   .kt-badge.kt-badge--primary {
     color: #ffffff;
     background: #5867dd; }
