@@ -33,21 +33,21 @@
                     <div class="kt-widget kt-widget--user-profile-1">
                         <div class="kt-widget__head">
                             <div class="kt-widget__media">
-                                <img src="assets\media\logos\user.gif" alt="image">
+                                <img style="width: 150px !important;" src="assets\media\logos\user.gif" alt="image">
                             </div>
                             <div class="kt-widget__content">
                                 <div class="kt-widget__section">
-                                    <a href="#" class="kt-widget__username">
-                                        Jason Muller
+                                     <span class="kt-widget__username">
+                                        <?php echo $firstName.' '.$lastName; ?>
                                         <i class="flaticon2-correct kt-font-success"></i>
-                                    </a>
+                                    </span>
                                     <span class="kt-widget__subtitle">
-                                                            Head of Development
+                                                            <?php echo $division; ?>
                                                         </span>
                                 </div>
                                 <div class="kt-widget__action">
 
-                                    <button type="button" class="btn btn-warning btn-sm">Sign Out</button>
+                                    <a href="logout.php" type="button" class="btn btn-warning btn-sm">Sign Out</a>
                                 </div>
                             </div>
                         </div>
@@ -55,16 +55,17 @@
                             <div class="kt-widget__content">
                                 <div class="kt-widget__info">
                                     <span class="kt-widget__label">Email :</span>
-                                    <a href="#" class="kt-widget__data">matt@fifestudios.com</a>
-                                </div>
-                                <div class="kt-widget__info">
-                                    <span class="kt-widget__label">Phone :</span>
-                                    <a href="#" class="kt-widget__data">44(76)34254578</a>
+                                    <span class="kt-widget__data"><?php echo $email; ?></span>
                                 </div>
                                 <div class="kt-widget__info">
                                     <span class="kt-widget__label">Employee Code :</span>
-                                    <span class="kt-widget__data">0123</span>
+                                    <span class="kt-widget__data"><?php echo $employeeCode; ?></span>
                                 </div>
+                                <div class="kt-widget__info">
+                                    <span class="kt-widget__label">Account Type :</span>
+                                    <span class="kt-widget__data"><?php echo $acc_type; ?></span>
+                                </div>
+
                             </div>
                             <div class="kt-widget__items">
 
@@ -159,53 +160,7 @@
                                 <h3 class="kt-portlet__head-title">Account Information <small>Update your account
                                         information</small></h3>
                             </div>
-                            <div class="kt-portlet__head-toolbar">
-                                <div class="kt-portlet__head-wrapper">
-                                    <div class="dropdown dropdown-inline">
-                                        <button type="button" class="btn btn-label-brand btn-sm btn-icon btn-icon-md"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="flaticon2-gear"></i>
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <ul class="kt-nav">
-                                                <li class="kt-nav__section kt-nav__section--first">
-                                                    <span class="kt-nav__section-text">Export Tools</span>
-                                                </li>
-                                                <li class="kt-nav__item">
-                                                    <a href="#" class="kt-nav__link">
-                                                        <i class="kt-nav__link-icon la la-print"></i>
-                                                        <span class="kt-nav__link-text">Print</span>
-                                                    </a>
-                                                </li>
-                                                <li class="kt-nav__item">
-                                                    <a href="#" class="kt-nav__link">
-                                                        <i class="kt-nav__link-icon la la-copy"></i>
-                                                        <span class="kt-nav__link-text">Copy</span>
-                                                    </a>
-                                                </li>
-                                                <li class="kt-nav__item">
-                                                    <a href="#" class="kt-nav__link">
-                                                        <i class="kt-nav__link-icon la la-file-excel-o"></i>
-                                                        <span class="kt-nav__link-text">Excel</span>
-                                                    </a>
-                                                </li>
-                                                <li class="kt-nav__item">
-                                                    <a href="#" class="kt-nav__link">
-                                                        <i class="kt-nav__link-icon la la-file-text-o"></i>
-                                                        <span class="kt-nav__link-text">CSV</span>
-                                                    </a>
-                                                </li>
-                                                <li class="kt-nav__item">
-                                                    <a href="#" class="kt-nav__link">
-                                                        <i class="kt-nav__link-icon la la-file-pdf-o"></i>
-                                                        <span class="kt-nav__link-text">PDF</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                         <form class="kt-form kt-form--label-right">
                             <div class="kt-portlet__body">

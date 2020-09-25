@@ -694,7 +694,7 @@
                 </div>
                 <div class="kt-subheader__toolbar">
                     <div class="kt-subheader__wrapper">
-                        <?php if ($page == "task_list.php" && $acc_type == 'Administrative Officer') { }else{?><a href="reports.php"><img class="pointerImageChart" onclick="" style="width: 30px"
+                        <?php if ($acc_type == 'Administrative Officer') { }else{?><a href="reports.php"><img class="pointerImageChart" onclick="" style="width: 30px"
                                                    src="assets/media/icons/chart.gif"></a> <?php }?>
                         <a class="btn kt-subheader__btn-daterange" id="" data-placement="left">
                                     <span class="kt-subheader__btn-daterange-title"
