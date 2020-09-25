@@ -169,28 +169,10 @@
                                         <div class="row">
                                             <label class="col-xl-3"></label>
                                             <div class="col-lg-9 col-xl-6">
-                                                <h3 class="kt-section__title kt-section__title-sm">Customer Info:</h3>
+                                                <h3 class="kt-section__title kt-section__title-sm">User Information :</h3>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label class="col-xl-3 col-lg-3 col-form-label">Avatar</label>
-                                            <div class="col-lg-9 col-xl-6">
-                                                <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar">
-                                                    <div class="kt-avatar__holder"
-                                                         style="background-image: url(assets/media/users/100_13.jpg)"></div>
-                                                    <label class="kt-avatar__upload" data-toggle="kt-tooltip" title=""
-                                                           data-original-title="Change avatar">
-                                                        <i class="fa fa-pen"></i>
-                                                        <input type="file" name="profile_avatar"
-                                                               accept=".png, .jpg, .jpeg">
-                                                    </label>
-                                                    <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title=""
-                                                          data-original-title="Cancel avatar">
-                                                                            <i class="fa fa-times"></i>
-                                                                        </span>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                         <div class="form-group row">
                                             <label class="col-xl-3 col-lg-3 col-form-label">First Name</label>
                                             <div class="col-lg-9 col-xl-6">
@@ -213,7 +195,7 @@
                                         <div class="row">
                                             <label class="col-xl-3"></label>
                                             <div class="col-lg-9 col-xl-6">
-                                                <h3 class="kt-section__title kt-section__title-sm">Contact Info:</h3>
+                                                <h3 class="kt-section__title kt-section__title-sm">Change Password :</h3>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -250,8 +232,11 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
+
                                 </div>
+
                             </div>
                             <div class="kt-portlet__foot">
                                 <div class="kt-form__actions">
