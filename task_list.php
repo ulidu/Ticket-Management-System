@@ -1,30 +1,6 @@
 <?php include 'include/header.php'; ?>
 <?php include 'include/aside.php'; ?>
 
-<script type="text/javascript">
-
-    function confirm_approve(form)
-    {
-
-        swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!'
-        }).then(function(result) {
-            if (result.value) {
-                swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
-            }
-        });
-
-    }
-
-</script>
 
 <!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
@@ -280,18 +256,31 @@
                             <br <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
                             } ?> >
 
-                            <form onsubmit="return confirm_approve(this);" action="" method="post">
+                            <form name="approve_decline" id="approve_decline" action="" method="post">
 
-                                <input type="hidden" value="<?php echo $ticket_id; ?>" name="ticket_hidden">
+                                <input type="hidden" value="<?php echo $ticket_id; ?>" name="ticket_hidden"
+                                       id="ticket_hidden">
 
-                                <button id="submit_approve" name="submit_approve" type="submit"
+                                <button onclick="
+                                if (confirm('Are you sure you want to approve this ticket ?')) {
+            return true;
+
+        } else {
+            return false;
+        }" id="submit_approve" name="submit_approve" type="submit"
                                         class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--d22 kt-badge--inline kt-badge--pill"
                                         title="Approve">
                                     <i style="font-size: 18px; color: #007bff; font-weight: 800;"
                                        class="la la-check"></i>
                                 </button>
 
-                                <button id="submit_remove" name="submit_remove" type="submit"
+                                <button onclick="
+                                if (confirm('Are you sure you want to delete this ticket ?')) {
+            return true;
+
+        } else {
+            return false;
+        }" type="submit" id="submit_remove" name="submit_remove"
                                         class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
                                         title="Delete">
                                     <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
@@ -324,7 +313,7 @@
                                     class="kt-font-bold kt-font-warning">Medium</span><?php } elseif ($priority == "Low") { ?>
                                 <span class="kt-badge kt-badge--success kt-badge--dot"></span>&nbsp;<span
                                         class="kt-font-bold kt-font-success">Low</span> <?php } else { ?><span
-                                    class="kt-badge kt-badge--warning kt-badge--dot"></span>&nbsp;<span
+                                    class="kt-badge kt-badge--danger kt-badge--dot"></span>&nbsp;<span
                                     class="kt-font-bold kt-font-danger">Critical</span><?php } ?> </td>
                         <td style="font-family: 'Fira Code'"><?php echo $ip_add; ?></td>
                     </tr>

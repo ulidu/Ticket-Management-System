@@ -113,6 +113,19 @@ $_SESSION['last_action'] = time();
 
         }
 
+        .darkenBackground {
+            height: 100%;
+            width: 100%;
+            position:fixed;
+            top: 0px;
+            left: 0px;
+            background-color: rgb(0, 0, 0);
+            background-repeat:repeat;
+            opacity: 0.7;
+            -moz-opacity: 0.70;
+            filter: alpha(opacity=70);
+            z-index: 20;
+        }
 
     </style>
 </head>
@@ -164,7 +177,7 @@ while ($rw = mysqli_fetch_assoc($run_query)) {
 
 }
 
-if ($acc_type == 'Administrative Officer' && $page4 != 'task_add.php' && $page4 != 'ticket_success.php' && $page4 != 'feedback.php' && $page4 != 'task_list.php') {
+if ($acc_type == 'Administrative Officer' && $page4 != 'task_add.php' && $page4 != 'ticket_success.php' && $page4 != 'feedback.php' && $page4 != 'task_list.php' && $page4 != 'profile.php') {
 
     echo "<script type='text/javascript'> document.location = 'task_list.php'; </script>";
 
@@ -176,8 +189,9 @@ if ($acc_type == 'Administrative Officer' && $page4 != 'task_add.php' && $page4 
 <!-- end::Head -->
 
 <!-- begin::Body -->
-<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
 
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
+<div class="darkenBackground" name="darkBackgroundLayer" id="darkBackgroundLayer"></div>
 <!-- begin:: Page -->
 
 <!-- begin:: Header Mobile -->

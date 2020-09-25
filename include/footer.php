@@ -18,6 +18,11 @@
 </div>
 </div>
 
+
+
+<script type="text/javascript" language="javascript">
+    document.getElementsByName("darkBackgroundLayer")[0].style.display = "none";
+</script>
 <!-- end:: Page -->
 <!-- begin::Global Config(global config for global JS sciprts) -->
 <script>

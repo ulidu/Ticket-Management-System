@@ -157,11 +157,22 @@
         <div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1"
              data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
             <ul class="kt-menu__nav ">
+
+                <?php
+
+                $logged_user_id = $_SESSION['logged_user_id'];
+
+                if ($logged_user_id != '' && $acc_type!='Administrative Officer') {
+
+                ?>
+
                 <li class="kt-menu__item" aria-haspopup="true"><a href="index.php"
                                                                   class="kt-menu__link "><i
                                 class="kt-menu__link-icon flaticon2-architecture-and-city"></i><span
                                 class="kt-menu__link-text">Home</span></a></li>
+                <?php } else {
 
+                } ?>
 
                 <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
                     data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
@@ -184,7 +195,13 @@
                     </div>
                 </li>
 
+                <?php
 
+                $logged_user_id = $_SESSION['logged_user_id'];
+
+                if ($logged_user_id != '' && $acc_type!='Administrative Officer') {
+
+                ?>
                 <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true"
                     data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
                                                           class="kt-menu__link kt-menu__toggle"><i
@@ -213,6 +230,11 @@
                                 class="kt-menu__link-icon flaticon2-graph"></i><span
                                 class="kt-menu__link-text">Reports</span></a>
                 </li>
+
+                <?php } else {
+
+                } ?>
+
                 <li class="kt-menu__item "><a href="feedback.php" class="kt-menu__link "><i
                                 class="kt-menu__link-icon flaticon2-chat-1"></i><span
                                 class="kt-menu__link-text">Feedback</span></a>
