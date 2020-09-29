@@ -73,7 +73,7 @@ $_SESSION['last_action'] = time();
 
     <!--end::Layout Skins -->
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
 
         @import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');

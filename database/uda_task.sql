@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Sep 21, 2020 at 04:00 AM
+-- Generation Time: Sep 25, 2020 at 03:29 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -30,8 +30,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `approve`;
 CREATE TABLE IF NOT EXISTS `approve` (
-  `tasktask_id` varchar(200) NOT NULL,
-  `userID` varchar(200) NOT NULL,
+  `task_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `approved_by` varchar(200) NOT NULL,
   `approved_date` varchar(200) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -88,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `asset_code` varchar(200) NOT NULL,
   `ip_address` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`task_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `task`
@@ -96,13 +95,9 @@ CREATE TABLE IF NOT EXISTS `task` (
 
 INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issue`, `category`, `status`, `designation`, `division`, `extension_no`, `priority`, `asset_code`, `ip_address`) VALUES
 (28, 'yu', 'fgy', 'Wednesday 16th of September 2020 04:06:22 PM', 'jh', 'Hardware Issue', 'Approval Required', 'gh', 'Landscape Division', 'uh', 'Medium', 'yug', '192.168.1.102'),
-(26, 'srbfd', 'bg', 'Wednesday 16th of September 2020 12:13:54 PM', 'g', 'Software Issue', 'Approval Required', 'gb', 'Finance Division', 'gf', 'Low', 'gb', '192.168.1.102'),
-(24, 'nf', 'b', 'Thursday 10th of September 2020 03:43:48 PM', 'rfsg', 'Hardware Issue', 'Approval Required', 'bfd', 'Finance Division', '43r2w', 'Medium', 'dfbg', '192.168.1.103'),
-(22, 'Ulidu', '868', 'Thursday 10th of September 2020 01:47:35 PM', 'PC not working', 'hardware', 'submitted', 'ITS Officer - Intern', 'GIS Division', '1578', 'Low', '2018/C/018', '192.168.8.102'),
-(23, 'fg', 'N', 'Thursday 10th of September 2020 03:43:11 PM', 'dh', 'Software Issue', 'Need Approval', 'fh', 'Finance Division', '54563', 'Medium', 'dh', '192.168.1.103'),
+(69, 'fserd', 'gbtr', 'Friday 25th of September 2020 09:38:46 AM', 'trv', 'Software Issue', 'Approved', 'ttr', 'Finance Division', 'tv', 'Low', 'rvt', '192.168.8.101'),
 (27, 'rb', 'bg', 'Wednesday 16th of September 2020 12:20:23 PM', 'bg', 'Hardware Issue', 'Approval Required', 'bg', 'GIS Division', 'bg', 'Medium', 'bg', '192.168.1.102'),
-(29, 'sc', 'cd', 'Saturday 19th of September 2020 01:59:42 AM', 'c', 'Hardware Issue', 'Approval Required', 'c', 'Finance Division', 'dc', 'Low', 'c', '192.168.8.100'),
-(30, 'ulidu', 'f', 'Saturday 19th of September 2020 09:22:30 AM', 'cwda', 'Software Issue', 'Approval Required', 'sc', 'Finance Division', 'c3', 'Medium', 'wc', '192.168.8.100');
+(32, 'vfdvdfvdfvd', 'vdfv', 'Monday 21st of September 2020 10:24:54 AM', 'vfdvdfvdf', 'Network Issue', 'Approval Required', 'vdf', 'Landscape Division', 'vfd', 'Medium', 'vf', '::1');
 
 -- --------------------------------------------------------
 
@@ -133,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`userID`, `employeeCode`, `firstName`, `lastName`, `email`, `password`, `date_created`, `status`, `acc_type`, `title`, `division`) VALUES
 (14, '0868', 'Ulidu', 'Theerake', 'ulidutheerake@gmail.com', '333', 'Saturday 19th of September 2020 12:16:05 AM', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
 (12, '0000', 'System', 'Administrator', 'udatmsproject@gmail.com', 'admin', 'Saturday 19th of September 2020 12:14:48 AM', 'Active', 'Administrator', 'Mr.', 'ITS Division'),
-(15, '0155', 'Amarabandu', 'Rupasena', 'amare@gmail.com', '333', 'Sunday 20th of September 2020 01:08:59 PM', 'Active', 'Administrative Officer', 'Mr.', 'Project Management Division'),
+(15, '0155', 'Amarabandu', 'Rupasinghe', 'amare@gmail.com', '333', 'Sunday 20th of September 2020 01:08:59 PM', 'Active', 'Administrative Officer', 'Mr.', 'Finance Division'),
 (22, '123e1er1q3req1r', 'fde', 'sfd', 'df@fedc.com', '123456', 'Sunday 20th of September 2020 05:10:20 PM', 'Active', 'IT Staff', 'Mr.', 'Project Management Division');
 COMMIT;
 
