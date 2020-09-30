@@ -86,7 +86,7 @@
 
                             var staff1 = $(this).val();
                             var logged_user_id = <?php echo $logged_user_id; ?>;
-                            var ticket_id = <?php echo $ticket_hidden = $_POST['ticket_hidden_assign1']; echo $ticket_hidden; ?>;
+                            var ticket_id = '1111';
 
                             $.ajax({
                                 url: "assign_app.php",
