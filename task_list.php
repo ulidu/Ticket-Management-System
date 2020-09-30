@@ -209,7 +209,7 @@
                                 <select <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
                                 } ?> style="width: 100px; font-weight: 500;" id="<?php echo 'staff'.$i; ?>" name="<?php echo 'staff'.$i; ?>"
                                      class="ui-select form-control dropdown dropdown-menu-anim-down " required>
-                                    <option value="" hidden="true">Assign 1</option>
+                                    <option style="color: grey;" value="">Person 1</option>
 
                                     <?php
 
@@ -248,6 +248,7 @@
                             <script>
 
                                 $(document).ready(function() {
+
                                     $(document).on('change', '#<?= 'staff2'.$i ?>', function() {
 
                                         var staff2 = $(this).val();
@@ -286,7 +287,7 @@
                             <select <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
                             } ?> style="width: 100px; font-weight: 500;" id="<?php echo 'staff2'.$i; ?>" name="<?php echo 'staff2'.$i; ?>"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down " required>
-                                <option value="" hidden="true">Assign 2</option>
+                                <option style="color: grey;" value="">Person 2</option>
 
                                 <?php
 
