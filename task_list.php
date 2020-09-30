@@ -245,26 +245,63 @@
                             } ?> >
 
 
+                            <script>
+
+                                $(document).ready(function() {
+                                    $(document).on('change', '#<?= 'staff2'.$i ?>', function() {
+
+                                        var staff2 = $(this).val();
+                                        var logged_user_id = <?php echo $logged_user_id; ?>;
+                                        var ticket_id = $(<?php echo 'row2'.$i; ?>).val();
+
+                                        $.ajax({
+                                            url: "assign_app2.php",
+                                            method: "POST",
+                                            data: {
+                                                staff2: staff2,
+                                                ticket_id: ticket_id,
+                                                logged_user_id: logged_user_id
+                                            },
+                                            success: function(data) {
+                                                swal.fire({
+                                                    position: 'top-right',
+                                                    type: 'success',
+                                                    title: 'Task Assigned Successfully',
+                                                    showConfirmButton: false,
+                                                    timer: 1000
+                                                });
+                                            }
+
+                                        });
+
+                                    });
+
+                                });
+
+                            </script>
+
+                            <input type="hidden" value="<?php echo $ticket_id; ?>" name="<?php echo 'row2'.$i; ?>"
+                                   id="<?php echo 'row2'.$i; ?>">
+
                             <select <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
-                            } ?> style="width: 100px;" id="staff2" name="staff2"
+                            } ?> style="width: 100px; font-weight: 500;" id="<?php echo 'staff2'.$i; ?>" name="<?php echo 'staff2'.$i; ?>"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down " required>
                                 <option value="" hidden="true">Assign 2</option>
 
                                 <?php
 
-                                $query4 = "select * from user where acc_type = 'IT Staff' or acc_type = 'Administrator'";
-                                $run_query4 = mysqli_query($con, $query4);
-                                while ($row4 = mysqli_fetch_assoc($run_query4)) {
-                                    $userID = $row4['userID'];
-                                    $employeeCode = $row4['employeeCode'];
-                                    $firstName = $row4['firstName'];
-                                    $lastName = $row4['lastName'];
-                                    $email = $row4['email'];
-                                    $password = $row4['password'];
-                                    $date_created = $row4['date_created'];
-                                    $status = $row4['status'];
-                                    $acc_type222 = $row4['acc_type'];
-
+                                $query3 = "select * from user where acc_type = 'IT Staff' or acc_type = 'Administrator'";
+                                $run_query3 = mysqli_query($con, $query3);
+                                while ($row3 = mysqli_fetch_assoc($run_query3)) {
+                                    $userID = $row3['userID'];
+                                    $employeeCode = $row3['employeeCode'];
+                                    $firstName = $row3['firstName'];
+                                    $lastName = $row3['lastName'];
+                                    $email = $row3['email'];
+                                    $password = $row3['password'];
+                                    $date_created = $row3['date_created'];
+                                    $status = $row3['status'];
+                                    $acc_type111 = $row3['acc_type'];
 
                                     ?>
                                     <option

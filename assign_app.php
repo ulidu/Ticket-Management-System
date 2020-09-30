@@ -21,7 +21,7 @@ $row1 = mysqli_fetch_array($run_query_select, MYSQLI_ASSOC);
 $count = mysqli_num_rows($run_query_select);
 
 if ($count == 1) {
-    $query = "UPDATE assign SET userID='$user_ID_selected', task_id='$ticket_id', assigned_to_user_date='$date', assigned_by='$logged_user_id'";
+    $query = "UPDATE assign SET userID='$user_ID_selected', assigned_to_user_date='$date', assigned_by='$logged_user_id' where task_id='$ticket_id'";
 
 
 
