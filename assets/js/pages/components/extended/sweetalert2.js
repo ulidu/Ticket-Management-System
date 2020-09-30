@@ -70,9 +70,9 @@ var KTSweetAlert2Demo = function() {
             swal.fire({
                 position: 'top-right',
                 type: 'success',
-                title: 'Your work has been saved',
+                title: 'Task Assigned Successfully',
                 showConfirmButton: false,
-                timer: 1500
+                timer: 1000
             });
         });
 
@@ -148,14 +148,14 @@ var KTSweetAlert2Demo = function() {
         $('#kt_sweetalert_demo_11').click(function(e) {
             swal.fire({
                 title: 'Auto close alert!',
-                text: 'I will close in 5 seconds.',
-                timer: 5000,
+                text: 'I will close in 1 second.',
+                timer: 1000,
                 onOpen: function() {
                     swal.showLoading()
                 }
             }).then(function(result) {
                 if (result.dismiss === 'timer') {
-                    console.log('I was closed by the timer')
+                    console.log('Assigning Dialog Closed')
                 }
             })
         });

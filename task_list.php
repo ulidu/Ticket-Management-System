@@ -80,27 +80,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <script>
-                    $(document).ready(function() {
-                        $('select[id="staff1"]').change(function() {
 
-                            var staff1 = $(this).val();
-                            var logged_user_id = <?php echo $logged_user_id; ?>;
-                            var ticket_id = '1111';
-
-                            $.ajax({
-                                url: "assign_app.php",
-                                method: "POST",
-                                data: {
-                                    staff1: staff1,
-                                    ticket_id: ticket_id,
-                                    logged_user_id: logged_user_id
-                                },
-
-                            });
-                        });
-                    });
-                </script>
                 <?php
 
                 if (isset($_POST['submit_approve'])) {
@@ -188,14 +168,48 @@
                         <td style="color: #343a40;">
 
 
+                            <script>
 
+                                $(document).ready(function() {
+                                    $(document).on('change', '#<?= 'staff'.$i ?>', function() {
 
-    <input type="hidden" value="<?php echo $ticket_id; ?>" name="ticket_hidden_assign1"
-           id="ticket_hidden_assign1">
+                                        var staff1 = $(this).val();
+                                        var logged_user_id = <?php echo $logged_user_id; ?>;
+                                        var ticket_id = $(<?php echo 'row'.$i; ?>).val();
+
+                                        $.ajax({
+                                            url: "assign_app.php",
+                                            method: "POST",
+                                            data: {
+                                                staff1: staff1,
+                                                ticket_id: ticket_id,
+                                                logged_user_id: logged_user_id
+                                            },
+                                            success: function(data) {
+                                                swal.fire({
+                                                    position: 'top-right',
+                                                    type: 'success',
+                                                    title: 'Task Assigned Successfully',
+                                                    showConfirmButton: false,
+                                                    timer: 1000
+                                                });
+                                            }
+
+                                        });
+
+                                    });
+
+                                });
+
+                            </script>
+
+    <input type="hidden" value="<?php echo $ticket_id; ?>" name="<?php echo 'row'.$i; ?>"
+           id="<?php echo 'row'.$i; ?>">
+
                                 <select <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
-                                } ?> style="width: 100px;" id="staff1" name="staff1"
+                                } ?> style="width: 100px; font-weight: 500;" id="<?php echo 'staff'.$i; ?>" name="<?php echo 'staff'.$i; ?>"
                                      class="ui-select form-control dropdown dropdown-menu-anim-down " required>
-                                    <option value="" hidden="true">Assign*</option>
+                                    <option value="" hidden="true">Assign 1</option>
 
                                     <?php
 
@@ -234,7 +248,7 @@
                             <select <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
                             } ?> style="width: 100px;" id="staff2" name="staff2"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down " required>
-                                <option value="" hidden="true">Assign</option>
+                                <option value="" hidden="true">Assign 2</option>
 
                                 <?php
 
