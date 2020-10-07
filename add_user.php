@@ -193,6 +193,8 @@
                                     <option value="" hidden="true">Select Applicant's
                                         Division
                                     </option>
+                                    <option value="Project Management Division">ITS Division
+                                    </option>
                                     <option value="Project Management Division">Project
                                         Management Division
                                     </option>
@@ -283,7 +285,15 @@
                 $title = $_POST['title'];
                 $division = $_POST['division'];
 
-                $query = "INSERT INTO user(firstName, lastName, employeeCode, email, acc_type, password, date_created, status, title, division) VALUES('$firstName','$lastName','$empCode','$email','$acc_type','$password','$date','$status','$title','$division')";
+
+
+                // can be stored in the database
+                $hash = password_hash($password, PASSWORD_DEFAULT);
+
+
+
+
+                $query = "INSERT INTO user(firstName, lastName, employeeCode, email, acc_type, password, date_created, status, title, division) VALUES('$firstName','$lastName','$empCode','$email','$acc_type','$hash','$date','$status','$title','$division')";
 
                 $create_query = mysqli_query($con, $query);
 

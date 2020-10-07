@@ -13,8 +13,8 @@ if ($logged_user_id != '') {
 
 }
 
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,7 +113,6 @@ if ($logged_user_id != '') {
 
                 <!--begin::Body-->
                 <div class="kt-login__body">
-
                     <!--begin::Signin-->
                     <div class="kt-login__form">
 
