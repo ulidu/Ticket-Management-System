@@ -38,7 +38,7 @@
                             <div class="kt-widget__content">
                                 <div class="kt-widget__section">
                                      <span class="kt-widget__username">
-                                        <?php echo $firstName.' '.$lastName; ?>
+                                        <?php echo $firstName . ' ' . $lastName; ?>
                                         <i class="flaticon2-correct kt-font-success"></i>
                                     </span>
                                     <span class="kt-widget__subtitle">
@@ -80,28 +80,6 @@
                                                                     <g stroke="none" stroke-width="1" fill="none"
                                                                        fill-rule="evenodd">
                                                                         <rect x="0" y="0" width="24" height="24"/>
-                                                                        <path d="M2.56066017,10.6819805 L4.68198052,8.56066017 C5.26776695,7.97487373 6.21751442,7.97487373 6.80330086,8.56066017 L8.9246212,10.6819805 C9.51040764,11.267767 9.51040764,12.2175144 8.9246212,12.8033009 L6.80330086,14.9246212 C6.21751442,15.5104076 5.26776695,15.5104076 4.68198052,14.9246212 L2.56066017,12.8033009 C1.97487373,12.2175144 1.97487373,11.267767 2.56066017,10.6819805 Z M14.5606602,10.6819805 L16.6819805,8.56066017 C17.267767,7.97487373 18.2175144,7.97487373 18.8033009,8.56066017 L20.9246212,10.6819805 C21.5104076,11.267767 21.5104076,12.2175144 20.9246212,12.8033009 L18.8033009,14.9246212 C18.2175144,15.5104076 17.267767,15.5104076 16.6819805,14.9246212 L14.5606602,12.8033009 C13.9748737,12.2175144 13.9748737,11.267767 14.5606602,10.6819805 Z"
-                                                                              fill="#000000" opacity="0.3"/>
-                                                                        <path d="M8.56066017,16.6819805 L10.6819805,14.5606602 C11.267767,13.9748737 12.2175144,13.9748737 12.8033009,14.5606602 L14.9246212,16.6819805 C15.5104076,17.267767 15.5104076,18.2175144 14.9246212,18.8033009 L12.8033009,20.9246212 C12.2175144,21.5104076 11.267767,21.5104076 10.6819805,20.9246212 L8.56066017,18.8033009 C7.97487373,18.2175144 7.97487373,17.267767 8.56066017,16.6819805 Z M8.56066017,4.68198052 L10.6819805,2.56066017 C11.267767,1.97487373 12.2175144,1.97487373 12.8033009,2.56066017 L14.9246212,4.68198052 C15.5104076,5.26776695 15.5104076,6.21751442 14.9246212,6.80330086 L12.8033009,8.9246212 C12.2175144,9.51040764 11.267767,9.51040764 10.6819805,8.9246212 L8.56066017,6.80330086 C7.97487373,6.21751442 7.97487373,5.26776695 8.56066017,4.68198052 Z"
-                                                                              fill="#000000"/>
-                                                                    </g>
-                                                                </svg> </span>
-                                                            <span class="kt-widget__desc">
-                                                                Account Information
-                                                            </span>
-                                                        </span>
-                                </a>
-
-                                <a href="custom/apps/user/profile-1/change-password.html" class="kt-widget__item ">
-                                                        <span class="kt-widget__section">
-                                                            <span class="kt-widget__icon">
-                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                     width="24px" height="24px" viewBox="0 0 24 24"
-                                                                     version="1.1" class="kt-svg-icon">
-                                                                    <g stroke="none" stroke-width="1" fill="none"
-                                                                       fill-rule="evenodd">
-                                                                        <rect x="0" y="0" width="24" height="24"/>
                                                                         <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z"
                                                                               fill="#000000" opacity="0.3"/>
                                                                         <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z"
@@ -110,14 +88,6 @@
                                                                               fill="#000000" opacity="0.3"/>
                                                                     </g>
                                                                 </svg> </span>
-                                                            <span class="kt-widget__desc">
-                                                                Change Password
-                                                            </span>
-                                                        </span>
-
-                                </a>
-                                <a href="custom/apps/user/profile-1/email-settings.html" class="kt-widget__item ">
-                                                        <span class="kt-widget__section">
                                                             <span class="kt-widget__icon">
                                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                                      xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -133,10 +103,11 @@
                                                                     </g>
                                                                 </svg> </span>
                                                             <span class="kt-widget__desc">
-                                                                Email settings
+                                                                Account Settings
                                                             </span>
                                                         </span>
                                 </a>
+
                             </div>
                         </div>
                     </div>
@@ -162,52 +133,32 @@
                             </div>
 
                         </div>
-                        <form class="kt-form kt-form--label-right">
+                        <form method="post" action="" class="kt-form kt-form--label-right">
                             <div class="kt-portlet__body">
                                 <div class="kt-section kt-section--first">
                                     <div class="kt-section__body">
                                         <div class="row">
                                             <label class="col-xl-3"></label>
                                             <div class="col-lg-9 col-xl-6">
-                                                <h3 class="kt-section__title kt-section__title-sm">User Information :</h3>
+                                                <h3 class="kt-section__title kt-section__title-sm">User Information
+                                                    :</h3>
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label class="col-xl-3 col-lg-3 col-form-label">First Name</label>
                                             <div class="col-lg-9 col-xl-6">
-                                                <input class="form-control" type="text" value="Nick">
+                                                <input name="fname_up" required class="form-control"
+                                                       value="<?php echo $firstName; ?>" type="text"
+                                                       placeholder="Update First Name">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-xl-3 col-lg-3 col-form-label">Last Name</label>
                                             <div class="col-lg-9 col-xl-6">
-                                                <input class="form-control" type="text" value="Bold">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-xl-3 col-lg-3 col-form-label">Company Name</label>
-                                            <div class="col-lg-9 col-xl-6">
-                                                <input class="form-control" type="text" value="Loop Inc.">
-                                                <span class="form-text text-muted">If you want your invoices addressed to a company. Leave blank to use your full name.</span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <label class="col-xl-3"></label>
-                                            <div class="col-lg-9 col-xl-6">
-                                                <h3 class="kt-section__title kt-section__title-sm">Change Password :</h3>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-xl-3 col-lg-3 col-form-label">Contact Phone</label>
-                                            <div class="col-lg-9 col-xl-6">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend"><span class="input-group-text"><i
-                                                                    class="la la-phone"></i></span></div>
-                                                    <input type="text" class="form-control" value="+35278953712"
-                                                           placeholder="Phone" aria-describedby="basic-addon1">
-                                                </div>
-                                                <span class="form-text text-muted">We'll never share your email with anyone else.</span>
+                                                <input name="lname_up" required class="form-control"
+                                                       value="<?php echo $lastName; ?>" type="text"
+                                                       placeholder="Update Last Name">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -216,22 +167,62 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend"><span class="input-group-text"><i
                                                                     class="la la-at"></i></span></div>
-                                                    <input type="text" class="form-control" value="nick.bold@loop.com"
-                                                           placeholder="Email" aria-describedby="basic-addon1">
+                                                    <input name="email_up" required type="text" class="form-control"
+                                                           value="<?php echo $email; ?>"
+                                                           placeholder="Update Email Address"
+                                                           aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group form-group-last row">
-                                            <label class="col-xl-3 col-lg-3 col-form-label">Company Site</label>
+                                        <div class="row">
+                                            <label class="col-xl-3"></label>
+                                            <div class="col-lg-9 col-xl-6">
+                                                <h3 class="kt-section__title kt-section__title-sm">Change Password
+                                                    :</h3>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">Current Password</label>
                                             <div class="col-lg-9 col-xl-6">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" placeholder="Username"
-                                                           value="loop">
-                                                    <div class="input-group-append"><span
-                                                                class="input-group-text">.com</span></div>
+                                                    <div class="input-group-prepend"><span class="input-group-text"><i
+                                                                    class="la la-lock"></i></span></div>
+                                                    <input name="c_pass_up" required type="password"
+                                                           class="form-control"
+                                                           placeholder="Enter Current Password"
+                                                           aria-describedby="basic-addon1">
                                                 </div>
+
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">New Password</label>
+                                            <div class="col-lg-9 col-xl-6">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend"><span class="input-group-text"><i
+                                                                    class="la la-lock"></i></span></div>
+                                                    <input name="n_pass_up" required type="text" class="form-control"
+                                                           placeholder="Enter a New Password"
+                                                           aria-describedby="basic-addon1">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-xl-3 col-lg-3 col-form-label">Confirm New Password</label>
+                                            <div class="col-lg-9 col-xl-6">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend"><span class="input-group-text"><i
+                                                                    class="la la-lock"></i></span></div>
+                                                    <input name="cn_pass_up" required type="password"
+                                                           class="form-control"
+                                                           placeholder="Re-Enter your New Password"
+                                                           aria-describedby="basic-addon1">
+                                                </div>
+                                                <span class="form-text text-muted">We'll never share your password with anyone.</span>
+                                            </div>
+                                        </div>
+
 
                                     </div>
 
@@ -244,8 +235,11 @@
                                         <div class="col-lg-3 col-xl-3">
                                         </div>
                                         <div class="col-lg-9 col-xl-9">
-                                            <button type="reset" class="btn btn-success">Submit</button>&nbsp;
-                                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                                            <button name="save_user_info" type="submit" class="btn btn-success">Save
+                                            </button>&nbsp;
+                                            <button onclick="window.location.href='profile.php'" type="button"
+                                                    class="btn btn-secondary">Cancel
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -255,7 +249,59 @@
                 </div>
             </div>
         </div>
+        <?php
 
+        if (isset($_POST['save_user_info'])) {
+
+            $fname_up = $_POST['fname_up'];
+            $lname_up = $_POST['lname_up'];
+            $email_up = $_POST['email_up'];
+            $c_pass_up = $_POST['c_pass_up'];
+            $n_pass_up = $_POST['n_pass_up'];
+            $cn_pass_up = $_POST['cn_pass_up'];
+
+
+            $sql1 = "SELECT userID, password FROM user where userID='$logged_user_id'";
+            $run_query1 = mysqli_query($con, $sql1);
+
+            while ($pw = mysqli_fetch_assoc($run_query1)) {
+
+                $userID1 = $pw['userID'];
+                $password1 = $pw['password'];
+
+                // Verify the hash against the password entered
+                $verify = password_verify($c_pass_up, $password);
+
+                // Print the result depending if they match
+                if ($verify) {
+
+                    echo '<script> alert("verified") </script>';
+                    return false;
+
+                } else {
+
+                    echo '<script> alert("not verified") </script>';
+                    return false;
+
+                }
+
+                //$query = "UPDATE user SET firstName = '$fname_up', lastName = '$lname_up', email = '$email_up' WHERE userID = '$logged_user_id'";
+
+                //$create_query = mysqli_query($con, $query);
+
+                //if ($create_query) {
+
+                 //   echo '<meta http-equiv=Refresh content="0;url=ticket_success.php">';
+
+               // } else {
+               //     echo " <div class='alert alert-solid-danger alert-bold' role='alert'>";
+               //     echo " <div class='alert-text'>Something went wrong.</div>";
+                //    echo " </div>";
+                //}
+            }
+        }
+
+        ?>
         <!--End:: App Content-->
     </div>
 

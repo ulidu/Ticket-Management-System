@@ -27,10 +27,8 @@ while ($pw = mysqli_fetch_assoc($run_query)) {
     // Verify the hash against the password entered
     $verify = password_verify($password_enter, $password);
 
-// Print the result depending if they match
+    // Print the result depending if they match
     if ($verify) {
-
-
 
         $Row2 = "SELECT userID, acc_type FROM user where userID='$user_id_enter'";
         $run_query2 = mysqli_query($con, $Row2);
