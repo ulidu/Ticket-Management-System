@@ -133,7 +133,7 @@
                             </div>
 
                         </div>
-                        <form method="post" action="" class="kt-form kt-form--label-right">
+                        <form id="profile_pw_form" method="post" class="kt-form kt-form--label-right">
                             <div class="kt-portlet__body">
                                 <div class="kt-section kt-section--first">
                                     <div class="kt-section__body">
@@ -148,7 +148,7 @@
                                         <div class="form-group row">
                                             <label class="col-xl-3 col-lg-3 col-form-label">First Name</label>
                                             <div class="col-lg-9 col-xl-6">
-                                                <input name="fname_up" required class="form-control"
+                                                <input name="fname_up" id="fname_up" required class="form-control"
                                                        value="<?php echo $firstName; ?>" type="text"
                                                        placeholder="Update First Name">
                                             </div>
@@ -156,7 +156,7 @@
                                         <div class="form-group row">
                                             <label class="col-xl-3 col-lg-3 col-form-label">Last Name</label>
                                             <div class="col-lg-9 col-xl-6">
-                                                <input name="lname_up" required class="form-control"
+                                                <input name="lname_up" id="lname_up" required class="form-control"
                                                        value="<?php echo $lastName; ?>" type="text"
                                                        placeholder="Update Last Name">
                                             </div>
@@ -167,7 +167,8 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend"><span class="input-group-text"><i
                                                                     class="la la-at"></i></span></div>
-                                                    <input name="email_up" required type="text" class="form-control"
+                                                    <input name="email_up" id="email_up" required type="text"
+                                                           class="form-control"
                                                            value="<?php echo $email; ?>"
                                                            placeholder="Update Email Address"
                                                            aria-describedby="basic-addon1">
@@ -176,18 +177,23 @@
                                         </div>
                                         <div class="row">
                                             <label class="col-xl-3"></label>
-                                            <div class="col-lg-9 col-xl-6">
+                                            <div class="col-lg-10 col-xl-6">
                                                 <h3 class="kt-section__title kt-section__title-sm">Change Password
                                                     :</h3>
+                                                <span style="font-size: small;" class="form-text text-muted">Leave this <span
+                                                            style="font-weight: 600;">Change Password</span> section blank if you don't want to change your password.</span>
+                                                <br>
                                             </div>
+
                                         </div>
                                         <div class="form-group row">
+
                                             <label class="col-xl-3 col-lg-3 col-form-label">Current Password</label>
                                             <div class="col-lg-9 col-xl-6">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend"><span class="input-group-text"><i
                                                                     class="la la-lock"></i></span></div>
-                                                    <input name="c_pass_up" required type="password"
+                                                    <input id="c_pass_up" name="c_pass_up" type="password"
                                                            class="form-control"
                                                            placeholder="Enter Current Password"
                                                            aria-describedby="basic-addon1">
@@ -201,7 +207,8 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend"><span class="input-group-text"><i
                                                                     class="la la-lock"></i></span></div>
-                                                    <input name="n_pass_up" required type="text" class="form-control"
+                                                    <input id="n_pass_up" name="n_pass_up" type="password"
+                                                           class="form-control"
                                                            placeholder="Enter a New Password"
                                                            aria-describedby="basic-addon1">
                                                 </div>
@@ -214,12 +221,11 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend"><span class="input-group-text"><i
                                                                     class="la la-lock"></i></span></div>
-                                                    <input name="cn_pass_up" required type="password"
+                                                    <input id="cn_pass_up" name="cn_pass_up" type="password"
                                                            class="form-control"
                                                            placeholder="Re-Enter your New Password"
                                                            aria-describedby="basic-addon1">
                                                 </div>
-                                                <span class="form-text text-muted">We'll never share your password with anyone.</span>
                                             </div>
                                         </div>
 
@@ -235,7 +241,8 @@
                                         <div class="col-lg-3 col-xl-3">
                                         </div>
                                         <div class="col-lg-9 col-xl-9">
-                                            <button name="save_user_info" type="submit" class="btn btn-success">Save
+                                            <button id="save_user_info" name="save_user_info" type="submit"
+                                                    class="btn btn-success">Save
                                             </button>&nbsp;
                                             <button onclick="window.location.href='profile.php'" type="button"
                                                     class="btn btn-secondary">Cancel
@@ -249,59 +256,97 @@
                 </div>
             </div>
         </div>
-        <?php
-
-        if (isset($_POST['save_user_info'])) {
-
-            $fname_up = $_POST['fname_up'];
-            $lname_up = $_POST['lname_up'];
-            $email_up = $_POST['email_up'];
-            $c_pass_up = $_POST['c_pass_up'];
-            $n_pass_up = $_POST['n_pass_up'];
-            $cn_pass_up = $_POST['cn_pass_up'];
 
 
-            $sql1 = "SELECT userID, password FROM user where userID='$logged_user_id'";
-            $run_query1 = mysqli_query($con, $sql1);
+        <script>
 
-            while ($pw = mysqli_fetch_assoc($run_query1)) {
 
-                $userID1 = $pw['userID'];
-                $password1 = $pw['password'];
+            $(document).ready(function () {
 
-                // Verify the hash against the password entered
-                $verify = password_verify($c_pass_up, $password);
+                $("#profile_pw_form").submit(function (event) {
 
-                // Print the result depending if they match
-                if ($verify) {
+                    event.preventDefault();
 
-                    echo '<script> alert("verified") </script>';
-                    return false;
+                    var logged_user_id = <?php echo $logged_user_id; ?>;
 
-                } else {
+                    var fname_up = $("#fname_up").val();
+                    var lname_up = $("#lname_up").val();
+                    var email_up = $("#email_up").val();
 
-                    echo '<script> alert("not verified") </script>';
-                    return false;
+                    var c_pass_up = $("#c_pass_up").val();
+                    var n_pass_up = $("#n_pass_up").val();
+                    var cn_pass_up = $("#cn_pass_up").val();
 
-                }
+                    if (fname_up == '' || lname_up == '' || email_up == '') {
 
-                //$query = "UPDATE user SET firstName = '$fname_up', lastName = '$lname_up', email = '$email_up' WHERE userID = '$logged_user_id'";
+                        swal.fire("Empty Fields !", "First Name, Last Name and Email Cannot be Empty.", "warning");
+                        return false;
 
-                //$create_query = mysqli_query($con, $query);
+                    } else if (c_pass_up !== '' && n_pass_up !== '' && cn_pass_up !== '') {
 
-                //if ($create_query) {
+                        if (n_pass_up == cn_pass_up) {
 
-                 //   echo '<meta http-equiv=Refresh content="0;url=ticket_success.php">';
+                            $.ajax({
+                                type: "POST",
+                                url: "profile_pw.php",
+                                data: {
+                                    staff2: staff2,
+                                    ticket_id: ticket_id,
+                                    logged_user_id: logged_user_id
+                                },
+                                success: function (data) {
+                                    swal.fire("Updated Successfully !", "Account Information Updated Successfully.", "success");
+                                }
+                            });
 
-               // } else {
-               //     echo " <div class='alert alert-solid-danger alert-bold' role='alert'>";
-               //     echo " <div class='alert-text'>Something went wrong.</div>";
-                //    echo " </div>";
-                //}
-            }
-        }
+                        } else {
 
-        ?>
+                            swal.fire("Passwords do not Match !", "Please Confirm New Password", "warning");
+                            return false;
+
+                        }
+
+                    } else if (c_pass_up !== '' && cn_pass_up == '' && n_pass_up == '') {
+
+                        swal.fire("Enter a New Password !", "Please Enter a New Password.", "warning");
+                        return false;
+
+                    } else if (c_pass_up !== '' && cn_pass_up == '' && n_pass_up !== '') {
+
+                        swal.fire("Confirm New Password !", "Please Confirm the New Password.", "warning");
+                        return false;
+
+                    } else if (c_pass_up !== '' && cn_pass_up !== '' && n_pass_up == '') {
+
+                        swal.fire("Confirm New Password !", "Please Confirm the New Password.", "warning");
+                        return false;
+
+                    } else if (c_pass_up == '' && cn_pass_up == '' && n_pass_up == '') {
+
+                        $.ajax({
+                            type: "POST",
+                            url: "profile_pw.php",
+                            data: {
+                                staff2: staff2,
+                                ticket_id: ticket_id,
+                                logged_user_id: logged_user_id
+                            },
+                            success: function (data) {
+                                swal.fire("Updated Successfully !", "Account Information Updated Successfully.", "success");
+                            }
+                        });
+
+                    } else {
+
+                        swal.fire("Errors in submission !", "There are errors in your submission. Please correct them before proceeding.", "warning");
+                        return false;
+
+                    }
+                });
+            });
+
+        </script>
+
         <!--End:: App Content-->
     </div>
 
