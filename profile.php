@@ -241,9 +241,8 @@
                                         <div class="col-lg-3 col-xl-3">
                                         </div>
                                         <div class="col-lg-9 col-xl-9">
-                                            <button id="save_user_info" name="save_user_info" type="submit"
-                                                    class="btn btn-success">Save
-                                            </button>&nbsp;
+                                            <input value="Save" id="save_user_info" name="save_user_info" type="submit"
+                                                    class="btn btn-success">
                                             <button onclick="window.location.href='profile.php'" type="button"
                                                     class="btn btn-secondary">Cancel
                                             </button>
@@ -260,14 +259,13 @@
 
         <script>
 
-
             $(document).ready(function () {
 
                 $("#profile_pw_form").submit(function (event) {
 
-                    event.preventDefault();
 
-                    var logged_user_id = <?php echo $logged_user_id; ?>;
+
+                    var logged_user_id = '<?php echo $logged_user_id; ?>';
 
                     var fname_up = $("#fname_up").val();
                     var lname_up = $("#lname_up").val();
@@ -290,12 +288,17 @@
                                 type: "POST",
                                 url: "profile_pw.php",
                                 data: {
-                                    staff2: staff2,
-                                    ticket_id: ticket_id,
+                                    fname_up: fname_up,
+                                    lname_up: lname_up,
+                                    email_up: email_up,
+                                    c_pass_up: c_pass_up,
+                                    n_pass_up: n_pass_up,
                                     logged_user_id: logged_user_id
                                 },
                                 success: function (data) {
-                                    swal.fire("Updated Successfully !", "Account Information Updated Successfully.", "success");
+
+                                    swal.fire("Updated Successfully !", "Account Information and Password Updated Successfully.", "success");
+
                                 }
                             });
 
@@ -327,8 +330,11 @@
                             type: "POST",
                             url: "profile_pw.php",
                             data: {
-                                staff2: staff2,
-                                ticket_id: ticket_id,
+                                fname_up: fname_up,
+                                lname_up: lname_up,
+                                email_up: email_up,
+                                c_pass_up: c_pass_up,
+                                n_pass_up: n_pass_up,
                                 logged_user_id: logged_user_id
                             },
                             success: function (data) {
@@ -336,12 +342,30 @@
                             }
                         });
 
-                    } else {
+                    }else if (c_pass_up == '' && cn_pass_up !== '' && n_pass_up == '') {
+
+                        swal.fire("Confirm Current Password !", "Please Confirm the Current Password.", "warning");
+                        return false;
+
+                    }else if (c_pass_up == '' && cn_pass_up == '' && n_pass_up !== '') {
+
+                        swal.fire("Confirm Current Password !", "Please Confirm the Current Password.", "warning");
+                        return false;
+
+                    } else if (c_pass_up == '' && cn_pass_up !== '' && n_pass_up !== '') {
+
+                        swal.fire("Confirm Current Password !", "Please Confirm the Current Password.", "warning");
+                        return false;
+
+                    }else {
 
                         swal.fire("Errors in submission !", "There are errors in your submission. Please correct them before proceeding.", "warning");
                         return false;
 
                     }
+
+                    event.preventDefault();
+
                 });
             });
 

@@ -1,42 +1,53 @@
 <?php
 
-$fname_up = $_POST['fname_up'];
-$lname_up = $_POST['lname_up'];
-$email_up = $_POST['email_up'];
-$c_pass_up = $_POST['c_pass_up'];
-$n_pass_up = $_POST['n_pass_up'];
-$cn_pass_up = $_POST['cn_pass_up'];
+if (isset($_POST['save_user_info'])) {
 
-$sql1 = "SELECT userID, password FROM user where userID='$logged_user_id'";
-$run_query1 = mysqli_query($con, $sql1);
+    $fname_up = $_POST['fname_up'];
+    $lname_up = $_POST['lname_up'];
+    $email_up = $_POST['email_up'];
+    $c_pass_up = $_POST['c_pass_up'];
+    $n_pass_up = $_POST['n_pass_up'];
+    $logged_user_id = $_POST['logged_user_id'];
 
-while ($pw = mysqli_fetch_assoc($run_query1)) {
+    if ($c_pass_up == '') {
 
-    $userID1 = $pw['userID'];
-    $password1 = $pw['password'];
+        $query_details = "UPDATE user SET firstName = '$fname_up', lastName = '$lname_up', email = '$email_up' WHERE userID = '$logged_user_id'";
+        $create_query_details = mysqli_query($con, $query_details);
 
-    // Verify the hash against the password entered
-    $verify = password_verify($c_pass_up, $password);
+    } else if ($c_pass_up !== '') {
 
-    // Print the result depending if they match
-    if ($verify) {
+        $sql1 = "SELECT userID, password FROM user where userID='$logged_user_id'";
+        $run_query1 = mysqli_query($con, $sql1);
 
-        $query = "UPDATE user SET firstName = '$fname_up', lastName = '$lname_up', email = '$email_up' WHERE userID = '$logged_user_id'";
+        while ($pw = mysqli_fetch_assoc($run_query1)) {
 
-        $create_query = mysqli_query($con, $query);
+            $userID1 = $pw['userID'];
+            $password1 = $pw['password'];
 
-        if ($create_query) {
+            // Verify the hash against the password entered
+            $verify = password_verify($c_pass_up, $password);
 
-            echo '<meta http-equiv=Refresh content="0;url=ticket_success.php">';
+            // Print the result depending if they match
+            if ($verify) {
 
+                $query = "UPDATE user SET firstName = '$fname_up', lastName = '$lname_up', email = '$email_up' WHERE userID = '$logged_user_id'";
+
+                $create_query = mysqli_query($con, $query);
+
+                if ($create_query) {
+
+                    echo '<meta http-equiv=Refresh content="0;url=ticket_success.php">';
+
+                }
+                return false;
+
+            } else {
+
+                echo '<script> alert("not verified"); </script>';
+                return false;
+
+            }
         }
-        return false;
-
-    } else {
-
-        echo '<script> alert("not verified"); </script>';
-        return false;
-
     }
 }
 
