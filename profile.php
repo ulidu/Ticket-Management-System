@@ -1,6 +1,11 @@
 <?php include 'include/header.php'; ?>
 <?php include 'include/aside.php'; ?>
 
+<?php
+
+
+
+?>
 
 <!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
@@ -257,11 +262,12 @@
         </div>
 
 
+
         <script>
 
             $(document).ready(function () {
 
-                $("#profile_pw_form").submit(function (event) {
+                $("#profile_pw_form").submit(function () {
 
 
 
@@ -285,8 +291,8 @@
                         if (n_pass_up == cn_pass_up) {
 
                             $.ajax({
-                                type: "POST",
                                 url: "profile_pw.php",
+                                method: "POST",
                                 data: {
                                     fname_up: fname_up,
                                     lname_up: lname_up,
@@ -296,9 +302,7 @@
                                     logged_user_id: logged_user_id
                                 },
                                 success: function (data) {
-
                                     swal.fire("Updated Successfully !", "Account Information and Password Updated Successfully.", "success");
-
                                 }
                             });
 
@@ -327,8 +331,8 @@
                     } else if (c_pass_up == '' && cn_pass_up == '' && n_pass_up == '') {
 
                         $.ajax({
-                            type: "POST",
                             url: "profile_pw.php",
+                            method: "POST",
                             data: {
                                 fname_up: fname_up,
                                 lname_up: lname_up,

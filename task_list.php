@@ -135,6 +135,11 @@
                     $query = "select * from task where division='$division' order by task_id desc";
                     $run_query = mysqli_query($con, $query);
 
+                } elseif ($acc_type == 'IT Staff') {
+
+                    $query = "SELECT * FROM task t WHERE t.task_id IN (select a.task_id from assign a where a.userID = '$logged_user_id' OR a.userID_2_opt='$logged_user_id')";
+                    $run_query = mysqli_query($con, $query);
+
                 }
 
                 $i = 1;
@@ -170,12 +175,13 @@
 
                             <script>
 
-                                $(document).ready(function() {
-                                    $(document).on('change', '#<?= 'staff'.$i ?>', function() {
+                                $(document).ready(function () {
+
+                                    $(document).on('change', '#<?= 'staff' . $i ?>', function () {
 
                                         var staff1 = $(this).val();
                                         var logged_user_id = <?php echo $logged_user_id; ?>;
-                                        var ticket_id = $(<?php echo 'row'.$i; ?>).val();
+                                        var ticket_id = $(<?php echo 'row' . $i; ?>).val();
 
                                         $.ajax({
                                             url: "assign_app.php",
@@ -185,7 +191,7 @@
                                                 ticket_id: ticket_id,
                                                 logged_user_id: logged_user_id
                                             },
-                                            success: function(data) {
+                                            success: function (data) {
                                                 swal.fire({
                                                     position: 'top-right',
                                                     type: 'success',
@@ -203,42 +209,39 @@
 
                             </script>
 
-    <input type="hidden" value="<?php echo $ticket_id; ?>" name="<?php echo 'row'.$i; ?>"
-           id="<?php echo 'row'.$i; ?>">
+                            <input type="hidden" value="<?php echo $ticket_id; ?>" name="<?php echo 'row' . $i; ?>"
+                                   id="<?php echo 'row' . $i; ?>">
 
-                                <select <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
-                                } ?> style="width: 100px; font-weight: 500;" id="<?php echo 'staff'.$i; ?>" name="<?php echo 'staff'.$i; ?>"
-                                     class="ui-select form-control dropdown dropdown-menu-anim-down " required>
-                                    <option style="color: grey;" value="">Person 1</option>
+                            <select <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
+                            } ?> style="width: 200px; font-weight: 500; " id="<?php echo 'staff' . $i; ?>"
+                                 name="<?php echo 'staff' . $i; ?>"
+                                 class="ui-select form-control dropdown dropdown-menu-anim-down " required>
+                                <option style="color: grey;" value="">Assign Person No. 1*</option>
 
-                                    <?php
+                                <?php
 
-                                    $query3 = "select * from user where acc_type = 'IT Staff' or acc_type = 'Administrator'";
-                                    $run_query3 = mysqli_query($con, $query3);
-                                    while ($row3 = mysqli_fetch_assoc($run_query3)) {
-                                        $userID = $row3['userID'];
-                                        $employeeCode = $row3['employeeCode'];
-                                        $firstName = $row3['firstName'];
-                                        $lastName = $row3['lastName'];
-                                        $email = $row3['email'];
-                                        $password = $row3['password'];
-                                        $date_created = $row3['date_created'];
-                                        $status = $row3['status'];
-                                        $acc_type111 = $row3['acc_type'];
+                                $query3 = "select * from user where acc_type = 'IT Staff'";
+                                $run_query3 = mysqli_query($con, $query3);
+                                while ($row3 = mysqli_fetch_assoc($run_query3)) {
 
-                                        ?>
-                                        <option
-                                            <?php if ($userID == 12){ ?>style="font-weight: 500; color: #fd7e14;"
-                                            hidden<?php } else {
-                                        } ?>
-                                            value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName; ?></option>
-                                        <?php
-                                    }
+                                    $userID = $row3['userID'];
+                                    $employeeCode = $row3['employeeCode'];
+                                    $firstName = $row3['firstName'];
+                                    $lastName = $row3['lastName'];
+                                    $email = $row3['email'];
+                                    $password = $row3['password'];
+                                    $date_created = $row3['date_created'];
+                                    $status = $row3['status'];
+                                    $acc_type111 = $row3['acc_type'];
+
                                     ?>
+                                    <option style="font-weight: 500; color: #fd7e14;" value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName; ?></option>
+                                    <?php
+                                }
+                                ?>
 
 
-                                </select>
-
+                            </select>
 
 
                             <br <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
@@ -247,13 +250,13 @@
 
                             <script>
 
-                                $(document).ready(function() {
+                                $(document).ready(function () {
 
-                                    $(document).on('change', '#<?= 'staff2'.$i ?>', function() {
+                                    $(document).on('change', '#<?= 'staff2' . $i ?>', function () {
 
                                         var staff2 = $(this).val();
                                         var logged_user_id = <?php echo $logged_user_id; ?>;
-                                        var ticket_id = $(<?php echo 'row2'.$i; ?>).val();
+                                        var ticket_id = $(<?php echo 'row2' . $i; ?>).val();
 
                                         $.ajax({
                                             url: "assign_app2.php",
@@ -263,7 +266,7 @@
                                                 ticket_id: ticket_id,
                                                 logged_user_id: logged_user_id
                                             },
-                                            success: function(data) {
+                                            success: function (data) {
                                                 swal.fire({
                                                     position: 'top-right',
                                                     type: 'success',
@@ -281,13 +284,14 @@
 
                             </script>
 
-                            <input type="hidden" value="<?php echo $ticket_id; ?>" name="<?php echo 'row2'.$i; ?>"
-                                   id="<?php echo 'row2'.$i; ?>">
+                            <input type="hidden" value="<?php echo $ticket_id; ?>" name="<?php echo 'row2' . $i; ?>"
+                                   id="<?php echo 'row2' . $i; ?>">
 
                             <select <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
-                            } ?> style="width: 100px; font-weight: 500;" id="<?php echo 'staff2'.$i; ?>" name="<?php echo 'staff2'.$i; ?>"
+                            } ?> style="width: 200px; font-weight: 400;" id="<?php echo 'staff2' . $i; ?>"
+                                 name="<?php echo 'staff2' . $i; ?>"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down " required>
-                                <option style="color: grey;" value="">Person 2</option>
+                                <option style="color: grey;" value="">Assign Person No. 2</option>
 
                                 <?php
 
@@ -306,7 +310,7 @@
 
                                     ?>
                                     <option
-                                        <?php if ($userID == 12){ ?>style="font-weight: 500; color: #fd7e14;"
+                                        <?php if ($acc_type111 == 'Administrator'){ ?>style="font-weight: 500; color: #fd7e14;"
                                         hidden<?php } else {
                                     } ?>
                                         value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName; ?></option>
@@ -321,7 +325,7 @@
                             } ?> >
 
                             <select <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
-                            } ?> style="width: 100px;" id="status" name="status"
+                            } ?> style="width: 200px;" id="status" name="status"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down kt-badge--d22" required>
                                 <option value="" hidden="true">Status*</option>
                                 <option style="color: #fd7e14; font-weight: 500" value="Approved">New</option>

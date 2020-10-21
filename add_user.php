@@ -285,13 +285,7 @@
                 $title = $_POST['title'];
                 $division = $_POST['division'];
 
-
-
-                // can be stored in the database
                 $hash = password_hash($password, PASSWORD_DEFAULT);
-
-
-
 
                 $query = "INSERT INTO user(firstName, lastName, employeeCode, email, acc_type, password, date_created, status, title, division) VALUES('$firstName','$lastName','$empCode','$email','$acc_type','$hash','$date','$status','$title','$division')";
 
