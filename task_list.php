@@ -127,7 +127,7 @@
 
                 if ($acc_type == 'Administrator') {
 
-                    $query = "select * from task where status!='Approval Required' order by task_id desc";
+                    $query = "select * from task t, assign a where t.task_id = a.task_id and status!='Approval Required' order by t.task_id desc";
                     $run_query = mysqli_query($con, $query);
 
                 } elseif ($acc_type == 'Administrative Officer') {
@@ -159,6 +159,9 @@
                     $status12 = $row['status'];
                     $date = $row['assigned_date'];
                     $ip_add = $row['ip_address'];
+
+                    $userID_a = $row['userID'];
+                    $userID_2_opt_a = $row['userID_2_opt'];
 
 
                     ?>
@@ -235,7 +238,24 @@
                                     $acc_type111 = $row3['acc_type'];
 
                                     ?>
-                                    <option style="font-weight: 500; color: #fd7e14;" value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName; ?></option>
+                                    <?php if ($userID_a==$userID){
+
+
+                                        ?>
+                                        <option style="font-weight: 500; color: #fd7e14;" value="<?php echo $userID; ?>" selected><?php echo $firstName . " " . $lastName; ?></option>
+
+                                        <?php
+
+                                    }else{
+                                        ?>
+
+                                        <option style="font-weight: 500; color: #fd7e14;" value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName; ?></option>
+                                        <?php
+
+                                    }
+                                    ?>
+
+
                                     <?php
                                 }
                                 ?>
@@ -309,11 +329,31 @@
                                     $acc_type111 = $row3['acc_type'];
 
                                     ?>
-                                    <option
+
+                                    <?php if ($userID_2_opt_a==$userID){
+
+
+                                    ?>
+                                        <option
+                                            <?php if ($acc_type111 == 'Administrator'){ ?>style="font-weight: 500; color: #fd7e14;"
+                                            hidden<?php } else {
+                                        } ?>
+                                            value="<?php echo $userID; ?>" selected><?php echo $firstName . " " . $lastName; ?></option>
+
+                                    <?php
+
+                                    }else{
+?>
+
+                                        <option
                                         <?php if ($acc_type111 == 'Administrator'){ ?>style="font-weight: 500; color: #fd7e14;"
-                                        hidden<?php } else {
-                                    } ?>
+                                            hidden<?php } else {
+                                        } ?>
                                         value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName; ?></option>
+<?php
+
+                                    }
+                                    ?>
                                     <?php
                                 }
                                 ?>

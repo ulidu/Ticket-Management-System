@@ -26,7 +26,7 @@ if ($c_pass_up == '') {
         $password1 = $pw['password'];
 
         // Verify the hash against the password entered
-        $verify = password_verify($c_pass_up, $password);
+        $verify = password_verify($c_pass_up, $password1);
 
         // Print the result depending if they match
         if ($verify) {
@@ -37,12 +37,13 @@ if ($c_pass_up == '') {
 
             $create_query = mysqli_query($con, $query);
 
+            echo 1;
 
 
 
         } else {
 
-            echo "<script> alert('failed'); </script>";
+            echo 0;
 
 
         }

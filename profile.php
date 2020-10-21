@@ -302,7 +302,18 @@
                                     logged_user_id: logged_user_id
                                 },
                                 success: function (data) {
-                                    swal.fire("Updated Successfully !", "Account Information and Password Updated Successfully.", "success");
+                                    alert(data.toString());
+
+                                    if (data.toString() == 1){
+
+                                        swal.fire("Updated Successfully !", "Account Information and Password Updated Successfully.", "success");
+
+                                    }else {
+
+                                        swal.fire("fk !", "ff", "danger");
+
+                                    }
+
                                 }
                             });
 
