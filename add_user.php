@@ -280,7 +280,7 @@
                 $email = $_POST['email'];
                 $acc_type = $_POST['permissions'];
                 $password = $_POST['password'];
-                $date = date(DATE_ATOM, mktime(0, 0, 0, 7, 1, 2000));
+                $date = date_format($date, 'Y-m-d H:i:s');
                 $status = "Active";
                 $title = $_POST['title'];
                 $division = $_POST['division'];

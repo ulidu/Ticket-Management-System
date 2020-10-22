@@ -86,7 +86,7 @@
                 if (isset($_POST['submit_approve'])) {
 
                     date_default_timezone_set('Asia/Colombo');
-                    $date = date(DATE_ATOM, mktime(0, 0, 0, 7, 1, 2000));
+                    $date = date_format($date, 'Y-m-d H:i:s');
 
                     $ticket_hidden = $_POST['ticket_hidden'];
 

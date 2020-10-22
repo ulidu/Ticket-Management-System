@@ -6,7 +6,7 @@ if (isset($_POST["staff2"])) {
 
     date_default_timezone_set('Asia/Colombo');
 
-    $date = date(DATE_ATOM, mktime(0, 0, 0, 7, 1, 2000));
+    $date = date_format($date, 'Y-m-d H:i:s');
     $user_ID_selected = $_POST['staff2'];
     $ticket_id = $_POST['ticket_id'];
     $logged_user_id = $_POST['logged_user_id'];

@@ -31,7 +31,7 @@ if (isset($_SESSION['last_action'])) {
 $_SESSION['last_action'] = time();
 
 ?>
-
+<?php date_default_timezone_set('Asia/Colombo'); ?>
 <!DOCTYPE html>
 
 
