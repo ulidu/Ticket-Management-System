@@ -310,7 +310,7 @@
 
                                     }else {
 
-                                        swal.fire("fk !", "ff", "danger");
+                                        swal.fire("Incorrect Password !", "Please Confirm Current Password", "danger");
 
                                     }
 

@@ -324,7 +324,7 @@
                                 $cat_issue = $_POST['cat_issue'];
                                 $asst_code = $_POST['asst_code'];
                                 $priority = $_POST['priority'];
-                                $date = date("l jS \of F Y h:i:s A");
+                                $date = date(DATE_ATOM, mktime(0, 0, 0, 7, 1, 2000));
                                 $status = "Approval Required";
 
                                 $query = "INSERT INTO task(assigned_by, emp_code, assigned_date, issue, category, status, designation, division, extension_no, priority, asset_code, ip_address) VALUES('$name','$emp_code','$date','$issue','$cat_issue','$status','$designation','$division','$ext','$priority','$asst_code','$localAddr')";

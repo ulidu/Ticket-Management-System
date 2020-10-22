@@ -86,7 +86,7 @@
                 if (isset($_POST['submit_approve'])) {
 
                     date_default_timezone_set('Asia/Colombo');
-                    $date = date("l jS \of F Y h:i:s A");
+                    $date = date(DATE_ATOM, mktime(0, 0, 0, 7, 1, 2000));
 
                     $ticket_hidden = $_POST['ticket_hidden'];
 
@@ -364,7 +364,7 @@
                             <br <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
                             } ?> >
 
-                            <select <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
+                            <select <?php if ($acc_type !== 'IT Staff') { ?> hidden <?php } else {
                             } ?> style="width: 200px;" id="status" name="status"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down kt-badge--d22" required>
                                 <option value="" hidden="true">Status*</option>

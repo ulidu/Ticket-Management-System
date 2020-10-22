@@ -8,7 +8,7 @@
 
         if(form.password.value != "" && form.password.value == form.pw_cf.value) {
             if(form.password.value.length < 6) {
-                swal.fire("Confirm Password !", "Your password must contain at least six characters.", "warning");
+                swal.fire("Weak Password !", "Your password must contain at least six characters.", "warning");
                 form.password.focus();
                 return false;
             }
@@ -280,7 +280,7 @@
                 $email = $_POST['email'];
                 $acc_type = $_POST['permissions'];
                 $password = $_POST['password'];
-                $date = date("l jS \of F Y h:i:s A");
+                $date = date(DATE_ATOM, mktime(0, 0, 0, 7, 1, 2000));
                 $status = "Active";
                 $title = $_POST['title'];
                 $division = $_POST['division'];
