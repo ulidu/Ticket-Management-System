@@ -112,6 +112,21 @@
 
                     $create_query_removing = mysqli_query($con, $query_removing);
 
+                    if ($create_query_removing) {
+
+                        echo '<meta http-equiv=Refresh content="0;url=task_list.php">';
+
+                    }
+
+                }
+
+                if (isset($_POST['dlt_admin'])) {
+
+                    $ticket_hidden = $_POST['ticket_hidden'];
+
+                    $query_removing = "DELETE FROM task WHERE task_id = '$ticket_hidden'";
+
+                    $create_query_removing = mysqli_query($con, $query_removing);
 
                     if ($create_query_removing) {
 
@@ -374,7 +389,7 @@
                                 <option style="color: #1dc9b7; font-weight: 500" value="Completed">Completed</option>
 
                             </select>
-                            <br <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
+                            <br <?php if ($acc_type == 'Administrative Officer' || $acc_type == 'Administrator') { ?> hidden <?php } else {
                             } ?> >
 
                             <form name="approve_decline" id="approve_decline" action="" method="post">
@@ -420,7 +435,7 @@
 
         } else {
             return false;
-        }" type="submit" id="submit_remove" name="submit_remove"
+        }" type="submit" id="dlt_admin" name="dlt_admin"
                                                                                  class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
                                                                                  title="Delete">
                                 <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
