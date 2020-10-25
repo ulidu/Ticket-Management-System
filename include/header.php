@@ -166,7 +166,7 @@ while ($rw = mysqli_fetch_assoc($run_query)) {
 
 }
 
-if ($acc_type == 'Administrative Officer' && $page4 != 'task_add.php' && $page4 != 'ticket_success.php' && $page4 != 'feedback.php' && $page4 != 'task_list.php' && $page4 != 'profile.php') {
+if ($acc_type == 'Administrative Officer' && $page4 != 'task_add.php' && $page4 != 'ticket_success.php' && $page4 != 'feedback.php' && $page4 != 'task_list.php' && $page4 != 'profile.php' && $page4 != 'profile_pw.php' || $acc_type == 'IT Staff' && $page4 != 'task_add.php' && $page4 != 'ticket_success.php' && $page4 != 'feedback.php' && $page4 != 'task_list.php' && $page4 != 'profile.php' && $page4 != 'profile_pw.php' && $page4 != 'reports.php') {
 
     echo "<script type='text/javascript'> document.location = 'task_list.php'; </script>";
 

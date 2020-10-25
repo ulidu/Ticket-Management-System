@@ -425,7 +425,7 @@
                                        class="la la-close"></i>
                                 </button>
 
-                            </form>
+
 
 
                             <button <?php if ($acc_type != 'Administrator') { ?> hidden <?php } else {
@@ -442,7 +442,7 @@
                                    class="la la-trash"></i>
                             </button>
 
-
+                            </form>
                         </td>
 
                         <td><?php echo $ticket_id; ?></td>

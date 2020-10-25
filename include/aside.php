@@ -127,7 +127,7 @@
 
                 $logged_user_id = $_SESSION['logged_user_id'];
 
-                if ($logged_user_id != '' && $acc_type=='Administrator') {
+                if ($logged_user_id != '' && $acc_type=='Administrator' || $logged_user_id != '' && $acc_type=='IT Staff') {
 
                 ?>
                 <li class="kt-menu__item " aria-haspopup="true"><a href="reports.php" class="kt-menu__link "><i
@@ -162,7 +162,7 @@
 
                 $logged_user_id = $_SESSION['logged_user_id'];
 
-                if ($logged_user_id != '' && $acc_type!='Administrative Officer') {
+                if ($logged_user_id != '' && $acc_type!='Administrative Officer' && $acc_type!='IT Staff') {
 
                 ?>
 
@@ -199,7 +199,7 @@
 
                 $logged_user_id = $_SESSION['logged_user_id'];
 
-                if ($logged_user_id != '' && $acc_type!='Administrative Officer') {
+                if ($logged_user_id != '' && $acc_type!='Administrative Officer' && $acc_type!='IT Staff') {
 
                 ?>
                 <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--active" aria-haspopup="true"
@@ -224,8 +224,18 @@
                         </ul>
                     </div>
                 </li>
+                <?php
 
+                }else{}
 
+                ?>
+                <?php
+
+                $logged_user_id = $_SESSION['logged_user_id'];
+
+                if ($logged_user_id != '' && $acc_type!='Administrative Officer') {
+
+                    ?>
                 <li class="kt-menu__item " aria-haspopup="true"><a href="reports.php" class="kt-menu__link "><i
                                 class="kt-menu__link-icon flaticon2-graph"></i><span
                                 class="kt-menu__link-text">Reports</span></a>
@@ -254,12 +264,19 @@
         <div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1"
              data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
             <ul class="kt-menu__nav ">
+                <?php
+
+                $logged_user_id = $_SESSION['logged_user_id'];
+
+                if ($logged_user_id != '' && $acc_type == 'Administrator' || $logged_user_id != '' && $acc_type == 'Observer') {
+
+                ?>
                 <li class="kt-menu__item" aria-haspopup="true"><a href="index.php"
                                                                   class="kt-menu__link "><i
                                 class="kt-menu__link-icon flaticon2-architecture-and-city"></i><span
                                 class="kt-menu__link-text">Home</span></a></li>
 
-
+<?php }else{ }?>
                 <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
                     data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
                                                           class="kt-menu__link kt-menu__toggle"><i
@@ -267,6 +284,7 @@
                                 class="kt-menu__link-text">Tickets</span></a>
                     <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                         <ul class="kt-menu__subnav">
+
 
                             <li class="kt-menu__item "><a href="task_add.php"
                                                           class="kt-menu__link "><i
@@ -281,7 +299,11 @@
                     </div>
                 </li>
 
+                <?php
 
+                if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
+
+                ?>
                 <li class="kt-menu__item  kt-menu__item--submenu " aria-haspopup="true"
                     data-ktmenu-submenu-toggle="hover"><a href="javascript:;"
                                                           class="kt-menu__link kt-menu__toggle"><i
@@ -305,6 +327,7 @@
                     </div>
                 </li>
 
+                <?php }else{} ?>
 
                 <li class="kt-menu__item kt-menu__item--active"><a href="reports.php" class="kt-menu__link "><i
                                 class="kt-menu__link-icon flaticon2-graph"></i><span
@@ -413,7 +436,7 @@
 
                 $logged_user_id = $_SESSION['logged_user_id'];
 
-                if ($logged_user_id != '' && $acc_type=='Administrator') {
+                if ($logged_user_id != '' && $acc_type=='Administrator' || $logged_user_id != '' && $acc_type=='IT Staff') {
 
                 ?>
                 <li class="kt-menu__item "><a href="reports.php" class="kt-menu__link "><i
