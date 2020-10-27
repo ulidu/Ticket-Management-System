@@ -23,14 +23,26 @@ if (isset($_POST["staff2"])) {
 
         $query = "UPDATE assign SET userID_2_opt='$user_ID_selected', assigned_to_user_date='$date', assigned_by='$logged_user_id' where task_id='$ticket_id'";
 
+        if ($user_ID_selected != '') {
+
+            $query_status = "UPDATE task SET status='Assigned' where task_id='$ticket_id'";
+
+        }
+
     } else {
 
-        $query = "INSERT INTO assign(userID_2_opt,task_id,assigned_to_user_date, assigned_by) VALUES('$user_ID_selected', '$ticket_id','$date', '$logged_user_id')";
+        $query = "INSERT INTO assign(userID_2_opt, task_id, assigned_to_user_date, assigned_by) VALUES('$user_ID_selected', '$ticket_id','$date', '$logged_user_id')";
+
+        if ($user_ID_selected != '') {
+
+            $query_status = "UPDATE task SET status='Assigned' where task_id='$ticket_id'";
+
+        }
 
     }
 
     $create_query = mysqli_query($con, $query);
-
+    $create_query_status = mysqli_query($con, $query_status);
 }
 
 ?>

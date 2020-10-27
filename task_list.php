@@ -109,8 +109,10 @@
                     $ticket_hidden = $_POST['ticket_hidden'];
 
                     $query_removing = "DELETE FROM task WHERE task_id = '$ticket_hidden'";
+                    $query_removing_approve = "DELETE FROM approve WHERE task_id = '$ticket_hidden'";
 
                     $create_query_removing = mysqli_query($con, $query_removing);
+                    $create_query_removing_approve = mysqli_query($con, $query_removing_approve);
 
                     if ($create_query_removing) {
 
@@ -125,8 +127,12 @@
                     $ticket_hidden = $_POST['ticket_hidden'];
 
                     $query_removing = "DELETE FROM task WHERE task_id = '$ticket_hidden'";
+                    $query_removing_assign = "DELETE FROM assign WHERE task_id = '$ticket_hidden'";
+                    $query_removing_approve = "DELETE FROM approve WHERE task_id = '$ticket_hidden'";
 
                     $create_query_removing = mysqli_query($con, $query_removing);
+                    $create_query_removing_assign = mysqli_query($con, $query_removing_assign);
+                    $create_query_removing_approve = mysqli_query($con, $query_removing_approve);
 
                     if ($create_query_removing) {
 
@@ -142,12 +148,12 @@
 
                 if ($acc_type == 'Administrator') {
 
-                    $query = "select * from task t, assign a where t.task_id = a.task_id and status!='Approval Required' order by t.task_id desc";
+                    $query = "SELECT * FROM assign RIGHT JOIN task ON task.task_id = assign.task_id WHERE task.status!='Approval Required' order by task.task_id desc";
                     $run_query = mysqli_query($con, $query);
 
                 } elseif ($acc_type == 'Administrative Officer') {
 
-                    $query = "select * from task where division='$division' order by task_id desc";
+                    $query = "select * from task where division='$division' AND status='Approved' OR division='$division' AND status='Approval Required' order by task_id desc";
                     $run_query = mysqli_query($con, $query);
 
                 } elseif ($acc_type == 'IT Staff') {
@@ -210,6 +216,9 @@
                                                 logged_user_id: logged_user_id
                                             },
                                             success: function (data) {
+
+                                                $("#aa").load(window.location + " #aa");
+
                                                 swal.fire({
                                                     position: 'top-right',
                                                     type: 'success',
@@ -217,6 +226,8 @@
                                                     showConfirmButton: false,
                                                     timer: 1000
                                                 });
+
+
                                             }
 
                                         });
@@ -305,6 +316,9 @@
                                                 logged_user_id: logged_user_id
                                             },
                                             success: function (data) {
+
+                                                $("#aa").load(window.location + " #aa");
+
                                                 swal.fire({
                                                     position: 'top-right',
                                                     type: 'success',
@@ -312,6 +326,7 @@
                                                     showConfirmButton: false,
                                                     timer: 1000
                                                 });
+
                                             }
 
                                         });
@@ -321,6 +336,7 @@
                                 });
 
                             </script>
+
 
                             <input type="hidden" value="<?php echo $ticket_id; ?>" name="<?php echo 'row2' . $i; ?>"
                                    id="<?php echo 'row2' . $i; ?>">
@@ -380,6 +396,33 @@
 
 
                             </select>
+
+                            <script>
+
+
+                                $(document).ready(function () {
+
+                                    if($('#<?= 'staff' . $i ?>').val == '') {
+                                        $('#<?= 'staff2' . $i ?>').prop('disabled', true);
+                                    }
+
+                                    $('#<?= 'staff' . $i ?>').change(function () {
+
+                                        if($(this).val == "") {
+                                            $("#<?= 'staff2' . $i ?> option[value='']").prop('selected', true);
+                                            $('#<?= 'staff2' . $i ?>').prop('disabled', true);
+
+                                        } else {
+
+                                            $('#<?= 'staff2' . $i ?>').prop('disabled', false);
+
+                                        }
+
+                                    });
+
+                                });
+
+                            </script>
 
                             <br <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
                             } ?> >
@@ -450,14 +493,14 @@
 
                         <td><?php echo $ticket_id; ?></td>
                         <td><?php echo $date; ?></td>
-                        <td>
+                        <td id="aa">
 
                             <?php if ($status12 == "Approval Required") { ?>
                                 <span style="font-weight: 500"
                                       class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Approval Required</span>
                             <?php } elseif ($status12 == "Approved") { ?>
                                 <span style="font-weight: 500"
-                                      class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">Approved</span>
+                                      class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">Approved by A/O</span>
                             <?php } elseif ($status12 == "Assigned") { ?>
                                 <span style="font-weight: 500"
                                       class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Assigned</span>
