@@ -167,105 +167,442 @@
                             <!--end:: Widgets/Daily Sales-->
                         </div>
                     </div>
-                    <div class="col-6">
-
-                        <!--begin:: Widgets/Profit Share-->
-
-                        <div class="kt-widget14">
-                            <div class="kt-widget14__header">
-                                <h3 class="kt-widget14__title">
-                                    Profit Share
-                                </h3>
-                                <span class="kt-widget14__desc">
-															Profit Share between customers
-														</span>
-                            </div>
-                            <div class="kt-widget14__content">
-                                <div class="kt-widget14__chart">
-                                    <div class="kt-widget14__stat">45</div>
-                                    <canvas id="kt_chart_profit_share" style="height: 140px; width: 140px;"></canvas>
-                                </div>
-                                <div class="kt-widget14__legends">
-                                    <div class="kt-widget14__legend">
-                                        <span class="kt-widget14__bullet kt-bg-success"></span>
-                                        <span class="kt-widget14__stats">37% Sport Tickets</span>
-                                    </div>
-                                    <div class="kt-widget14__legend">
-                                        <span class="kt-widget14__bullet kt-bg-warning"></span>
-                                        <span class="kt-widget14__stats">47% Business Events</span>
-                                    </div>
-                                    <div class="kt-widget14__legend">
-                                        <span class="kt-widget14__bullet kt-bg-brand"></span>
-                                        <span class="kt-widget14__stats">19% Others</span>
-                                    </div>
-                                    <div class="kt-widget14__legend">
-                                        <span class="kt-widget14__bullet kt-bg-brand"></span>
-                                        <span class="kt-widget14__stats">19% Others</span>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!--end:: Widgets/Profit Share-->
-                    </div>
-                </div>
-
-                    <!--begin:: Widgets/Revenue Change-->
-
-                    <div class="kt-widget14">
-                        <div class="kt-widget14__header">
-                            <h3 class="kt-widget14__title">
-                                Revenue Change
-                            </h3>
-                            <span class="kt-widget14__desc">
-															Revenue change breakdown by cities
-														</span>
-                        </div>
-                        <div class="kt-widget14__content">
-                            <div class="kt-widget14__chart">
-                                <div id="kt_chart_revenue_change" style="height: 150px; width: 150px;"></div>
-                            </div>
-                            <div class="kt-widget14__legends">
-                                <div class="kt-widget14__legend">
-                                    <span class="kt-widget14__bullet kt-bg-success"></span>
-                                    <span class="kt-widget14__stats">+10% New York</span>
-                                </div>
-                                <div class="kt-widget14__legend">
-                                    <span class="kt-widget14__bullet kt-bg-warning"></span>
-                                    <span class="kt-widget14__stats">-7% London</span>
-                                </div>
-                                <div class="kt-widget14__legend">
-                                    <span class="kt-widget14__bullet kt-bg-brand"></span>
-                                    <span class="kt-widget14__stats">+20% California</span>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <!--end:: Widgets/Revenue Change-->
-
-
-                    </div>
                 </div>
 
 
             </div>
+        </div>
+
+        <div class="row col-12">
+            <div class="col-6">
+
+                <!--begin:: Widgets/Audit Log-->
+                <div class="kt-portlet kt-portlet--height-fluid">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Latest Log
+                            </h3>
+                        </div>
+                    </div>
+                    <div style="text-align: center;" class="kt-portlet__body">
+
+                            <!--begin:: Widgets/Profit Share-->
+                            <div class="kt-widget14">
+                                <div class="kt-widget14__header">
+                                    <h3 class="kt-widget14__title">
+                                        Profit Share
+                                    </h3>
+                                    <span class="kt-widget14__desc">
+															Profit Share between customers
+														</span>
+                                </div>
+                                <div class="kt-widget14__content">
+                                    <div class="kt-widget14__chart">
+                                        <div class="kt-widget14__stat">45</div>
+                                        <canvas id="kt_chart_profit_share"
+                                                style="height: 140px; width: 140px;"></canvas>
+                                    </div>
+                                    <div class="kt-widget14__legends">
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-success"></span>
+                                            <span class="kt-widget14__stats">37% Sport Tickets</span>
+                                        </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-warning"></span>
+                                            <span class="kt-widget14__stats">47% Business Events</span>
+                                        </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                            <span class="kt-widget14__stats">19% Others</span>
+                                        </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                            <span class="kt-widget14__stats">19% Others</span>
+                                        </div>
+
+                                    </div>
+                                </div>
 
 
+                            <!--end:: Widgets/Profit Share-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-6">
+                <!--begin:: Widgets/Audit Log-->
+                <div class="kt-portlet kt-portlet--height-fluid">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Latest Log
+                            </h3>
+                        </div>
+                    </div>
+                    <div style="text-align: center;" class="kt-portlet__body">
+
+                            <!--begin:: Widgets/Revenue Change-->
+                            <div class="kt-widget14">
+                                <div class="kt-widget14__header">
+                                    <h3 class="kt-widget14__title">
+                                        Revenue Change
+                                    </h3>
+                                    <span class="kt-widget14__desc">
+															Revenue change breakdown by cities
+														</span>
+                                </div>
+                                <div class="kt-widget14__content">
+                                    <div class="kt-widget14__chart">
+                                        <div id="kt_chart_revenue_change" style="height: 150px; width: 150px;"></div>
+                                    </div>
+                                    <div class="kt-widget14__legends">
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-success"></span>
+                                            <span class="kt-widget14__stats">+10% New York</span>
+                                        </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-warning"></span>
+                                            <span class="kt-widget14__stats">-7% London</span>
+                                        </div>
+                                        <div class="kt-widget14__legend">
+                                            <span class="kt-widget14__bullet kt-bg-brand"></span>
+                                            <span class="kt-widget14__stats">+20% California</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!--end:: Widgets/Revenue Change-->
+                            </div>
+                        </div>
+
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+            <!--End::Section-->
+
+        <div class="col-12">
+
+            <!--begin:: Widgets/Audit Log-->
+            <div class="kt-portlet kt-portlet--height-fluid">
+                <div class="kt-portlet__head">
+                    <div class="kt-portlet__head-label">
+                        <h3 class="kt-portlet__head-title">
+                            Latest Log
+                        </h3>
+                    </div>
+                    <div class="kt-portlet__head-toolbar">
+                        <ul class="nav nav-pills nav-pills-sm nav-pills-label nav-pills-bold" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#kt_widget4_tab11_content" role="tab">
+                                    Today
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#kt_widget4_tab12_content" role="tab">
+                                    Week
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#kt_widget4_tab13_content" role="tab">
+                                    Month
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="kt-portlet__body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="kt_widget4_tab11_content">
+                            <div class="kt-scroll" data-scroll="true" data-height="400" style="height: 400px;">
+                                <div class="kt-list-timeline">
+                                    <div class="kt-list-timeline__items">
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">12 new users registered</span>
+                                            <span class="kt-list-timeline__time">Just now</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
+                                            <span class="kt-list-timeline__text">System shutdown <span class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">pending</span></span>
+                                            <span class="kt-list-timeline__time">14 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
+                                            <span class="kt-list-timeline__text">New invoice received</span>
+                                            <span class="kt-list-timeline__time">20 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__time">1 hr</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
+                                            <span class="kt-list-timeline__text">System error - <a href="#" class="kt-link">Check</a></span>
+                                            <span class="kt-list-timeline__time">2 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--brand"></span>
+                                            <span class="kt-list-timeline__text">Production server down</span>
+                                            <span class="kt-list-timeline__time">3 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
+                                            <span class="kt-list-timeline__text">Production server up</span>
+                                            <span class="kt-list-timeline__time">5 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span href="" class="kt-list-timeline__text">New order received <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
+                                            <span class="kt-list-timeline__time">7 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">12 new users registered</span>
+                                            <span class="kt-list-timeline__time">Just now</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
+                                            <span class="kt-list-timeline__text">System shutdown <span class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">pending</span></span>
+                                            <span class="kt-list-timeline__time">14 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
+                                            <span class="kt-list-timeline__text">New invoice received</span>
+                                            <span class="kt-list-timeline__time">20 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__time">1 hr</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
+                                            <span class="kt-list-timeline__text">New invoice received</span>
+                                            <span class="kt-list-timeline__time">20 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__time">1 hr</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
+                                            <span class="kt-list-timeline__text">System error - <a href="#" class="kt-link">Check</a></span>
+                                            <span class="kt-list-timeline__time">2 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--brand"></span>
+                                            <span class="kt-list-timeline__text">Production server down</span>
+                                            <span class="kt-list-timeline__time">3 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
+                                            <span class="kt-list-timeline__text">Production server up</span>
+                                            <span class="kt-list-timeline__time">5 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span href="" class="kt-list-timeline__text">New order received <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
+                                            <span class="kt-list-timeline__time">7 hrs</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="kt_widget4_tab12_content">
+                            <div class="kt-scroll" data-scroll="true" data-height="400" style="height: 400px;">
+                                <div class="kt-list-timeline">
+                                    <div class="kt-list-timeline__items">
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
+                                            <span class="kt-list-timeline__text">New invoice received</span>
+                                            <span class="kt-list-timeline__time">20 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__time">1 hr</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
+                                            <span class="kt-list-timeline__text">New invoice received</span>
+                                            <span class="kt-list-timeline__time">20 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">12 new users registered</span>
+                                            <span class="kt-list-timeline__time">Just now</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
+                                            <span class="kt-list-timeline__text">System shutdown <span class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">pending</span></span>
+                                            <span class="kt-list-timeline__time">14 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
+                                            <span class="kt-list-timeline__text">New invoice received</span>
+                                            <span class="kt-list-timeline__time">20 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__time">1 hr</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
+                                            <span class="kt-list-timeline__text">System error - <a href="#" class="kt-link">Check</a></span>
+                                            <span class="kt-list-timeline__time">2 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__time">1 hr</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
+                                            <span class="kt-list-timeline__text">New invoice received</span>
+                                            <span class="kt-list-timeline__time">20 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__time">1 hr</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
+                                            <span class="kt-list-timeline__text">System error - <a href="#" class="kt-link">Check</a></span>
+                                            <span class="kt-list-timeline__time">2 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--brand"></span>
+                                            <span class="kt-list-timeline__text">Production server down</span>
+                                            <span class="kt-list-timeline__time">3 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
+                                            <span class="kt-list-timeline__text">Production server up</span>
+                                            <span class="kt-list-timeline__time">5 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span href="" class="kt-list-timeline__text">New order received <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
+                                            <span class="kt-list-timeline__time">7 hrs</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="kt_widget4_tab13_content">
+                            <div class="kt-scroll" data-scroll="true" data-height="400" style="height: 400px;">
+                                <div class="kt-list-timeline">
+                                    <div class="kt-list-timeline__items">
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span href="" class="kt-list-timeline__text">New order received <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
+                                            <span class="kt-list-timeline__time">7 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--brand"></span>
+                                            <span class="kt-list-timeline__text">New invoice received</span>
+                                            <span class="kt-list-timeline__time">20 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__time">1 hr</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
+                                            <span class="kt-list-timeline__text">New invoice received</span>
+                                            <span class="kt-list-timeline__time">20 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">12 new users registered</span>
+                                            <span class="kt-list-timeline__time">Just now</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
+                                            <span class="kt-list-timeline__text">System shutdown <span class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">pending</span></span>
+                                            <span class="kt-list-timeline__time">14 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
+                                            <span class="kt-list-timeline__text">New invoice received</span>
+                                            <span class="kt-list-timeline__time">20 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__time">1 hr</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
+                                            <span class="kt-list-timeline__text">System error - <a href="#" class="kt-link">Check</a></span>
+                                            <span class="kt-list-timeline__time">2 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__time">1 hr</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
+                                            <span class="kt-list-timeline__text">New invoice received</span>
+                                            <span class="kt-list-timeline__time">20 mins</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__time">1 hr</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
+                                            <span class="kt-list-timeline__text">System error - <a href="#" class="kt-link">Check</a></span>
+                                            <span class="kt-list-timeline__time">2 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--brand"></span>
+                                            <span class="kt-list-timeline__text">Production server down</span>
+                                            <span class="kt-list-timeline__time">3 hrs</span>
+                                        </div>
+                                        <div class="kt-list-timeline__item">
+                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
+                                            <span class="kt-list-timeline__text">Production server up</span>
+                                            <span class="kt-list-timeline__time">5 hrs</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--end:: Widgets/Audit Log-->
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+</div>
+
+        <!-- end:: Content -->
     </div>
 
-    <!--End::Section-->
 
-
-
-</div>
-
-
-<!-- end:: Content -->
-</div>
-
-
-<?php include 'include/footer.php'; ?>
+    <?php include 'include/footer.php'; ?>

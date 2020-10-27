@@ -230,8 +230,9 @@
                             <input type="hidden" value="<?php echo $ticket_id; ?>" name="<?php echo 'row' . $i; ?>"
                                    id="<?php echo 'row' . $i; ?>">
 
-                            <select <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
-                            } ?> style="width: 200px; font-weight: 500; " id="<?php echo 'staff' . $i; ?>"
+                            <select <?php if ($acc_type != 'Administrator') { ?> hidden <?php } else {
+                            } ?> style="width: 200px; font-weight: 500; color: #2c77f4;"
+                                 id="<?php echo 'staff' . $i; ?>"
                                  name="<?php echo 'staff' . $i; ?>"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down " required>
                                 <option style="color: grey;" value="">Assign Person No. 1*</option>
@@ -253,18 +254,20 @@
                                     $acc_type111 = $row3['acc_type'];
 
                                     ?>
-                                    <?php if ($userID_a==$userID){
+                                    <?php if ($userID_a == $userID) {
 
 
                                         ?>
-                                        <option style="font-weight: 500; color: #fd7e14;" value="<?php echo $userID; ?>" selected><?php echo $firstName . " " . $lastName; ?></option>
+                                        <option style="font-weight: 500; color: #2c77f4;" value="<?php echo $userID; ?>"
+                                                selected><?php echo strtoupper($firstName . " " . $lastName); ?></option>
 
                                         <?php
 
-                                    }else{
+                                    } else {
                                         ?>
 
-                                        <option style="font-weight: 500; color: #fd7e14;" value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName; ?></option>
+                                        <option style="font-weight: 500; color: #2c77f4;"
+                                                value="<?php echo $userID; ?>"><?php echo strtoupper($firstName . " " . $lastName); ?></option>
                                         <?php
 
                                     }
@@ -279,7 +282,7 @@
                             </select>
 
 
-                            <br <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
+                            <br <?php if ($acc_type != 'Administrator') { ?> hidden <?php } else {
                             } ?> >
 
 
@@ -322,8 +325,9 @@
                             <input type="hidden" value="<?php echo $ticket_id; ?>" name="<?php echo 'row2' . $i; ?>"
                                    id="<?php echo 'row2' . $i; ?>">
 
-                            <select <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
-                            } ?> style="width: 200px; font-weight: 400;" id="<?php echo 'staff2' . $i; ?>"
+                            <select <?php if ($acc_type != 'Administrator') { ?> hidden <?php } else {
+                            } ?> style="width: 200px; font-weight: 400; color: #34bfa3;"
+                                 id="<?php echo 'staff2' . $i; ?>"
                                  name="<?php echo 'staff2' . $i; ?>"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down " required>
                                 <option style="color: grey;" value="">Assign Person No. 2</option>
@@ -345,27 +349,28 @@
 
                                     ?>
 
-                                    <?php if ($userID_2_opt_a==$userID){
+                                    <?php if ($userID_2_opt_a == $userID) {
 
 
-                                    ?>
-                                        <option
-                                            <?php if ($acc_type111 == 'Administrator'){ ?>style="font-weight: 500; color: #fd7e14;"
-                                            hidden<?php } else {
-                                        } ?>
-                                            value="<?php echo $userID; ?>" selected><?php echo $firstName . " " . $lastName; ?></option>
+                                        ?>
+                                        <option style="font-weight: 500; color: #34bfa3;"
+                                            <?php if ($acc_type111 == 'Administrator') { ?>
+                                                hidden<?php } else {
+                                            } ?>
+                                                value="<?php echo $userID; ?>"
+                                                selected><?php echo strtoupper($firstName . " " . $lastName); ?></option>
 
-                                    <?php
+                                        <?php
 
-                                    }else{
-?>
+                                    } else {
+                                        ?>
 
-                                        <option
-                                        <?php if ($acc_type111 == 'Administrator'){ ?>style="font-weight: 500; color: #fd7e14;"
-                                            hidden<?php } else {
-                                        } ?>
-                                        value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName; ?></option>
-<?php
+                                        <option style="font-weight: 500; color: #34bfa3;"
+                                            <?php if ($acc_type111 == 'Administrator') { ?>
+                                                hidden<?php } else {
+                                            } ?>
+                                                value="<?php echo $userID; ?>"><?php echo strtoupper($firstName . " " . $lastName); ?></option>
+                                        <?php
 
                                     }
                                     ?>
@@ -380,9 +385,9 @@
                             } ?> >
 
                             <select <?php if ($acc_type !== 'IT Staff') { ?> hidden <?php } else {
-                            } ?> style="width: 200px;" id="status" name="status"
+                            } ?> style="width: 200px; font-weight: 500; color: #2c77f4;" id="status" name="status"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down kt-badge--d22" required>
-                                <option value="" hidden="true">Status*</option>
+                                <option value="" hidden="true">Ticket Status*</option>
                                 <option style="color: #fd7e14; font-weight: 500" value="Approved">New</option>
                                 <option style="color: #5867dd; font-weight: 500" value="In Progress">In Progress
                                 </option>
@@ -426,32 +431,38 @@
                                 </button>
 
 
-
-
-                            <button <?php if ($acc_type != 'Administrator') { ?> hidden <?php } else {
-                            } ?>onclick="
+                                <button <?php if ($acc_type != 'Administrator') { ?> hidden <?php } else {
+                                } ?>onclick="
                                 if (confirm('Are you sure you want to delete this ticket ?')) {
             return true;
 
         } else {
             return false;
         }" type="submit" id="dlt_admin" name="dlt_admin"
-                                                                                 class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
-                                                                                 title="Delete">
-                                <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
-                                   class="la la-trash"></i>
-                            </button>
+                                                                                     class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
+                                                                                     title="Delete">
+                                    <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
+                                       class="la la-trash"></i>
+                                </button>
 
                             </form>
                         </td>
 
                         <td><?php echo $ticket_id; ?></td>
                         <td><?php echo $date; ?></td>
-                        <td><?php if ($status12 == "Approval Required") { ?> <span style="font-weight: 500"
-                                                                                   class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Approval Required</span>  <?php } elseif ($status12 == "Approved") { ?>
+                        <td>
+
+                            <?php if ($status12 == "Approval Required") { ?>
                                 <span style="font-weight: 500"
-                                      class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">Approved</span>  <?php }
-                            ?>
+                                      class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Approval Required</span>
+                            <?php } elseif ($status12 == "Approved") { ?>
+                                <span style="font-weight: 500"
+                                      class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">Approved</span>
+                            <?php } elseif ($status12 == "Assigned") { ?>
+                                <span style="font-weight: 500"
+                                      class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Assigned</span>
+                            <?php } ?>
+
                         </td>
                         <td><?php echo $issue; ?></td>
                         <td><?php echo $cat_issue; ?></td>
