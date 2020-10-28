@@ -293,13 +293,9 @@
                                         Previous
                                     </div>
 
-                                    <input type="submit" id="submitTicket" name="submitTicket" data-ktwizard-type="action-submit"
+                                    <input type="submit" id="submitTicket" name="submitTicket"
+                                           data-ktwizard-type="action-submit"
                                            class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u">
-
-
-
-
-
 
 
                                     <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"
