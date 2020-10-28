@@ -246,7 +246,7 @@
                                  id="<?php echo 'staff' . $i; ?>"
                                  name="<?php echo 'staff' . $i; ?>"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down " required>
-                                <option style="color: grey;" value="">Assign Person No. 1*</option>
+                                <option style="color: grey;" value="" disabled="disabled" selected>Assign Person No. 1*</option>
 
                                 <?php
 
@@ -346,7 +346,7 @@
                                  id="<?php echo 'staff2' . $i; ?>"
                                  name="<?php echo 'staff2' . $i; ?>"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down " required>
-                                <option style="color: grey;" value="">Assign Person No. 2</option>
+                                <option style="color: grey;" value="" disabled="disabled" selected>Assign Person No. 2</option>
 
                                 <?php
 
@@ -402,23 +402,23 @@
 
                                 $(document).ready(function () {
 
-                                    if($('#<?= 'staff' . $i ?>').val == '') {
+                                    var <?= 'staff' . $i ?> = document.getElementById('<?= 'staff' . $i ?>').value;
+                                    var <?= 'staff2' . $i ?> = document.getElementById('<?= 'staff2' . $i ?>').value;
+
+                                    if(<?= 'staff' . $i ?> == '') {
+
                                         $('#<?= 'staff2' . $i ?>').prop('disabled', true);
+
                                     }
+
+
 
                                     $('#<?= 'staff' . $i ?>').change(function () {
 
-                                        if($(this).val == "") {
-                                            $("#<?= 'staff2' . $i ?> option[value='']").prop('selected', true);
-                                            $('#<?= 'staff2' . $i ?>').prop('disabled', true);
-
-                                        } else {
-
-                                            $('#<?= 'staff2' . $i ?>').prop('disabled', false);
-
-                                        }
+                                        $('#<?= 'staff2' . $i ?>').prop('disabled', false);
 
                                     });
+
 
                                 });
 
@@ -473,6 +473,18 @@
                                        class="la la-close"></i>
                                 </button>
 
+                                <button <?php if ($acc_type != 'Administrator') { ?> hidden <?php } else {
+                                } ?>onclick="
+                                if (confirm('Are you sure you want to delete this ticket ?')) {
+            return true;
+
+        } else {
+            return false;
+        }" type="submit" id="undo_assign" name="undo_assign" class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--abc kt-badge--inline kt-badge--pill"
+                                                                                     title="Undo Assign">
+                                    <i style="font-size: 18px; color: #343a40; font-weight: 800;"
+                                       class="la la-undo"></i>
+                                </button>
 
                                 <button <?php if ($acc_type != 'Administrator') { ?> hidden <?php } else {
                                 } ?>onclick="
