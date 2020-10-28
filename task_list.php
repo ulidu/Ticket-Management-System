@@ -429,7 +429,8 @@
                                     var <?= 'staff2' . $i ?> =
                                     document.getElementById('<?= 'staff2' . $i ?>').value;
 
-                                    if (<?= 'staff' . $i ?> == '')
+                                    if (<?= 'staff' . $i ?> == ''
+                                )
                                     {
 
                                         $('#<?= 'staff2' . $i ?>').prop('disabled', true);
@@ -450,8 +451,6 @@
 
                             <br <?php if ($acc_type == 'Administrative Officer') { ?> hidden <?php } else {
                             } ?> >
-
-
 
 
                             <script>
@@ -498,13 +497,48 @@
 
 
                             <select <?php if ($acc_type !== 'IT Staff') { ?> hidden <?php } else {
-                            } ?> style="width: 200px; font-weight: 500; color: #2c77f4;" id="<?php echo 'status_s' . $i; ?>" name="<?php echo 'status_s' . $i; ?>"
+                            } ?> style="width: 200px; font-weight: 500; color: #2c77f4;"
+                                 id="<?php echo 'status_s' . $i; ?>" name="<?php echo 'status_s' . $i; ?>"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down kt-badge--d22" required>
                                 <option value="" disabled="true" selected>Ticket Status*</option>
 
-                                <option style="color: #5867dd; font-weight: 500" value="In Progress">In Progress
-                                </option>
-                                <option style="color: #1dc9b7; font-weight: 500" value="Completed">Completed</option>
+
+                                <?php
+
+                                $queryqwabc = "SELECT * FROM task WHERE task_id='$ticket_id'";
+                                $run_queryqwabc = mysqli_query($con, $queryqwabc);
+
+                                while ($rowqwabc = mysqli_fetch_assoc($run_queryqwabc)) {
+
+                                    $status_b = $rowqwabc['status'];
+
+                                }
+
+                                if ($status_b == 'In Progress') {
+
+                                    ?>
+
+                                    <option style="color: #5867dd; font-weight: 500" value="In Progress" selected>In Progress
+                                    </option>
+                                    <option style="color: #1dc9b7; font-weight: 500" value="Completed">Completed</option>
+                                    <?php
+
+                                }if ($status_b == 'Completed') {
+
+                                    ?>
+
+                                    <option style="color: #5867dd; font-weight: 500" value="In Progress">In Progress
+                                    </option>
+                                    <option style="color: #1dc9b7; font-weight: 500" value="Completed" selected>Completed</option>
+                                    <?php
+
+                                }
+
+                                ?>
+
+
+
+
 
                             </select>
                             <br <?php if ($acc_type == 'Administrative Officer' || $acc_type == 'Administrator') { ?> hidden <?php } else {
@@ -543,7 +577,7 @@
                                        class="la la-close"></i>
                                 </button>
 
-                                <button <?php if ($acc_type != 'Administrator') { ?> hidden <?php } else {
+                                <button <?php if ($acc_type != 'Administrator' || $status12 == 'Completed') { ?> hidden <?php } else {
                                 } ?>onclick="
                                 if (confirm('Are you sure you want to undo assigned staff from this ticket ?')) {
             return true;
@@ -557,7 +591,7 @@
                                        class="la la-undo"></i>
                                 </button>
 
-                                <button <?php if ($acc_type != 'Administrator') { ?> hidden <?php } else {
+                                <button <?php if ($acc_type != 'Administrator' || $status12 == 'Completed') { ?> hidden <?php } else {
                                 } ?>onclick="
                                 if (confirm('Are you sure you want to delete this ticket ?')) {
             return true;
