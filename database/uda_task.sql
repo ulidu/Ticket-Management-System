@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Oct 28, 2020 at 02:16 AM
+-- Generation Time: Oct 28, 2020 at 09:35 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -25,26 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `approve`
---
-
-DROP TABLE IF EXISTS `approve`;
-CREATE TABLE IF NOT EXISTS `approve` (
-  `task_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `approved_by` varchar(200) NOT NULL,
-  `approved_date` varchar(200) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `approve`
---
-
-INSERT INTO `approve` (`task_id`, `approved_by`, `approved_date`) VALUES
-('79', '15', '2020-10-27 15:45:47');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `assign`
 --
 
@@ -54,15 +34,16 @@ CREATE TABLE IF NOT EXISTS `assign` (
   `userID` varchar(200) NOT NULL,
   `userID_2_opt` varchar(200) NOT NULL,
   `assigned_to_user_date` varchar(200) NOT NULL,
-  `assigned_by` varchar(200) NOT NULL
+  `assigned_by` varchar(200) NOT NULL,
+  `task_completed_date` varchar(200) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `assign`
 --
 
-INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_date`, `assigned_by`) VALUES
-('79', '22', '22', '', '29');
+INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_date`, `assigned_by`, `task_completed_date`) VALUES
+('84', '14', '14', '2020-10-28 14:37:10', '29', '');
 
 -- --------------------------------------------------------
 
@@ -116,15 +97,18 @@ CREATE TABLE IF NOT EXISTS `task` (
   `priority` varchar(200) NOT NULL,
   `asset_code` varchar(200) NOT NULL,
   `ip_address` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `approved_by` varchar(200) NOT NULL,
+  `approved_date` varchar(200) NOT NULL,
   PRIMARY KEY (`task_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `task`
 --
 
-INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issue`, `category`, `status`, `designation`, `division`, `extension_no`, `priority`, `asset_code`, `ip_address`) VALUES
-(79, 'sd', 'h', '2020-10-27 15:45:37', 'fd', 'Software Issue', 'Assigned', 'ht', 'Finance Division', '3', 'Medium', 'df', '192.168.8.100');
+INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issue`, `category`, `status`, `designation`, `division`, `extension_no`, `priority`, `asset_code`, `ip_address`, `approved_by`, `approved_date`) VALUES
+(84, 'hgh', 'hg', '2020-10-28 14:17:32', 'gh', 'Software Issue', 'Assigned', 'hg', 'Finance Division', 'h', 'Medium', 'ghf', '192.168.1.2', '15', '2020-10-28 14:18:01'),
+(85, 'gbb', 'g', '2020-10-28 14:52:27', 'gf', 'Software Issue', 'Approved', 'gb', 'Finance Division', 'gb', 'Medium', 'gb', '192.168.1.2', '15', '2020-10-28 14:52:39');
 
 -- --------------------------------------------------------
 

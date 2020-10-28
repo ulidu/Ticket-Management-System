@@ -76,6 +76,7 @@
                     <th>Asset Code</th>
                     <th>Extension No.</th>
                     <th>Approved By</th>
+                    <th>Since Approved</th>
                     <th>Priority</th>
                     <th>IP Address</th>
                 </tr>
@@ -630,6 +631,32 @@
                         }
 
                         ?></td>
+
+                    <td><?php
+
+                        if ($approved_date !='-' && $approved_date != '' && $task_completed_date != '-' && $task_completed_date != ''){
+
+                            $assigned_time = $approved_date;
+                            $completed_time= $task_completed_date;
+
+                            $d1 = new DateTime($assigned_time);
+                            $d2 = new DateTime($completed_time);
+                            $interval = $d2->diff($d1);
+
+                            echo '<span style="font-weight: 500"
+                                  class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">' . $interval->format('%d Day(s)') . '</span>';
+
+                        }else{
+
+                            echo '<span style="font-weight: 500"
+                                  class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">Pending Approval</span>';
+
+                        }
+
+
+                        ?></td>
+
+
                     <td><?php if ($priority == "Medium") { ?><span
                                 class="kt-badge kt-badge--warning kt-badge--dot"></span>&nbsp;<span
                                 class="kt-font-bold kt-font-warning">Medium</span><?php } elseif ($priority == "Low") { ?>
