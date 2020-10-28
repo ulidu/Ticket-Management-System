@@ -634,10 +634,17 @@
 
                     <td><?php
 
-                        if ($approved_date !='-' && $approved_date != '' && $task_completed_date != '-' && $task_completed_date != ''){
+                        date_default_timezone_set('Asia/Colombo');
+
+                        $string = date("Y-m-d");
+                        $date = DateTime::createFromFormat("Y-m-d", $string);
+
+                        $today_date = date_format($date, 'Y-m-d H:i:s');
+
+                        if ($approved_date !='-' && $approved_date != '' && $today_date != '-' && $today_date != ''){
 
                             $assigned_time = $approved_date;
-                            $completed_time= $task_completed_date;
+                            $completed_time= $today_date;
 
                             $d1 = new DateTime($assigned_time);
                             $d2 = new DateTime($completed_time);
@@ -645,6 +652,7 @@
 
                             echo '<span style="font-weight: 500"
                                   class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">' . $interval->format('%d Day(s)') . '</span>';
+
 
                         }else{
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Oct 28, 2020 at 09:35 AM
+-- Generation Time: Oct 28, 2020 at 09:51 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -34,16 +34,16 @@ CREATE TABLE IF NOT EXISTS `assign` (
   `userID` varchar(200) NOT NULL,
   `userID_2_opt` varchar(200) NOT NULL,
   `assigned_to_user_date` varchar(200) NOT NULL,
-  `assigned_by` varchar(200) NOT NULL,
-  `task_completed_date` varchar(200) NOT NULL
+  `assigned_by` varchar(200) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `assign`
 --
 
-INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_date`, `assigned_by`, `task_completed_date`) VALUES
-('84', '14', '14', '2020-10-28 14:37:10', '29', '');
+INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_date`, `assigned_by`) VALUES
+('84', '22', '14', '2020-10-28 15:08:36', '29'),
+('85', '14', '22', '2020-10-28 15:08:24', '29');
 
 -- --------------------------------------------------------
 
@@ -99,6 +99,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `ip_address` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `approved_by` varchar(200) NOT NULL,
   `approved_date` varchar(200) NOT NULL,
+  `task_completed_date` varchar(200) NOT NULL,
   PRIMARY KEY (`task_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
 
@@ -106,9 +107,9 @@ CREATE TABLE IF NOT EXISTS `task` (
 -- Dumping data for table `task`
 --
 
-INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issue`, `category`, `status`, `designation`, `division`, `extension_no`, `priority`, `asset_code`, `ip_address`, `approved_by`, `approved_date`) VALUES
-(84, 'hgh', 'hg', '2020-10-28 14:17:32', 'gh', 'Software Issue', 'Assigned', 'hg', 'Finance Division', 'h', 'Medium', 'ghf', '192.168.1.2', '15', '2020-10-28 14:18:01'),
-(85, 'gbb', 'g', '2020-10-28 14:52:27', 'gf', 'Software Issue', 'Approved', 'gb', 'Finance Division', 'gb', 'Medium', 'gb', '192.168.1.2', '15', '2020-10-28 14:52:39');
+INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issue`, `category`, `status`, `designation`, `division`, `extension_no`, `priority`, `asset_code`, `ip_address`, `approved_by`, `approved_date`, `task_completed_date`) VALUES
+(84, 'hgh', 'hg', '2020-10-28 14:17:32', 'gh', 'Software Issue', 'Assigned', 'hg', 'Finance Division', 'h', 'Medium', 'ghf', '192.168.1.2', '15', '2020-10-28 14:18:01', ''),
+(85, 'gbb', 'g', '2020-10-28 14:52:27', 'gf', 'Software Issue', 'Assigned', 'gb', 'Finance Division', 'gb', 'Medium', 'gb', '192.168.1.2', '15', '2020-10-28 14:52:39', '');
 
 -- --------------------------------------------------------
 
