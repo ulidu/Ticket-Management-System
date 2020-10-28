@@ -400,6 +400,7 @@
                                         <?php
 
                                     } else {
+
                                         ?>
 
                                         <option style="font-weight: 500; color: #34bfa3;"
@@ -587,6 +588,15 @@
                                     <span class="kt-font-bold kt-font-warning">
                             <?php
 
+                            $queryqwa = "SELECT * FROM assign WHERE task_id='$ticket_id'";
+                            $run_queryqwa = mysqli_query($con, $queryqwa);
+
+                            while ($rowqwa = mysqli_fetch_assoc($run_queryqwa)) {
+
+                                $assigned_to_user_date = $rowqwa['assigned_to_user_date'];
+
+                            }
+
                             if ($assigned_to_user_date == '') {
 
                                 $assigned_to_user_date = '-';
@@ -637,6 +647,12 @@
                             <?php } elseif ($status12 == "Assigned") { ?>
                                 <span style="font-weight: 500"
                                       class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Assigned</span>
+                            <?php } elseif ($status12 == "In Progress") { ?>
+                                <span style="font-weight: 500"
+                                      class="kt-badge kt-badge--dark kt-badge--inline kt-badge--pill">In Progress</span>
+                            <?php } elseif ($status12 == "Completed") { ?>
+                                <span style="font-weight: 500"
+                                      class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">Completed</span>
                             <?php } ?>
 
                         </td>
