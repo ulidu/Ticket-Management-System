@@ -225,8 +225,10 @@
                                                                     <option value="" hidden="true">Select Issue
                                                                         Category
                                                                     </option>
-                                                                    <option value="Software Issue">Software Issue</option>
-                                                                    <option value="Hardware Issue">Hardware Issue</option>
+                                                                    <option value="Software Issue">Software Issue
+                                                                    </option>
+                                                                    <option value="Hardware Issue">Hardware Issue
+                                                                    </option>
                                                                     <option value="Network Issue">Network Issue</option>
                                                                     <option value="Printer Issue">Printer Issue</option>
                                                                     <option value="General Issue">General Issue</option>
@@ -291,8 +293,13 @@
                                         Previous
                                     </div>
 
-                                    <input type="submit" id="submitTicket" name="submitTicket"
+                                    <input type="submit" id="submitTicket" name="submitTicket" data-ktwizard-type="action-submit"
                                            class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u">
+
+
+
+
+
 
 
                                     <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u"

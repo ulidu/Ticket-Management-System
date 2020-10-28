@@ -88,6 +88,7 @@
 <!--begin::Page Scripts(used by sweetalert) -->
 <script src="assets/js/pages/components/extended/sweetalert2.js" type="text/javascript"></script>
 
+<!--
 <script>
 
     $(document).keydown(function(event){
@@ -104,6 +105,7 @@
     });
 
 </script>
+-->
 
 </body>
 <!-- end::Body -->
