@@ -6,7 +6,11 @@ if (isset($_POST["staff1"])) {
 
     date_default_timezone_set('Asia/Colombo');
 
+    $string = date("Y-m-d");
+    $date = DateTime::createFromFormat("Y-m-d", $string);
+
     $date = date_format($date, 'Y-m-d H:i:s');
+
     $user_ID_selected = $_POST['staff1'];
     $ticket_id = $_POST['ticket_id'];
     $logged_user_id = $_POST['logged_user_id'];
