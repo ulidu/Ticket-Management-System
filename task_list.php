@@ -261,7 +261,10 @@
                                    id="<?php echo 'row' . $i; ?>">
 
                             <select <?php if ($acc_type != 'Administrator') { ?> hidden <?php } else {
-                            } ?> style="width: 200px; font-weight: 500; color: #2c77f4;"
+                            } ?>
+                                <?php if ($status12 == 'In Progress' || $status12 == 'Completed') { ?> disabled <?php } else {
+                                } ?>
+                                    style="width: 200px; font-weight: 500; color: #2c77f4;"
                                  id="<?php echo 'staff' . $i; ?>"
                                  name="<?php echo 'staff' . $i; ?>"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down " required>
@@ -362,7 +365,10 @@
                                    id="<?php echo 'row2' . $i; ?>">
 
                             <select <?php if ($acc_type != 'Administrator') { ?> hidden <?php } else {
-                            } ?> style="width: 200px; font-weight: 400; color: #34bfa3;"
+                            } ?>
+                                <?php if ($status12 == 'In Progress' || $status12 == 'Completed') { ?> disabled <?php } else {
+                                } ?>
+                                    style="width: 200px; font-weight: 400; color: #34bfa3;"
                                  id="<?php echo 'staff2' . $i; ?>"
                                  name="<?php echo 'staff2' . $i; ?>"
                                  class="ui-select form-control dropdown dropdown-menu-anim-down " required>
@@ -481,6 +487,8 @@
                                                     timer: 1500
                                                 });
 
+                                                setTimeout(function () { location.reload(1); }, 1500);
+
                                             }
 
                                         });
@@ -532,6 +540,15 @@
                                     <option style="color: #1dc9b7; font-weight: 500" value="Completed" selected>Completed</option>
                                     <?php
 
+                                }if ($status_b == 'Assigned') {
+
+                                    ?>
+
+                                    <option style="color: #5867dd; font-weight: 500" value="In Progress">In Progress
+                                    </option>
+                                    <option style="color: #1dc9b7; font-weight: 500" value="Completed">Completed</option>
+                                    <?php
+
                                 }
 
                                 ?>
@@ -577,7 +594,7 @@
                                        class="la la-close"></i>
                                 </button>
 
-                                <button <?php if ($acc_type != 'Administrator' || $status12 == 'Completed') { ?> hidden <?php } else {
+                                <button <?php if ($acc_type != 'Administrator' || $status12 == 'In Progress' || $status12 == 'Completed') { ?> hidden <?php } else {
                                 } ?>onclick="
                                 if (confirm('Are you sure you want to undo assigned staff from this ticket ?')) {
             return true;
@@ -591,7 +608,22 @@
                                        class="la la-undo"></i>
                                 </button>
 
-                                <button <?php if ($acc_type != 'Administrator' || $status12 == 'Completed') { ?> hidden <?php } else {
+
+                                <button <?php if ($acc_type != 'IT Staff' && $status12 != 'In Progress' || $acc_type != 'IT Staff' && $status12 != 'Completed') { ?> hidden <?php } else {
+                                } ?>onclick="
+                                if (confirm('Are you sure you want to undo the status this ticket ?')) {
+            return true;
+
+        } else {
+            return false;
+        }" type="submit" id="undo_status_staff" name="undo_status_staff" class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--abc kt-badge--inline kt-badge--pill"
+                                                                                                                                               title="Undo Status">
+                                    <i style="font-size: 18px; color: #343a40; font-weight: 800;"
+                                       class="la la-undo"></i>
+                                </button>
+
+
+                                <button <?php if ($acc_type != 'Administrator' || $status12 == 'In Progress' || $status12 == 'Completed') { ?> hidden <?php } else {
                                 } ?>onclick="
                                 if (confirm('Are you sure you want to delete this ticket ?')) {
             return true;
@@ -792,5 +824,9 @@
 
 <!-- begin:: Content -->
 
+<script>
 
+    setTimeout(function () { location.reload(1); }, 900000);
+
+</script>
 <?php include 'include/footer.php'; ?>
