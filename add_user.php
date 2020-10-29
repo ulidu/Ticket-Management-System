@@ -2,17 +2,16 @@
 <?php include 'include/aside.php'; ?>
 <script type="text/javascript">
 
-    function checkForm(form)
-    {
+    function checkForm(form) {
 
 
-        if(form.password.value != "" && form.password.value == form.pw_cf.value) {
-            if(form.password.value.length < 6) {
+        if (form.password.value != "" && form.password.value == form.pw_cf.value) {
+            if (form.password.value.length < 6) {
                 swal.fire("Weak Password !", "Your password must contain at least six characters.", "warning");
                 form.password.focus();
                 return false;
             }
-            if(form.password.value == form.firstName.value) {
+            if (form.password.value == form.firstName.value) {
                 swal.fire("Confirm Password !", "Your password must be different from Username.", "warning");
                 form.password.focus();
                 return false;
@@ -66,193 +65,306 @@
             </div>
 
 
-
             <!--begin::Form-->
-            <form onsubmit="return checkForm(this);" autocomplete="off" name="user_add" id="user_add" method="post" action="" class="kt-form kt-form--label-right">
+            <form onsubmit="return checkForm(this);" autocomplete="off" name="user_add" id="user_add" method="post"
+                  action="" class="kt-form kt-form--label-right">
                 <div class="kt-portlet__body">
-                    <div class="form-group row form-group-marginless kt-margin-t-20">
 
-                        <label class="col-lg-1 col-form-label">Title <span
-                                    style="color: #dc3545; font-size: 18px;">* </span>:</label>
-                        <div class="col-lg-3">
-                            <div class="form-group">
+                    <div class="row">
+                        <div class="col-8">
 
-                                <div class="kt-radio-list">
+                            <div class="form-group row form-group-marginless kt-margin-t-20">
 
-                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                        <input type="radio" value="Mr." name="title" checked> Mr.
-                                        <span></span>
-                                    </label>
-                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                        <input type="radio" value="Mrs." name="title"> Mrs.
-                                        <span></span>
-                                    </label>
-                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                        <input type="radio" value="Miss." name="title">
-                                        Miss.
-                                        <span></span>
-                                    </label>
+
+                                <label class="col-lg-2 col-form-label">Title <span
+                                            style="color: #dc3545; font-size: 18px; ">* </span>:</label>
+
+                                <div class="col-10">
+                                    <div class="form-group">
+
+
+                                        <div class="kt-radio-inline">
+
+
+                                            <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                <input type="radio" value="Mr." name="title" checked> Mr.
+                                                <span></span>
+                                            </label>
+
+
+                                            <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                <input type="radio" value="Mrs." name="title"> Mrs.
+                                                <span></span>
+                                            </label>
+
+
+                                            <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                <input type="radio" value="Miss." name="title">
+                                                Miss.
+                                                <span></span>
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <label class="col-lg-2 col-form-label">First Name <span
+                                            style="color: #dc3545; font-size: 18px;">* </span>:</label>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        class="la la-user"></i></span></div>
+                                        <input name="firstName" id="firstName" type="text" class="form-control"
+                                               placeholder="Enter User's First Name" required>
+                                    </div>
+
+                                </div>
+
+
+                                <label class="col-lg-2 col-form-label">Last Name <span
+                                            style="color: #dc3545; font-size: 18px;">* </span>:</label>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        class="la la-user"></i></span></div>
+
+                                        <input name="lastName" type="text" class="form-control"
+                                               placeholder="Enter User's Last Name" required>
+                                    </div>
+
+                                </div>
+
+
+                                <label class="col-lg-2 col-form-label">Employee Code <span
+                                            style="color: #dc3545; font-size: 18px;">* </span>:</label>
+                                <div class="col-10">
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        class="la la-qrcode"></i></span></div>
+
+                                        <input name="empCode" type="text" class="form-control"
+                                               placeholder="Enter User's Employee Code" required>
+                                    </div>
+
+                                </div>
+                                <label class="col-lg-2 col-form-label">Email <span
+                                            style="color: #dc3545; font-size: 18px;">* </span>:</label>
+                                <div class="col-10">
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        class="la la-at"></i></span></div>
+
+                                        <input name="email" type="email" class="form-control"
+                                               placeholder="Enter User's Email Address" required>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit"></div>
+                            <div class="form-group row form-group-marginless">
+
+
+                                <label class="col-lg-3 col-form-label">Account Type <span
+                                            style="color: #dc3545; font-size: 18px;">* </span>:</label>
+                                <div class="col-9">
+                                    <div class="form-group">
+
+                                        <div class="kt-radio-list">
+
+                                            <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                <input type="radio" value="IT Staff" name="permissions" checked> IT
+                                                Staff
+                                                <span></span>
+                                            </label>
+                                            <label class="kt-radio kt-radio--bold kt-radio--danger">
+                                                <input type="radio" value="Administrator" name="permissions">
+                                                Administrator
+                                                <span></span>
+                                            </label>
+                                            <label class="kt-radio kt-radio--bold kt-radio--warning">
+                                                <input type="radio" value="Administrative Officer" name="permissions">
+                                                Administrative Officer
+                                                <span></span>
+                                            </label>
+                                            <label class="kt-radio kt-radio--bold kt-radio--success">
+                                                <input type="radio" value="Observer" name="permissions"> Observer
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                        <span class="form-text text-muted">Select the account types with different permissions.</span>
+                                    </div>
+
+
+                                </div>
+                                <label class="col-lg-3 col-form-label">Division <span
+                                            style="color: #dc3545; font-size: 18px;">* </span>:</label>
+                                <div class="col-9">
+                                    <div class="input-group">
+                                        <select id="division" name="division"
+                                                class="form-control" required>
+                                            <option value="" hidden="true">Select Applicant's
+                                                Division
+                                            </option>
+                                            <option value="Project Management Division">ITS Division
+                                            </option>
+                                            <option value="Project Management Division">Project
+                                                Management Division
+                                            </option>
+                                            <option value="Finance Division">Finance Division
+                                            </option>
+                                            <option value="Landscape Division">Landscape
+                                                Division
+                                            </option>
+                                            <option value="Western Province Division">Western
+                                                Province Division
+                                            </option>
+                                            <option value="GIS Division">GIS Division</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit"></div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label">Password <span
+                                            style="color: #dc3545; font-size: 18px;">* </span>:</label>
+                                <div class="col-9">
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        class="la la-unlock"></i></span></div>
+                                        <input type="password" name="password" id="password" class="form-control"
+                                               placeholder="Enter a Password" required>
+                                    </div>
+
+
+                                </div>
+                                <label class="col-lg-3 col-form-label">Confirm Password <span
+                                            style="color: #dc3545; font-size: 18px;">* </span>:</label>
+
+
+                                <div class="col-9">
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        class="la la-unlock"></i></span></div>
+                                        <input type="password" name="pw_cf" id="pw_cf" class="form-control"
+                                               placeholder="Re-type Password" required>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <p>
+                                <br>
+                                Please note that the fields marked with <span
+                                        style="color: #dc3545; font-size: 18px;">* </span>
+                                are compulsory.
+
+                            </p>
+
+                        </div>
+
+                        <div class="col-4">
+
+
+                            <div class="kanban-container">
+                                <div style="width: 100% !important;" class="kanban-board">
+                                    <header class="kanban-board-header brand-light">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"/>
+                                                <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"/>
+                                                <rect fill="#000000" x="11" y="10" width="2" height="7" rx="1"/>
+                                                <rect fill="#000000" x="11" y="7" width="2" height="2" rx="1"/>
+                                            </g>
+                                        </svg>
+                                        &nbsp;
+                                        <div class="kanban-title-board">Account Structure</div>
+                                    </header>
+
+<br>
+
+                                       <div style="margin-left: 8%;" id="kt_tree_2" class="tree-demo">
+                                        <ul>
+                                            <li data-jstree='{ "icon" : "fa fa-city kt-font-danger" }'>
+                                                Urban Development Authority
+                                                <ul>
+                                                    <li data-jstree='{ "selected" : true, "icon" : "fa fa-user-check kt-font-success" }'>
+                                                        <a href="javascript:;">
+                                                            Observer </a>
+                                                    </li>
+                                                    <li data-jstree='{ "opened" : true, "icon" : "fa fa-building kt-font-brand" }'>
+                                                        ITS Division
+                                                        <ul>
+                                                            <li data-jstree='{ "opened" : true, "icon" : "fa fa-user-circle kt-font-warning" }'>
+                                                                Administrator
+                                                            </li>
+                                                            <li data-jstree='{ "opened" : true, "icon" : "fa fa-user-circle kt-font-warning" }'>
+                                                                IT Staff
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+
+                                                </ul><ul>
+
+                                                    <li data-jstree='{ "opened" : true, "icon" : "fa fa-building kt-font-brand" }'>
+                                                        Other Divisions
+                                                        <ul>
+                                                            <li data-jstree='{ "opened" : true, "icon" : "fa fa-user-circle kt-font-warning" }'>
+                                                                Administrative Officer
+                                                            </li>
+                                                            <li data-jstree='{ "opened" : true, "icon" : "fa fa-user-circle kt-font-success" }'>
+                                                                Staff
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+
+                                    <main class="kanban-drag">
+                                        <div class="kanban-item">
+                                            <div class="kt-kanban__badge">
+
+                                                <div class="kt-kanban__content">
+                                                    <span class="kt-badge kt-badge--brand kt-badge--inline">Administrator</span>
+                                                    <div class="kt-kanban__title">Sidebars</div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="kanban-item">
+                                            <div class="kt-kanban__badge">
+
+                                                <div class="kt-kanban__content">
+                                                    <span class="kt-badge kt-badge--brand kt-badge--inline">Administrator</span>
+                                                    <div class="kt-kanban__title">Sidebars</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </main>
+
 
                                 </div>
                             </div>
-                        </div>
-
-                        <label class="col-lg-1 col-form-label">First Name <span
-                                    style="color: #dc3545; font-size: 18px;">* </span>:</label>
-                        <div class="col-lg-3">
-                            <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><i
-                                                class="la la-user"></i></span></div>
-                                <input name="firstName" id="firstName" type="text" class="form-control"
-                                       placeholder="Enter User's First Name" required>
-                            </div>
-
-                        </div>
-
-
-                        <label class="col-lg-1 col-form-label">Last Name <span
-                                    style="color: #dc3545; font-size: 18px;">* </span>:</label>
-                        <div class="col-lg-3">
-                            <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><i
-                                                class="la la-user"></i></span></div>
-
-                                <input name="lastName" type="text" class="form-control"
-                                       placeholder="Enter User's Last Name" required>
-                            </div>
-
-                        </div>
-                        <label class="col-lg-1 col-form-label">Employee Code <span
-                                    style="color: #dc3545; font-size: 18px;">* </span>:</label>
-                        <div class="col-lg-3">
-
-                            <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><i
-                                                class="la la-qrcode"></i></span></div>
-
-                                <input name="empCode" type="text" class="form-control"
-                                       placeholder="Enter User's Employee Code" required>
-                            </div>
-
-                        </div>
-                        <label class="col-lg-1 col-form-label">Email <span
-                                    style="color: #dc3545; font-size: 18px;">* </span>:</label>
-                        <div class="col-lg-3">
-
-                            <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><i
-                                                class="la la-at"></i></span></div>
-
-                                <input name="email" type="email" class="form-control"
-                                       placeholder="Enter User's Email Address" required>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-                    <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit"></div>
-                    <div class="form-group row form-group-marginless">
-
-
-                        <label class="col-lg-1 col-form-label">Account Type <span
-                                    style="color: #dc3545; font-size: 18px;">* </span>:</label>
-                        <div class="col-lg-4">
-                            <div class="form-group">
-
-                                <div class="kt-radio-list">
-
-                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                        <input type="radio" value="IT Staff" name="permissions" checked> IT Staff
-                                        <span></span>
-                                    </label>
-                                    <label class="kt-radio kt-radio--bold kt-radio--danger">
-                                        <input type="radio" value="Administrator" name="permissions"> Administrator
-                                        <span></span>
-                                    </label>
-                                    <label class="kt-radio kt-radio--bold kt-radio--warning">
-                                        <input type="radio" value="Administrative Officer" name="permissions">
-                                        Administrative Officer
-                                        <span></span>
-                                    </label>
-                                    <label class="kt-radio kt-radio--bold kt-radio--success">
-                                        <input type="radio" value="Observer" name="permissions"> Observer
-                                        <span></span>
-                                    </label>
-                                </div>
-                                <span class="form-text text-muted">Select the account types with different permissions.</span>
-                            </div>
-
-
-                        </div><label class="col-lg-1 col-form-label">Division <span
-                                    style="color: #dc3545; font-size: 18px;">* </span>:</label>
-                        <div class="col-lg-3">
-                            <div class="input-group">
-                                <select id="division" name="division"
-                                        class="form-control" required>
-                                    <option value="" hidden="true">Select Applicant's
-                                        Division
-                                    </option>
-                                    <option value="Project Management Division">ITS Division
-                                    </option>
-                                    <option value="Project Management Division">Project
-                                        Management Division
-                                    </option>
-                                    <option value="Finance Division">Finance Division
-                                    </option>
-                                    <option value="Landscape Division">Landscape
-                                        Division
-                                    </option>
-                                    <option value="Western Province Division">Western
-                                        Province Division
-                                    </option>
-                                    <option value="GIS Division">GIS Division</option>
-                                </select>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-                    <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit"></div>
-                    <div class="form-group row">
-                        <label class="col-lg-1 col-form-label">Password <span
-                                    style="color: #dc3545; font-size: 18px;">* </span>:</label>
-                        <div class="col-lg-3">
-
-                            <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><i
-                                                class="la la-unlock"></i></span></div>
-                                <input type="password" name="password" id="password" class="form-control"
-                                       placeholder="Enter a Password" required>
-                            </div>
 
 
                         </div>
-                        <label class="col-lg-1 col-form-label">Confirm Password <span
-                                    style="color: #dc3545; font-size: 18px;">* </span>:</label>
-
-
-                        <div class="col-lg-3">
-
-                            <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><i
-                                                class="la la-unlock"></i></span></div>
-                                <input type="password" name="pw_cf" id="pw_cf" class="form-control"
-                                       placeholder="Re-type Password" required>
-                            </div>
-
-                        </div>
-
-
                     </div>
 
-                    <p>
-                        <br>
-                        Please note that the fields marked with <span style="color: #dc3545; font-size: 18px;">* </span>
-                        are compulsory.
-
-                    </p>
                     <div class="kt-portlet__foot">
                         <div class="kt-form__actions">
                             <div class="row">

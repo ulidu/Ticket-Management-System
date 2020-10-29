@@ -88,6 +88,9 @@
 <!--begin::Page Scripts(used by sweetalert) -->
 <script src="assets/js/pages/components/extended/sweetalert2.js" type="text/javascript"></script>
 
+<script src="assets/plugins/custom/jstree/jstree.bundle.js" type="text/javascript"></script>
+<script src="assets/js/pages/components/extended/treeview.js" type="text/javascript"></script>
+
 <!--
 <script>
 
