@@ -182,7 +182,7 @@
 
                 } elseif ($acc_type == 'Administrative Officer') {
 
-                    $query = "select * from task where division='$division' AND status='Approved' OR division='$division' AND status='Approval Required' order by task_id desc";
+                    $query = "select * from task where division='$division' order by task_id desc";
                     $run_query = mysqli_query($con, $query);
 
                 } elseif ($acc_type == 'IT Staff') {
@@ -261,6 +261,9 @@
                                                     timer: 1000
                                                 });
 
+                                                setTimeout(function () {
+                                                    location.reload(1);
+                                                }, 1200);
 
                                             }
 
@@ -364,6 +367,10 @@
                                                     showConfirmButton: false,
                                                     timer: 1000
                                                 });
+
+                                                setTimeout(function () {
+                                                    location.reload(1);
+                                                }, 1200);
 
                                             }
 
@@ -587,33 +594,69 @@
                                 <input type="hidden" value="<?php echo $ticket_id; ?>" name="ticket_hidden"
                                        id="ticket_hidden">
 
-                                <button <?php if ($acc_type != 'Administrative Officer') { ?> hidden <?php } else {
-                                } ?> onclick="
+
+
+
+                                <?php if ($acc_type == 'Administrative Officer'){
+
+
+                                    if ($status12 == 'Approval Required' || $status12 == 'Approved'){
+
+                                    ?>
+
+
+                                    <button <?php if ($acc_type != 'Administrative Officer') { ?> hidden <?php } else {
+                                    } ?> onclick="
                                 if (confirm('Are you sure you want to approve this ticket ?')) {
             return true;
 
         } else {
             return false;
         }" id="submit_approve" name="submit_approve" type="submit"
-                                     class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--d22 kt-badge--inline kt-badge--pill"
-                                     title="Approve">
-                                    <i style="font-size: 18px; color: #007bff; font-weight: 800;"
-                                       class="la la-check"></i>
-                                </button>
+                                         class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--d22 kt-badge--inline kt-badge--pill"
+                                         title="Approve">
+                                        <i style="font-size: 18px; color: #007bff; font-weight: 800;"
+                                           class="la la-check"></i>
+                                    </button>
 
-                                <button <?php if ($acc_type != 'Administrative Officer') { ?> hidden <?php } else {
-                                } ?> onclick="
+                                    <button <?php if ($acc_type != 'Administrative Officer') { ?> hidden <?php } else {
+                                    } ?> onclick="
                                 if (confirm('Are you sure you want to delete this ticket ?')) {
             return true;
 
         } else {
             return false;
         }" type="submit" id="submit_remove" name="submit_remove"
-                                     class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
-                                     title="Delete">
-                                    <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
-                                       class="la la-close"></i>
-                                </button>
+                                         class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
+                                         title="Delete">
+                                        <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
+                                           class="la la-close"></i>
+                                    </button>
+
+
+                                    <?php
+
+                                }elseif ($status12 == 'Completed'){
+
+                                        echo '<span style="font-weight: 500" class="kt-font-bold kt-font-success">Ticket Already Completed</span>
+                            ';
+
+                                    }else{
+
+echo '<span style="font-weight: 500" class="kt-font-bold kt-font-brand">Ticket is in Processing State</span>
+                            ';
+
+                                }
+
+                                }else{}
+
+                                ?>
+
+
+
+
+
+
 
                                 <button <?php if ($acc_type != 'Administrator' || $status12 == 'In Progress' || $status12 == 'Completed') { ?>
                                         hidden <?php } else {
@@ -722,6 +765,8 @@
                             }
                             echo 'Completed<br></span><span class="kt-font-bold kt-font-dark">' . $task_completed_date . '<br>'; ?>
                             </span>
+
+
                                 </div>
 
                             </div>
@@ -844,6 +889,8 @@
 
         </div>
     </div>
+
+
 </div>
 </div>
 
