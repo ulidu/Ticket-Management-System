@@ -62,13 +62,13 @@ $_SESSION['last_action'] = time();
     <!--begin::Page Custom Styles(used by this page) -->
     <link href="assets/css/pages/support-center/faq-3.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/pages/support-center/feedback.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/custom/jstree/jstree.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/custom/kanban/kanban.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/custom/jstree/jstree.bundle.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/custom/kanban/kanban.bundle.css" rel="stylesheet" type="text/css"/>
 
     <!--begin::Global Theme Styles(used by all pages) -->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/pages/support-center/home-1.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/pages/support-center/home-1.css" rel="stylesheet" type="text/css"/>
     <!--end::Global Theme Styles -->
 
     <!--begin::Layout Skins(used by all pages) -->
@@ -116,8 +116,6 @@ $_SESSION['last_action'] = time();
         }
 
 
-
-
     </style>
 </head>
 
@@ -134,7 +132,6 @@ if ($logged_user_id == '' && $page4 != 'task_add.php' && $page4 != 'ticket_succe
     echo "<script type='text/javascript'> document.location = 'login.php'; </script>";
 
 }
-
 
 
 $Row = "SELECT * FROM user where userID='$logged_user_id'";

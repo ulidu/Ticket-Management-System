@@ -277,7 +277,7 @@
                         <div class="col-4">
 
 
-                            <div class="kanban-container">
+                            <div class="kanban-container embed-responsive">
                                 <div style="width: 100% !important;" class="kanban-board">
                                     <header class="kanban-board-header brand-light">
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -324,7 +324,7 @@
                                                                 Administrative Officer
                                                             </li>
                                                             <li data-jstree='{ "opened" : true, "icon" : "fa fa-user-circle kt-font-success" }'>
-                                                                Staff
+                                                                Staff (No Registration)
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -341,7 +341,7 @@
                                             <div class="kt-kanban__badge">
 
                                                 <div class="kt-kanban__content">
-                                                    <span class="kt-badge kt-badge--brand kt-badge--inline">Administrator</span>
+                                                    <span class="kt-badge kt-badge--success kt-badge--inline">Observer</span>
                                                     <div class="kt-kanban__title">Sidebars</div>
                                                     </div>
                                             </div>
@@ -350,7 +350,34 @@
                                             <div class="kt-kanban__badge">
 
                                                 <div class="kt-kanban__content">
-                                                    <span class="kt-badge kt-badge--brand kt-badge--inline">Administrator</span>
+                                                    <span class="kt-badge kt-badge--warning kt-badge--inline">Administrator</span>
+                                                    <div class="kt-kanban__title">Sidebars</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="kanban-item">
+                                            <div class="kt-kanban__badge">
+
+                                                <div class="kt-kanban__content">
+                                                    <span class="kt-badge kt-badge--warning kt-badge--inline">IT Staff</span>
+                                                    <div class="kt-kanban__title">Sidebars</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="kanban-item">
+                                            <div class="kt-kanban__badge">
+
+                                                <div class="kt-kanban__content">
+                                                    <span class="kt-badge kt-badge--warning kt-badge--inline">Administrative Officer</span>
+                                                    <div class="kt-kanban__title">Sidebars</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="kanban-item">
+                                            <div class="kt-kanban__badge">
+
+                                                <div class="kt-kanban__content">
+                                                    <span class="kt-badge kt-badge--success kt-badge--inline">Staff - Other Divisions</span>
                                                     <div class="kt-kanban__title">Sidebars</div>
                                                 </div>
                                             </div>
