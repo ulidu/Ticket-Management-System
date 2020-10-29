@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Oct 28, 2020 at 03:12 PM
+-- Generation Time: Oct 29, 2020 at 05:20 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -44,7 +44,8 @@ CREATE TABLE IF NOT EXISTS `assign` (
 INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_date`, `assigned_by`) VALUES
 ('84', '22', '14', '2020-10-28 15:08:36', '29'),
 ('85', '14', '22', '2020-10-28 19:33:10', '29'),
-('86', '14', '', '2020-10-28 19:29:21', '29');
+('86', '22', '22', '2020-10-29 06:52:48', '29'),
+('88', '22', '14', '2020-10-28 21:15:22', '29');
 
 -- --------------------------------------------------------
 
@@ -102,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `approved_date` varchar(200) NOT NULL,
   `task_completed_date` varchar(200) NOT NULL,
   PRIMARY KEY (`task_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `task`
@@ -111,7 +112,8 @@ CREATE TABLE IF NOT EXISTS `task` (
 INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issue`, `category`, `status`, `designation`, `division`, `extension_no`, `priority`, `asset_code`, `ip_address`, `approved_by`, `approved_date`, `task_completed_date`) VALUES
 (84, 'hgh', 'hg', '2020-10-28 14:17:32', 'gh', 'Software Issue', 'Completed', 'hg', 'Finance Division', 'h', 'Medium', 'ghf', '192.168.1.2', '15', '2020-10-28 14:18:01', '2020-10-28 20:39:14'),
 (85, 'gbb', 'g', '2020-10-28 14:52:27', 'gf', 'Software Issue', 'Assigned', 'gb', 'Finance Division', 'gb', 'Medium', 'gb', '192.168.1.2', '15', '2020-10-28 14:52:39', ''),
-(86, 'd', 'sd', '2020-10-28 19:28:17', 'df', 'Software Issue', 'Assigned', 'fd', 'Finance Division', 'sdf', 'Medium', 'dsf', '192.168.1.2', '15', '2020-10-28 19:28:39', '');
+(86, 'd', 'sd', '2020-10-28 19:28:17', 'df', 'Software Issue', 'Assigned', 'fd', 'Finance Division', 'sdf', 'Medium', 'dsf', '192.168.1.2', '15', '2020-10-28 19:28:39', ''),
+(89, 'fdg', 'f', '2020-10-29 07:34:55', 'g', 'Software Issue', 'Approved', 'fd', 'Finance Division', 'fg', 'Medium', 'fg', '192.168.1.2', '15', '2020-10-29 07:38:36', '');
 
 -- --------------------------------------------------------
 
