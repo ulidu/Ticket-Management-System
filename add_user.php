@@ -280,7 +280,9 @@
                             <div class="kanban-container embed-responsive">
                                 <div style="width: 100% !important;" class="kanban-board">
                                     <header class="kanban-board-header brand-light">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                             viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                 <rect x="0" y="0" width="24" height="24"/>
                                                 <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"/>
@@ -289,23 +291,23 @@
                                             </g>
                                         </svg>
                                         &nbsp;
-                                        <div class="kanban-title-board">Account Structure</div>
+                                        <div style="font-weight: 500;" class="kanban-title-board">Account Structure</div>
                                     </header>
 
-<br>
+                                    <br>
 
-                                       <div style="margin-left: 8%;" id="kt_tree_2" class="tree-demo">
+                                    <div style="margin-left: 8%; font-weight: 400;" id="kt_tree_2" class="tree-demo">
                                         <ul>
                                             <li data-jstree='{ "icon" : "fa fa-city kt-font-danger" }'>
                                                 Urban Development Authority
                                                 <ul>
-                                                    <li data-jstree='{ "selected" : true, "icon" : "fa fa-user-check kt-font-success" }'>
-                                                        <a href="javascript:;">
-                                                            Observer </a>
-                                                    </li>
+
                                                     <li data-jstree='{ "opened" : true, "icon" : "fa fa-building kt-font-brand" }'>
                                                         ITS Division
                                                         <ul>
+                                                            <li data-jstree='{ "selected" : true, "icon" : "fa fa-user-check kt-font-success" }'>
+                                                                Observer
+                                                            </li>
                                                             <li data-jstree='{ "opened" : true, "icon" : "fa fa-user-circle kt-font-warning" }'>
                                                                 Administrator
                                                             </li>
@@ -315,7 +317,8 @@
                                                         </ul>
                                                     </li>
 
-                                                </ul><ul>
+                                                </ul>
+                                                <ul>
 
                                                     <li data-jstree='{ "opened" : true, "icon" : "fa fa-building kt-font-brand" }'>
                                                         Other Divisions
@@ -339,11 +342,15 @@
                                     <main class="kanban-drag">
                                         <div class="kanban-item">
                                             <div class="kt-kanban__badge">
-
                                                 <div class="kt-kanban__content">
                                                     <span class="kt-badge kt-badge--success kt-badge--inline">Observer</span>
-                                                    <div class="kt-kanban__title">Sidebars</div>
+                                                    <div class="kt-kanban__title">User Accounts with <span
+                                                                class="kt-font-success">Observer Privileges</span>
+                                                        can only view the details of the system.
+                                                        These type of users are not allowed to create or modify any data
+                                                        within the system.
                                                     </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="kanban-item">
@@ -351,7 +358,12 @@
 
                                                 <div class="kt-kanban__content">
                                                     <span class="kt-badge kt-badge--warning kt-badge--inline">Administrator</span>
-                                                    <div class="kt-kanban__title">Sidebars</div>
+                                                    <div class="kt-kanban__title">User Accounts with <span
+                                                                class="kt-font-warning">Administrator Privileges</span>
+                                                        has the full access to the system.
+                                                        Mainly including user account creation and assigning tickets.
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -360,7 +372,10 @@
 
                                                 <div class="kt-kanban__content">
                                                     <span class="kt-badge kt-badge--warning kt-badge--inline">IT Staff</span>
-                                                    <div class="kt-kanban__title">Sidebars</div>
+                                                    <div class="kt-kanban__title">
+                                                        <span class="kt-font-warning">IT Staff Accounts</span>
+                                                         only able to view and update the status of their tickets.
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -369,7 +384,10 @@
 
                                                 <div class="kt-kanban__content">
                                                     <span class="kt-badge kt-badge--warning kt-badge--inline">Administrative Officer</span>
-                                                    <div class="kt-kanban__title">Sidebars</div>
+                                                    <div class="kt-kanban__title">
+                                                        <span class="kt-font-warning">Administrative Officers</span>
+                                                        are only able to view, approve or reject the tickets of their division.
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -378,7 +396,10 @@
 
                                                 <div class="kt-kanban__content">
                                                     <span class="kt-badge kt-badge--success kt-badge--inline">Staff - Other Divisions</span>
-                                                    <div class="kt-kanban__title">Sidebars</div>
+                                                    <div class="kt-kanban__title">
+                                                        <span class="kt-font-success">The Staff of Other Divisions</span>
+                                                        are not required to register to the system. They can simply submit a ticket without login.
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
