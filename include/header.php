@@ -22,6 +22,7 @@ if (isset($_SESSION['last_action'])) {
         //Kill their session.
         session_unset();
         session_destroy();
+        header("location: login.php?timeout=true");
     }
 
 }

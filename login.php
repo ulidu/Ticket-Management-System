@@ -157,7 +157,20 @@ if ($logged_user_id != '') {
                                     </div>
                                 </div>
 
-                            <?php } else {
+                            <?php }else if ($_GET['timeout'] == "true") { ?>
+
+                                <div style="margin-top: 10%; margin-bottom: -50px;"
+                                     class="alert alert-bold alert-solid-warning alert-dismissible" role="alert">
+                                    <div class="alert-text">Session has Expired. Please Sign In again to continue.</div>
+                                    <div class="alert-close">
+                                        <i class="flaticon2-cross kt-icon-sm" data-dismiss="alert"></i>
+                                    </div>
+                                </div>
+
+                                <?php
+                            }
+
+                            else {
 
                             } ?>
 
