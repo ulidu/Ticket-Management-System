@@ -399,7 +399,7 @@
 
                                 <?php
 
-                                $query3 = "select * from user where acc_type = 'IT Staff' or acc_type = 'Administrator'";
+                                $query3 = "select * from user where acc_type = 'IT Staff'";
                                 $run_query3 = mysqli_query($con, $query3);
                                 while ($row3 = mysqli_fetch_assoc($run_query3)) {
                                     $userID = $row3['userID'];
@@ -418,11 +418,7 @@
 
 
                                         ?>
-                                        <option style="font-weight: 500; color: #34bfa3;"
-                                            <?php if ($acc_type111 == 'Administrator') { ?>
-                                                hidden<?php } else {
-                                            } ?>
-                                                value="<?php echo $userID; ?>"
+                                        <option style="font-weight: 500; color: #34bfa3;" value="<?php echo $userID; ?>"
                                                 selected><?php echo strtoupper($firstName . " " . $lastName); ?></option>
 
                                         <?php

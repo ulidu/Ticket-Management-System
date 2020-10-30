@@ -339,8 +339,8 @@
                                     echo '<meta http-equiv=Refresh content="0;url=ticket_success.php">';
 
                                 } else {
-                                    echo " <div class='alert alert-solid-danger alert-bold' role='alert'>";
-                                    echo " <div class='alert-text'>Something went wrong.</div>";
+                                    echo " <div class='alert alert-solid-danger alert-bold'>";
+                                    echo("Error : " . mysqli_error($con));
                                     echo " </div>";
                                 }
                             }

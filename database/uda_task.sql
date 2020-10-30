@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Oct 29, 2020 at 05:20 PM
+-- Generation Time: Oct 30, 2020 at 06:54 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -30,11 +30,11 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `assign`;
 CREATE TABLE IF NOT EXISTS `assign` (
-  `task_id` varchar(200) NOT NULL,
-  `userID` varchar(200) NOT NULL,
-  `userID_2_opt` varchar(200) NOT NULL,
-  `assigned_to_user_date` varchar(200) NOT NULL,
-  `assigned_by` varchar(200) NOT NULL
+  `task_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `userID` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `userID_2_opt` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `assigned_to_user_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `assigned_by` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -56,10 +56,10 @@ INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_dat
 DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE IF NOT EXISTS `feedback` (
   `feedbackID` int(200) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) NOT NULL,
+  `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `feedback` varchar(200) NOT NULL,
-  `extension` varchar(200) NOT NULL,
-  `division` varchar(200) NOT NULL,
+  `extension` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `division` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`feedbackID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -72,8 +72,8 @@ CREATE TABLE IF NOT EXISTS `feedback` (
 DROP TABLE IF EXISTS `log`;
 CREATE TABLE IF NOT EXISTS `log` (
   `logID` int(200) NOT NULL AUTO_INCREMENT,
-  `userID` varchar(200) NOT NULL,
-  `date` varchar(200) NOT NULL,
+  `userID` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `date_time` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `action` varchar(200) NOT NULL,
   PRIMARY KEY (`logID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -99,11 +99,11 @@ CREATE TABLE IF NOT EXISTS `task` (
   `priority` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `asset_code` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `ip_address` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `approved_by` varchar(200) NOT NULL,
-  `approved_date` varchar(200) NOT NULL,
-  `task_completed_date` varchar(200) NOT NULL,
+  `approved_by` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `approved_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `task_completed_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`task_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `task`
@@ -113,6 +113,7 @@ INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issu
 (84, 'hgh', 'hg', '2020-10-28 14:17:32', 'gh', 'Software Issue', 'Completed', 'hg', 'Finance Division', 'h', 'Medium', 'ghf', '192.168.1.2', '15', '2020-10-28 14:18:01', '2020-10-28 20:39:14'),
 (85, 'gbb', 'g', '2020-10-28 14:52:27', 'gf', 'Software Issue', 'Assigned', 'gb', 'Finance Division', 'gb', 'Medium', 'gb', '192.168.1.2', '15', '2020-10-28 14:52:39', ''),
 (86, 'd', 'sd', '2020-10-28 19:28:17', 'df', 'Software Issue', 'Assigned', 'fd', 'Finance Division', 'sdf', 'Medium', 'dsf', '192.168.1.2', '15', '2020-10-28 19:28:39', ''),
+(90, 's', 's', '2020-10-30 11:49:11', 'd', 'Software Issue', 'Approval Required', 's', 'Finance Division', '21', 'Medium', 'd', '192.168.1.2', '', '', ''),
 (89, 'fdg', 'f', '2020-10-29 07:34:55', 'g', 'Software Issue', 'Approved', 'fd', 'Finance Division', 'fg', 'Medium', 'fg', '192.168.1.2', '15', '2020-10-29 07:38:36', '');
 
 -- --------------------------------------------------------
