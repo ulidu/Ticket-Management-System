@@ -40,6 +40,7 @@ if ($logged_user_id != '') {
     <!--begin::Global Theme Styles(used by all pages) -->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="assets/plugins/jquery-nice-select-1.1.0/css/nice-select.css">
 
     <!--end::Global Theme Styles -->
 
@@ -124,13 +125,31 @@ if ($logged_user_id != '') {
                             <h5 style="font-weight: lighter; font-size: medium;">Sign In, Or just click on the <a
                                         href="task_add.php"><span class="btn-font-success" style="font-weight: 500">Submit Ticket</span></a>
                                 button to submit a ticket without signing in.</h5>
+                            <br>
+                            <button style="margin-bottom: -8%; margin-top: -4%; font-size: medium;"
+                                    onclick="location.href='task_add.php'"
+                                    type="button"
+                                    name="login_btn"
+                                    class="btn btn-success btn-elevate kt-login__btn-primary btn-wide">Submit Ticket
+
+                                &nbsp;
+                                <svg style="fill: #fff" class="svg_arrow" width="18px" height="17px" viewBox="-1 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g>
+                                        <polygon style="fill: #fff" class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+                                        <polygon style="fill: #fff" class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+                                        <path d="M-4.58892184e-16,0.56157424 L-4.58892184e-16,16.1929159 L9.708,8.33860465 L-1.64313008e-15,0.56157424 L-4.58892184e-16,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
+                                    </g>
+                                </svg>
+
+                            </button>
+
                             <?php
 
                             if ($_GET['error'] == "verify") {
 
                                 ?>
 
-                                <div style="margin-top: 5%; margin-bottom: -50px;"
+                                <div style="margin-top: 10%; margin-bottom: -50px;"
                                      class="alert alert-bold alert-solid-danger alert-dismissible" role="alert">
                                     <div class="alert-text">Incorrect password. Please try again.</div>
                                     <div class="alert-close">
@@ -147,10 +166,12 @@ if ($logged_user_id != '') {
 
                         <!--begin::Form-->
                         <form style="margin-top: -20px;" method="post" class="kt-form" action="login_app.php">
+
                             <div class="form-group">
 
 
-                                <select id="name" name="name" class="form-control bg-secondary" required>
+                                <select id="name" name="name" class="form-control bg-secondary wide" required>
+
                                     <option value="" hidden="true">Select an Account</option>
 
                                     <?php
@@ -180,11 +201,14 @@ if ($logged_user_id != '') {
 
                                 </select>
 
+
                             </div>
+
                             <div class="form-group">
                                 <input class="form-control bg-secondary" type="password"
                                        placeholder="Enter the Password" name="password" required>
                             </div>
+
 
                             <!--begin::Action-->
                             <div class="kt-login__actions">
@@ -192,17 +216,14 @@ if ($logged_user_id != '') {
                                     Forgot Password ?
                                 </a>
 
-                                <button style="margin-right: -30px" onclick="location.href='task_add.php'" type="button"
-                                        name="login_btn"
-                                        class="btn btn-success btn-elevate kt-login__btn-primary">Submit Ticket
-                                </button>
 
                                 <button type="submit" name="login_btn"
                                         class="btn btn-primary btn-elevate kt-login__btn-primary">Sign In
                                 </button>
                             </div>
-
                             <!--end::Action-->
+
+
                         </form>
 
                         <!--end::Form-->
@@ -226,6 +247,8 @@ if ($logged_user_id != '') {
 </div>
 
 <!-- end:: Page -->
+
+
 
 <!-- begin::Global Config(global config for global JS sciprts) -->
 <script>
@@ -255,10 +278,15 @@ if ($logged_user_id != '') {
 <!--begin::Global Theme Bundle(used by all pages) -->
 <script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
 <script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
 
 <!--end::Global Theme Bundle -->
 
-
+<script>
+    $(document).ready(function() {
+        $('select').niceSelect();
+    });
+</script>
 <!--end::Page Scripts -->
 </body>
 

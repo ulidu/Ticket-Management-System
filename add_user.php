@@ -306,13 +306,13 @@
                                                         ITS Division
                                                         <ul>
                                                             <li data-jstree='{ "selected" : true, "icon" : "fa fa-user-check kt-font-success" }'>
-                                                                Observer
+                                                                <a href="#observer_k">Observer</a>
                                                             </li>
                                                             <li data-jstree='{ "opened" : true, "icon" : "fa fa-user-circle kt-font-warning" }'>
-                                                                Administrator
+                                                                <a href="#admin_k">Administrator</a>
                                                             </li>
-                                                            <li data-jstree='{ "opened" : true, "icon" : "fa fa-user-circle kt-font-warning" }'>
-                                                                IT Staff
+                                                            <li id="observer_k" data-jstree='{ "opened" : true, "icon" : "fa fa-user-circle kt-font-warning" }'>
+                                                                <a href="#it_staff_k">IT Staff</a>
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -324,10 +324,10 @@
                                                         Other Divisions
                                                         <ul>
                                                             <li data-jstree='{ "opened" : true, "icon" : "fa fa-user-circle kt-font-warning" }'>
-                                                                Administrative Officer
+                                                                <a href="#ad_off_k">Administrative Officer</a>
                                                             </li>
                                                             <li data-jstree='{ "opened" : true, "icon" : "fa fa-user-circle kt-font-success" }'>
-                                                                Staff (No Registration)
+                                                                <a href="#staff_k_a">Staff (No Registration)</a>
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -344,7 +344,7 @@
                                             <div class="kt-kanban__badge">
                                                 <div class="kt-kanban__content">
                                                     <span class="kt-badge kt-badge--success kt-badge--inline">Observer</span>
-                                                    <div class="kt-kanban__title">User Accounts with <span
+                                                    <div id="admin_k" class="kt-kanban__title">User Accounts with <span
                                                                 class="kt-font-success">Observer Privileges</span>
                                                         can only view the details of the system.
                                                         These type of users are not allowed to create or modify any data
@@ -354,7 +354,7 @@
                                             </div>
                                         </div>
                                         <div class="kanban-item">
-                                            <div class="kt-kanban__badge">
+                                            <div id="it_staff_k" class="kt-kanban__badge">
 
                                                 <div class="kt-kanban__content">
                                                     <span class="kt-badge kt-badge--warning kt-badge--inline">Administrator</span>
@@ -368,7 +368,7 @@
                                             </div>
                                         </div>
                                         <div class="kanban-item">
-                                            <div class="kt-kanban__badge">
+                                            <div id="ad_off_k" class="kt-kanban__badge">
 
                                                 <div class="kt-kanban__content">
                                                     <span class="kt-badge kt-badge--warning kt-badge--inline">IT Staff</span>
@@ -380,7 +380,7 @@
                                             </div>
                                         </div>
                                         <div class="kanban-item">
-                                            <div class="kt-kanban__badge">
+                                            <div id="staff_k_a" class="kt-kanban__badge">
 
                                                 <div class="kt-kanban__content">
                                                     <span class="kt-badge kt-badge--warning kt-badge--inline">Administrative Officer</span>
