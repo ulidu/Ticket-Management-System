@@ -189,7 +189,7 @@ if ($logged_user_id != '') {
 
                                     <?php
 
-                                    $query = "select * from user";
+                                    $query = "select * from user where status='Active'";
                                     $run_query = mysqli_query($con, $query);
                                     while ($row = mysqli_fetch_assoc($run_query)) {
                                         $userID = $row['userID'];
