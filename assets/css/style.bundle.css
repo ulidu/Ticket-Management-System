@@ -39887,21 +39887,6 @@ td > .kt-radio.kt-radio--single {
     opacity: 0.5;
 }
 
-.kt-notification .kt-notification__item:after {
-    border: 0;
-    font-family: "LineAwesome";
-    text-decoration: inherit;
-    text-rendering: optimizeLegibility;
-    text-transform: none;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    content: "";
-    font-size: 0.8rem;
-    line-height: 0;
-    position: relative;
-    color: #74788d;
-}
 
 .kt-notification .kt-notification__custom {
     display: -webkit-box;

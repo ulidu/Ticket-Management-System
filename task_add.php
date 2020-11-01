@@ -331,8 +331,10 @@
                                 $status = "Approval Required";
 
                                 $query = "INSERT INTO task(assigned_by, emp_code, assigned_date, issue, category, status, designation, division, extension_no, priority, asset_code, ip_address) VALUES('$name','$emp_code','$date','$issue','$cat_issue','$status','$designation','$division','$ext','$priority','$asst_code','$localAddr')";
+                                $querylog_taskadd = "INSERT INTO log(log_emp_code, log_date_time, log_action) VALUES('$emp_code', '$date', 'New ticket added by $name in $division')";
 
                                 $create_query = mysqli_query($con, $query);
+                                $create_querylog_taskadd = mysqli_query($con, $querylog_taskadd);
 
                                 if ($create_query) {
 
