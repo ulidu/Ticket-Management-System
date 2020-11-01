@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Oct 30, 2020 at 06:54 AM
+-- Generation Time: Nov 01, 2020 at 07:23 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -43,9 +43,8 @@ CREATE TABLE IF NOT EXISTS `assign` (
 
 INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_date`, `assigned_by`) VALUES
 ('84', '22', '14', '2020-10-28 15:08:36', '29'),
-('85', '14', '22', '2020-10-28 19:33:10', '29'),
-('86', '22', '22', '2020-10-29 06:52:48', '29'),
-('88', '22', '14', '2020-10-28 21:15:22', '29');
+('88', '22', '14', '2020-10-28 21:15:22', '29'),
+('89', '14', NULL, '2020-11-01 08:52:40', '29');
 
 -- --------------------------------------------------------
 
@@ -72,11 +71,12 @@ CREATE TABLE IF NOT EXISTS `feedback` (
 DROP TABLE IF EXISTS `log`;
 CREATE TABLE IF NOT EXISTS `log` (
   `logID` int(200) NOT NULL AUTO_INCREMENT,
-  `userID` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `date_time` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `action` varchar(200) NOT NULL,
+  `log_userID` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `log_date_time` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `log_action` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `log_emp_code` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`logID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `approved_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `task_completed_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`task_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=92 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `task`
@@ -111,10 +111,9 @@ CREATE TABLE IF NOT EXISTS `task` (
 
 INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issue`, `category`, `status`, `designation`, `division`, `extension_no`, `priority`, `asset_code`, `ip_address`, `approved_by`, `approved_date`, `task_completed_date`) VALUES
 (84, 'hgh', 'hg', '2020-10-28 14:17:32', 'gh', 'Software Issue', 'Completed', 'hg', 'Finance Division', 'h', 'Medium', 'ghf', '192.168.1.2', '15', '2020-10-28 14:18:01', '2020-10-28 20:39:14'),
-(85, 'gbb', 'g', '2020-10-28 14:52:27', 'gf', 'Software Issue', 'Assigned', 'gb', 'Finance Division', 'gb', 'Medium', 'gb', '192.168.1.2', '15', '2020-10-28 14:52:39', ''),
-(86, 'd', 'sd', '2020-10-28 19:28:17', 'df', 'Software Issue', 'Assigned', 'fd', 'Finance Division', 'sdf', 'Medium', 'dsf', '192.168.1.2', '15', '2020-10-28 19:28:39', ''),
 (90, 's', 's', '2020-10-30 11:49:11', 'd', 'Software Issue', 'Approval Required', 's', 'Finance Division', '21', 'Medium', 'd', '192.168.1.2', '', '', ''),
-(89, 'fdg', 'f', '2020-10-29 07:34:55', 'g', 'Software Issue', 'Approved', 'fd', 'Finance Division', 'fg', 'Medium', 'fg', '192.168.1.2', '15', '2020-10-29 07:38:36', '');
+(89, 'fdg', 'f', '2020-10-29 07:34:55', 'g', 'Software Issue', 'Assigned', 'fd', 'Finance Division', 'fg', 'Medium', 'fg', '192.168.1.2', '15', '2020-10-29 07:38:36', ''),
+(91, 'sfgd', 'fd', '2020-11-01 07:47:27', 'gfh', 'Software Issue', 'Approval Required', 'fg', 'Finance Division', '443', 'Medium', 'hr', '192.168.1.2', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

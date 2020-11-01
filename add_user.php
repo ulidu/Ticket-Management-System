@@ -449,6 +449,13 @@
 
                 $query = "INSERT INTO user(firstName, lastName, employeeCode, email, acc_type, password, date_created, status, title, division) VALUES('$firstName','$lastName','$empCode','$email','$acc_type','$hash','$date','$status','$title','$division')";
 
+
+                $string = date("Y-m-d");
+                $date = DateTime::createFromFormat("Y-m-d", $string);
+                $date = date_format($date, 'Y-m-d H:i:s');
+                $query_log_user_add = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$logged_user_id', '$date', 'User ID: $logged_user_id Added a new user (Acc Type: $acc_type) named $firstName $lastName with Employee Code: $empCode')";
+                $create_query_query_log_user_add = mysqli_query($con, $query_log_user_add);
+
                 $create_query = mysqli_query($con, $query);
 
                 if ($create_query) {

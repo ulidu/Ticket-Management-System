@@ -686,7 +686,7 @@
                                 $firstChar = mb_substr($firstName, 0, 1, "UTF-8");
 
                                 //Print out the first character.
-                                echo $firstChar; ?></span>
+                                echo strtoupper($firstChar); ?></span>
                         </div>
                         <div class="kt-user-card__name">
                             <?php $firstName = $_SESSION['firstName']; $lastName = $_SESSION['lastName']; echo $firstName." ".$lastName; ?>
