@@ -41,13 +41,14 @@ if ($logged_user_id != '') {
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="assets/plugins/jquery-nice-select-1.1.0/css/nice-select.css">
-
+    <link rel="stylesheet" href="assets/plugins/select_plugin/style.css">
     <!--end::Global Theme Styles -->
 
     <!--begin::Layout Skins(used by all pages) -->
 
     <!--end::Layout Skins -->
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
+
 </head>
 
 <!-- end::Head -->
@@ -133,10 +134,14 @@ if ($logged_user_id != '') {
                                     class="btn btn-success btn-elevate kt-login__btn-primary btn-wide">Submit Ticket
 
                                 &nbsp;
-                                <svg style="fill: #fff" class="svg_arrow" width="18px" height="17px" viewBox="-1 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg style="fill: #fff" class="svg_arrow" width="18px" height="17px"
+                                     viewBox="-1 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g>
-                                        <polygon style="fill: #fff" class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                                        <polygon style="fill: #fff" class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+                                        <polygon style="fill: #fff" class="arrow"
+                                                 points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+                                        <polygon style="fill: #fff" class="arrow-fixed"
+                                                 points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
                                         <path d="M-4.58892184e-16,0.56157424 L-4.58892184e-16,16.1929159 L9.708,8.33860465 L-1.64313008e-15,0.56157424 L-4.58892184e-16,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
                                     </g>
                                 </svg>
@@ -157,7 +162,7 @@ if ($logged_user_id != '') {
                                     </div>
                                 </div>
 
-                            <?php }else if ($_GET['timeout'] == "true") { ?>
+                            <?php } else if ($_GET['timeout'] == "true") { ?>
 
                                 <div style="margin-top: 10%; margin-bottom: -50px;"
                                      class="alert alert-bold alert-solid-warning alert-dismissible" role="alert">
@@ -168,9 +173,7 @@ if ($logged_user_id != '') {
                                 </div>
 
                                 <?php
-                            }
-
-                            else {
+                            } else {
 
                             } ?>
 
@@ -178,47 +181,63 @@ if ($logged_user_id != '') {
 
 
                         <!--begin::Form-->
-                        <form style="margin-top: -20px;" method="post" class="kt-form" action="login_app.php">
+                        <form style="margin-top: -20px;" id="login_app" method="post" class="kt-form form_select"
+                              action="login_app.php">
 
                             <div class="form-group">
 
 
-                                <select id="name" name="name" class="form-control bg-secondary wide" required>
+                                <!-- partial:index.partial.html -->
+                                <div style="margin-bottom: 15%;" class="select_fil">
 
-                                    <option value="" hidden="true">Select an Account</option>
-
-                                    <?php
-
-                                    $query = "select * from user where status='Active'";
-                                    $run_query = mysqli_query($con, $query);
-                                    while ($row = mysqli_fetch_assoc($run_query)) {
-                                        $userID = $row['userID'];
-                                        $employeeCode = $row['employeeCode'];
-                                        $firstName = $row['firstName'];
-                                        $lastName = $row['lastName'];
-                                        $email = $row['email'];
-                                        $password = $row['password'];
-                                        $date_created = $row['date_created'];
-                                        $status = $row['status'];
-                                        $acc_type = $row['acc_type'];
+                                    <input name="name2" autocomplete="off" id="username_login" required
+                                           class="chosen-value bg-secondary" type="number"
+                                           value="" placeholder="Select an Account">
+                                    <ul style="z-index: 10000000" class="value-list">
 
 
-                                        ?>
-                                        <option
-                                            <?php if ($acc_type == 'Administrator'){ ?>style="font-weight: 500; color: #fd7e14;"<?php } else {
-                                        } ?>
-                                            value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName . " " . "-" . " " . $acc_type; ?></option>
                                         <?php
-                                    }
-                                    ?>
 
-                                </select>
+                                        $query = "select * from user where status='Active' order by acc_type";
+                                        $run_query = mysqli_query($con, $query);
+                                        while ($row = mysqli_fetch_assoc($run_query)) {
+                                            $userID = $row['userID'];
+                                            $employeeCode = $row['employeeCode'];
+                                            $firstName = $row['firstName'];
+                                            $lastName = $row['lastName'];
+                                            $email = $row['email'];
+                                            $password = $row['password'];
+                                            $date_created = $row['date_created'];
+                                            $status = $row['status'];
+                                            $acc_type = $row['acc_type'];
+
+
+                                            ?>
+                                            <li
+                                                <?php if ($acc_type == 'Administrator'){ ?>style="color: #ffb822;"<?php } else {
+                                            } ?>
+                                                value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName . ' | ' . $employeeCode . " " . "-" . " " . $acc_type; ?>
+                                            </li>
+                                            <?php
+                                        }
+                                        ?>
+
+
+                                    </ul>
+
+                                    <!-- partial -->
+                                </div>
 
 
                             </div>
+                            <input type="hidden" value="" id="chosen-value2" class="chosen-value2" name="name">
+
 
                             <div class="form-group">
-                                <input class="form-control bg-secondary" type="password"
+                                <input disabled id="pw_login" style="text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 1.1rem;" class="form-control bg-secondary" type="text"
                                        placeholder="Enter the Password" name="password" required>
                             </div>
 
@@ -262,7 +281,6 @@ if ($logged_user_id != '') {
 <!-- end:: Page -->
 
 
-
 <!-- begin::Global Config(global config for global JS sciprts) -->
 <script>
 
@@ -292,14 +310,27 @@ if ($logged_user_id != '') {
 <script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
 <script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
 <script src="assets/plugins/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js" type="text/javascript"></script>
 
 <!--end::Global Theme Bundle -->
 
+<!--
 <script>
     $(document).ready(function() {
         $('select').niceSelect();
     });
 </script>
+-->
+
+
+<script>
+    setTimeout(function () {
+        $("#username_login").prop("type", "text");
+        $("#pw_login").prop("type", "password");
+    }, 10);
+    // time out required to make sure it is not set as a password field before Google fills it in. You may need to adjust this timeout depending on your page load times.
+</script>
+<script src="assets/plugins/select_plugin/script.js"></script>
 <!--end::Page Scripts -->
 </body>
 

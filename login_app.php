@@ -3,15 +3,25 @@
 session_start();
 include 'include/db.php';
 
+$emp_code_enter = mysqli_real_escape_string($con, $_POST['name']);
 
+$sql_code_enter = "SELECT userID, employeeCode FROM user where employeeCode='$emp_code_enter'";
+$run_query_code_enter = mysqli_query($con, $sql_code_enter);
 
+while ($uID_code_enter = mysqli_fetch_assoc($run_query_code_enter)) {
+
+    $uID_code_enter = $uID_code_enter['userID'];
+    $_SESSION['uID_code_enter'] = $uID_code_enter;
+}
+
+$uID_code_enter = $_SESSION['uID_code_enter'];
 
 
 // username and password sent from form
-$user_id_enter = mysqli_real_escape_string($con, $_POST['name']);
+$user_id_enter = $uID_code_enter;
 $password_enter = mysqli_real_escape_string($con, $_POST['password']);
 
-
+$_SESSION["uID_code_enter"] = "";
 
 
 $sql = "SELECT userID, password FROM user where userID='$user_id_enter'";

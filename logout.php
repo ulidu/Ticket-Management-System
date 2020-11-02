@@ -6,6 +6,8 @@ session_start();
 
 $_SESSION["logged_user_id"] = "";
 
+$_SESSION["uID_code_enter"] = "";
+
 $_SESSION['userID'] = "";
 $_SESSION['employeeCode'] = "";
 $_SESSION['firstName'] = "";
