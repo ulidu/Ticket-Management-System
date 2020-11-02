@@ -45306,6 +45306,23 @@ td > .kt-radio.kt-radio--single {
     border: 2px solid #FADBD8;
 }
 
+
+.kt-badge.kt-badge--warn {
+    color: #ffffff;
+    background: rgba(255, 184, 34, 0.17);
+}
+
+.kt-badge.kt-badge--outline.kt-badge--warn {
+    background: transparent;
+    color: rgba(255, 184, 34, 0.17);
+    border: 1px solid rgba(255, 184, 34, 0.17);
+}
+
+.kt-badge.kt-badge--outline.kt-badge--warn.kt-badge--outline-2x {
+    border: 2px solid rgba(255, 184, 34, 0.17);
+}
+
+
 .kt-badge.kt-badge--abc {
     color: #ffffff;
     background: rgba(52, 58, 64, 0.1);

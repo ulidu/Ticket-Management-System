@@ -81,7 +81,7 @@
 
                                 } elseif ($acc_type == 'IT Staff') {
 
-                                    echo 'Assigned';
+                                    echo 'Received';
 
                                 }
 
@@ -135,7 +135,7 @@
 
                                     } elseif ($acc_type == 'IT Staff') {
 
-                                        $count_in_progress = "SELECT * FROM assign INNER JOIN task ON assign.task_id=task.task_id WHERE task.status='In Progress' and assign.userID = '$logged_user_id' or task.status='In Progress' and assign.userID_2_opt = '$logged_user_id'";
+                                        $count_in_progress = "SELECT * FROM assign a, task t WHERE a.task_id = t.task_id AND t.status='In Progress' and (a.userID = '$logged_user_id' OR a.userID_2_opt = '$logged_user_id')";
 
                                     }
 
@@ -199,7 +199,19 @@
 
                                     <?php
 
-                                    $count_completed = "SELECT * FROM task where status = 'Completed' ORDER BY task_id";
+                                    if ($acc_type == 'Administrator') {
+
+                                        $count_completed = "SELECT * FROM task where status = 'Completed' ORDER BY task_id";
+
+                                    } elseif ($acc_type == 'Administrative Officer') {
+
+                                        $count_completed = "SELECT * FROM task where status = 'Completed' and division='$division' ORDER BY task_id";
+
+                                    } elseif ($acc_type == 'IT Staff') {
+
+                                        $count_completed = "SELECT * FROM assign a, task t WHERE a.task_id = t.task_id AND t.status='Completed' and (a.userID = '$logged_user_id' OR a.userID_2_opt = '$logged_user_id')";
+
+                                    }
 
                                     if ($count_completed_run = mysqli_query($con, $count_completed)) {
 
@@ -478,7 +490,8 @@
 
 
                     <tr style="font-weight: 400;">
-                        <td><span style="font-weight: 500"
+                        <td>
+                            <span style="font-weight: 500"
                                   class="kt-badge kt-badge--dark kt-badge--inline kt-badge--pill"><?php echo $i; ?></span>
                         </td>
 
