@@ -665,21 +665,21 @@
                                    id="ticket_hidden">
 
 
-                            <button onclick="edit_g_r1()" id="edit_u" name="edit_u" type="button"
+                            <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Edit User" onclick="edit_g_r1()" id="edit_u" name="edit_u" type="button"
                                     class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--d22 kt-badge--inline kt-badge--pill"
                                     title="Edit User">
                                 <i style="font-size: 18px; color: #007bff; font-weight: 800;"
                                    class="la la-edit"></i>
                             </button>
                             &nbsp;
-                            <button onclick="" id="submit_approve" name="submit_approve" type="submit"
+                            <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Disable User" onclick="" id="submit_approve" name="submit_approve" type="submit"
                                     class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--warn kt-badge--inline kt-badge--pill"
                                     title="Disable User">
                                 <i style="font-size: 18px; color: #ffb822; font-weight: 800;"
                                    class="la la-minus-circle"></i>
                             </button>
                             &nbsp;
-                            <button onclick="
+                            <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Delete User" onclick="
                                 if (confirm('Are you sure you want to delete this ticket ?')) {
             return true;
 

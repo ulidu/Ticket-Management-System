@@ -876,7 +876,7 @@
             return false;
         }" id="submit_approve" name="submit_approve" type="submit"
                                              class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--d22 kt-badge--inline kt-badge--pill"
-                                             title="Approve">
+                                             data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Approve Ticket">
                                             <i style="font-size: 18px; color: #007bff; font-weight: 800;"
                                                class="la la-check"></i>
                                         </button>
@@ -890,7 +890,7 @@
             return false;
         }" type="submit" id="submit_remove" name="submit_remove"
                                              class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
-                                             title="Delete">
+                                             data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Reject and Delete the Ticket">
                                             <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
                                                class="la la-close"></i>
                                         </button>
@@ -926,7 +926,7 @@
             return false;
         }" type="submit" id="undo_assign" name="undo_assign"
                                         class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--abc kt-badge--inline kt-badge--pill"
-                                        title="Undo Assign">
+                                        data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Undo Assigning the Ticket">
                                     <i style="font-size: 18px; color: #343a40; font-weight: 800;"
                                        class="la la-undo"></i>
                                 </button>
@@ -942,7 +942,7 @@
             return false;
         }" type="submit" id="undo_status_staff" name="undo_status_staff"
                                         class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--abc kt-badge--inline kt-badge--pill"
-                                        title="Undo Status">
+                                        data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Undo the Status of Ticket">
                                     <i style="font-size: 18px; color: #343a40; font-weight: 800;"
                                        class="la la-undo"></i>
                                 </button>
@@ -960,7 +960,7 @@
 
         }" type="submit" id="dlt_admin" name="dlt_admin"
                                         class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
-                                        title="Delete">
+                                        data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Delete the Ticket">
                                     <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
                                        class="la la-trash"></i>
                                 </button>
