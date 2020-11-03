@@ -40,7 +40,6 @@ if ($logged_user_id != '') {
     <!--begin::Global Theme Styles(used by all pages) -->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="assets/plugins/jquery-nice-select-1.1.0/css/nice-select.css">
     <link rel="stylesheet" href="assets/plugins/select_plugin/style.css">
     <!--end::Global Theme Styles -->
 
@@ -309,18 +308,19 @@ if ($logged_user_id != '') {
 <!--begin::Global Theme Bundle(used by all pages) -->
 <script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
 <script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js" type="text/javascript"></script>
 
 <!--end::Global Theme Bundle -->
 
-<!--
 <script>
-    $(document).ready(function() {
-        $('select').niceSelect();
+
+    $('#username_login').keypress(function(e){
+        if ( e.which == 13 ) return false;
+        //or...
+        if ( e.which == 13 ) e.preventDefault();
     });
+
 </script>
--->
 
 
 <script>
