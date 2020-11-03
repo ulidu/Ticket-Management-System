@@ -8,8 +8,8 @@
 
     <div class="row">
 
-        <div class="col-4">
-            <div class="kt-portlet kt-iconbox kt-iconbox--warning kt-iconbox--animate-slow">
+        <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
+            <div class="kt-portlet kt-iconbox <?php if ($acc_type == 'IT Staff') { ?>kt-iconbox--warning<?php }else{ ?> kt-iconbox--danger <?php } ?> kt-iconbox--animate-slow">
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
@@ -33,7 +33,7 @@
                                     <?php
 
 
-                                    if ($acc_type == 'Administrator') {
+                                    if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
 
                                         $count_all = "SELECT * FROM task where status != 'Approval Required' ORDER BY task_id";
 
@@ -75,7 +75,7 @@
 
                                 <?php
 
-                                if ($acc_type == 'Administrator' || $acc_type == 'Administrative Officer') {
+                                if ($acc_type == 'Administrator' || $acc_type == 'Administrative Officer' || $acc_type == 'Observer') {
 
                                     echo 'Approved';
 
@@ -94,8 +94,74 @@
             </div>
         </div>
 
+        <?php if ($acc_type != 'IT Staff') { ?>
+        <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
+            <div class="kt-portlet kt-iconbox kt-iconbox--warning kt-iconbox--animate-slow">
+                <div class="kt-portlet__body">
+                    <div class="kt-iconbox__body">
+                        <div class="kt-iconbox__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z"
+                                          fill="#000000" opacity="0.3"/>
+                                    <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z"
+                                          fill="#000000"/>
+                                    <rect fill="#000000" opacity="0.3" x="7" y="10" width="5" height="2" rx="1"/>
+                                    <rect fill="#000000" opacity="0.3" x="7" y="14" width="9" height="2" rx="1"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="kt-iconbox__desc">
+                            <h3 class="kt-iconbox__title">
+                                <a class="kt-link" href="#">
 
-        <div class="col-4">
+                                    <?php
+
+                                    if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
+
+                                        $count_all = "SELECT * FROM task where status = 'Approved' ORDER BY task_id";
+
+                                    } elseif ($acc_type == 'Administrative Officer') {
+
+                                        $count_all = "SELECT * FROM task where status = 'Approved' and division='$division' ORDER BY task_id";
+
+                                    }
+
+                                    if ($count_all_run = mysqli_query($con, $count_all)) {
+
+                                        $count_all_tickets = mysqli_num_rows($count_all_run);
+
+                                        if ($count_all_tickets == 1) {
+
+                                            printf("%d Ticket", $count_all_tickets);
+
+                                        } else {
+
+                                            printf("%d Tickets", $count_all_tickets);
+
+                                        }
+
+                                        mysqli_free_result($count_all_run);
+
+                                    }
+
+                                    ?>
+
+                                </a>
+                            </h3>
+                            <div class="kt-iconbox__content">
+                                Pending Assign
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+
+        <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
             <div class="kt-portlet kt-iconbox kt-iconbox--brand kt-iconbox--animate-slow">
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
@@ -125,7 +191,7 @@
                                     <?php
 
 
-                                    if ($acc_type == 'Administrator') {
+                                    if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
 
                                         $count_in_progress = "SELECT * FROM task where status = 'In Progress' ORDER BY task_id";
 
@@ -174,7 +240,7 @@
         </div>
 
 
-        <div class="col-4">
+        <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
             <div class="kt-portlet kt-iconbox kt-iconbox--success kt-iconbox--animate-slow">
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
@@ -199,7 +265,7 @@
 
                                     <?php
 
-                                    if ($acc_type == 'Administrator') {
+                                    if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
 
                                         $count_completed = "SELECT * FROM task where status = 'Completed' ORDER BY task_id";
 
@@ -442,7 +508,7 @@
 
                 <?php
 
-                if ($acc_type == 'Administrator') {
+                if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
 
                     $query = "SELECT * FROM assign RIGHT JOIN task ON task.task_id = assign.task_id WHERE task.status!='Approval Required' order by task.task_id desc";
                     $run_query = mysqli_query($con, $query);
@@ -498,7 +564,6 @@
 
                         <td style="color: #343a40;">
 
-
                             <script>
 
                                 $(document).ready(function () {
@@ -553,7 +618,9 @@
                                     style="width: 200px; font-weight: 500; color: #2c77f4;"
                                     id="<?php echo 'staff' . $i; ?>"
                                     name="<?php echo 'staff' . $i; ?>"
-                                    class="ui-select form-control dropdown dropdown-menu-anim-down " required>
+                                    data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                                    title="Assign the Person No. 1"
+                                    class="ui-select form-control dropdown dropdown-menu-anim-down" required>
                                 <option style="color: grey;" value="" disabled="disabled" selected>Assign Person No. 1*
                                 </option>
 
@@ -660,7 +727,8 @@
                                 } ?>
                                     style="width: 200px; font-weight: 400; color: #34bfa3;"
                                     id="<?php echo 'staff2' . $i; ?>"
-                                    name="<?php echo 'staff2' . $i; ?>"
+                                    name="<?php echo 'staff2' . $i; ?>" data-skin="dark" data-toggle="kt-tooltip"
+                                    data-placement="top" title="Assign the Person No. 2"
                                     class="ui-select form-control dropdown dropdown-menu-anim-down " required>
                                 <option style="color: grey;" value="" disabled="disabled" selected>Assign Person No. 2
                                 </option>
@@ -795,7 +863,9 @@
                             <select <?php if ($acc_type !== 'IT Staff') { ?> hidden <?php } else {
                             } ?> style="width: 200px; font-weight: 500; color: #2c77f4;"
                                  id="<?php echo 'status_s' . $i; ?>" name="<?php echo 'status_s' . $i; ?>"
-                                 class="ui-select form-control dropdown dropdown-menu-anim-down kt-badge--d22" required>
+                                 class="ui-select form-control dropdown dropdown-menu-anim-down kt-badge--d22"
+                                 data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                                 title="Set the Ticket Status" required>
                                 <option value="" disabled="true" selected>Ticket Status*</option>
 
 
@@ -876,7 +946,8 @@
             return false;
         }" id="submit_approve" name="submit_approve" type="submit"
                                              class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--d22 kt-badge--inline kt-badge--pill"
-                                             data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Approve Ticket">
+                                             data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                                             title="Approve Ticket">
                                             <i style="font-size: 18px; color: #007bff; font-weight: 800;"
                                                class="la la-check"></i>
                                         </button>
@@ -890,7 +961,8 @@
             return false;
         }" type="submit" id="submit_remove" name="submit_remove"
                                              class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
-                                             data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Reject and Delete the Ticket">
+                                             data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                                             title="Reject and Delete the Ticket">
                                             <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
                                                class="la la-close"></i>
                                         </button>
@@ -926,7 +998,8 @@
             return false;
         }" type="submit" id="undo_assign" name="undo_assign"
                                         class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--abc kt-badge--inline kt-badge--pill"
-                                        data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Undo Assigning the Ticket">
+                                        data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                                        title="Undo Assigning the Ticket">
                                     <i style="font-size: 18px; color: #343a40; font-weight: 800;"
                                        class="la la-undo"></i>
                                 </button>
@@ -942,7 +1015,8 @@
             return false;
         }" type="submit" id="undo_status_staff" name="undo_status_staff"
                                         class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--abc kt-badge--inline kt-badge--pill"
-                                        data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Undo the Status of Ticket">
+                                        data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                                        title="Undo the Status of Ticket">
                                     <i style="font-size: 18px; color: #343a40; font-weight: 800;"
                                        class="la la-undo"></i>
                                 </button>
@@ -960,7 +1034,8 @@
 
         }" type="submit" id="dlt_admin" name="dlt_admin"
                                         class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
-                                        data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Delete the Ticket">
+                                        data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                                        title="Delete the Ticket">
                                     <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
                                        class="la la-trash"></i>
                                 </button>

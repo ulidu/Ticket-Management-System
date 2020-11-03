@@ -238,7 +238,9 @@
                                                 <button type="submit" name="submitUser"
                                                         class="btn btn-brand">Update Details
                                                 </button>&nbsp;
-                                                <button type="reset" onClick="window.location.href=window.location.href" class="btn btn-secondary">Cancel</button>
+                                                <button type="reset" onClick="window.location.href=window.location.href"
+                                                        class="btn btn-secondary">Cancel
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -252,9 +254,6 @@
     </div>
 
 
-
-
-
     <div class="row">
 
         <div class="col-3">
@@ -262,16 +261,12 @@
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z"
-                                          fill="#000000" opacity="0.3"/>
-                                    <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z"
-                                          fill="#000000"/>
-                                    <rect fill="#000000" opacity="0.3" x="7" y="10" width="5" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="7" y="14" width="9" height="2" rx="1"/>
+                                    <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z" fill="#000000" opacity="0.3"/>
                                 </g>
                             </svg>
                         </div>
@@ -282,9 +277,7 @@
                                     <?php
 
 
-
-                                    $count_all = "SELECT * FROM user where acc_type='Administrator' ORDER BY userID";
-
+                                    $count_all = "SELECT * FROM user where acc_type='Administrator'";
 
 
                                     if ($count_all_run = mysqli_query($con, $count_all)) {
@@ -326,20 +319,13 @@
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z"
-                                          fill="#000000" opacity="0.3"/>
-                                    <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z"
-                                          fill="#000000"/>
-                                    <rect fill="#000000" opacity="0.3" x="10" y="9" width="7" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="7" y="9" width="2" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="7" y="13" width="2" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="10" y="13" width="7" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="7" y="17" width="2" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="10" y="17" width="7" height="2" rx="1"/>
+                                    <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z" fill="#000000" opacity="0.3"/>
                                 </g>
                             </svg>
                         </div>
@@ -351,19 +337,7 @@
                                     <?php
 
 
-                                    if ($acc_type == 'Administrator') {
-
-                                        $count_in_progress = "SELECT * FROM task where status = 'In Progress' ORDER BY task_id";
-
-                                    } elseif ($acc_type == 'Administrative Officer') {
-
-                                        $count_in_progress = "SELECT * FROM task where status = 'In Progress' and division='$division' ORDER BY task_id";
-
-                                    } elseif ($acc_type == 'IT Staff') {
-
-                                        $count_in_progress = "SELECT * FROM assign a, task t WHERE a.task_id = t.task_id AND t.status='In Progress' and (a.userID = '$logged_user_id' OR a.userID_2_opt = '$logged_user_id')";
-
-                                    }
+                                    $count_in_progress = "SELECT * FROM user where acc_type='Observer'";
 
 
                                     if ($count_in_progress_run = mysqli_query($con, $count_in_progress)) {
@@ -372,11 +346,11 @@
 
                                         if ($count_in_progress_run_tickets == 1) {
 
-                                            printf("%d Ticket", $count_in_progress_run_tickets);
+                                            printf("%d Account", $count_in_progress_run_tickets);
 
                                         } else {
 
-                                            printf("%d Tickets", $count_in_progress_run_tickets);
+                                            printf("%d Accounts", $count_in_progress_run_tickets);
 
                                         }
 
@@ -403,16 +377,13 @@
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z"
-                                          fill="#000000" opacity="0.3"/>
-                                    <path d="M10.875,15.75 C10.6354167,15.75 10.3958333,15.6541667 10.2041667,15.4625 L8.2875,13.5458333 C7.90416667,13.1625 7.90416667,12.5875 8.2875,12.2041667 C8.67083333,11.8208333 9.29375,11.8208333 9.62916667,12.2041667 L10.875,13.45 L14.0375,10.2875 C14.4208333,9.90416667 14.9958333,9.90416667 15.3791667,10.2875 C15.7625,10.6708333 15.7625,11.2458333 15.3791667,11.6291667 L11.5458333,15.4625 C11.3541667,15.6541667 11.1145833,15.75 10.875,15.75 Z"
-                                          fill="#000000"/>
-                                    <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z"
-                                          fill="#000000"/>
+                                    <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z" fill="#000000" opacity="0.3"/>
                                 </g>
                             </svg>
                         </div>
@@ -423,19 +394,7 @@
 
                                     <?php
 
-                                    if ($acc_type == 'Administrator') {
-
-                                        $count_completed = "SELECT * FROM task where status = 'Completed' ORDER BY task_id";
-
-                                    } elseif ($acc_type == 'Administrative Officer') {
-
-                                        $count_completed = "SELECT * FROM task where status = 'Completed' and division='$division' ORDER BY task_id";
-
-                                    } elseif ($acc_type == 'IT Staff') {
-
-                                        $count_completed = "SELECT * FROM assign a, task t WHERE a.task_id = t.task_id AND t.status='Completed' and (a.userID = '$logged_user_id' OR a.userID_2_opt = '$logged_user_id')";
-
-                                    }
+                                    $count_completed = "SELECT * FROM user where acc_type='IT Staff'";
 
                                     if ($count_completed_run = mysqli_query($con, $count_completed)) {
 
@@ -443,11 +402,11 @@
 
                                         if ($count_completed_run_tickets == 1) {
 
-                                            printf("%d Ticket", $count_completed_run_tickets);
+                                            printf("%d Account", $count_completed_run_tickets);
 
                                         } else {
 
-                                            printf("%d Tickets", $count_completed_run_tickets);
+                                            printf("%d Accounts", $count_completed_run_tickets);
 
                                         }
 
@@ -475,18 +434,16 @@
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z"
-                                          fill="#000000" opacity="0.3"/>
-                                    <path d="M10.875,15.75 C10.6354167,15.75 10.3958333,15.6541667 10.2041667,15.4625 L8.2875,13.5458333 C7.90416667,13.1625 7.90416667,12.5875 8.2875,12.2041667 C8.67083333,11.8208333 9.29375,11.8208333 9.62916667,12.2041667 L10.875,13.45 L14.0375,10.2875 C14.4208333,9.90416667 14.9958333,9.90416667 15.3791667,10.2875 C15.7625,10.6708333 15.7625,11.2458333 15.3791667,11.6291667 L11.5458333,15.4625 C11.3541667,15.6541667 11.1145833,15.75 10.875,15.75 Z"
-                                          fill="#000000"/>
-                                    <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z"
-                                          fill="#000000"/>
-                                </g>
-                            </svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24"/>
+                                        <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"/>
+                                        <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z" fill="#000000" opacity="0.3"/>
+                                        <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z" fill="#000000" opacity="0.3"/>
+                                    </g>
+                                </svg>
                         </div>
                         <div class="kt-iconbox__desc">
                             <h3 class="kt-iconbox__title">
@@ -495,19 +452,7 @@
 
                                     <?php
 
-                                    if ($acc_type == 'Administrator') {
-
-                                        $count_completed = "SELECT * FROM task where status = 'Completed' ORDER BY task_id";
-
-                                    } elseif ($acc_type == 'Administrative Officer') {
-
-                                        $count_completed = "SELECT * FROM task where status = 'Completed' and division='$division' ORDER BY task_id";
-
-                                    } elseif ($acc_type == 'IT Staff') {
-
-                                        $count_completed = "SELECT * FROM assign a, task t WHERE a.task_id = t.task_id AND t.status='Completed' and (a.userID = '$logged_user_id' OR a.userID_2_opt = '$logged_user_id')";
-
-                                    }
+                                    $count_completed = "SELECT * FROM user where acc_type='Administrative Officer'";
 
                                     if ($count_completed_run = mysqli_query($con, $count_completed)) {
 
@@ -515,11 +460,11 @@
 
                                         if ($count_completed_run_tickets == 1) {
 
-                                            printf("%d Ticket", $count_completed_run_tickets);
+                                            printf("%d Account", $count_completed_run_tickets);
 
                                         } else {
 
-                                            printf("%d Tickets", $count_completed_run_tickets);
+                                            printf("%d Accounts", $count_completed_run_tickets);
 
                                         }
 
@@ -660,42 +605,45 @@
 
                         <td style="min-width: 120px;">
 
+                            <form name="user_actions" action="" method="post">
 
-                            <input type="hidden" value="" name="ticket_hidden"
-                                   id="ticket_hidden">
+                                <input type="hidden" value="" name="ticket_hidden"
+                                       id="ticket_hidden">
 
 
-                            <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Edit User" onclick="edit_g_r1()" id="edit_u" name="edit_u" type="button"
-                                    class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--d22 kt-badge--inline kt-badge--pill"
-                                    title="Edit User">
-                                <i style="font-size: 18px; color: #007bff; font-weight: 800;"
-                                   class="la la-edit"></i>
-                            </button>
-                            &nbsp;
-                            <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Disable User" onclick="" id="submit_approve" name="submit_approve" type="submit"
-                                    class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--warn kt-badge--inline kt-badge--pill"
-                                    title="Disable User">
-                                <i style="font-size: 18px; color: #ffb822; font-weight: 800;"
-                                   class="la la-minus-circle"></i>
-                            </button>
-                            &nbsp;
-                            <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top" title="Delete User" onclick="
-                                if (confirm('Are you sure you want to delete this ticket ?')) {
-            return true;
+                                <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                                        onclick="edit_g_r1()" id="edit_u" name="edit_u" type="button"
+                                        class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--d22 kt-badge--inline kt-badge--pill"
+                                        title="Edit User">
+                                    <i style="font-size: 18px; color: #007bff; font-weight: 800;"
+                                       class="la la-edit"></i>
+                                </button>
+                                &nbsp;
+                                <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                                        id="submit_approve" name="submit_approve"
+                                        type="submit" onclick="
+                                if (confirm('Are you sure you want to disable this user ?')) { return true; } else { return false; }"
+                                        class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--warn kt-badge--inline kt-badge--pill"
+                                        title="Disable User">
+                                    <i style="font-size: 18px; color: #ffb822; font-weight: 800;"
+                                       class="la la-minus-circle"></i>
+                                </button>
+                                &nbsp;
+                                <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                                        onclick="
+                                if (confirm('Are you sure you want to delete this user permanently ?')) { return true; } else { return false; }"
+                                        type="submit" id="submit_remove" name="submit_remove"
+                                        class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
+                                        title="Delete User Permanently">
+                                    <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
+                                       class="la la-trash"></i>
+                                </button>
 
-        } else {
-            return false;
-        }" type="submit" id="submit_remove" name="submit_remove"
-                                    class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
-                                    title="Delete User">
-                                <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
-                                   class="la la-trash"></i>
-                            </button>
+                                <hr>
 
-                            <hr>
+                                <span class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill kt-font-bold">Password Reset</span>
 
-                            <span class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill kt-font-bold">Password Reset</span>
-
+                            </form>
 
                         </td>
 
