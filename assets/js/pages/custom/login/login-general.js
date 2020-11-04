@@ -224,7 +224,7 @@ var KTLoginGeneral = function() {
                             showConfirmButton: true
                         });
 
-                    }, 1200);
+                    }, 5000);
 
 
 

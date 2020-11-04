@@ -15,8 +15,8 @@ if (isset($_POST["email"])) {
 
     $to = $email;
     $subject = "Reset Your Password. Ticket Management System - UDA";
-    $message = "<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">
-
+    $message = "
+    <html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">
 <head>
     <meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\" />
     <!-- [ if !mso]> <!-->
@@ -25,7 +25,8 @@ if (isset($_POST["email"])) {
     <meta content=\"telephone=no\" name=\"format-detection\" />
     <meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\" />
     <title>Reset Your Password on Ticket Management System at UDA</title>
- <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700\">
+<link rel=\"stylesheet\"
+          href=\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700\">
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src=\"http://paulgoddarddesign.com/js/ripple.js\"></script>
     <style type=\"text/css\">
