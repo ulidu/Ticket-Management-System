@@ -308,6 +308,10 @@
 
                                         swal.fire("Updated Successfully !", "Account Information and Password Updated Successfully.", "success");
 
+                                        setTimeout(function () {
+                                            location.reload(1);
+                                        }, 1200);
+
                                     }else {
 
                                         swal.fire("Incorrect Password !", "Please Confirm Current Password", "danger");
@@ -354,6 +358,11 @@
                             },
                             success: function (data) {
                                 swal.fire("Updated Successfully !", "Account Information Updated Successfully.", "success");
+
+                                setTimeout(function () {
+                                    location.reload(1);
+                                }, 1200);
+
                             }
                         });
 

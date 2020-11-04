@@ -5,6 +5,8 @@ var KTLoginGeneral = function() {
 
     var login = $('#kt_login');
 
+    var login_form_app = $('#login_app');
+
     var showErrorMsg = function(form, type, msg) {
         var alert = $('<div class="alert alert-' + type + ' alert-dismissible" role="alert">\
 			<div class="alert-text">'+msg+'</div>\
@@ -51,11 +53,16 @@ var KTLoginGeneral = function() {
     var handleFormSwitch = function() {
         $('#kt_login_forgot').click(function(e) {
             e.preventDefault();
+            $('#login_app').hide();
+            $('#forget_form').show();
             displayForgotForm();
         });
 
         $('#kt_login_forgot_cancel').click(function(e) {
             e.preventDefault();
+            $('#forget_form').hide();
+            $('#login_app').show();
+            KTUtil.animateClass(login.find('#login_app')[0], 'flipInX animated');
             displaySignInForm();
         });
 
@@ -185,25 +192,56 @@ var KTLoginGeneral = function() {
 
             btn.addClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', true);
 
-            form.ajaxSubmit({
-                url: '',
-                success: function(response, status, xhr, $form) {
-                	// similate 2s delay
-                	setTimeout(function() {
-                		btn.removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false); // remove
-	                    form.clearForm(); // clear form
-	                    form.validate().resetForm(); // reset validation states
 
-	                    // display signup form
-	                    displaySignInForm();
-	                    var signInForm = login.find('.kt-login__signin form');
-	                    signInForm.clearForm();
-	                    signInForm.validate().resetForm();
 
-	                    showErrorMsg(signInForm, 'success', 'Cool! Password recovery instruction has been sent to your email.');
-                	}, 2000);
+            var email = $('#kt_email').val();
+
+
+            $.ajax({
+                url: "forget_pw.php",
+                method: "POST",
+                data: {
+                    email: email
+                },
+                success: function (data, response, status, xhr, $form) {
+
+
+
+                    setTimeout(function() {
+                        btn.removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false); // remove
+                        form.clearForm(); // clear form
+                        form.validate().resetForm(); // reset validation states
+
+                        // display signup form
+                        $('#forget_form').hide();
+                        $('#login_app').show();
+                        KTUtil.animateClass(login.find('#login_app')[0], 'flipInX animated');
+
+                        swal.fire({
+                            position: 'center',
+                            type: 'success',
+                            title: 'Password recovery instructions has been sent to your email.',
+                            showConfirmButton: true
+                        });
+
+                    }, 1200);
+
+
+
+
+
+
                 }
+
             });
+
+
+
+
+
+
+
+
         });
     }
 

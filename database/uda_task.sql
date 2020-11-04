@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Nov 01, 2020 at 07:23 AM
+-- Generation Time: Nov 04, 2020 at 11:44 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -43,8 +43,7 @@ CREATE TABLE IF NOT EXISTS `assign` (
 
 INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_date`, `assigned_by`) VALUES
 ('84', '22', '14', '2020-10-28 15:08:36', '29'),
-('88', '22', '14', '2020-10-28 21:15:22', '29'),
-('89', '14', NULL, '2020-11-01 08:52:40', '29');
+('92', '14', '22', '2020-11-02 17:03:11', '29');
 
 -- --------------------------------------------------------
 
@@ -76,7 +75,21 @@ CREATE TABLE IF NOT EXISTS `log` (
   `log_action` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `log_emp_code` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`logID`)
-) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `log`
+--
+
+INSERT INTO `log` (`logID`, `log_userID`, `log_date_time`, `log_action`, `log_emp_code`) VALUES
+(46, '29', '2020-11-04 10:58:47', 'User ID: 29 Removed previously assigned person(s) for the ticket with ID: 90', NULL),
+(45, '29', '2020-11-04 10:50:06', 'User ID: 29 assigned the ticket ID: 90 for User ID : 22 as person No. 1', NULL),
+(44, '29', '2020-11-02 17:03:11', 'User ID: 29 assigned the ticket ID: 92 for User ID : 22 as person No. 2', NULL),
+(43, '29', '2020-11-02 17:03:08', 'User ID: 29 assigned the ticket ID: 92 for User ID : 14 as person No. 1', NULL),
+(42, '29', '2020-11-02 17:02:39', 'User ID: 29 Deleted the ticket with ID: 89', NULL),
+(41, NULL, '2020-11-01 13:24:30', 'New ticket added by rt in Finance Division', 'sfgh'),
+(40, '29', '2020-11-01 13:15:37', 'User ID: 29 Added a new user (Acc Type: Administrator) named thd fh with Employee Code: 324', NULL),
+(39, '29', '2020-11-01 13:13:57', 'User ID: 29 Added a new user (Acc  Type: Observer) with EmpCode: 53 named ggj gh', NULL);
 
 -- --------------------------------------------------------
 
@@ -103,16 +116,16 @@ CREATE TABLE IF NOT EXISTS `task` (
   `approved_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `task_completed_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`task_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=92 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `task`
 --
 
 INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issue`, `category`, `status`, `designation`, `division`, `extension_no`, `priority`, `asset_code`, `ip_address`, `approved_by`, `approved_date`, `task_completed_date`) VALUES
-(84, 'hgh', 'hg', '2020-10-28 14:17:32', 'gh', 'Software Issue', 'Completed', 'hg', 'Finance Division', 'h', 'Medium', 'ghf', '192.168.1.2', '15', '2020-10-28 14:18:01', '2020-10-28 20:39:14'),
-(90, 's', 's', '2020-10-30 11:49:11', 'd', 'Software Issue', 'Approval Required', 's', 'Finance Division', '21', 'Medium', 'd', '192.168.1.2', '', '', ''),
-(89, 'fdg', 'f', '2020-10-29 07:34:55', 'g', 'Software Issue', 'Assigned', 'fd', 'Finance Division', 'fg', 'Medium', 'fg', '192.168.1.2', '15', '2020-10-29 07:38:36', ''),
+(84, 'hgh', 'hg', '2020-10-28 14:17:32', 'gh', 'Software Issue', 'Completed', 'hg', 'Finance Division', 'h', 'Medium', 'ghf', '192.168.1.2', '15', '2020-10-28 14:18:01', '2020-11-02 16:49:16'),
+(92, 'rt', 'sfgh', '2020-11-01 13:24:30', 'fgh', 'Software Issue', 'Completed', 'fgh', 'Finance Division', '545', 'Medium', 'gh', '192.168.1.2', '15', '2020-11-01 14:20:13', '2020-11-02 17:04:51'),
+(90, 's', 's', '2020-10-30 11:49:11', 'd', 'Software Issue', 'Approved', 's', 'Finance Division', '21', 'Medium', 'd', '192.168.1.2', '15', '2020-11-03 11:34:20', ''),
 (91, 'sfgd', 'fd', '2020-11-01 07:47:27', 'gfh', 'Software Issue', 'Approval Required', 'fg', 'Finance Division', '443', 'Medium', 'hr', '192.168.1.2', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -135,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `title` varchar(200) NOT NULL,
   `division` varchar(200) NOT NULL,
   PRIMARY KEY (`userID`)
-) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
@@ -148,7 +161,9 @@ INSERT INTO `user` (`userID`, `employeeCode`, `firstName`, `lastName`, `email`, 
 (22, '123', 'fde', 'sfd', 'df@fedc.com', '$2y$10$Rdcairg06Yjr86awsWDv7Oknud4TvIr1I3xLpAWh50yzAPoyScGvi', 'Sunday 20th of September 2020 05:10:20 PM', 'Active', 'IT Staff', 'Mr.', 'Project Management Division'),
 (29, '5656', 'admin', 'account', 'admin@admin.com', '$2y$10$lwW0IwMrZkDgr.sP4ZrvbuPBfgPi7iNOpfntqm/XHdTijEaFq1MLS', 'Tuesday 20th of October 2020 08:41:06 AM', 'Active', 'Administrator', 'Mr.', 'Project Management Division'),
 (30, '11', 'aaa', 'aa', 'a@a.com', '$2y$10$vaIBZ3JPl3hzFUC8897xZObx/HlwYXZWaHzPyKVx5X3f6zhk4qz0i', '2000-07-01T00:00:00+06:00', 'Active', 'Observer', 'Mr.', 'Project Management Division'),
-(31, '1', 's', 's', 's@a.com', '$2y$10$2aCg1/WAlkI.7Fc2mNmVmurGke36djrvYEvV9UyDuubPgbK5VhM9a', '2020-10-22 09:15:12', 'Active', 'Administrative Officer', 'Mrs.', 'Project Management Division');
+(31, '1', 's', 's', 's@a.com', '$2y$10$2aCg1/WAlkI.7Fc2mNmVmurGke36djrvYEvV9UyDuubPgbK5VhM9a', '2020-10-22 09:15:12', 'Active', 'Administrative Officer', 'Mrs.', 'Project Management Division'),
+(32, '53', 'ggj', 'gh', 'ds@fgs.com', '$2y$10$I6wp1AYR/15QRv/Yd5Lp..aKye8n59cVR/kUlw6zJ08ei.biInAfu', '2020-11-01 13:13:57', 'Active', 'Observer', 'Mr.', 'Project Management Division'),
+(33, '324', 'thd', 'fh', 'jb@jkh.com', '$2y$10$I9Knf6sbaZZPHsCd9QDqgO09pSoHORgk4spSwnWEK7ikFHWd67SzS', '2020-11-01 13:15:37', 'Active', 'Administrator', 'Mr.', 'Project Management Division');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -10,7 +10,7 @@
 
         <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
             <div class="kt-portlet kt-iconbox <?php if ($acc_type == 'IT Staff') { ?>kt-iconbox--warning kt-ribbon--warning <?php }else{ ?> kt-iconbox--danger kt-ribbon--danger <?php } ?> kt-iconbox--animate-slow kt-ribbon kt-ribbon--left kt-ribbon--round">
-                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400;">
+                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400; opacity: 0.8;">
                     Previous 3 Months
                 </div>
                 <div class="kt-portlet__body">
@@ -35,18 +35,27 @@
 
                                     <?php
 
+                                    date_default_timezone_set('Asia/Colombo');
+
+                                    $date=date('Y-m-d H:i:s');
+                                    $time=date('H:i:s');
+                                    $today_d_c1 = $date;
+
+                                    $d2 = date('Y-m-d', strtotime('-90 days'));
+                                    $back_3_months = $d2 . ' ' .$time;
+
 
                                     if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
 
-                                        $count_all = "SELECT * FROM task where status != 'Approval Required' ORDER BY task_id";
+                                        $count_all = "SELECT * FROM task where status != 'Approval Required' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
 
                                     } elseif ($acc_type == 'Administrative Officer') {
 
-                                        $count_all = "SELECT * FROM task where status != 'Approval Required' and division='$division' ORDER BY task_id";
+                                        $count_all = "SELECT * FROM task where status != 'Approval Required' and division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
 
                                     } elseif ($acc_type == 'IT Staff') {
 
-                                        $count_all = "SELECT * FROM assign where userID='$logged_user_id' or userID_2_opt='$logged_user_id' ORDER BY task_id";
+                                        $count_all = "SELECT * FROM assign a, task t where a.task_id = t.task_id AND (a.userID='$logged_user_id' or a.userID_2_opt='$logged_user_id') AND  t.assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY a.task_id";
 
                                     }
 
@@ -57,11 +66,35 @@
 
                                         if ($count_all_tickets == 1) {
 
-                                            printf("%d Ticket", $count_all_tickets);
+                                            if ($acc_type == 'Administrative Officer'){
+
+                                                $count_all_ap_req = "SELECT * FROM task where division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
+                                                $count_all_ap_req_run = mysqli_query($con, $count_all_ap_req);
+                                                $count_all_ap_req_tickets = mysqli_num_rows($count_all_ap_req_run);
+
+                                                printf("%d out of %d Ticket", $count_all_tickets, $count_all_ap_req_tickets);
+
+                                            }else{
+
+                                                printf("%d Ticket", $count_all_tickets);
+
+                                            }
 
                                         } else {
 
-                                            printf("%d Tickets", $count_all_tickets);
+                                            if ($acc_type == 'Administrative Officer'){
+
+                                                $count_all_ap_req = "SELECT * FROM task where division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
+                                                $count_all_ap_req_run = mysqli_query($con, $count_all_ap_req);
+                                                $count_all_ap_req_tickets = mysqli_num_rows($count_all_ap_req_run);
+
+                                                printf("%d/%d Tickets", $count_all_tickets, $count_all_ap_req_tickets);
+
+                                            }else{
+
+                                                printf("%d Tickets", $count_all_tickets);
+
+                                            }
 
                                         }
 
@@ -100,7 +133,7 @@
         <?php if ($acc_type != 'IT Staff') { ?>
         <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
             <div class="kt-portlet kt-iconbox kt-iconbox--warning kt-iconbox--animate-slow kt-ribbon kt-ribbon--warning kt-ribbon--left kt-ribbon--round">
-                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400;">
+                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400; opacity: 0.8;">
                     Previous 3 Months
                 </div>
                 <div class="kt-portlet__body">
@@ -125,13 +158,22 @@
 
                                     <?php
 
+                                    date_default_timezone_set('Asia/Colombo');
+
+                                    $date=date('Y-m-d H:i:s');
+                                    $time=date('H:i:s');
+                                    $today_d_c1 = $date;
+
+                                    $d2 = date('Y-m-d', strtotime('-90 days'));
+                                    $back_3_months = $d2 . ' ' .$time;
+
                                     if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
 
-                                        $count_all = "SELECT * FROM task where status = 'Approved' ORDER BY task_id";
+                                        $count_all = "SELECT * FROM task where status = 'Approved' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
 
                                     } elseif ($acc_type == 'Administrative Officer') {
 
-                                        $count_all = "SELECT * FROM task where status = 'Approved' and division='$division' ORDER BY task_id";
+                                        $count_all = "SELECT * FROM task where status = 'Approved' and division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
 
                                     }
 
@@ -169,7 +211,7 @@
 
         <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
             <div class="kt-portlet kt-iconbox kt-iconbox--brand kt-iconbox--animate-slow kt-ribbon kt-ribbon--brand kt-ribbon--left kt-ribbon--round">
-                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400;">
+                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400; opacity: 0.8;">
                     Previous 3 Months
                 </div>
                 <div class="kt-portlet__body">
@@ -199,18 +241,26 @@
 
                                     <?php
 
+                                    date_default_timezone_set('Asia/Colombo');
+
+                                    $date=date('Y-m-d H:i:s');
+                                    $time=date('H:i:s');
+                                    $today_d_c1 = $date;
+
+                                    $d2 = date('Y-m-d', strtotime('-90 days'));
+                                    $back_3_months = $d2 . ' ' .$time;
 
                                     if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
 
-                                        $count_in_progress = "SELECT * FROM task where status = 'In Progress' ORDER BY task_id";
+                                        $count_in_progress = "SELECT * FROM task where status = 'In Progress' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
 
                                     } elseif ($acc_type == 'Administrative Officer') {
 
-                                        $count_in_progress = "SELECT * FROM task where status = 'In Progress' and division='$division' ORDER BY task_id";
+                                        $count_in_progress = "SELECT * FROM task where status = 'In Progress' and division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
 
                                     } elseif ($acc_type == 'IT Staff') {
 
-                                        $count_in_progress = "SELECT * FROM assign a, task t WHERE a.task_id = t.task_id AND t.status='In Progress' and (a.userID = '$logged_user_id' OR a.userID_2_opt = '$logged_user_id')";
+                                        $count_in_progress = "SELECT * FROM assign a, task t WHERE a.task_id = t.task_id AND t.status='In Progress' and (assigned_date between '$back_3_months' and '$today_d_c1') and (a.userID = '$logged_user_id' OR a.userID_2_opt = '$logged_user_id')";
 
                                     }
 
@@ -251,7 +301,7 @@
 
         <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
             <div class="kt-portlet kt-iconbox kt-iconbox--success kt-iconbox--animate-slow kt-ribbon kt-ribbon--success kt-ribbon--left kt-ribbon--round">
-                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400;">
+                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400; opacity: 0.8;">
                     Previous 3 Months
                 </div>
                 <div class="kt-portlet__body">
@@ -277,17 +327,26 @@
 
                                     <?php
 
+                                    date_default_timezone_set('Asia/Colombo');
+
+                                    $date=date('Y-m-d H:i:s');
+                                    $time=date('H:i:s');
+                                    $today_d_c1 = $date;
+
+                                    $d2 = date('Y-m-d', strtotime('-90 days'));
+                                    $back_3_months = $d2 . ' ' .$time;
+
                                     if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
 
-                                        $count_completed = "SELECT * FROM task where status = 'Completed' ORDER BY task_id";
+                                        $count_completed = "SELECT * FROM task where status = 'Completed' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
 
                                     } elseif ($acc_type == 'Administrative Officer') {
 
-                                        $count_completed = "SELECT * FROM task where status = 'Completed' and division='$division' ORDER BY task_id";
+                                        $count_completed = "SELECT * FROM task where status = 'Completed' and division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
 
                                     } elseif ($acc_type == 'IT Staff') {
 
-                                        $count_completed = "SELECT * FROM assign a, task t WHERE a.task_id = t.task_id AND t.status='Completed' and (a.userID = '$logged_user_id' OR a.userID_2_opt = '$logged_user_id')";
+                                        $count_completed = "SELECT * FROM assign a, task t WHERE a.task_id = t.task_id AND t.status='Completed' and (assigned_date between '$back_3_months' and '$today_d_c1') and (a.userID = '$logged_user_id' OR a.userID_2_opt = '$logged_user_id')";
 
                                     }
 

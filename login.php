@@ -34,7 +34,7 @@ if ($logged_user_id != '') {
 
     <!--begin::Page Custom Styles(used by this page) -->
     <link href="assets/css/pages/login/login-1.css" rel="stylesheet" type="text/css"/>
-
+    <link href="assets/css/pages/login/login-5.css" rel="stylesheet" type="text/css"/>
     <!--end::Page Custom Styles -->
 
     <!--begin::Global Theme Styles(used by all pages) -->
@@ -213,7 +213,8 @@ if ($logged_user_id != '') {
 
                                             ?>
                                             <li
-                                                <?php if ($acc_type == 'Administrator'){ ?>style="color: #ffb822;"<?php }elseif ($acc_type == 'Observer'){ ?>style="color: #282a3c;"<?php } else {
+                                                <?php if ($acc_type == 'Administrator'){ ?>style="color: #ffb822;"
+                                                <?php }elseif ($acc_type == 'Observer'){ ?>style="color: #282a3c;"<?php } else {
                                             } ?>
                                                 value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName . ' | ' . $employeeCode . " " . "-" . " " . $acc_type; ?>
                                             </li>
@@ -243,7 +244,7 @@ if ($logged_user_id != '') {
 
                             <!--begin::Action-->
                             <div class="kt-login__actions">
-                                <a href="" class="kt-link kt-login__link-forgot">
+                                <a href="javascript:;" id="kt_login_forgot" class="kt-link kt-login__link-forgot">
                                     Forgot Password ?
                                 </a>
 
@@ -258,7 +259,34 @@ if ($logged_user_id != '') {
                         </form>
 
                         <!--end::Form-->
+                        <div id="forget_form" style="display: none; text-align: center;" class="kt-login__forgot">
+                            <div class="kt-login__title">
+                                <h3>Forgotten Password ?</h3>
+                                <h5 style="font-weight: lighter; font-size: medium;">Enter your email to reset the
+                                    password.
+                                </h5>
 
+
+                                <div class="kt-login__form">
+                                    <form class="kt-form" action="" method="post">
+                                        <div class="form-group">
+                                            <input style="font-weight: 500; letter-spacing: 2px; font-size: 1.1rem;"
+                                                   class="form-control bg-secondary" type="text" placeholder="Enter Your Email Address" name="email"
+                                                   id="kt_email" autocomplete="off">
+                                        </div>
+                                        <div style="text-align: right;" >
+                                            <br><br>
+                                            <button style="width: 100px;" name="kt_login_forgot_submit" id="kt_login_forgot_submit"
+                                                    class="btn btn-brand btn-pill btn-elevate">Request
+                                            </button>
+                                            <button id="kt_login_forgot_cancel" class="btn btn-outline-brand btn-pill">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -309,15 +337,15 @@ if ($logged_user_id != '') {
 <script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
 <script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js" type="text/javascript"></script>
-
+<script src="assets/js/pages/custom/login/login-general.js" type="text/javascript"></script>
 <!--end::Global Theme Bundle -->
 
 <script>
 
-    $('#username_login').keypress(function(e){
-        if ( e.which == 13 ) return false;
+    $('#username_login').keypress(function (e) {
+        if (e.which == 13) return false;
         //or...
-        if ( e.which == 13 ) e.preventDefault();
+        if (e.which == 13) e.preventDefault();
     });
 
 </script>
