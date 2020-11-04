@@ -9,7 +9,10 @@
     <div class="row">
 
         <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
-            <div class="kt-portlet kt-iconbox <?php if ($acc_type == 'IT Staff') { ?>kt-iconbox--warning<?php }else{ ?> kt-iconbox--danger <?php } ?> kt-iconbox--animate-slow">
+            <div class="kt-portlet kt-iconbox <?php if ($acc_type == 'IT Staff') { ?>kt-iconbox--warning kt-ribbon--warning <?php }else{ ?> kt-iconbox--danger kt-ribbon--danger <?php } ?> kt-iconbox--animate-slow kt-ribbon kt-ribbon--left kt-ribbon--round">
+                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400;">
+                    Previous 3 Months
+                </div>
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
@@ -96,7 +99,10 @@
 
         <?php if ($acc_type != 'IT Staff') { ?>
         <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
-            <div class="kt-portlet kt-iconbox kt-iconbox--warning kt-iconbox--animate-slow">
+            <div class="kt-portlet kt-iconbox kt-iconbox--warning kt-iconbox--animate-slow kt-ribbon kt-ribbon--warning kt-ribbon--left kt-ribbon--round">
+                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400;">
+                    Previous 3 Months
+                </div>
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
@@ -162,7 +168,10 @@
         <?php } ?>
 
         <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
-            <div class="kt-portlet kt-iconbox kt-iconbox--brand kt-iconbox--animate-slow">
+            <div class="kt-portlet kt-iconbox kt-iconbox--brand kt-iconbox--animate-slow kt-ribbon kt-ribbon--brand kt-ribbon--left kt-ribbon--round">
+                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400;">
+                    Previous 3 Months
+                </div>
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
@@ -241,7 +250,10 @@
 
 
         <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
-            <div class="kt-portlet kt-iconbox kt-iconbox--success kt-iconbox--animate-slow">
+            <div class="kt-portlet kt-iconbox kt-iconbox--success kt-iconbox--animate-slow kt-ribbon kt-ribbon--success kt-ribbon--left kt-ribbon--round">
+                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400;">
+                    Previous 3 Months
+                </div>
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
