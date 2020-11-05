@@ -14,18 +14,18 @@ $date = date_format($date, 'Y-m-d H:i:s');
 $email = $_POST['email'];
 
 
-$query_check_email = "SELECT * FROM user WHERE email = '$email'";
+$query_check_email = "SELECT * FROM user WHERE email = '$email' and status='Active'";
 $run_query_check_email = mysqli_query($con, $query_check_email);
 
 $count_email = mysqli_num_rows($run_query_check_email);
 
 if ($count_email == 0) {
 
-    echo 0;
+    echo 1;
 
 }else{
 
-    $query_email = "SELECT * FROM user WHERE email = '$email'";
+    $query_email = "SELECT * FROM user WHERE email = '$email' and status='Active'";
     $run_query_email = mysqli_query($con, $query_email);
 
     while ($row_email = mysqli_fetch_assoc($run_query_email)) {
@@ -34,14 +34,32 @@ if ($count_email == 0) {
         $employeeCode = $row_email['employeeCode'];
         $firstName = $row_email['firstName'];
         $lastName = $row_email['lastName'];
-        $date = $row_email['date_created'];
-        $email = $row_email['email'];
         $type = $row_email['acc_type'];
         $status = $row_email['status'];
-        $password = $row_email['password'];
         $title = $row_email['title'];
         $division = $row_email['division'];
 
+        $_SESSION['userID'] = $userID;
+        $_SESSION['employeeCode'] = $employeeCode;
+        $_SESSION['firstName'] = $firstName;
+        $_SESSION['lastName'] = $lastName;
+        $_SESSION['status'] = $status;
+        $_SESSION['acc_type'] = $acc_type;
+        $_SESSION['title'] = $title;
+        $_SESSION['division'] = $division;
+
+    }
+
+    $userID = $_SESSION['userID'];
+    $employeeCode = $_SESSION['employeeCode'];
+    $firstName = $_SESSION['firstName'];
+    $lastName = $_SESSION['lastName'];
+    $status = $_SESSION['status'];
+    $acc_type = $_SESSION['acc_type'];
+    $title = $_SESSION['title'];
+    $division = $_SESSION['division'];
+
+    $logged_user_id = $_POST['logged_user_id'];
 
         $selector = bin2hex(random_bytes(8));
         $token = random_bytes(32);
@@ -657,7 +675,7 @@ if ($count_email == 0) {
 
 
 
-    }
+
 
 
 

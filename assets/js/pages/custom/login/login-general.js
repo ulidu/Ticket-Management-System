@@ -205,9 +205,18 @@ var KTLoginGeneral = function() {
                 },
                 success: function (data, response, status, xhr, $form) {
 
-                    if (data.toString() == 0){
+                    //alert(data.toString());
+
+                    if (data.toString() == 1){
 
                         swal.fire("Account Not Found !", "No associated account found for the email you entered.", "danger");
+
+                        setTimeout(function () {
+                            location.reload(1);
+                        }, 10000);
+
+                        return false;
+
 
                     }else {
 
@@ -225,7 +234,7 @@ var KTLoginGeneral = function() {
                             swal.fire({
                                 position: 'center',
                                 type: 'success',
-                                title: 'Password recovery instructions has been sent to your email.',
+                                title: 'Password recovery instructions has been sent to your email. Don\'t forget to check your Spam folder and you can ignore the Spam alert.',
                                 showConfirmButton: true
                             });
 

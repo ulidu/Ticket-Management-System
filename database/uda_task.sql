@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Nov 04, 2020 at 11:44 AM
+-- Generation Time: Nov 05, 2020 at 03:38 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -21,6 +21,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `uda_task`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `account_recovery`
+--
+
+DROP TABLE IF EXISTS `account_recovery`;
+CREATE TABLE IF NOT EXISTS `account_recovery` (
+  `userID` varchar(200) DEFAULT NULL,
+  `selector` varchar(200) DEFAULT NULL,
+  `token` varchar(200) DEFAULT NULL,
+  `expires` varchar(200) DEFAULT NULL,
+  `email_reset` varchar(200) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -159,7 +174,7 @@ INSERT INTO `user` (`userID`, `employeeCode`, `firstName`, `lastName`, `email`, 
 (12, '0000', 'System', 'Administrator', 'udatmsproject@gmail.com', '$2y$10$nTxOB9ro.s8tbSKH6WIjReoqbE1ooFpzxjOIvFKYoyzkEtFaninSm', 'Saturday 19th of September 2020 12:14:48 AM', 'Active', 'Administrator', 'Mr.', 'ITS Division'),
 (15, '0155', 'Amarabandu', 'Rupasinghe', 'amare@gmail.com', '$2y$10$Rdcairg06Yjr86awsWDv7Oknud4TvIr1I3xLpAWh50yzAPoyScGvi', 'Sunday 20th of September 2020 01:08:59 PM', 'Active', 'Administrative Officer', 'Mr.', 'Finance Division'),
 (22, '123', 'fde', 'sfd', 'df@fedc.com', '$2y$10$Rdcairg06Yjr86awsWDv7Oknud4TvIr1I3xLpAWh50yzAPoyScGvi', 'Sunday 20th of September 2020 05:10:20 PM', 'Active', 'IT Staff', 'Mr.', 'Project Management Division'),
-(29, '5656', 'admin', 'account', 'admin@admin.com', '$2y$10$lwW0IwMrZkDgr.sP4ZrvbuPBfgPi7iNOpfntqm/XHdTijEaFq1MLS', 'Tuesday 20th of October 2020 08:41:06 AM', 'Active', 'Administrator', 'Mr.', 'Project Management Division'),
+(29, '5656', 'admin', 'account', 'admin@admin.com', '$2y$10$i8T701XY1pJdYfrcDkcjnuJII.kIep9BPHlr.XvTpk/nEV0kwAY4i', 'Tuesday 20th of October 2020 08:41:06 AM', 'Active', 'Administrator', 'Mr.', 'Project Management Division'),
 (30, '11', 'aaa', 'aa', 'a@a.com', '$2y$10$vaIBZ3JPl3hzFUC8897xZObx/HlwYXZWaHzPyKVx5X3f6zhk4qz0i', '2000-07-01T00:00:00+06:00', 'Active', 'Observer', 'Mr.', 'Project Management Division'),
 (31, '1', 's', 's', 's@a.com', '$2y$10$2aCg1/WAlkI.7Fc2mNmVmurGke36djrvYEvV9UyDuubPgbK5VhM9a', '2020-10-22 09:15:12', 'Active', 'Administrative Officer', 'Mrs.', 'Project Management Division'),
 (32, '53', 'ggj', 'gh', 'ds@fgs.com', '$2y$10$I6wp1AYR/15QRv/Yd5Lp..aKye8n59cVR/kUlw6zJ08ei.biInAfu', '2020-11-01 13:13:57', 'Active', 'Observer', 'Mr.', 'Project Management Division'),

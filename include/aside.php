@@ -27,6 +27,7 @@
     $status = $_SESSION['status'];
     $acc_type = $_SESSION['acc_type'];
     $title = $_SESSION['title'];
+    $division = $_SESSION['division'];
 
     $link = $_SERVER['PHP_SELF'];
     $link_array = explode('/', $link);
