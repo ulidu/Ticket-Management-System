@@ -234,7 +234,7 @@ var KTLoginGeneral = function() {
                             swal.fire({
                                 position: 'center',
                                 type: 'success',
-                                title: 'Password recovery instructions has been sent to your email. Don\'t forget to check your Spam folder and you can ignore the Spam alert.',
+                                title: 'Password recovery instructions has been sent to your email. <br>Don\'t forget to check your Spam folder and you can ignore the Spam alert.',
                                 showConfirmButton: true
                             });
 

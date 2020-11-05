@@ -61,17 +61,35 @@ if ($count_email == 0) {
 
     $logged_user_id = $_POST['logged_user_id'];
 
+    try {
         $selector = bin2hex(random_bytes(8));
+    } catch (Exception $e) {
+    }
+    try {
         $token = random_bytes(32);
+    } catch (Exception $e) {
+    }
 
-        $urlToEmail = 'https://tmsuda.000webhostapp.com/forget.php?'.http_build_query([
+    $urlToEmail = 'https://tmsuda.000webhostapp.com/forget.php?'.http_build_query([
                 'selector' => $selector,
                 'validator' => bin2hex($token)
             ]);
 
-        $expires = new DateTime('NOW');
-        $expires->add(new DateInterval('PT03H')); // 3 hours
-        $expires->format('Y-m-d\TH:i:s');
+
+    $date=date('Y-m-d H:i:s');
+    $time=date('H:i:s');
+    $today_dt = $date;
+
+    $expires = date('Y-m-d H:i:s', strtotime('+3 hours'));
+
+    $userID = $_SESSION['userID'];
+    $employeeCode = $_SESSION['employeeCode'];
+    $firstName = $_SESSION['firstName'];
+    $lastName = $_SESSION['lastName'];
+    $status = $_SESSION['status'];
+    $acc_type = $_SESSION['acc_type'];
+    $title = $_SESSION['title'];
+    $division = $_SESSION['division'];
 
         $query_res_token = "INSERT INTO account_recovery(userID, email_reset, selector, token, expires) VALUES('$userID', '$email', '$selector', '$token','$expires')";
         $query_res_log = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$userID', '$date', 'User with email : $email has requested a password reset link.')";
@@ -525,7 +543,7 @@ if ($count_email == 0) {
                                                         </tr>
                                                          <tr>
                                                             <td class=\"td-padding\" align=\"left\" style=\"color: #212121!important; font-size: 18px; line-height: 30px; padding-top: 18px; padding-left: 40px!important; padding-right: 40px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 18px 18px 0px 13px;\">
-                                                                 Hi $title.' '.$firstName.' '.$lastName,
+                                                                 Hi $title $firstName $lastName,
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -604,7 +622,7 @@ if ($count_email == 0) {
                                         <table style=\"background-color: transparent;\" width=\"800\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\">
                                             <tr>
                                                 <!-- SOCIAL -->
-                                                <td align=\"center\" width=\"300\" style=\"padding-top: 0px!important; padding-bottom: 18px!important; mso-padding-alt: 0px 0px 18px 0px;\">
+                                                <td align=\"center\" width=\"300\" style=\"padding-top: -10px!important; padding-bottom: 18px!important; mso-padding-alt: 0px 0px 18px 0px;\">
                                                     <table style=\"background-color: transparent;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                                                         <tr>
                                                             <td align=\"right\" valign=\"top\" class=\"social\">
