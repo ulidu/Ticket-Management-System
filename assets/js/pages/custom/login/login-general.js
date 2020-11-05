@@ -205,30 +205,34 @@ var KTLoginGeneral = function() {
                 },
                 success: function (data, response, status, xhr, $form) {
 
+                    if (data.toString() == 0){
+
+                        swal.fire("Account Not Found !", "No associated account found for the email you entered.", "danger");
+
+                    }else {
 
 
-                    setTimeout(function() {
-                        btn.removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false); // remove
-                        form.clearForm(); // clear form
-                        form.validate().resetForm(); // reset validation states
+                        setTimeout(function () {
+                            btn.removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false); // remove
+                            form.clearForm(); // clear form
+                            form.validate().resetForm(); // reset validation states
 
-                        // display signup form
-                        $('#forget_form').hide();
-                        $('#login_app').show();
-                        KTUtil.animateClass(login.find('#login_app')[0], 'flipInX animated');
+                            // display signup form
+                            $('#forget_form').hide();
+                            $('#login_app').show();
+                            KTUtil.animateClass(login.find('#login_app')[0], 'flipInX animated');
 
-                        swal.fire({
-                            position: 'center',
-                            type: 'success',
-                            title: 'Password recovery instructions has been sent to your email.',
-                            showConfirmButton: true
-                        });
+                            swal.fire({
+                                position: 'center',
+                                type: 'success',
+                                title: 'Password recovery instructions has been sent to your email.',
+                                showConfirmButton: true
+                            });
 
-                    }, 5000);
-
-
+                        }, 5000);
 
 
+                    }
 
 
                 }

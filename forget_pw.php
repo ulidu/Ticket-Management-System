@@ -4,18 +4,67 @@ include 'include/db.php';
 
 if (isset($_POST["email"])) {
 
-    date_default_timezone_set('Asia/Colombo');
+date_default_timezone_set('Asia/Colombo');
 
-    $string = date("Y-m-d");
-    $date = DateTime::createFromFormat("Y-m-d", $string);
+$string = date("Y-m-d");
+$date = DateTime::createFromFormat("Y-m-d", $string);
 
-    $date = date_format($date, 'Y-m-d H:i:s');
+$date = date_format($date, 'Y-m-d H:i:s');
 
-    $email = $_POST['email'];
+$email = $_POST['email'];
 
-    $to = $email;
-    $subject = "Reset Your Password. Ticket Management System - UDA";
-    $message = "
+
+$query_check_email = "SELECT * FROM user WHERE email = '$email'";
+$run_query_check_email = mysqli_query($con, $query_check_email);
+
+$count_email = mysqli_num_rows($run_query_check_email);
+
+if ($count_email == 0) {
+
+    echo 0;
+
+}else{
+
+    $query_email = "SELECT * FROM user WHERE email = '$email'";
+    $run_query_email = mysqli_query($con, $query_email);
+
+    while ($row_email = mysqli_fetch_assoc($run_query_email)) {
+
+        $userID = $row_email['userID'];
+        $employeeCode = $row_email['employeeCode'];
+        $firstName = $row_email['firstName'];
+        $lastName = $row_email['lastName'];
+        $date = $row_email['date_created'];
+        $email = $row_email['email'];
+        $type = $row_email['acc_type'];
+        $status = $row_email['status'];
+        $password = $row_email['password'];
+        $title = $row_email['title'];
+        $division = $row_email['division'];
+
+
+        $selector = bin2hex(random_bytes(8));
+        $token = random_bytes(32);
+
+        $urlToEmail = 'https://tmsuda.000webhostapp.com/forget.php?'.http_build_query([
+                'selector' => $selector,
+                'validator' => bin2hex($token)
+            ]);
+
+        $expires = new DateTime('NOW');
+        $expires->add(new DateInterval('PT03H')); // 3 hours
+        $expires->format('Y-m-d\TH:i:s');
+
+        $query_res_token = "INSERT INTO account_recovery(userID, email_reset, selector, token, expires) VALUES('$userID', '$email', '$selector', '$token','$expires')";
+        $query_res_log = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$userID', '$date', 'User with email : $email has requested a password reset link.')";
+
+        $create_query_res_token = mysqli_query($con, $query_res_token);
+        $create_query_res_log = mysqli_query($con, $query_res_log);
+
+
+        $to = $email;
+        $subject = "Reset Your Password. Ticket Management System - UDA";
+        $message = "
     <html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">
 <head>
     <meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\" />
@@ -458,14 +507,14 @@ if (isset($_POST["email"])) {
                                                         </tr>
                                                          <tr>
                                                             <td class=\"td-padding\" align=\"left\" style=\"color: #212121!important; font-size: 18px; line-height: 30px; padding-top: 18px; padding-left: 40px!important; padding-right: 40px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 18px 18px 0px 13px;\">
-                                                                 Hey There,
+                                                                 Hi $title.' '.$firstName.' '.$lastName,
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td class=\"td-padding\" align=\"left\" style=\" color: #212121!important; font-size: 16px; line-height: 24px; padding-top: 18px; padding-left: 40px!important; padding-right: 18px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 18px 18px 0px 18px;\">
                                                               
-                                                               
-                                                                Someone requested a new password for your account. If that's you, you can simply click on below <span style=\"font-weight: 600;\">Reset Password</span> button.
+            
+                                                                Someone requested a new password for your Ticket Management System account at UDA. If that's you, you can simply click on below <span style=\"font-weight: 600;\">Reset Password</span> button.
                                                                 
                                                             </td>
                                                         </tr>
@@ -479,7 +528,7 @@ if (isset($_POST["email"])) {
                                                                             <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                                                                                 <tr>
                                                                                     <td align=\"center\" style=\"border-radius: 3px;\" bgcolor=\"#2c77f4\">
-                                                                                        <a class=\"button raised\" href=\"https://tmsuda.000webhostapp.com/login.php?token=\" target=\"_blank\" style=\"font-size: 14px; line-height: 14px; font-weight: 500; font-family: 'Poppins'; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 25px; border: 8px solid #2c77f4; display: inline-block;\">Reset Password</a>
+                                                                                        <a class=\"button raised\" href=\"$urlToEmail\" target=\"_blank\" style=\"font-size: 14px; line-height: 14px; font-weight: 500; font-family: 'Poppins'; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 25px; border: 8px solid #2c77f4; display: inline-block;\">Reset Password</a>
                                                                                     </td>
                                                                                 </tr>
                                                                             </table>
@@ -597,12 +646,23 @@ if (isset($_POST["email"])) {
 </html>
 ";
 
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-    $headers .= 'From: <TMS-UDA@uda.lk>' . "\r\n";
+        $headers .= 'From: <TMS-UDA@uda.lk>' . "\r\n";
 
-    mail($to, $subject, $message, $headers);
+        mail($to, $subject, $message, $headers);
+
+
+
+
+
+    }
+
+
+
+}
+
 
 }
 

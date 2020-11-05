@@ -302,7 +302,7 @@
                                     logged_user_id: logged_user_id
                                 },
                                 success: function (data) {
-                                    alert(data.toString());
+                                    //alert(data.toString());
 
                                     if (data.toString() == 1){
 
