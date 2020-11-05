@@ -4,7 +4,6 @@ include 'include/db.php';
 
 session_start();
 
-
 $logged_user_id = $_SESSION['logged_user_id'];
 
 if ($logged_user_id != '') {
@@ -12,6 +11,25 @@ if ($logged_user_id != '') {
     echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
 
 }
+
+$selector = '';
+$validator = '';
+
+$stmt = $con->prepare("SELECT * FROM account_recovery WHERE selector = ? AND expires >= NOW()");
+$stmt->execute([$selector]);
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+if (!empty($results)) {
+    $calc = hash('sha256', hex2bin($validator));
+    if (hash_equals($calc, $results[0]['token'])) {
+        // The reset token is valid. Authenticate the user.
+        ?> <script> alert('verified'); </script> <?php
+    }
+    // Remove the token from the DB regardless of success or failure.
+}
+
+
 
 ?>
 
@@ -119,149 +137,13 @@ if ($logged_user_id != '') {
 
                         <div class="kt-login__title">
 
-                            <img width="60%" src="assets/media/logos/giphy.gif">
+                            <img width="50%" src="assets/media/logos/security.gif">
                             <br> <br>
-                            <h3>Sign In</h3>
-                            <h5 style="font-weight: lighter; font-size: medium;">Sign In, Or just click on the <a
-                                        href="task_add.php"><span class="btn-font-success" style="font-weight: 500">Submit Ticket</span></a>
-                                button to submit a ticket without signing in.</h5>
-                            <br>
-                            <button style="margin-bottom: -8%; margin-top: -4%; font-size: medium;"
-                                    onclick="location.href='task_add.php'"
-                                    type="button"
-                                    name="login_btn"
-                                    class="btn btn-success btn-elevate kt-login__btn-primary btn-wide">Submit Ticket
-
-                                &nbsp;
-                                <svg style="fill: #fff" class="svg_arrow" width="18px" height="17px"
-                                     viewBox="-1 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                     xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g>
-                                        <polygon style="fill: #fff" class="arrow"
-                                                 points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                                        <polygon style="fill: #fff" class="arrow-fixed"
-                                                 points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                                        <path d="M-4.58892184e-16,0.56157424 L-4.58892184e-16,16.1929159 L9.708,8.33860465 L-1.64313008e-15,0.56157424 L-4.58892184e-16,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
-                                    </g>
-                                </svg>
-
-                            </button>
-
-                            <?php
-
-                            if ($_GET['error'] == "verify") {
-
-                                ?>
-
-                                <div style="margin-top: 10%; margin-bottom: -50px;"
-                                     class="alert alert-bold alert-solid-danger alert-dismissible" role="alert">
-                                    <div class="alert-text">Incorrect password. Please try again.</div>
-                                    <div class="alert-close">
-                                        <i class="flaticon2-cross kt-icon-sm" data-dismiss="alert"></i>
-                                    </div>
-                                </div>
-
-                            <?php } else if ($_GET['timeout'] == "true") { ?>
-
-                                <div style="margin-top: 10%; margin-bottom: -50px;"
-                                     class="alert alert-bold alert-solid-warning alert-dismissible" role="alert">
-                                    <div class="alert-text">Session has Expired. Please Sign In again to continue.</div>
-                                    <div class="alert-close">
-                                        <i class="flaticon2-cross kt-icon-sm" data-dismiss="alert"></i>
-                                    </div>
-                                </div>
-
-                                <?php
-                            } else {
-
-                            } ?>
-
-                        </div>
 
 
-                        <!--begin::Form-->
-                        <form style="margin-top: -20px;" id="login_app" method="post" class="kt-form form_select"
-                              action="login_app.php">
-
-                            <div class="form-group">
-
-
-                                <!-- partial:index.partial.html -->
-                                <div style="margin-bottom: 15%;" class="select_fil">
-
-                                    <input name="name2" autocomplete="off" id="username_login" required
-                                           class="chosen-value bg-secondary" type="number"
-                                           value="" placeholder="Select an Account">
-                                    <ul style="z-index: 10000000" class="value-list">
-
-
-                                        <?php
-
-                                        $query = "select * from user where status='Active' order by acc_type";
-                                        $run_query = mysqli_query($con, $query);
-                                        while ($row = mysqli_fetch_assoc($run_query)) {
-                                            $userID = $row['userID'];
-                                            $employeeCode = $row['employeeCode'];
-                                            $firstName = $row['firstName'];
-                                            $lastName = $row['lastName'];
-                                            $email = $row['email'];
-                                            $password = $row['password'];
-                                            $date_created = $row['date_created'];
-                                            $status = $row['status'];
-                                            $acc_type = $row['acc_type'];
-
-
-                                            ?>
-                                            <li
-                                                <?php if ($acc_type == 'Administrator'){ ?>style="color: #ffb822;"
-                                                <?php }elseif ($acc_type == 'Observer'){ ?>style="color: #282a3c;"<?php } else {
-                                            } ?>
-                                                value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName . ' | ' . $employeeCode . " " . "-" . " " . $acc_type; ?>
-                                            </li>
-                                            <?php
-                                        }
-                                        ?>
-
-
-                                    </ul>
-
-                                    <!-- partial -->
-                                </div>
-
-
-                            </div>
-                            <input type="hidden" value="" id="chosen-value2" class="chosen-value2" name="name">
-
-
-                            <div class="form-group">
-                                <input disabled id="pw_login" style="text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: 2px;
-  font-size: 1.1rem;" class="form-control bg-secondary" type="text"
-                                       placeholder="Enter the Password" name="password" required>
-                            </div>
-
-
-                            <!--begin::Action-->
-                            <div class="kt-login__actions">
-                                <a href="javascript:;" id="kt_login_forgot" class="kt-link kt-login__link-forgot">
-                                    Forgot Password ?
-                                </a>
-
-
-                                <button type="submit" name="login_btn"
-                                        class="btn btn-primary btn-elevate kt-login__btn-primary">Sign In
-                                </button>
-                            </div>
-                            <!--end::Action-->
-
-
-                        </form>
-
-                        <!--end::Form-->
-                        <div id="forget_form" style="display: none; text-align: center;" class="kt-login__forgot">
+                        <div id="forget_form_reset" style="text-align: center;" class="kt-login__forgot">
                             <div class="kt-login__title">
-                                <h3>Forgotten Password ?</h3>
+                                <h3>Reset Your Password</h3>
                                 <h5 style="font-weight: lighter; font-size: medium;">Enter your email to reset the
                                     password.
                                 </h5>
@@ -276,10 +158,10 @@ if ($logged_user_id != '') {
                                         </div>
                                         <div style="text-align: right;" >
                                             <br><br>
-                                            <button style="width: 100px;" name="kt_login_forgot_submit" id="kt_login_forgot_submit"
+                                            <button style="width: 100px;" name="" id=""
                                                     class="btn btn-brand btn-pill btn-elevate">Request
                                             </button>
-                                            <button id="kt_login_forgot_cancel" class="btn btn-outline-brand btn-pill">
+                                            <button id="" class="btn btn-outline-brand btn-pill">
                                                 Cancel
                                             </button>
                                         </div>
@@ -340,25 +222,6 @@ if ($logged_user_id != '') {
 <script src="assets/js/pages/custom/login/login-general.js" type="text/javascript"></script>
 <!--end::Global Theme Bundle -->
 
-
-<script>
-
-    $('#username_login').keypress(function (e) {
-        if (e.which == 13) return false;
-        //or...
-        if (e.which == 13) e.preventDefault();
-    });
-
-</script>
-
-
-<script>
-    setTimeout(function () {
-        $("#username_login").prop("type", "text");
-        $("#pw_login").prop("type", "password");
-    }, 10);
-    // time out required to make sure it is not set as a password field before Google fills it in. You may need to adjust this timeout depending on your page load times.
-</script>
 <script src="assets/plugins/select_plugin/script.js"></script>
 <!--end::Page Scripts -->
 </body>
