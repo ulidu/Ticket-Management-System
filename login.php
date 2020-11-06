@@ -161,6 +161,26 @@ if ($logged_user_id != '') {
                                     </div>
                                 </div>
 
+                            <?php } else if ($_GET['reset'] == "failed") { ?>
+
+                                <div style="margin-top: 10%; margin-bottom: -50px;"
+                                     class="alert alert-bold alert-solid-danger alert-dismissible" role="alert">
+                                    <div class="alert-text">There was an error processing your request. Please try again.</div>
+                                    <div class="alert-close">
+                                        <i class="flaticon2-cross kt-icon-sm" data-dismiss="alert"></i>
+                                    </div>
+                                </div>
+
+                            <?php } else if ($_GET['reset'] == "success") { ?>
+
+                                <div style="margin-top: 10%; margin-bottom: -50px;"
+                                     class="alert alert-bold alert-solid-success alert-dismissible" role="alert">
+                                    <div class="alert-text">Password reset successful. Now please login with your new password.</div>
+                                    <div class="alert-close">
+                                        <i class="flaticon2-cross kt-icon-sm" data-dismiss="alert"></i>
+                                    </div>
+                                </div>
+
                             <?php } else if ($_GET['timeout'] == "true") { ?>
 
                                 <div style="margin-top: 10%; margin-bottom: -50px;"
@@ -189,7 +209,7 @@ if ($logged_user_id != '') {
                                 <!-- partial:index.partial.html -->
                                 <div style="margin-bottom: 15%;" class="select_fil">
 
-                                    <input name="name2" autocomplete="off" id="username_login" required
+                                    <input style="letter-spacing: 1px;" name="name2" autocomplete="off" id="username_login" required
                                            class="chosen-value bg-secondary" type="number"
                                            value="" placeholder="Select an Account">
                                     <ul style="z-index: 10000000" class="value-list">
@@ -236,7 +256,7 @@ if ($logged_user_id != '') {
                             <div class="form-group">
                                 <input disabled id="pw_login" style="text-transform: uppercase;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-size: 1.1rem;" class="form-control bg-secondary" type="text"
                                        placeholder="Enter the Password" name="password" required>
                             </div>
@@ -270,7 +290,7 @@ if ($logged_user_id != '') {
                                 <div class="kt-login__form">
                                     <form class="kt-form" action="" method="post">
                                         <div class="form-group">
-                                            <input style="font-weight: 500; letter-spacing: 2px; font-size: 1.1rem;"
+                                            <input style="font-weight: 500; letter-spacing: 1px; font-size: 1.1rem;"
                                                    class="form-control bg-secondary" type="text" placeholder="Enter Your Email Address" name="email"
                                                    id="kt_email" autocomplete="off">
                                         </div>

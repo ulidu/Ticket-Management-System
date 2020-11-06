@@ -12,25 +12,6 @@ if ($logged_user_id != '') {
 
 }
 
-$selector = '';
-$validator = '';
-
-$stmt = $con->prepare("SELECT * FROM account_recovery WHERE selector = ? AND expires >= NOW()");
-$stmt->execute([$selector]);
-$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-if (!empty($results)) {
-    $calc = hash('sha256', hex2bin($validator));
-    if (hash_equals($calc, $results[0]['token'])) {
-        // The reset token is valid. Authenticate the user.
-        ?> <script> alert('verified'); </script> <?php
-    }
-    // Remove the token from the DB regardless of success or failure.
-}
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +48,26 @@ if (!empty($results)) {
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
 
 </head>
+<script type="text/javascript">
 
+    function checkForm(form) {
+
+        if (form.password.value != "" && form.password.value == form.password_confirm.value) {
+            if (form.password.value.length < 6) {
+                swal.fire("Weak Password !", "Your password must contain at least six characters.", "warning");
+                form.password.focus();
+                return false;
+            }
+        } else {
+            swal.fire("Confirm Password !", "Passwords do not match !", "warning");
+            form.password.focus();
+            return false;
+        }
+        return true;
+
+    }
+
+</script>
 <!-- end::Head -->
 
 <!-- begin::Body -->
@@ -138,92 +138,227 @@ if (!empty($results)) {
                         <div class="kt-login__title">
 
                             <img width="50%" src="assets/media/logos/security.gif">
+
+
+                            <?php
+
+                            // Check for tokens
+                            $selector = filter_input(INPUT_GET, 'selector');
+                            $validator = filter_input(INPUT_GET, 'validator');
+
+                            if (false !== ctype_xdigit($selector) && false !== ctype_xdigit($validator)) :
+                            ?>
+
                             <br> <br>
 
 
-                        <div id="forget_form_reset" style="text-align: center;" class="kt-login__forgot">
-                            <div class="kt-login__title">
-                                <h3>Reset Your Password</h3>
-                                <h5 style="font-weight: lighter; font-size: medium;">Enter your email to reset the
-                                    password.
-                                </h5>
+                            <div id="forget_form_reset" style="text-align: center;" class="kt-login__forgot">
+                                <div class="kt-login__title">
+                                    <h3>Reset Your Password</h3>
 
 
-                                <div class="kt-login__form">
-                                    <form class="kt-form" action="" method="post">
-                                        <div class="form-group">
-                                            <input style="font-weight: 500; letter-spacing: 2px; font-size: 1.1rem;"
-                                                   class="form-control bg-secondary" type="text" placeholder="Enter Your Email Address" name="email"
-                                                   id="kt_email" autocomplete="off">
-                                        </div>
-                                        <div style="text-align: right;" >
-                                            <br><br>
-                                            <button style="width: 100px;" name="" id=""
-                                                    class="btn btn-brand btn-pill btn-elevate">Request
-                                            </button>
-                                            <button id="" class="btn btn-outline-brand btn-pill">
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </form>
+                                    <h5 style="font-weight: lighter; font-size: medium;">Enter a super memorable
+                                        password.
+                                    </h5>
+                                    <div class="kt-login__form">
+                                        <form onsubmit="return checkForm(this);" class="kt-form" action=""
+                                              name="reset_process" method="post">
+
+                                            <input type="hidden" name="selector" value="<?php echo $selector; ?>">
+                                            <input type="hidden" name="validator" value="<?php echo $validator; ?>">
+
+
+                                            <div class="form-group">
+                                                <input style="font-weight: 500; letter-spacing: 1px; font-size: 1.1rem;"
+                                                       class="form-control bg-secondary" type="password"
+                                                       placeholder="Enter a new password" id="password" name="password"
+                                                       autocomplete="off" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input style="font-weight: 500; letter-spacing: 1px; font-size: 1.1rem;"
+                                                       class="form-control bg-secondary" type="password"
+                                                       placeholder="Enter a new password" id="password_confirm"
+                                                       name="password_confirm"
+                                                       autocomplete="off" required>
+                                            </div>
+
+                                            <div style="text-align: right;">
+                                                <br><br>
+
+                                                <input style="width: 180px;" value="Change Password" type="submit"
+                                                       name="submit_new_password" id=""
+                                                       class="btn btn-brand btn-pill btn-elevate">
+                                                &nbsp;
+                                                <button onclick="location.href='login.php'" id=""
+                                                        class="btn btn-outline-brand btn-pill">
+                                                    Cancel
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+
+                                    <?php endif; ?>
+
+
                                 </div>
                             </div>
+
                         </div>
+                        <!--end::Signin-->
+
+
+                        <?php
+
+                        if (isset($_POST["submit_new_password"])) {
+
+                            $selector = $_POST['selector'];
+                            $validator = $_POST['validator'];
+                            $password = $_POST['password'];
+                            $hash_new = password_hash($password, PASSWORD_DEFAULT);
+
+                            date_default_timezone_set('Asia/Colombo');
+                            $date_e_check = date('Y-m-d H:i:s');
+
+                            $query_for = "SELECT * FROM account_recovery WHERE selector = '$selector' AND expires >= '$date_e_check'";
+                            $run_query_for = mysqli_query($con, $query_for);
+
+                            while ($row_query_for = mysqli_fetch_assoc($run_query_for)) {
+
+                                $userID = $row_query_for['userID'];
+                                $selector = $row_query_for['selector'];
+                                $token = $row_query_for['token'];
+                                $expires = $row_query_for['expires'];
+                                $email_reset = $row_query_for['email_reset'];
+
+                                echo "<script> alert('userID - ' $userID); </script>";
+                                echo "<script> alert('selector - ' $selector); </script>";
+                                echo "<script> alert('token - ' $token); </script>";
+                                echo "<script> alert('expires - ' $expires); </script>";
+                                echo "<script> alert('email_reset - ' $email_reset); </script>";
+
+
+                                $calc = hash('sha256', hex2bin($validator));
+
+                                if (hash_equals($calc, $token)) {
+
+                                    echo "<script> alert('hash equals'); </script>";
+                                    return false;
+
+                                }
+
+                                return false;
+
+                            }
+
+
+                            /*
+
+                            // Get tokens
+                            $results = $this->con->get_results("SELECT * FROM account_recovery WHERE selector = :selector AND expires >= :time",
+                                ['selector' => $selector, 'time' => time()]);
+                            echo "<script> alert('b'); </script>";
+                            return false;
+                            if (empty($results)) {
+                                return array('status' => 0, 'message' => 'There was an error processing your request. Error Code: 002');
+                            }
+                            echo "<script> alert('b'); </script>";
+                            return false;
+                            $auth_token = $results[0];
+                            $calc = hash('sha256', hex2bin($validator));
+                            echo "<script> alert('s'); </script>";
+                            return false;
+                            // Validate tokens
+                            if (hash_equals($calc, $auth_token->token)) {
+
+                                $user = $this->user_exists($auth_token->email_reset, 'email_reset');
+
+                                if (false === $user) {
+                                    return array('status' => 0, 'message' => 'There was an error processing your request. Error Code: 003');
+                                }
+
+                                // Update password
+                                $update = $this->db->update('user',
+                                    array(
+                                        'password' => password_hash($password, PASSWORD_DEFAULT),
+                                    ), $user->userID
+                                );
+
+
+                                // Delete any existing password reset
+                                $this->db->delete('account_recovery', 'email_reset', $user->email);
+
+                                if ($update == true) {
+                                    // New password. New session.
+                                    session_destroy();
+
+                                    header("location: login.php?reset=success");
+
+                                    return array('status' => 1, 'message' => 'Password updated successfully. <a href="index.php">Login here</a> using your new password');
+                                } else {
+
+                                    header("location: login.php?reset=failed");
+
+                                }
+                            }
+
+                            */
+
+                        }
+                        ?>
 
                     </div>
 
-                    <!--end::Signin-->
-
-
+                    <!--end::Body-->
                 </div>
 
-                <!--end::Body-->
+                <!--end::Content-->
+
+
             </div>
-
-            <!--end::Content-->
-
-
         </div>
     </div>
-</div>
 
-<!-- end:: Page -->
+    <!-- end:: Page -->
 
 
-<!-- begin::Global Config(global config for global JS sciprts) -->
-<script>
+    <!-- begin::Global Config(global config for global JS sciprts) -->
+    <script>
 
-    var KTAppOptions = {
-        "colors": {
-            "state": {
-                "brand": "#2c77f4",
-                "light": "#ffffff",
-                "dark": "#282a3c",
-                "primary": "#5867dd",
-                "success": "#34bfa3",
-                "info": "#36a3f7",
-                "warning": "#ffb822",
-                "danger": "#fd3995"
-            },
-            "base": {
-                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+        var KTAppOptions = {
+            "colors": {
+                "state": {
+                    "brand": "#2c77f4",
+                    "light": "#ffffff",
+                    "dark": "#282a3c",
+                    "primary": "#5867dd",
+                    "success": "#34bfa3",
+                    "info": "#36a3f7",
+                    "warning": "#ffb822",
+                    "danger": "#fd3995"
+                },
+                "base": {
+                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                }
             }
-        }
-    };
-</script>
+        };
+    </script>
 
-<!-- end::Global Config -->
+    <!-- end::Global Config -->
 
-<!--begin::Global Theme Bundle(used by all pages) -->
-<script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
-<script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js" type="text/javascript"></script>
-<script src="assets/js/pages/custom/login/login-general.js" type="text/javascript"></script>
-<!--end::Global Theme Bundle -->
+    <!--begin::Global Theme Bundle(used by all pages) -->
+    <script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
+    <script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" type="text/javascript"></script>
+    <script src="assets/js/pages/custom/login/login-general.js" type="text/javascript"></script>
+    <!--end::Global Theme Bundle -->
 
-<script src="assets/plugins/select_plugin/script.js"></script>
-<!--end::Page Scripts -->
+    <script src="assets/plugins/select_plugin/script.js"></script>
+    <!--end::Page Scripts -->
+
+
 </body>
 
 <!-- end::Body -->

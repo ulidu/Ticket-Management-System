@@ -75,6 +75,7 @@ if ($count_email == 0) {
                 'validator' => bin2hex($token)
             ]);
 
+    $token = hash('sha256', $token);
 
     $date=date('Y-m-d H:i:s');
     $time=date('H:i:s');
@@ -82,14 +83,11 @@ if ($count_email == 0) {
 
     $expires = date('Y-m-d H:i:s', strtotime('+3 hours'));
 
-    $userID = $_SESSION['userID'];
-    $employeeCode = $_SESSION['employeeCode'];
-    $firstName = $_SESSION['firstName'];
-    $lastName = $_SESSION['lastName'];
-    $status = $_SESSION['status'];
-    $acc_type = $_SESSION['acc_type'];
-    $title = $_SESSION['title'];
-    $division = $_SESSION['division'];
+    echo "<script>console.log($userID);</script>";
+    echo "<script>console.log($email);</script>";
+    echo "<script>console.log($selector);</script>";
+    echo "<script>console.log($token);</script>";
+    echo "<script>console.log($expires);</script>";
 
         $query_res_token = "INSERT INTO account_recovery(userID, email_reset, selector, token, expires) VALUES('$userID', '$email', '$selector', '$token','$expires')";
         $query_res_log = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$userID', '$date', 'User with email : $email has requested a password reset link.')";
@@ -478,13 +476,13 @@ if ($count_email == 0) {
                             <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">
                                 <tr>
                                     <td width=\"100%\" valign=\"top\" align=\"center\">
-                                        <table style=\"background-color: transparent;\" width=\"800\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#eeeeee\">
+                                        <table style=\"background-color: transparent;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#eeeeee\">
                                             <tr>
                                                 <td align=\"center\">
-                                                    <table width=\"800\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\" align=\"center\">
+                                                    <table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\" align=\"center\">
                                                         <!-- START HEADER IMAGE -->
                                                         <tr>
-                                                            <td align=\"center\" class=\"hund\" width=\"800\">
+                                                            <td align=\"center\" class=\"hund\" width=\"600\">
                                                                 <img src=\"https://tmsuda.000webhostapp.com/assets/media/logos/logo-4.png\" width=\"50\" alt=\"Logo\" border=\"0\" style=\"max-width: 50px; display:block; \">
 
                                                             </td>
@@ -517,20 +515,20 @@ if ($count_email == 0) {
         <!-- START CARD 1 -->
         <tr>
             <td width=\"100%\" valign=\"top\" align=\"center\" class=\"padding-container\" style=\"padding-top: 0px!important; padding-bottom: 18px!important; mso-padding-alt: 0px 0px 18px 0px;\">
-                <table width=\"800\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\">
+                <table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\">
                     <tr>
                         <td>
                             <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">
                                 <tr>
                                     <td style=\"border-radius: 3px; border-bottom: 2px solid #d4d4d4;\" class=\"card-1\" width=\"100%\" valign=\"top\" align=\"center\">
-                                        <table style=\"border-radius: 3px;\" width=\"800\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#ffffff\">
+                                        <table style=\"border-radius: 3px;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#ffffff\">
                                             <tr>
                                                 <td align=\"center\">
-                                                    <table width=\"800\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\">
+                                                    <table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\">
                                                         <!-- START HEADER IMAGE -->
                                                         <tr>
-                                                            <td align=\"center\" class=\"hund ripplelink\" width=\"800\">
-                                                                <img align=\"center\" width=\"800\" style=\"border-radius: 3px 3px 0px 0px; width: 100%; max-width: 800px!important\" class=\"hund\" src=\"https://www.mygo.ge/uploads/blog/1584024171.jpg\">
+                                                            <td align=\"center\" class=\"hund ripplelink\" width=\"600\">
+                                                                <img align=\"center\" width=\"600\" style=\"border-radius: 3px 3px 0px 0px; width: 100%; max-width: 600px!important\" class=\"hund\" src=\"https://www.mygo.ge/uploads/blog/1584024171.jpg\">
                                                             </td>
                                                         </tr>
                                                         <!-- END HEADER IMAGE -->
@@ -563,8 +561,8 @@ if ($count_email == 0) {
                                                                         <td>
                                                                             <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                                                                                 <tr>
-                                                                                    <td align=\"center\" style=\"border-radius: 3px;\" bgcolor=\"#2c77f4\">
-                                                                                        <a class=\"button raised\" href=\"$urlToEmail\" target=\"_blank\" style=\"font-size: 14px; line-height: 14px; font-weight: 500; font-family: 'Poppins'; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 25px; border: 8px solid #2c77f4; display: inline-block;\">Reset Password</a>
+                                                                                    <td align=\"center\" style=\"border-radius: 3px; font-family: 'Poppins' !important;\" bgcolor=\"#2c77f4\">
+                                                                                        <a class=\"button raised\" href=\"$urlToEmail\" target=\"_blank\" style=\"font-size: 14px; line-height: 14px; font-weight: 500; font-family: 'Poppins' !important; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 25px; border: 8px solid #2c77f4; display: inline-block;\">Reset Password</a>
                                                                                     </td>
                                                                                 </tr>
                                                                             </table>
@@ -596,9 +594,9 @@ if ($count_email == 0) {
 
         <!-- SPACER -->
         <!--[if gte mso 9]>
-      <table align=\"center\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"800\">
+      <table align=\"center\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"600\">
         <tr>
-          <td align=\"center\" valign=\"top\" width=\"800\" height=\"18\">
+          <td align=\"center\" valign=\"top\" width=\"600\" height=\"18\">
             <![endif]-->
         <tr>
             <td height=\"18px\"></td>
@@ -613,21 +611,21 @@ if ($count_email == 0) {
         <!-- FOOTER -->
         <tr>
             <td width=\"100%\" valign=\"top\" align=\"center\" class=\"padding-container\">
-                <table width=\"800\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\">
+                <table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\">
                     <tr>
                         <td width=\"100%\" valign=\"top\" align=\"center\">
-                            <table style=\"background-color: transparent;\" width=\"800\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#eeeeee\">
+                            <table style=\"background-color: transparent;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#eeeeee\">
                                 <tr>
                                     <td align=\"center\">
-                                        <table style=\"background-color: transparent;\" width=\"800\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\">
+                                        <table style=\"background-color: transparent;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\">
                                             <tr>
                                                 <!-- SOCIAL -->
                                                 <td align=\"center\" width=\"300\" style=\"padding-top: -10px!important; padding-bottom: 18px!important; mso-padding-alt: 0px 0px 18px 0px;\">
                                                     <table style=\"background-color: transparent;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                                                         <tr>
-                                                            <td align=\"right\" valign=\"top\" class=\"social\">
+                                                            <td align=\"center\" valign=\"top\" class=\"social\">
                                                                 <a style=\"font-size: 12px; color: black; font-weight: 500; text-decoration: none;\" href=\"https://tmsuda.000webhostapp.com/assets/profile/index.php\" target=\"_blank\">
-                                                                   DEVELOPED BY ULIDU T. GUNATHILAKE
+                                                                   <img src=\"https://tmsuda.000webhostapp.com/assets/media/logos/s.png\">
                                                                 </a>
                                                             </td>
 
@@ -656,9 +654,9 @@ if ($count_email == 0) {
 
         <!-- SPACER -->
         <!--[if gte mso 9]>
-      <table align=\"center\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"800\">
+      <table align=\"center\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"600\">
         <tr>
-          <td align=\"center\" valign=\"top\" width=\"800\" height=\"36\">
+          <td align=\"center\" valign=\"top\" width=\"600\" height=\"36\">
             <![endif]-->
         <tr>
             <td height=\"36px\"></td>

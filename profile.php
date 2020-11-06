@@ -286,7 +286,12 @@
                         swal.fire("Empty Fields !", "First Name, Last Name and Email Cannot be Empty.", "warning");
                         return false;
 
-                    } else if (c_pass_up !== '' && n_pass_up !== '' && cn_pass_up !== '') {
+                    } if (n_pass_up.length < 6) {
+
+                        swal.fire("Weak Password !", "Your password must contain at least six characters.", "warning");
+                        return false;
+
+                    }else if (c_pass_up !== '' && n_pass_up !== '' && cn_pass_up !== '') {
 
                         if (n_pass_up == cn_pass_up) {
 
