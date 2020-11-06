@@ -72,7 +72,7 @@
                                                 $count_all_ap_req_run = mysqli_query($con, $count_all_ap_req);
                                                 $count_all_ap_req_tickets = mysqli_num_rows($count_all_ap_req_run);
 
-                                                printf("%d out of %d Ticket", $count_all_tickets, $count_all_ap_req_tickets);
+                                                printf("%d/%d Ticket", $count_all_tickets, $count_all_ap_req_tickets);
 
                                             }else{
 
@@ -469,6 +469,8 @@
                 if (isset($_POST['submit_approve'])) {
 
                     date_default_timezone_set('Asia/Colombo');
+                    $string = date("Y-m-d");
+                    $date = DateTime::createFromFormat("Y-m-d", $string);
                     $date = date_format($date, 'Y-m-d H:i:s');
 
                     $ticket_hidden = $_POST['ticket_hidden'];

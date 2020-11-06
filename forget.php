@@ -178,7 +178,7 @@ if ($logged_user_id != '') {
                                             <div class="form-group">
                                                 <input style="font-weight: 500; letter-spacing: 1px; font-size: 1.1rem;"
                                                        class="form-control bg-secondary" type="password"
-                                                       placeholder="Enter a new password" id="password_confirm"
+                                                       placeholder="Confirm new password" id="password_confirm"
                                                        name="password_confirm"
                                                        autocomplete="off" required>
                                             </div>
@@ -232,78 +232,53 @@ if ($logged_user_id != '') {
                                 $expires = $row_query_for['expires'];
                                 $email_reset = $row_query_for['email_reset'];
 
-                                echo "<script> alert('userID - ' $userID); </script>";
-                                echo "<script> alert('selector - ' $selector); </script>";
-                                echo "<script> alert('token - ' $token); </script>";
-                                echo "<script> alert('expires - ' $expires); </script>";
-                                echo "<script> alert('email_reset - ' $email_reset); </script>";
-
-
                                 $calc = hash('sha256', hex2bin($validator));
 
-                                if (hash_equals($calc, $token)) {
 
-                                    echo "<script> alert('hash equals'); </script>";
-                                    return false;
+                                    if (is_null($row_query_for["email_reset"])){
 
-                                }
+                                        echo "<script> location.replace('login.php?reset=failed') </script>";
 
-                                return false;
+                                    }else{
+
+                                        if (hash_equals($calc, $token)) {
+
+                                            // Update password
+                                            $query_update_password = "UPDATE user SET password='$hash_new' where userID='$userID'";
+                                            $create_query_update_password = mysqli_query($con, $query_update_password);
+
+                                            // Delete any existing password reset
+                                            $query_del_a_rec = "DELETE FROM account_recovery WHERE userID = '$userID'";
+                                            $create_query_del_a_rec = mysqli_query($con, $query_del_a_rec);
+
+                                            // Add the record to log
+                                            date_default_timezone_set('Asia/Colombo');
+                                            $date = date('Y-m-d H:i:s');
+                                            $query_log_acc_rec = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$userID', '$date', 'UserID : $userID has reset the account password.')";
+                                            $create_query_log_acc_rec = mysqli_query($con, $query_log_acc_rec);
+
+
+                                            if ($create_query_update_password) {
+
+                                                // New password. New session.
+                                                session_destroy();
+                                                echo "<script> location.replace('login.php?reset=success') </script>";
+
+                                            } else {
+
+                                                echo "<script> location.replace('login.php?reset=failed') </script>";
+
+                                            }
+
+                                        }else {
+
+                                            echo "<script> location.replace('login.php?reset=failed') </script>";
+
+                                        }
+
+                                    }
 
                             }
-
-
-                            /*
-
-                            // Get tokens
-                            $results = $this->con->get_results("SELECT * FROM account_recovery WHERE selector = :selector AND expires >= :time",
-                                ['selector' => $selector, 'time' => time()]);
-                            echo "<script> alert('b'); </script>";
-                            return false;
-                            if (empty($results)) {
-                                return array('status' => 0, 'message' => 'There was an error processing your request. Error Code: 002');
-                            }
-                            echo "<script> alert('b'); </script>";
-                            return false;
-                            $auth_token = $results[0];
-                            $calc = hash('sha256', hex2bin($validator));
-                            echo "<script> alert('s'); </script>";
-                            return false;
-                            // Validate tokens
-                            if (hash_equals($calc, $auth_token->token)) {
-
-                                $user = $this->user_exists($auth_token->email_reset, 'email_reset');
-
-                                if (false === $user) {
-                                    return array('status' => 0, 'message' => 'There was an error processing your request. Error Code: 003');
-                                }
-
-                                // Update password
-                                $update = $this->db->update('user',
-                                    array(
-                                        'password' => password_hash($password, PASSWORD_DEFAULT),
-                                    ), $user->userID
-                                );
-
-
-                                // Delete any existing password reset
-                                $this->db->delete('account_recovery', 'email_reset', $user->email);
-
-                                if ($update == true) {
-                                    // New password. New session.
-                                    session_destroy();
-
-                                    header("location: login.php?reset=success");
-
-                                    return array('status' => 1, 'message' => 'Password updated successfully. <a href="index.php">Login here</a> using your new password');
-                                } else {
-
-                                    header("location: login.php?reset=failed");
-
-                                }
-                            }
-
-                            */
 
                         }
                         ?>

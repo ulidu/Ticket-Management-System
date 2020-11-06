@@ -210,7 +210,7 @@
                                             <option value="" hidden="true">Select Applicant's
                                                 Division
                                             </option>
-                                            <option value="Project Management Division">ITS Division
+                                            <option value="ITS Division">ITS Division
                                             </option>
                                             <option value="Project Management Division">Project
                                                 Management Division

@@ -175,7 +175,7 @@ if ($logged_user_id != '') {
 
                                 <div style="margin-top: 10%; margin-bottom: -50px;"
                                      class="alert alert-bold alert-solid-success alert-dismissible" role="alert">
-                                    <div class="alert-text">Password reset successful. Now please login with your new password.</div>
+                                    <div class="alert-text">Password reset successful.<br>Now please login with your new password.</div>
                                     <div class="alert-close">
                                         <i class="flaticon2-cross kt-icon-sm" data-dismiss="alert"></i>
                                     </div>
