@@ -198,7 +198,7 @@ var KTLoginGeneral = function() {
 
 
             $.ajax({
-                url: "forget_pw.php",
+                url: "forget_pw_pm.php",
                 method: "POST",
                 data: {
                     email: email

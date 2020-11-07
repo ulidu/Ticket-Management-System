@@ -2,87 +2,101 @@
 
 include 'include/db.php';
 
+// Begin - PHPMailer Initialization
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'assets/plugins/PHPMailer/src/Exception.php';
+require 'assets/plugins/PHPMailer/src/PHPMailer.php';
+require 'assets/plugins/PHPMailer/src/SMTP.php';
+
+require 'vendor/autoload.php';
+
+$mail = new PHPMailer(true);
+
+// End - PHPMailer Initialization
+
 if (isset($_POST["email"])) {
 
-date_default_timezone_set('Asia/Colombo');
+    date_default_timezone_set('Asia/Colombo');
 
-$string = date("Y-m-d");
-$date = DateTime::createFromFormat("Y-m-d", $string);
+    $string = date("Y-m-d");
+    $date = DateTime::createFromFormat("Y-m-d", $string);
 
-$date = date_format($date, 'Y-m-d H:i:s');
+    $date = date_format($date, 'Y-m-d H:i:s');
 
-$email = $_POST['email'];
+    $email = $_POST['email'];
 
 
-$query_check_email = "SELECT * FROM user WHERE email = '$email' and status='Active'";
-$run_query_check_email = mysqli_query($con, $query_check_email);
+    $query_check_email = "SELECT * FROM user WHERE email = '$email' and status='Active'";
+    $run_query_check_email = mysqli_query($con, $query_check_email);
 
-$count_email = mysqli_num_rows($run_query_check_email);
+    $count_email = mysqli_num_rows($run_query_check_email);
 
-if ($count_email == 0) {
+    if ($count_email == 0) {
 
-    echo 1;
+        echo 1;
 
-}else{
+    } else {
 
-    $query_email = "SELECT * FROM user WHERE email = '$email' and status='Active'";
-    $run_query_email = mysqli_query($con, $query_email);
+        $query_email = "SELECT * FROM user WHERE email = '$email' and status='Active'";
+        $run_query_email = mysqli_query($con, $query_email);
 
-    while ($row_email = mysqli_fetch_assoc($run_query_email)) {
+        while ($row_email = mysqli_fetch_assoc($run_query_email)) {
 
-        $userID = $row_email['userID'];
-        $employeeCode = $row_email['employeeCode'];
-        $firstName = $row_email['firstName'];
-        $lastName = $row_email['lastName'];
-        $type = $row_email['acc_type'];
-        $status = $row_email['status'];
-        $title = $row_email['title'];
-        $division = $row_email['division'];
+            $userID = $row_email['userID'];
+            $employeeCode = $row_email['employeeCode'];
+            $firstName = $row_email['firstName'];
+            $lastName = $row_email['lastName'];
+            $type = $row_email['acc_type'];
+            $status = $row_email['status'];
+            $title = $row_email['title'];
+            $division = $row_email['division'];
 
-        $_SESSION['userID'] = $userID;
-        $_SESSION['employeeCode'] = $employeeCode;
-        $_SESSION['firstName'] = $firstName;
-        $_SESSION['lastName'] = $lastName;
-        $_SESSION['status'] = $status;
-        $_SESSION['acc_type'] = $acc_type;
-        $_SESSION['title'] = $title;
-        $_SESSION['division'] = $division;
+            $_SESSION['userID'] = $userID;
+            $_SESSION['employeeCode'] = $employeeCode;
+            $_SESSION['firstName'] = $firstName;
+            $_SESSION['lastName'] = $lastName;
+            $_SESSION['status'] = $status;
+            $_SESSION['acc_type'] = $acc_type;
+            $_SESSION['title'] = $title;
+            $_SESSION['division'] = $division;
 
-    }
+        }
 
-    $userID = $_SESSION['userID'];
-    $employeeCode = $_SESSION['employeeCode'];
-    $firstName = $_SESSION['firstName'];
-    $lastName = $_SESSION['lastName'];
-    $status = $_SESSION['status'];
-    $acc_type = $_SESSION['acc_type'];
-    $title = $_SESSION['title'];
-    $division = $_SESSION['division'];
+        $userID = $_SESSION['userID'];
+        $employeeCode = $_SESSION['employeeCode'];
+        $firstName = $_SESSION['firstName'];
+        $lastName = $_SESSION['lastName'];
+        $status = $_SESSION['status'];
+        $acc_type = $_SESSION['acc_type'];
+        $title = $_SESSION['title'];
+        $division = $_SESSION['division'];
 
-    $logged_user_id = $_POST['logged_user_id'];
+        $logged_user_id = $_POST['logged_user_id'];
 
-    try {
-        $selector = bin2hex(random_bytes(8));
-    } catch (Exception $e) {
-    }
-    try {
-        $token = random_bytes(32);
-    } catch (Exception $e) {
-    }
+        try {
+            $selector = bin2hex(random_bytes(8));
+        } catch (Exception $e) {
+        }
+        try {
+            $token = random_bytes(32);
+        } catch (Exception $e) {
+        }
 
-    $urlToEmail = 'https://tmsuda.000webhostapp.com/forget.php?'.http_build_query([
+        $urlToEmail = 'https://tmsuda.000webhostapp.com/forget.php?' . http_build_query([
                 'selector' => $selector,
                 'validator' => bin2hex($token)
             ]);
 
-    $token = hash('sha256', $token);
+        $token = hash('sha256', $token);
 
-    $date=date('Y-m-d H:i:s');
-    $time=date('H:i:s');
-    $today_dt = $date;
+        $date = date('Y-m-d H:i:s');
+        $time = date('H:i:s');
+        $today_dt = $date;
 
-    $expires = date('Y-m-d H:i:s', strtotime('+3 hours'));
-
+        $expires = date('Y-m-d H:i:s', strtotime('+3 hours'));
 
 
         $query_res_token = "INSERT INTO account_recovery(userID, email_reset, selector, token, expires) VALUES('$userID', '$email', '$selector', '$token','$expires')";
@@ -91,11 +105,25 @@ if ($count_email == 0) {
         $create_query_res_token = mysqli_query($con, $query_res_token);
         $create_query_res_log = mysqli_query($con, $query_res_log);
 
+        try {
+            //Server settings
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+            $mail->isSMTP();                                            // Send using SMTP
+            $mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
+            $mail->SMTPAuth = true;                                   // Enable SMTP authentication
+            $mail->Username = 'udatmsproject@gmail.com';                     // SMTP username
+            $mail->Password = 'tmsproject333';                               // SMTP password
+            $mail->SMTPSecure = 'tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
-        $to = $email;
-        $subject = "Reset Your Password. Ticket Management System - UDA";
-        $message = "
-    <html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">
+            //Recipients
+            $mail->setFrom('udatms@noreply.com', 'UDA-TMS');
+            $mail->addAddress($email, $title . ' ' . $firstName . ' ' . $lastName);     // Add a recipient
+
+            // Content
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'Reset Your Password. Ticket Management System - UDA';
+            $mail->Body = "<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">
 <head>
     <meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\" />
     <!-- [ if !mso]> <!-->
@@ -619,11 +647,10 @@ if ($count_email == 0) {
                                                 <td align=\"center\" width=\"300\" style=\"padding-top: -10px!important; padding-bottom: 18px!important; mso-padding-alt: 0px 0px 18px 0px;\">
                                                     <table style=\"background-color: transparent;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                                                         <tr>
-                                                            <td align=\"center\" valign=\"top\" class=\"social\">
-                                                                <a style=\"font-size: 12px; color: black; font-weight: 500; text-decoration: none;\" href=\"https://tmsuda.000webhostapp.com/assets/profile/index.php\" target=\"_blank\">
-                                                                   <img src=\"https://tmsuda.000webhostapp.com/assets/media/logos/s.png\">
-                                                                </a>
-                                                            </td>
+                                                        <td class=\"td-padding\" align=\"center\" style=\" color: #212121!important; font-size: 14px; line-height: 24px; padding-top: 0px; padding-left: 0px!important; padding-right: 0px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 0px 0px 0px 0px;\">
+                                                    <hr> URBAN DEVELOPMENT AUTHORITY <br> 2020
+                                                </td>
+                                                        
 
                                                         </tr>
                                                     </table>
@@ -632,9 +659,11 @@ if ($count_email == 0) {
                                             </tr>
                                             <tr>
                                                 
-                                                <td class=\"td-padding\" align=\"center\" style=\" color: #212121!important; font-size: 14px; line-height: 24px; padding-top: 0px; padding-left: 0px!important; padding-right: 0px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 0px 0px 0px 0px;\">
-                                                    <hr> URBAN DEVELOPMENT AUTHORITY <br> 2020
-                                                </td>
+                                                <td align=\"center\" valign=\"top\" class=\"social\">
+                                                                <a style=\"font-size: 12px; color: black; font-weight: 500; text-decoration: none;\" href=\"https://tmsuda.000webhostapp.com/assets/profile/index.php\" target=\"_blank\">
+                                                                   <img width=\"50%\" src=\"https://tmsuda.000webhostapp.com/assets/media/logos/s.png\">
+                                                                </a>
+                                                            </td>
                                             </tr>
 
                                         </table>
@@ -672,21 +701,21 @@ if ($count_email == 0) {
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     </div>
 </body>
+</html>";
 
-</html>
-";
+            $mail->AltBody = 'Hi $title $firstName $lastName, Someone requested a new password for your Ticket Management 
+            System account at UDA. If that\'s you, you can simply go to following link to reset your password. ' . $urlToEmail . '   If you didn\'t make this 
+            request, then you can safely ignore this email. Regards.';
 
-        $headers = "MIME-Version: 1.0" . "\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            echo 'Message has been sent';
 
-        $headers .= 'From: <TMS-UDA@uda.lk>' . "\r\n";
+        } catch (Exception $e) {
 
-        mail($to, $subject, $message, $headers);
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            
+        }
 
-
-
-}
-
+    }
 
 }
 
