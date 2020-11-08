@@ -38,7 +38,29 @@
                     <div class="kt-widget kt-widget--user-profile-1">
                         <div class="kt-widget__head">
                             <div class="kt-widget__media">
-                                <img style="width: 150px !important;" src="assets\media\logos\user.gif" alt="image">
+
+                                <?php
+
+                                if ($title == 'Mrs.' || $title == 'Miss.'){
+
+                                ?>
+
+                                    <img style="width: 120px !important; border-radius: 150px;" src="assets\media\logos\hi.gif" alt="image">
+
+                                    <?php
+
+                                }else{
+
+                                ?>
+
+                                    <img style="width: 150px !important;" src="assets\media\logos\user.gif" alt="image">
+
+                                    <?php
+
+                                    }
+
+                                    ?>
+
                             </div>
                             <div class="kt-widget__content">
                                 <div class="kt-widget__section">
