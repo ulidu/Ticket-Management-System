@@ -246,7 +246,7 @@ if (isset($_POST["email"])) {
         /**** My desktop styles ****/
         @media only screen and (min-width: 600px) {
             .noDesk {
-                 width: 0px !important;
+               
             }
 
             .td-padding {
@@ -270,7 +270,7 @@ if (isset($_POST["email"])) {
             }
 
             .mobile {
-                 width: 0px !important;
+             
             }
         }
 
@@ -349,15 +349,15 @@ if (isset($_POST["email"])) {
             }
 
             *[class=\"hide\"] {
-               width: 0px !important;
+               
             }
 
             *[class=\"Gmail\"] {
-                width: 0px !important;
+                
             }
 
             .Gmail {
-                 width: 0px !important;
+              
             }
 
             .bottom-padding-fix {
@@ -658,7 +658,7 @@ if (isset($_POST["email"])) {
                                                     <table style=\"background-color: #F2F3F4;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                                                         <tr>
                                                         <td class=\"td-padding\" align=\"center\" style=\" color: #212121!important; font-size: 12px; line-height: 24px; padding-top: 0px; padding-left: 0px!important; padding-right: 0px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 0px 0px 0px 0px;\">
-                                                    URBAN DEVELOPMENT AUTHORITY | 2020
+                                                    2020 | URBAN DEVELOPMENT AUTHORITY
                                                 </td>
                                                         
 

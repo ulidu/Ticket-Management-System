@@ -9,7 +9,7 @@ $string = date("Y-m-d");
 $date = DateTime::createFromFormat("Y-m-d", $string);
 $date = date_format($date, 'Y-m-d H:i:s');
 
-$query_clear_recovery = "DELETE FROM account_recovery WHERE expires <= '$date'";
+$query_clear_recovery = "DELETE FROM account_recovery WHERE expires < '$date'";
 $run_query_clear_recovery = mysqli_query($con, $query_clear_recovery);
 
 $logged_user_id = $_SESSION['logged_user_id'];
