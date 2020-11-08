@@ -699,7 +699,7 @@
 
                                 <?php
 
-                                $query3 = "select * from user where acc_type = 'IT Staff'";
+                                $query3 = "select * from user where acc_type = 'IT Staff' and status='Active'";
                                 $run_query3 = mysqli_query($con, $query3);
                                 while ($row3 = mysqli_fetch_assoc($run_query3)) {
 
@@ -808,7 +808,7 @@
 
                                 <?php
 
-                                $query3 = "select * from user where acc_type = 'IT Staff'";
+                                $query3 = "select * from user where acc_type = 'IT Staff' and status='Active'";
                                 $run_query3 = mysqli_query($con, $query3);
                                 while ($row3 = mysqli_fetch_assoc($run_query3)) {
                                     $userID = $row3['userID'];
