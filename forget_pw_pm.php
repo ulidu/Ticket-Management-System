@@ -98,32 +98,42 @@ if (isset($_POST["email"])) {
 
         $expires = date('Y-m-d H:i:s', strtotime('+3 hours'));
 
-
         $query_res_token = "INSERT INTO account_recovery(userID, email_reset, selector, token, expires) VALUES('$userID', '$email', '$selector', '$token','$expires')";
         $query_res_log = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$userID', '$date', 'User with email : $email has requested a password reset link.')";
 
         $create_query_res_token = mysqli_query($con, $query_res_token);
         $create_query_res_log = mysqli_query($con, $query_res_log);
 
-        try {
-            //Server settings
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-            $mail->isSMTP();                                            // Send using SMTP
-            $mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
-            $mail->SMTPAuth = true;                                   // Enable SMTP authentication
-            $mail->Username = 'udatmsproject@gmail.com';                     // SMTP username
-            $mail->Password = 'tmsproject333';                               // SMTP password
-            $mail->SMTPSecure = 'tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        // Server settings
+        $mail->isSMTP();
+        $mail->SMTPDebug = 0;
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
+        $mail->Debugoutput = 'html';
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+        $mail->Username = 'udatmsproject@gmail.com';
+        $mail->Password = 'vxhsfyuoygpbtfeo';
 
-            //Recipients
-            $mail->setFrom('udatms@noreply.com', 'UDA-TMS');
-            $mail->addAddress($email, $title . ' ' . $firstName . ' ' . $lastName);     // Add a recipient
+        // Sender &amp; Recipient
+        $mail->From = 'udatmsproject@gmail.com';
+        $mail->FromName = 'UDA-TMS';
+        $mail->addAddress($email);
 
-            // Content
-            $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Reset Your Password. Ticket Management System - UDA';
-            $mail->Body = "<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">
+        // Content
+        $mail->isHTML(true);
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'base64';
+        $mail->Subject = 'Reset Your Password. Ticket Management System - UDA';
+
+        $mail->Body = "<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">
 <head>
     <meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\" />
     <!-- [ if !mso]> <!-->
@@ -182,7 +192,7 @@ if (isset($_POST["email"])) {
 
         body,
         #body_style {
-            background: #fff;
+            background: #F2F3F4;
         }
 
         table td {
@@ -236,7 +246,7 @@ if (isset($_POST["email"])) {
         /**** My desktop styles ****/
         @media only screen and (min-width: 600px) {
             .noDesk {
-                display: none !important;
+                 width: 0px !important;
             }
 
             .td-padding {
@@ -260,7 +270,7 @@ if (isset($_POST["email"])) {
             }
 
             .mobile {
-                display: none !important
+                 width: 0px !important;
             }
         }
 
@@ -291,7 +301,7 @@ if (isset($_POST["email"])) {
 
             *[class=\"mobileOff\"] {
                 width: 0px !important;
-                display: none !important;
+                
             }
 
             *[class*=\"mobileOn\"] {
@@ -339,15 +349,15 @@ if (isset($_POST["email"])) {
             }
 
             *[class=\"hide\"] {
-                display: none !important
+               width: 0px !important;
             }
 
             *[class=\"Gmail\"] {
-                display: none !important
+                width: 0px !important;
             }
 
             .Gmail {
-                display: none !important
+                 width: 0px !important;
             }
 
             .bottom-padding-fix {
@@ -471,20 +481,20 @@ if (isset($_POST["email"])) {
     <![endif]-->
 </head>
 
-<body style=\"margin:0; padding:0; background-color: #fff !important;\" bgcolor=\"#fff\">
+<body style=\"margin:0; padding:0; background-color: #F2F3F4 !important;\" bgcolor=\"#fff\">
     <!--[if mso]>
     <style type=\"text/css\">
     body, table, td {font-family: Arial, Helvetica, sans-serif !important;}
     </style>
     <![endif]-->
     <!-- START EMAIL -->
-    <table style=\"background-color: transparent;\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" bgcolor=\"#fff\">
+    <table style=\"background-color: #F2F3F4;\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" bgcolor=\"#fff\">
         <div class=\"Gmail\" style=\"height: 1px !important; margin-top: -1px !important; max-width: 600px !important; min-width: 600px !important; width: 600px !important;\"></div>
-        <div style=\"display: none; max-height: 0px; overflow: hidden;\">
+        <div style=\"max-height: 0px; overflow: hidden;\">
             Reset Your Password on Ticket Management System at UDA
         </div>
         <!-- Insert &zwnj;&nbsp; hack after hidden preview text -->
-        <div style=\"display: none; max-height: 0px; overflow: hidden;\">
+        <div style=\"max-height: 0px; overflow: hidden;\">
             &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
 
@@ -500,7 +510,7 @@ if (isset($_POST["email"])) {
                             <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">
                                 <tr>
                                     <td width=\"100%\" valign=\"top\" align=\"center\">
-                                        <table style=\"background-color: transparent;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#eeeeee\">
+                                        <table style=\"background-color: #F2F3F4;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#eeeeee\">
                                             <tr>
                                                 <td align=\"center\">
                                                     <table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\" align=\"center\">
@@ -638,17 +648,17 @@ if (isset($_POST["email"])) {
                 <table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\">
                     <tr>
                         <td width=\"100%\" valign=\"top\" align=\"center\">
-                            <table style=\"background-color: transparent;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#eeeeee\">
+                            <table style=\"background-color: #F2F3F4;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#eeeeee\">
                                 <tr>
                                     <td align=\"center\">
-                                        <table style=\"background-color: transparent;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\">
+                                        <table style=\"background-color: #F2F3F4;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\">
                                             <tr>
                                                 <!-- SOCIAL -->
                                                 <td align=\"center\" width=\"300\" style=\"padding-top: -10px!important; padding-bottom: 18px!important; mso-padding-alt: 0px 0px 18px 0px;\">
-                                                    <table style=\"background-color: transparent;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
+                                                    <table style=\"background-color: #F2F3F4;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                                                         <tr>
-                                                        <td class=\"td-padding\" align=\"center\" style=\" color: #212121!important; font-size: 14px; line-height: 24px; padding-top: 0px; padding-left: 0px!important; padding-right: 0px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 0px 0px 0px 0px;\">
-                                                    <hr> URBAN DEVELOPMENT AUTHORITY <br> 2020
+                                                        <td class=\"td-padding\" align=\"center\" style=\" color: #212121!important; font-size: 12px; line-height: 24px; padding-top: 0px; padding-left: 0px!important; padding-right: 0px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 0px 0px 0px 0px;\">
+                                                    URBAN DEVELOPMENT AUTHORITY | 2020
                                                 </td>
                                                         
 
@@ -661,7 +671,7 @@ if (isset($_POST["email"])) {
                                                 
                                                 <td align=\"center\" valign=\"top\" class=\"social\">
                                                                 <a style=\"font-size: 12px; color: black; font-weight: 500; text-decoration: none;\" href=\"https://tmsuda.000webhostapp.com/assets/profile/index.php\" target=\"_blank\">
-                                                                   <img width=\"50%\" src=\"https://tmsuda.000webhostapp.com/assets/media/logos/s.png\">
+                                                                   <img width=\"45%\" style=\"border-radius:15px;\" src=\"https://tmsuda.000webhostapp.com/assets/media/logos/s.png\">
                                                                 </a>
                                                             </td>
                                             </tr>
@@ -695,7 +705,7 @@ if (isset($_POST["email"])) {
 
     </table>
     <!-- END EMAIL -->
-    <div style=\"display:none; white-space:nowrap; font:15px courier; line-height:0;\">
+    <div style=\"white-space:nowrap; font:15px courier; line-height:0;\">
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -703,16 +713,20 @@ if (isset($_POST["email"])) {
 </body>
 </html>";
 
-            $mail->AltBody = 'Hi $title $firstName $lastName, Someone requested a new password for your Ticket Management 
+        $mail->AltBody = 'Hi $title $firstName $lastName, Someone requested a new password for your Ticket Management 
             System account at UDA. If that\'s you, you can simply go to following link to reset your password. ' . $urlToEmail . '   If you didn\'t make this 
             request, then you can safely ignore this email. Regards.';
 
-            echo 'Message has been sent';
+        if ($mail->send()) {
 
-        } catch (Exception $e) {
+            echo 'Email Sending Success';
+            exit;
 
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-            
+        } else {
+
+            echo 'Email Sending Failed';
+            exit;
+
         }
 
     }
