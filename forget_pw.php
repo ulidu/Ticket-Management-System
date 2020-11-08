@@ -557,8 +557,8 @@ if ($count_email == 0) {
                                                                         <td>
                                                                             <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                                                                                 <tr>
-                                                                                    <td align=\"center\" style=\"border-radius: 3px; font-family: 'Poppins' !important;\" bgcolor=\"#2c77f4\">
-                                                                                        <a class=\"button raised\" href=\"$urlToEmail\" target=\"_blank\" style=\"font-size: 14px; line-height: 14px; font-weight: 500; font-family: 'Poppins' !important; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 25px; border: 8px solid #2c77f4; display: inline-block;\">Reset Password</a>
+                                                                                    <td align=\"center\" style=\"border-radius: 3px;\" bgcolor=\"#2c77f4\">
+                                                                                        <a class=\"button raised\" href=\"$urlToEmail\" target=\"_blank\" style=\"font-size: 14px; line-height: 14px; font-weight: 500; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 25px; border: 8px solid #2c77f4; display: inline-block;\">Reset Password</a>
                                                                                     </td>
                                                                                 </tr>
                                                                             </table>
@@ -619,9 +619,9 @@ if ($count_email == 0) {
                                                 <td align=\"center\" width=\"300\" style=\"padding-top: -10px!important; padding-bottom: 18px!important; mso-padding-alt: 0px 0px 18px 0px;\">
                                                     <table style=\"background-color: transparent;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                                                         <tr>
-                                                            <td align=\"center\" valign=\"top\" class=\"social\">
+                                                             <td align=\"center\" valign=\"top\" class=\"social\">
                                                                 <a style=\"font-size: 12px; color: black; font-weight: 500; text-decoration: none;\" href=\"https://tmsuda.000webhostapp.com/assets/profile/index.php\" target=\"_blank\">
-                                                                   <img src=\"https://tmsuda.000webhostapp.com/assets/media/logos/s.png\">
+                                                                   <img src=\"https://tmsuda.000webhostapp.com/assets/media/logos/s_de.png\">
                                                                 </a>
                                                             </td>
 
