@@ -123,7 +123,7 @@
                                                     <div class="input-group-prepend"><span class="input-group-text"><i
                                                                     class="la la-qrcode"></i></span></div>
 
-                                                    <input name="empCode" type="text" class="form-control"
+                                                    <input name="empCode" id="empCode" type="text" class="form-control"
                                                            placeholder="Enter User's Employee Code" required>
                                                 </div>
 
@@ -573,7 +573,7 @@
 
                 <?php
 
-                $query = "select * from user";
+                $query = "select * from user order by userID desc";
                 $run_query = mysqli_query($con, $query);
 
                 $i = 1;
@@ -872,7 +872,6 @@
 </div>
 
 <!-- end:: Content -->
-
 
 <script>
 

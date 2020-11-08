@@ -25,6 +25,13 @@ $mail = new PHPMailer(true);
 
     function checkForm(form) {
 
+        var xy = form.empCode.value;
+        if (isNaN(xy))
+        {
+            swal.fire("Check Employee Code !", "Employee code should be a number.", "warning");
+            form.empCode.focus();
+            return false;
+        }
 
         if (form.password.value != "" && form.password.value == form.pw_cf.value) {
             if (form.password.value.length < 6) {
@@ -165,7 +172,7 @@ $mail = new PHPMailer(true);
                                         <div class="input-group-prepend"><span class="input-group-text"><i
                                                         class="la la-qrcode"></i></span></div>
 
-                                        <input name="empCode" type="text" class="form-control"
+                                        <input name="empCode" id="empCode" type="text" class="form-control"
                                                placeholder="Enter User's Employee Code" required>
                                     </div>
 
