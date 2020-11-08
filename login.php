@@ -79,7 +79,7 @@ if ($logged_user_id != '') {
                     <div class="kt-grid__item kt-grid__item--middle">
                         <h3 style="font-size: 50px; color: #595d6e;" class="kt-login__title">TICKET MANAGEMENT
                             SYSTEM</h3>
-                        <h4 style="color: #595d6e;" class="kt-login__subtitle">Manage all the troubleshooting tickets
+                        <h4 style="color: #595d6e;" class="kt-login__subtitle">Manage all IT related troubleshooting tickets
                             among divisions in<br>
                             Urban Development Authority</h4>
                     </div>

@@ -529,7 +529,7 @@ if ($count_email == 0) {
                                                         <!-- START HEADER IMAGE -->
                                                         <tr>
                                                             <td align=\"center\" class=\"hund ripplelink\" width=\"600\">
-                                                                <img align=\"center\" width=\"600\" style=\"border-radius: 3px 3px 0px 0px; width: 100%; max-width: 600px!important\" class=\"hund\" src=\"https://www.mygo.ge/uploads/blog/1584024171.jpg\">
+                                                                <img align=\"center\" width=\"600\" style=\"border-radius: 3px 3px 0px 0px; width: 100%; max-width: 600px!important\" class=\"hund\" src=\"$url_of_host_mail_images/assets/media/logos/unnamed.gif\">
                                                             </td>
                                                         </tr>
                                                         <!-- END HEADER IMAGE -->
