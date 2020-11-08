@@ -85,7 +85,12 @@ if (isset($_POST["email"])) {
         } catch (Exception $e) {
         }
 
-        $urlToEmail = 'https://tmsuda.000webhostapp.com/forget.php?' . http_build_query([
+        //$url_of_host = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
+
+        $url_of_host = 'http://localhost/Ticket%20Management%20System'; // Testing - Localhost
+        $url_of_host_mail_images = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
+
+        $urlToEmail = $url_of_host.'/forget.php?'.http_build_query([
                 'selector' => $selector,
                 'validator' => bin2hex($token)
             ]);
@@ -517,7 +522,7 @@ if (isset($_POST["email"])) {
                                                         <!-- START HEADER IMAGE -->
                                                         <tr>
                                                             <td align=\"center\" class=\"hund\" width=\"600\">
-                                                                <img src=\"https://tmsuda.000webhostapp.com/assets/media/logos/logo-4.png\" width=\"50\" alt=\"Logo\" border=\"0\" style=\"max-width: 50px; display:block; \">
+                                                                <img src=\"$url_of_host_mail_images/assets/media/logos/logo-4.png\" width=\"50\" alt=\"Logo\" border=\"0\" style=\"max-width: 50px; display:block; \">
 
                                                             </td>
                                                         </tr>
@@ -670,8 +675,8 @@ if (isset($_POST["email"])) {
                                             <tr>
                                                 
                                                 <td align=\"center\" valign=\"top\" class=\"social\">
-                                                                <a style=\"font-size: 12px; color: black; font-weight: 500; text-decoration: none;\" href=\"https://tmsuda.000webhostapp.com/assets/profile/index.php\" target=\"_blank\">
-                                                                   <img src=\"https://tmsuda.000webhostapp.com/assets/media/logos/s_de.png\">
+                                                                <a style=\"font-size: 12px; color: black; font-weight: 500; text-decoration: none;\" href=\"$url_of_host/assets/profile/index.php\" target=\"_blank\">
+                                                                   <img src=\"$url_of_host_mail_images/assets/media/logos/s_de.png\">
                                                                 </a>
                                                             </td>
                                             </tr>

@@ -70,7 +70,12 @@ if ($count_email == 0) {
     } catch (Exception $e) {
     }
 
-    $urlToEmail = 'https://tmsuda.000webhostapp.com/forget.php?'.http_build_query([
+    //$url_of_host = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
+
+    $url_of_host = 'http://localhost/Ticket%20Management%20System'; // Testing - Localhost
+    $url_of_host_mail_images = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
+
+    $urlToEmail = $url_of_host.'/forget.php?'.http_build_query([
                 'selector' => $selector,
                 'validator' => bin2hex($token)
             ]);
@@ -95,7 +100,7 @@ if ($count_email == 0) {
         $to = $email;
         $subject = "Reset Your Password. Ticket Management System - UDA";
         $message = "
-    <html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">
+   <html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">
 <head>
     <meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\" />
     <!-- [ if !mso]> <!-->
@@ -154,7 +159,7 @@ if ($count_email == 0) {
 
         body,
         #body_style {
-            background: #fff;
+            background: #F2F3F4;
         }
 
         table td {
@@ -208,7 +213,7 @@ if ($count_email == 0) {
         /**** My desktop styles ****/
         @media only screen and (min-width: 600px) {
             .noDesk {
-                display: none !important;
+               
             }
 
             .td-padding {
@@ -232,7 +237,7 @@ if ($count_email == 0) {
             }
 
             .mobile {
-                display: none !important
+             
             }
         }
 
@@ -263,7 +268,7 @@ if ($count_email == 0) {
 
             *[class=\"mobileOff\"] {
                 width: 0px !important;
-                display: none !important;
+                
             }
 
             *[class*=\"mobileOn\"] {
@@ -311,15 +316,15 @@ if ($count_email == 0) {
             }
 
             *[class=\"hide\"] {
-                display: none !important
+               
             }
 
             *[class=\"Gmail\"] {
-                display: none !important
+                
             }
 
             .Gmail {
-                display: none !important
+              
             }
 
             .bottom-padding-fix {
@@ -443,20 +448,20 @@ if ($count_email == 0) {
     <![endif]-->
 </head>
 
-<body style=\"margin:0; padding:0; background-color: #fff !important;\" bgcolor=\"#fff\">
+<body style=\"margin:0; padding:0; background-color: #F2F3F4 !important;\" bgcolor=\"#fff\">
     <!--[if mso]>
     <style type=\"text/css\">
     body, table, td {font-family: Arial, Helvetica, sans-serif !important;}
     </style>
     <![endif]-->
     <!-- START EMAIL -->
-    <table style=\"background-color: transparent;\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" bgcolor=\"#fff\">
+    <table style=\"background-color: #F2F3F4;\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" bgcolor=\"#fff\">
         <div class=\"Gmail\" style=\"height: 1px !important; margin-top: -1px !important; max-width: 600px !important; min-width: 600px !important; width: 600px !important;\"></div>
-        <div style=\"display: none; max-height: 0px; overflow: hidden;\">
+        <div style=\"max-height: 0px; overflow: hidden;\">
             Reset Your Password on Ticket Management System at UDA
         </div>
         <!-- Insert &zwnj;&nbsp; hack after hidden preview text -->
-        <div style=\"display: none; max-height: 0px; overflow: hidden;\">
+        <div style=\"max-height: 0px; overflow: hidden;\">
             &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
 
@@ -472,14 +477,14 @@ if ($count_email == 0) {
                             <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">
                                 <tr>
                                     <td width=\"100%\" valign=\"top\" align=\"center\">
-                                        <table style=\"background-color: transparent;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#eeeeee\">
+                                        <table style=\"background-color: #F2F3F4;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#eeeeee\">
                                             <tr>
                                                 <td align=\"center\">
                                                     <table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\" align=\"center\">
                                                         <!-- START HEADER IMAGE -->
                                                         <tr>
                                                             <td align=\"center\" class=\"hund\" width=\"600\">
-                                                                <img src=\"https://tmsuda.000webhostapp.com/assets/media/logos/logo-4.png\" width=\"50\" alt=\"Logo\" border=\"0\" style=\"max-width: 50px; display:block; \">
+                                                                <img src=\"$url_of_host_mail_images/assets/media/logos/logo-4.png\" width=\"50\" alt=\"Logo\" border=\"0\" style=\"max-width: 50px; display:block; \">
 
                                                             </td>
                                                         </tr>
@@ -610,20 +615,19 @@ if ($count_email == 0) {
                 <table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\">
                     <tr>
                         <td width=\"100%\" valign=\"top\" align=\"center\">
-                            <table style=\"background-color: transparent;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#eeeeee\">
+                            <table style=\"background-color: #F2F3F4;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"wrapper\" bgcolor=\"#eeeeee\">
                                 <tr>
                                     <td align=\"center\">
-                                        <table style=\"background-color: transparent;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\">
+                                        <table style=\"background-color: #F2F3F4;\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"container\">
                                             <tr>
                                                 <!-- SOCIAL -->
                                                 <td align=\"center\" width=\"300\" style=\"padding-top: -10px!important; padding-bottom: 18px!important; mso-padding-alt: 0px 0px 18px 0px;\">
-                                                    <table style=\"background-color: transparent;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
+                                                    <table style=\"background-color: #F2F3F4;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                                                         <tr>
-                                                             <td align=\"center\" valign=\"top\" class=\"social\">
-                                                                <a style=\"font-size: 12px; color: black; font-weight: 500; text-decoration: none;\" href=\"https://tmsuda.000webhostapp.com/assets/profile/index.php\" target=\"_blank\">
-                                                                   <img src=\"https://tmsuda.000webhostapp.com/assets/media/logos/s_de.png\">
-                                                                </a>
-                                                            </td>
+                                                        <td class=\"td-padding\" align=\"center\" style=\" color: #212121!important; font-size: 12px; line-height: 24px; padding-top: 0px; padding-left: 0px!important; padding-right: 0px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 0px 0px 0px 0px;\">
+                                                    2020 | URBAN DEVELOPMENT AUTHORITY
+                                                </td>
+                                                        
 
                                                         </tr>
                                                     </table>
@@ -632,9 +636,11 @@ if ($count_email == 0) {
                                             </tr>
                                             <tr>
                                                 
-                                                <td class=\"td-padding\" align=\"center\" style=\" color: #212121!important; font-size: 14px; line-height: 24px; padding-top: 0px; padding-left: 0px!important; padding-right: 0px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 0px 0px 0px 0px;\">
-                                                    <hr> URBAN DEVELOPMENT AUTHORITY <br> 2020
-                                                </td>
+                                                <td align=\"center\" valign=\"top\" class=\"social\">
+                                                                <a style=\"font-size: 12px; color: black; font-weight: 500; text-decoration: none;\" href=\"$url_of_host/assets/profile/index.php\" target=\"_blank\">
+                                                                   <img src=\"$url_of_host_mail_images/assets/media/logos/s_de.png\">
+                                                                </a>
+                                                            </td>
                                             </tr>
 
                                         </table>
@@ -666,13 +672,12 @@ if ($count_email == 0) {
 
     </table>
     <!-- END EMAIL -->
-    <div style=\"display:none; white-space:nowrap; font:15px courier; line-height:0;\">
+    <div style=\"white-space:nowrap; font:15px courier; line-height:0;\">
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     </div>
 </body>
-
 </html>
 ";
 
