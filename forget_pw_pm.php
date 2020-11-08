@@ -3,6 +3,7 @@
 include 'include/db.php';
 
 // Begin - PHPMailer Initialization
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;

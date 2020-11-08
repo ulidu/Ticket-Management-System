@@ -1,5 +1,26 @@
 <?php include 'include/header.php'; ?>
 <?php include 'include/aside.php'; ?>
+
+<?php
+
+// Begin - PHPMailer Initialization
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'assets/plugins/PHPMailer/src/Exception.php';
+require 'assets/plugins/PHPMailer/src/PHPMailer.php';
+require 'assets/plugins/PHPMailer/src/SMTP.php';
+
+require 'vendor/autoload.php';
+
+$mail = new PHPMailer(true);
+
+// End - PHPMailer Initialization
+
+?>
+
 <script type="text/javascript">
 
     function checkForm(form) {
