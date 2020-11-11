@@ -27,6 +27,7 @@
                     $firstName = $lastrow['firstName'];
                     $lastName = $lastrow['lastName'];
                     $title = $lastrow['title'];
+                    $email_a = $lastrow['email'];
                     ?>
 
                     <?php
@@ -61,7 +62,7 @@
 
 
                             <p style=" font-size: 15px">User Account
-                                for <?php echo $title . ' ' . $firstName . ' ' . $lastName; ?> Created Successfully.</p>
+                                for <?php echo $title . ' ' . $firstName . ' ' . $lastName; ?> Created Successfully.<br> <span style="font-weight: 500">An email with getting started instructions has been sent to <?php echo  $email_a; ?>.</span></p>
                             <a href="user_list.php" class="btn btn-success btn-elevate btn-icon-sm">
                                 <i class="la la-chevron-circle-left"></i>
                                 Users List

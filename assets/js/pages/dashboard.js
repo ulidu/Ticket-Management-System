@@ -135,7 +135,7 @@ var KTDashboard = function() {
                     caretPadding: 10
                 },
                 legend: {
-                    display: false
+                    display: true
                 },
                 responsive: true,
                 maintainAspectRatio: false,

@@ -49,39 +49,29 @@ $_SESSION['last_action'] = time();
     <!--begin::Fonts -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
-    <!--end::Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
+    <!--end::Fonts -->
 
-    <!--begin::Page Vendors Styles(used by this page) -->
+    <!--begin::Global Theme Styles(used by all pages) -->
     <link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css"/>
-
     <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css"/>
-
-    <!--end::Page Vendors Styles -->
-    <!--begin::Page Custom Styles(used by this page) -->
     <link href="assets/css/pages/wizard/wizard-4.css" rel="stylesheet" type="text/css"/>
-    <!--begin::Page Custom Styles(used by this page) -->
     <link href="assets/css/pages/support-center/faq-3.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/pages/support-center/feedback.css" rel="stylesheet" type="text/css"/>
     <link href="assets/plugins/custom/jstree/jstree.bundle.css" rel="stylesheet" type="text/css"/>
     <link href="assets/plugins/custom/kanban/kanban.bundle.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="assets/plugins/jquery-nice-select-1.1.0/css/nice-select.css">
-
-    <!--begin::Global Theme Styles(used by all pages) -->
+    <link href="assets/plugins/jquery-nice-select-1.1.0/css/nice-select.css" rel="stylesheet">
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/pages/support-center/home-1.css" rel="stylesheet" type="text/css"/>
     <!--end::Global Theme Styles -->
 
-    <!--begin::Layout Skins(used by all pages) -->
-
-    <!--end::Layout Skins -->
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <style>
 
         @import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
-
 
         .ui-select {
             width: 100%;
@@ -114,9 +104,6 @@ $_SESSION['last_action'] = time();
                 border: none !important;
             }
         }
-
-
-
 
     </style>
 </head>

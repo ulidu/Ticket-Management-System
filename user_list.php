@@ -286,11 +286,11 @@
 
                                         if ($count_all_tickets == 1) {
 
-                                            printf("%d Account", $count_all_tickets);
+                                            printf("%d User", $count_all_tickets);
 
                                         } else {
 
-                                            printf("%d Accounts", $count_all_tickets);
+                                            printf("%d Users", $count_all_tickets);
 
                                         }
 
@@ -346,11 +346,11 @@
 
                                         if ($count_in_progress_run_tickets == 1) {
 
-                                            printf("%d Account", $count_in_progress_run_tickets);
+                                            printf("%d User", $count_in_progress_run_tickets);
 
                                         } else {
 
-                                            printf("%d Accounts", $count_in_progress_run_tickets);
+                                            printf("%d Users", $count_in_progress_run_tickets);
 
                                         }
 
@@ -402,11 +402,11 @@
 
                                         if ($count_completed_run_tickets == 1) {
 
-                                            printf("%d Account", $count_completed_run_tickets);
+                                            printf("%d User", $count_completed_run_tickets);
 
                                         } else {
 
-                                            printf("%d Accounts", $count_completed_run_tickets);
+                                            printf("%d Users", $count_completed_run_tickets);
 
                                         }
 
@@ -460,11 +460,11 @@
 
                                         if ($count_completed_run_tickets == 1) {
 
-                                            printf("%d Account", $count_completed_run_tickets);
+                                            printf("%d User", $count_completed_run_tickets);
 
                                         } else {
 
-                                            printf("%d Accounts", $count_completed_run_tickets);
+                                            printf("%d Users", $count_completed_run_tickets);
 
                                         }
 

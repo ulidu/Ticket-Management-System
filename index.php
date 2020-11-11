@@ -42,7 +42,7 @@
 
 
         <div style="cursor: pointer;" onclick="location.href='task_list.php';" class="col-lg-3">
-            <div class="kt-portlet kt-iconbox kt-iconbox--brand kt-iconbox--animate-slower">
+            <div class="kt-portlet kt-iconbox kt-iconbox--success kt-iconbox--animate-slower">
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
@@ -73,7 +73,7 @@
 
 
         <div style="cursor: pointer;" onclick="location.href='user_list.php';" class="col-lg-3">
-            <div class="kt-portlet kt-iconbox kt-iconbox--brand kt-iconbox--animate-slower">
+            <div class="kt-portlet kt-iconbox kt-iconbox--primary kt-iconbox--animate-slower">
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
@@ -104,7 +104,7 @@
 
 
         <div style="cursor: pointer;" onclick="location.href='reports.php';" class="col-lg-3">
-            <div class="kt-portlet kt-iconbox kt-iconbox--brand kt-iconbox--animate-slower">
+            <div class="kt-portlet kt-iconbox kt-iconbox--warning kt-iconbox--animate-slower">
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
@@ -140,138 +140,7 @@
 
     <div class="row">
 
-        <div class="col-12">
-            <!--Begin::Section-->
-            <div class="kt-portlet">
-                <div class="kt-portlet__body  kt-portlet__body--fit">
-                    <div class="row row-no-padding ">
-                        <div class="col-12">
-
-                            <!--begin:: Widgets/Daily Sales-->
-                            <div class="kt-portlet kt-portlet--height-fluid">
-                                <div class="kt-widget14">
-                                    <div class="kt-widget14__header kt-margin-b-30">
-                                        <h3 class="kt-widget14__title">
-                                            Daily Tickets
-                                        </h3>
-                                        <span class="kt-widget14__desc">
-															Check out each column for more details
-														</span>
-                                    </div>
-                                    <div class="kt-widget14__chart" style="height:120px;">
-                                        <canvas id="kt_chart_daily_sales"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--end:: Widgets/Daily Sales-->
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="row">
-
-        <div class="col-4">
-            <div class="kt-portlet kt-iconbox kt-iconbox--warning kt-iconbox--animate-slow">
-                <div class="kt-portlet__body">
-                    <div class="kt-iconbox__body">
-                        <div class="kt-iconbox__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"/>
-                                    <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"/>
-                                    <rect fill="#000000" opacity="0.3" x="7" y="10" width="5" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="7" y="14" width="9" height="2" rx="1"/>
-                                </g>
-                            </svg> </div>
-                        <div class="kt-iconbox__desc">
-                            <h3 class="kt-iconbox__title">
-                                <a class="kt-link" href="#">23 Tickets</a>
-                            </h3>
-                            <div class="kt-iconbox__content">
-                                All Tickets So far
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-4">
-            <div class="kt-portlet kt-iconbox kt-iconbox--brand kt-iconbox--animate-slow">
-                <div class="kt-portlet__body">
-                    <div class="kt-iconbox__body">
-                        <div class="kt-iconbox__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3"/>
-                                    <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000"/>
-                                    <rect fill="#000000" opacity="0.3" x="10" y="9" width="7" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="7" y="9" width="2" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="7" y="13" width="2" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="10" y="13" width="7" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="7" y="17" width="2" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="10" y="17" width="7" height="2" rx="1"/>
-                                </g>
-                            </svg> </div>
-                        <div class="kt-iconbox__desc">
-                            <h3 class="kt-iconbox__title">
-                                <a class="kt-link" href="#">8 Tickets</a>
-                            </h3>
-                            <div class="kt-iconbox__content">
-                                In Progress
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-4">
-            <div class="kt-portlet kt-iconbox kt-iconbox--success kt-iconbox--animate-slow">
-                <div class="kt-portlet__body">
-                    <div class="kt-iconbox__body">
-                        <div class="kt-iconbox__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24" />
-                                    <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3" />
-                                    <path d="M10.875,15.75 C10.6354167,15.75 10.3958333,15.6541667 10.2041667,15.4625 L8.2875,13.5458333 C7.90416667,13.1625 7.90416667,12.5875 8.2875,12.2041667 C8.67083333,11.8208333 9.29375,11.8208333 9.62916667,12.2041667 L10.875,13.45 L14.0375,10.2875 C14.4208333,9.90416667 14.9958333,9.90416667 15.3791667,10.2875 C15.7625,10.6708333 15.7625,11.2458333 15.3791667,11.6291667 L11.5458333,15.4625 C11.3541667,15.6541667 11.1145833,15.75 10.875,15.75 Z" fill="#000000" />
-                                    <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000" />
-                                </g>
-                            </svg> </div>
-                        <div class="kt-iconbox__desc">
-                            <h3 class="kt-iconbox__title">
-                                <a class="kt-link" href="#">15 Tickets</a>
-                            </h3>
-                            <div class="kt-iconbox__content">
-                                Completed
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-
-
-    <!--Begin::Section-->
-    <div class="row">
-        <div class="col-xl-6">
+        <div class="col-6">
 
             <!--begin:: Widgets/Support Cases-->
             <div class="kt-portlet kt-portlet--height-fluid">
@@ -383,128 +252,69 @@
             <!--end:: Widgets/Support Stats-->
         </div>
 
+        <div class="col-6">
+            <!--Begin::Section-->
+            <div class="kt-portlet">
+                <div class="kt-portlet__body  kt-portlet__body--fit">
+                    <div class="row row-no-padding ">
+                        <div class="col-12">
+
+                            <!--begin:: Widgets/Daily Sales-->
+                            <div class="kt-portlet kt-portlet--height-fluid">
+                                <div class="kt-widget14">
+                                    <div class="kt-widget14__header kt-margin-b-30">
+                                        <h3 class="kt-widget14__title">
+                                            Daily Tickets
+                                        </h3>
+                                        <span class="kt-widget14__desc">
+															Check out each column for more details
+														</span>
+
+                                    </div>
+                                    <div class="kt-widget14__chart" style="height:180px;">
+                                        <canvas id="kt_chart_daily_sales"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--end:: Widgets/Daily Sales-->
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
     </div>
 
-    <!--End::Section-->
 
     <div class="row">
-    <div class="col-xl-8 col-lg-12 order-lg-3 order-xl-1">
 
-        <!--begin:: Widgets/Best Sellers-->
-        <div class="kt-portlet kt-portlet--height-fluid">
-            <div class="kt-portlet__head">
-                <div class="kt-portlet__head-label">
-                    <h3 class="kt-portlet__head-title">
-                        Best Sellers
-                    </h3>
-                </div>
-                <div class="kt-portlet__head-toolbar">
-                    <ul class="nav nav-pills nav-pills-sm nav-pills-label nav-pills-bold" role="tablist">
-
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#kt_widget5_tab3_content" role="tab">
-                                All time
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="kt-portlet__body">
-                <div class="tab-content">
-                    <div class="tab-pane active" id="kt_widget5_tab3_content">
-                        <div class="kt-widget5">
-                            <div class="kt-widget5__item">
-                                <div class="kt-widget5__content">
-                                    <div class="kt-widget5__pic">
-                                        <img class="kt-widget7__img" src="assets/media/products/product11.jpg" alt="">
-                                    </div>
-                                    <div class="kt-widget5__section">
-                                        <a href="#" class="kt-widget5__title">
-                                            Awesome Mobile App
-                                        </a>
-                                        <p class="kt-widget5__desc">
-                                            Metronic admin themes.Lorem Ipsum Amet
-                                        </p>
-                                        <div class="kt-widget5__info">
-                                            <span>Author:</span>
-                                            <span class="kt-font-info">Fly themes</span>
-                                            <span>Released:</span>
-                                            <span class="kt-font-info">23.08.17</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="kt-widget5__content">
-                                    <div class="kt-widget5__stats">
-                                        <span class="kt-widget5__number">210,054</span>
-                                        <span class="kt-widget5__sales">sales</span>
-                                    </div>
-                                    <div class="kt-widget5__stats">
-                                        <span class="kt-widget5__number">1103</span>
-                                        <span class="kt-widget5__votes">votes</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="kt-widget5__item">
-                                <div class="kt-widget5__content">
-                                    <div class="kt-widget5__pic">
-                                        <img class="kt-widget7__img" src="assets/media/products/product6.jpg" alt="">
-                                    </div>
-                                    <div class="kt-widget5__section">
-                                        <a href="#" class="kt-widget5__title">
-                                            Great Logo Designn
-                                        </a>
-                                        <p class="kt-widget5__desc">
-                                            Metronic admin themes.
-                                        </p>
-                                        <div class="kt-widget5__info">
-                                            <span>Author:</span>
-                                            <span class="kt-font-info">Keenthemes</span>
-                                            <span>Released:</span>
-                                            <span class="kt-font-info">23.08.17</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="kt-widget5__content">
-                                    <div class="kt-widget5__stats">
-                                        <span class="kt-widget5__number">19,200</span>
-                                        <span class="kt-widget5__sales">sales</span>
-                                    </div>
-                                    <div class="kt-widget5__stats">
-                                        <span class="kt-widget5__number">1046</span>
-                                        <span class="kt-widget5__votes">votes</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="kt-widget5__item">
-                                <div class="kt-widget5__content">
-                                    <div class="kt-widget5__pic">
-                                        <img class="kt-widget7__img" src="assets/media/products/product10.jpg" alt="">
-                                    </div>
-                                    <div class="kt-widget5__section">
-                                        <a href="#" class="kt-widget5__title">
-                                            Branding Mockup
-                                        </a>
-                                        <p class="kt-widget5__desc">
-                                            Metronic bootstrap themes.
-                                        </p>
-                                        <div class="kt-widget5__info">
-                                            <span>Author:</span>
-                                            <span class="kt-font-info">Fly themes</span>
-                                            <span>Released:</span>
-                                            <span class="kt-font-info">23.08.17</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="kt-widget5__content">
-                                    <div class="kt-widget5__stats">
-                                        <span class="kt-widget5__number">24,583</span>
-                                        <span class="kt-widget5__sales">sales</span>
-                                    </div>
-                                    <div class="kt-widget5__stats">
-                                        <span class="kt-widget5__number">3809</span>
-                                        <span class="kt-widget5__votes">votes</span>
-                                    </div>
-                                </div>
+        <div class="col-4">
+            <div class="kt-portlet kt-iconbox kt-iconbox--warning kt-iconbox--animate-slow">
+                <div class="kt-portlet__body">
+                    <div class="kt-iconbox__body">
+                        <div class="kt-iconbox__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z"
+                                          fill="#000000" opacity="0.3"/>
+                                    <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z"
+                                          fill="#000000"/>
+                                    <rect fill="#000000" opacity="0.3" x="7" y="10" width="5" height="2" rx="1"/>
+                                    <rect fill="#000000" opacity="0.3" x="7" y="14" width="9" height="2" rx="1"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="kt-iconbox__desc">
+                            <h3 class="kt-iconbox__title">
+                                <a class="kt-link" href="#">23 Tickets</a>
+                            </h3>
+                            <div class="kt-iconbox__content">
+                                All Tickets So far
                             </div>
                         </div>
                     </div>
@@ -512,9 +322,210 @@
             </div>
         </div>
 
-        <!--end:: Widgets/Best Sellers-->
+
+        <div class="col-4">
+            <div class="kt-portlet kt-iconbox kt-iconbox--brand kt-iconbox--animate-slow">
+                <div class="kt-portlet__body">
+                    <div class="kt-iconbox__body">
+                        <div class="kt-iconbox__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z"
+                                          fill="#000000" opacity="0.3"/>
+                                    <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z"
+                                          fill="#000000"/>
+                                    <rect fill="#000000" opacity="0.3" x="10" y="9" width="7" height="2" rx="1"/>
+                                    <rect fill="#000000" opacity="0.3" x="7" y="9" width="2" height="2" rx="1"/>
+                                    <rect fill="#000000" opacity="0.3" x="7" y="13" width="2" height="2" rx="1"/>
+                                    <rect fill="#000000" opacity="0.3" x="10" y="13" width="7" height="2" rx="1"/>
+                                    <rect fill="#000000" opacity="0.3" x="7" y="17" width="2" height="2" rx="1"/>
+                                    <rect fill="#000000" opacity="0.3" x="10" y="17" width="7" height="2" rx="1"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="kt-iconbox__desc">
+                            <h3 class="kt-iconbox__title">
+                                <a class="kt-link" href="#">8 Tickets</a>
+                            </h3>
+                            <div class="kt-iconbox__content">
+                                In Progress
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-4">
+            <div class="kt-portlet kt-iconbox kt-iconbox--success kt-iconbox--animate-slow">
+                <div class="kt-portlet__body">
+                    <div class="kt-iconbox__body">
+                        <div class="kt-iconbox__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z"
+                                          fill="#000000" opacity="0.3"/>
+                                    <path d="M10.875,15.75 C10.6354167,15.75 10.3958333,15.6541667 10.2041667,15.4625 L8.2875,13.5458333 C7.90416667,13.1625 7.90416667,12.5875 8.2875,12.2041667 C8.67083333,11.8208333 9.29375,11.8208333 9.62916667,12.2041667 L10.875,13.45 L14.0375,10.2875 C14.4208333,9.90416667 14.9958333,9.90416667 15.3791667,10.2875 C15.7625,10.6708333 15.7625,11.2458333 15.3791667,11.6291667 L11.5458333,15.4625 C11.3541667,15.6541667 11.1145833,15.75 10.875,15.75 Z"
+                                          fill="#000000"/>
+                                    <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z"
+                                          fill="#000000"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="kt-iconbox__desc">
+                            <h3 class="kt-iconbox__title">
+                                <a class="kt-link" href="#">15 Tickets</a>
+                            </h3>
+                            <div class="kt-iconbox__content">
+                                Completed
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
+
+
+    <div class="row">
+
+        <div class="col-12">
+
+            <!--begin:: Widgets/Best Sellers-->
+            <div class="kt-portlet kt-portlet--height-fluid">
+                <div class="kt-portlet__head">
+                    <div class="kt-portlet__head-label">
+                        <h3 class="kt-portlet__head-title">
+                            Best Sellers
+                        </h3>
+                    </div>
+                    <div class="kt-portlet__head-toolbar">
+                        <ul class="nav nav-pills nav-pills-sm nav-pills-label nav-pills-bold" role="tablist">
+
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#kt_widget5_tab3_content" role="tab">
+                                    All time
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="kt-portlet__body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="kt_widget5_tab3_content">
+                            <div class="kt-widget5">
+                                <div class="kt-widget5__item">
+                                    <div class="kt-widget5__content">
+                                        <div class="kt-widget5__pic">
+                                            <img class="kt-widget7__img" src="assets/media/products/product11.jpg"
+                                                 alt="">
+                                        </div>
+                                        <div class="kt-widget5__section">
+                                            <a href="#" class="kt-widget5__title">
+                                                Awesome Mobile App
+                                            </a>
+                                            <p class="kt-widget5__desc">
+                                                Metronic admin themes.Lorem Ipsum Amet
+                                            </p>
+                                            <div class="kt-widget5__info">
+                                                <span>Author:</span>
+                                                <span class="kt-font-info">Fly themes</span>
+                                                <span>Released:</span>
+                                                <span class="kt-font-info">23.08.17</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-widget5__content">
+                                        <div class="kt-widget5__stats">
+                                            <span class="kt-widget5__number">210,054</span>
+                                            <span class="kt-widget5__sales">sales</span>
+                                        </div>
+                                        <div class="kt-widget5__stats">
+                                            <span class="kt-widget5__number">1103</span>
+                                            <span class="kt-widget5__votes">votes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-widget5__item">
+                                    <div class="kt-widget5__content">
+                                        <div class="kt-widget5__pic">
+                                            <img class="kt-widget7__img" src="assets/media/products/product6.jpg"
+                                                 alt="">
+                                        </div>
+                                        <div class="kt-widget5__section">
+                                            <a href="#" class="kt-widget5__title">
+                                                Great Logo Designn
+                                            </a>
+                                            <p class="kt-widget5__desc">
+                                                Metronic admin themes.
+                                            </p>
+                                            <div class="kt-widget5__info">
+                                                <span>Author:</span>
+                                                <span class="kt-font-info">Keenthemes</span>
+                                                <span>Released:</span>
+                                                <span class="kt-font-info">23.08.17</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-widget5__content">
+                                        <div class="kt-widget5__stats">
+                                            <span class="kt-widget5__number">19,200</span>
+                                            <span class="kt-widget5__sales">sales</span>
+                                        </div>
+                                        <div class="kt-widget5__stats">
+                                            <span class="kt-widget5__number">1046</span>
+                                            <span class="kt-widget5__votes">votes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-widget5__item">
+                                    <div class="kt-widget5__content">
+                                        <div class="kt-widget5__pic">
+                                            <img class="kt-widget7__img" src="assets/media/products/product10.jpg"
+                                                 alt="">
+                                        </div>
+                                        <div class="kt-widget5__section">
+                                            <a href="#" class="kt-widget5__title">
+                                                Branding Mockup
+                                            </a>
+                                            <p class="kt-widget5__desc">
+                                                Metronic bootstrap themes.
+                                            </p>
+                                            <div class="kt-widget5__info">
+                                                <span>Author:</span>
+                                                <span class="kt-font-info">Fly themes</span>
+                                                <span>Released:</span>
+                                                <span class="kt-font-info">23.08.17</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-widget5__content">
+                                        <div class="kt-widget5__stats">
+                                            <span class="kt-widget5__number">24,583</span>
+                                            <span class="kt-widget5__sales">sales</span>
+                                        </div>
+                                        <div class="kt-widget5__stats">
+                                            <span class="kt-widget5__number">3809</span>
+                                            <span class="kt-widget5__votes">votes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--end:: Widgets/Best Sellers-->
+        </div>
+
+    </div>
 
     <div class="row">
 
@@ -531,7 +542,8 @@
                     <div class="kt-portlet__head-toolbar">
                         <ul class="nav nav-pills nav-pills-sm nav-pills-label nav-pills-bold" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#kt_widget4_tab11_content" role="tab">
+                                <a class="nav-link active" data-toggle="tab" href="#kt_widget4_tab11_content"
+                                   role="tab">
                                     Today
                                 </a>
                             </li>
@@ -561,7 +573,8 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">System shutdown <span class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">pending</span></span>
+                                            <span class="kt-list-timeline__text">System shutdown <span
+                                                        class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">pending</span></span>
                                             <span class="kt-list-timeline__time">14 mins</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -571,12 +584,14 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
+                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
                                             <span class="kt-list-timeline__time">1 hr</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
-                                            <span class="kt-list-timeline__text">System error - <a href="#" class="kt-link">Check</a></span>
+                                            <span class="kt-list-timeline__text">System error - <a href="#"
+                                                                                                   class="kt-link">Check</a></span>
                                             <span class="kt-list-timeline__time">2 hrs</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -591,7 +606,8 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span href="" class="kt-list-timeline__text">New order received <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
+                                            <span href="" class="kt-list-timeline__text">New order received <span
+                                                        class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
                                             <span class="kt-list-timeline__time">7 hrs</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -601,7 +617,8 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">System shutdown <span class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">pending</span></span>
+                                            <span class="kt-list-timeline__text">System shutdown <span
+                                                        class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">pending</span></span>
                                             <span class="kt-list-timeline__time">14 mins</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -611,7 +628,8 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
+                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
                                             <span class="kt-list-timeline__time">1 hr</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -621,12 +639,14 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
+                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
                                             <span class="kt-list-timeline__time">1 hr</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
-                                            <span class="kt-list-timeline__text">System error - <a href="#" class="kt-link">Check</a></span>
+                                            <span class="kt-list-timeline__text">System error - <a href="#"
+                                                                                                   class="kt-link">Check</a></span>
                                             <span class="kt-list-timeline__time">2 hrs</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -641,7 +661,8 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span href="" class="kt-list-timeline__text">New order received <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
+                                            <span href="" class="kt-list-timeline__text">New order received <span
+                                                        class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
                                             <span class="kt-list-timeline__time">7 hrs</span>
                                         </div>
                                     </div>
@@ -659,7 +680,8 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
+                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
                                             <span class="kt-list-timeline__time">1 hr</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -674,7 +696,8 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">System shutdown <span class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">pending</span></span>
+                                            <span class="kt-list-timeline__text">System shutdown <span
+                                                        class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">pending</span></span>
                                             <span class="kt-list-timeline__time">14 mins</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -684,17 +707,20 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
+                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
                                             <span class="kt-list-timeline__time">1 hr</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
-                                            <span class="kt-list-timeline__text">System error - <a href="#" class="kt-link">Check</a></span>
+                                            <span class="kt-list-timeline__text">System error - <a href="#"
+                                                                                                   class="kt-link">Check</a></span>
                                             <span class="kt-list-timeline__time">2 hrs</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
+                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
                                             <span class="kt-list-timeline__time">1 hr</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -704,12 +730,14 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
+                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
                                             <span class="kt-list-timeline__time">1 hr</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
-                                            <span class="kt-list-timeline__text">System error - <a href="#" class="kt-link">Check</a></span>
+                                            <span class="kt-list-timeline__text">System error - <a href="#"
+                                                                                                   class="kt-link">Check</a></span>
                                             <span class="kt-list-timeline__time">2 hrs</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -724,7 +752,8 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span href="" class="kt-list-timeline__text">New order received <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
+                                            <span href="" class="kt-list-timeline__text">New order received <span
+                                                        class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
                                             <span class="kt-list-timeline__time">7 hrs</span>
                                         </div>
                                     </div>
@@ -737,7 +766,8 @@
                                     <div class="kt-list-timeline__items">
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span href="" class="kt-list-timeline__text">New order received <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
+                                            <span href="" class="kt-list-timeline__text">New order received <span
+                                                        class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
                                             <span class="kt-list-timeline__time">7 hrs</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -747,7 +777,8 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
+                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
                                             <span class="kt-list-timeline__time">1 hr</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -762,7 +793,8 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">System shutdown <span class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">pending</span></span>
+                                            <span class="kt-list-timeline__text">System shutdown <span
+                                                        class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">pending</span></span>
                                             <span class="kt-list-timeline__time">14 mins</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -772,17 +804,20 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
+                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
                                             <span class="kt-list-timeline__time">1 hr</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
-                                            <span class="kt-list-timeline__text">System error - <a href="#" class="kt-link">Check</a></span>
+                                            <span class="kt-list-timeline__text">System error - <a href="#"
+                                                                                                   class="kt-link">Check</a></span>
                                             <span class="kt-list-timeline__time">2 hrs</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
+                                                        class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">settled</span></span>
                                             <span class="kt-list-timeline__time">1 hr</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -792,12 +827,14 @@
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">settled</span></span>
+                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
+                                                        class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">settled</span></span>
                                             <span class="kt-list-timeline__time">1 hr</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
                                             <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
-                                            <span class="kt-list-timeline__text">System error - <a href="#" class="kt-link">Check</a></span>
+                                            <span class="kt-list-timeline__text">System error - <a href="#"
+                                                                                                   class="kt-link">Check</a></span>
                                             <span class="kt-list-timeline__time">2 hrs</span>
                                         </div>
                                         <div class="kt-list-timeline__item">
@@ -820,19 +857,14 @@
 
             <!--end:: Widgets/Audit Log-->
         </div>
-        </div>
 
-
-
-
-
-
+    </div>
 
 
 </div>
 
-        <!-- end:: Content -->
-    </div>
+<!-- end:: Content -->
+</div>
 
 
-    <?php include 'include/footer.php'; ?>
+<?php include 'include/footer.php'; ?>

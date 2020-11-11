@@ -220,7 +220,6 @@ var KTLoginGeneral = function() {
 
                     }else {
 
-
                         setTimeout(function () {
                             btn.removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false); // remove
                             form.clearForm(); // clear form

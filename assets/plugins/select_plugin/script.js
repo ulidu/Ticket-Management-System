@@ -56,6 +56,24 @@ dropdownArray.forEach(item => {
             dropdown.classList.add('closed');
         });
     });
+    item.addEventListener('mousedown', evt => {
+        inputField.value = item.textContent;
+
+        var sd = item.textContent;
+        var num_emp1 = sd.match(/\| [\d\.]+ \-/g);
+        var num_emp2 = num_emp1.toString();
+
+        var num_emp3 = num_emp2.match(/[\d\.]+/g);
+        var num_emp = num_emp3.toString();
+
+        inputField_hidden.value = num_emp;
+
+        $("#pw_login").prop('disabled', false);
+
+        dropdownArray.forEach(dropdown => {
+            dropdown.classList.add('closed');
+        });
+    });
 });
 
 inputField.addEventListener('focus', () => {
@@ -72,6 +90,14 @@ inputField.addEventListener('blur', () => {
 });
 
 document.addEventListener('click', evt => {
+    const isDropdown = dropdown.contains(evt.target);
+    const isInput = inputField.contains(evt.target);
+    if (!isDropdown && !isInput) {
+        dropdown.classList.remove('open');
+    }
+});
+
+document.addEventListener('mousedown', evt => {
     const isDropdown = dropdown.contains(evt.target);
     const isInput = inputField.contains(evt.target);
     if (!isDropdown && !isInput) {

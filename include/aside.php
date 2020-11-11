@@ -575,6 +575,7 @@
 
             <!--begin: Notifications -->
             <div class="kt-header__topbar-item dropdown">
+
                 <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true">
                     <span class="kt-header__topbar-icon"><i style="color: #ffb822;" class="flaticon2-bell-alarm-symbol"></i></span>
                     <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span>

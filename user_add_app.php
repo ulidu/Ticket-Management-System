@@ -3,7 +3,6 @@
 include 'include/db.php';
 
 // Begin - PHPMailer Initialization
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -18,128 +17,75 @@ $mail = new PHPMailer(true);
 
 // End - PHPMailer Initialization
 
-if (isset($_POST["email"])) {
 
-    date_default_timezone_set('Asia/Colombo');
+date_default_timezone_set('Asia/Colombo');
 
-    $string = date("Y-m-d");
-    $date = DateTime::createFromFormat("Y-m-d", $string);
+$string = date("Y-m-d");
+$date = DateTime::createFromFormat("Y-m-d", $string);
+$date = date_format($date, 'Y-m-d H:i:s');
+$logged_user_id = $_POST['logged_user_id'];
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
+$empCode = $_POST['empCode'];
+$email = $_POST['email'];
+$acc_type = $_POST['permissions'];
+$password = $_POST['password'];
+$status = "Active";
+$title = $_POST['title'];
+$division = $_POST['division'];
+$hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $date = date_format($date, 'Y-m-d H:i:s');
+$query_check_e = "SELECT * FROM user WHERE email = '$email' or employeeCode = '$empCode'";
+$run_query_check_e = mysqli_query($con, $query_check_e);
 
-    $email = $_POST['email'];
+$count_email = mysqli_num_rows($run_query_check_e);
 
+if ($count_email != 0) {
 
-    $query_check_email = "SELECT * FROM user WHERE email = '$email' and status='Active'";
-    $run_query_check_email = mysqli_query($con, $query_check_email);
+    echo 2;
+    return false;
 
-    $count_email = mysqli_num_rows($run_query_check_email);
+} else {
 
-    if ($count_email == 0) {
+    $query = "INSERT INTO user(firstName, lastName, employeeCode, email, acc_type, password, date_created, status, title, division) VALUES('$firstName','$lastName','$empCode','$email','$acc_type','$hash','$date','$status','$title','$division')";
 
-        echo 1;
+//$url_of_host = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
 
-    } else {
+    $url_of_host = 'http://localhost/Ticket%20Management%20System'; // Testing - Localhost
+    $url_of_host_mail_images = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
 
-        $query_email = "SELECT * FROM user WHERE email = '$email' and status='Active'";
-        $run_query_email = mysqli_query($con, $query_email);
+    $urlToEmail = $url_of_host;
 
-        while ($row_email = mysqli_fetch_assoc($run_query_email)) {
+// Server settings
+    $mail->isSMTP();
+    $mail->SMTPDebug = 0;
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
+    $mail->Debugoutput = 'html';
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
+    $mail->Username = 'udatmsproject@gmail.com';
+    $mail->Password = 'vxhsfyuoygpbtfeo';
 
-            $userID = $row_email['userID'];
-            $employeeCode = $row_email['employeeCode'];
-            $firstName = $row_email['firstName'];
-            $lastName = $row_email['lastName'];
-            $type = $row_email['acc_type'];
-            $status = $row_email['status'];
-            $title = $row_email['title'];
-            $division = $row_email['division'];
+// Sender &amp; Recipient
+    $mail->From = 'udatmsproject@gmail.com';
+    $mail->FromName = 'UDA-TMS';
+    $mail->addAddress($email);
 
-            $_SESSION['userID'] = $userID;
-            $_SESSION['employeeCode'] = $employeeCode;
-            $_SESSION['firstName'] = $firstName;
-            $_SESSION['lastName'] = $lastName;
-            $_SESSION['status'] = $status;
-            $_SESSION['acc_type'] = $acc_type;
-            $_SESSION['title'] = $title;
-            $_SESSION['division'] = $division;
+// Content
+    $mail->isHTML(true);
+    $mail->CharSet = 'UTF-8';
+    $mail->Encoding = 'base64';
+    $mail->Subject = 'Welcome to Ticket Management System - UDA';
 
-        }
-
-        $userID = $_SESSION['userID'];
-        $employeeCode = $_SESSION['employeeCode'];
-        $firstName = $_SESSION['firstName'];
-        $lastName = $_SESSION['lastName'];
-        $status = $_SESSION['status'];
-        $acc_type = $_SESSION['acc_type'];
-        $title = $_SESSION['title'];
-        $division = $_SESSION['division'];
-
-        $logged_user_id = $_POST['logged_user_id'];
-
-        try {
-            $selector = bin2hex(random_bytes(8));
-        } catch (Exception $e) {
-        }
-        try {
-            $token = random_bytes(32);
-        } catch (Exception $e) {
-        }
-
-        //$url_of_host = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
-
-        $url_of_host = 'http://localhost/Ticket%20Management%20System'; // Testing - Localhost
-        $url_of_host_mail_images = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
-
-        $urlToEmail = $url_of_host.'/forget.php?'.http_build_query([
-                'selector' => $selector,
-                'validator' => bin2hex($token)
-            ]);
-
-        $token = hash('sha256', $token);
-
-        $date = date('Y-m-d H:i:s');
-        $time = date('H:i:s');
-        $today_dt = $date;
-
-        $expires = date('Y-m-d H:i:s', strtotime('+3 hours'));
-
-        $query_res_token = "INSERT INTO account_recovery(userID, email_reset, selector, token, expires) VALUES('$userID', '$email', '$selector', '$token','$expires')";
-        $query_res_log = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$userID', '$date', 'User with email : $email has requested a password reset link.')";
-
-        $create_query_res_token = mysqli_query($con, $query_res_token);
-        $create_query_res_log = mysqli_query($con, $query_res_log);
-
-        // Server settings
-        $mail->isSMTP();
-        $mail->SMTPDebug = 0;
-        $mail->SMTPOptions = array(
-            'ssl' => array(
-                'verify_peer' => false,
-                'verify_peer_name' => false,
-                'allow_self_signed' => true
-            )
-        );
-        $mail->Debugoutput = 'html';
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 587;
-        $mail->Username = 'udatmsproject@gmail.com';
-        $mail->Password = 'vxhsfyuoygpbtfeo';
-
-        // Sender &amp; Recipient
-        $mail->From = 'udatmsproject@gmail.com';
-        $mail->FromName = 'UDA-TMS';
-        $mail->addAddress($email);
-
-        // Content
-        $mail->isHTML(true);
-        $mail->CharSet = 'UTF-8';
-        $mail->Encoding = 'base64';
-        $mail->Subject = 'Reset Your Password. Ticket Management System - UDA';
-
-        $mail->Body = "<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">
+    $mail->Body = "<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">
 <head>
     <meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\" />
     <!-- [ if !mso]> <!-->
@@ -497,7 +443,7 @@ if (isset($_POST["email"])) {
     <table style=\"background-color: #F2F3F4;\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" bgcolor=\"#fff\">
         <div class=\"Gmail\" style=\"height: 1px !important; margin-top: -1px !important; max-width: 600px !important; min-width: 600px !important; width: 600px !important;\"></div>
         <div style=\"max-height: 0px; overflow: hidden;\">
-            Reset Your Password on Ticket Management System at UDA
+            Welcome to Ticket Management System at UDA
         </div>
         <!-- Insert &zwnj;&nbsp; hack after hidden preview text -->
         <div style=\"max-height: 0px; overflow: hidden;\">
@@ -568,7 +514,7 @@ if (isset($_POST["email"])) {
                                                         <!-- START HEADER IMAGE -->
                                                         <tr>
                                                             <td align=\"center\" class=\"hund ripplelink\" width=\"600\">
-                                                                <img align=\"center\" width=\"600\" style=\"border-radius: 3px 3px 0px 0px; width: 100%; max-width: 600px!important\" class=\"hund\" src=\"$url_of_host_mail_images/assets/media/logos/unnamed.gif\">
+                                                                <img align=\"center\" width=\"600\" style=\"border-radius: 3px 3px 0px 0px; width: 100%; max-width: 600px!important\" class=\"hund\" src=\"$url_of_host_mail_images/assets/media/logos/wel.gif\">
                                                             </td>
                                                         </tr>
                                                         <!-- END HEADER IMAGE -->
@@ -576,19 +522,29 @@ if (isset($_POST["email"])) {
                                                         <tr align=\"center\">
                                                             <td class=\"td-padding\" align=\"center\" style=\" color: #212121!important; font-size: 24px; line-height: 30px; padding-top: 18px; padding-left: 40px!important; padding-right: 18px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 18px 18px 0px 13px;\">
                                                                 <br>
-                                                                 Reset Your Password on Ticket Management System<br>
+                                                                 Welcome Aboard<br>
                                                             </td>
                                                         </tr>
                                                          <tr>
                                                             <td class=\"td-padding\" align=\"left\" style=\"color: #212121!important; font-size: 18px; line-height: 30px; padding-top: 18px; padding-left: 40px!important; padding-right: 40px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 18px 18px 0px 13px;\">
-                                                                 Hi $title $firstName $lastName,
+                                                                 Hi $title <span style=\"font-weight: 600; text-transform: uppercase;\">$firstName $lastName,</span>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td class=\"td-padding\" align=\"left\" style=\" color: #212121!important; font-size: 16px; line-height: 24px; padding-top: 18px; padding-left: 40px!important; padding-right: 18px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 18px 18px 0px 18px;\">
                                                               
-            
-                                                                Someone requested a new password for your Ticket Management System account at UDA. If that's you, you can simply click on below <span style=\"font-weight: 600;\">Reset Password</span> button.
+                                                              Ticket Management System is a tool for the managing of all IT related troubleshooting tickets 
+                                                              among divisions in Urban Development Authority.
+                                                              
+                                                              <br><br>
+                                                              
+                                                              First you need to login to the system by selecting your Username which is, <span style=\"font-weight: 600; text-transform: uppercase;\">$firstName $lastName | $empCode - $acc_type</span> and entering your password given by IT Administration.
+                                                              
+                                                              <br>
+                                                              It's highly recommend to change your password after the first time you logged into the system.  
+                                                              That can be done by after clicking on top left corner profile icon and navigating to <span style=\"font-weight: 600;\">Account Settings</span> while logged in.
+                                                              <br>   <br>      
+                                                                 You can simply click on below <span style=\"font-weight: 600;\">Get Started</span> button to manage all of your tickets.
                                                                 
                                                             </td>
                                                         </tr>
@@ -602,7 +558,7 @@ if (isset($_POST["email"])) {
                                                                             <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                                                                                 <tr>
                                                                                     <td align=\"center\" style=\"border-radius: 3px;\" bgcolor=\"#2c77f4\">
-                                                                                        <a class=\"button raised\" href=\"$urlToEmail\" target=\"_blank\" style=\"font-size: 14px; line-height: 14px; font-weight: 500; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 25px; border: 8px solid #2c77f4; display: inline-block;\">Reset Password</a>
+                                                                                        <a class=\"button raised\" href=\"$urlToEmail\" target=\"_blank\" style=\"font-size: 14px; line-height: 14px; font-weight: 500; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 25px; border: 8px solid #2c77f4; display: inline-block;\">Get Started</a>
                                                                                     </td>
                                                                                 </tr>
                                                                             </table>
@@ -613,7 +569,7 @@ if (isset($_POST["email"])) {
                                                         </tr>
                                                         <tr>
                                                             <td class=\"td-padding\" align=\"left\" style=\" color: #212121!important; font-size: 16px; line-height: 24px; padding-top: 18px; padding-left: 40px!important; padding-right: 18px!important; padding-bottom: 0px!important; mso-line-height-rule: exactly; mso-padding-alt: 18px 18px 0px 18px;\">
-                                                                If you didn't make this request, then you can safely ignore this email.
+                                                                Cheers.<br><br> <i>This is an auto generated email. Please don't reply.</i>
                                                                 <br><br><br>
                                                             </td>
                                                         </tr>
@@ -719,25 +675,36 @@ if (isset($_POST["email"])) {
 </body>
 </html>";
 
-        $mail->AltBody = 'Hi '.$title.' '.$firstName.' '.$lastName.', Someone requested a new password for your Ticket Management 
-            System account at UDA. If that\'s you, you can simply go to following link to reset your password. ' . $urlToEmail . '   If you didn\'t make this 
-            request, then you can safely ignore this email. Regards.';
+    $mail->AltBody = 'Hi ' . $title . ' ' . $firstName . ' ' . $lastName . ', Welcome to Ticket Management 
+            System account at UDA. Ticket Management System is a tool for the managing of all IT related troubleshooting tickets among divisions in 
+            Urban Development Authority. First you need to login to the system by selecting your Username which 
+            is, ' . $firstName . ' ' . $lastName . ' | ' . $empCode . ' - ' . $acc_type . ' and entering your password given by IT Administration. It\'s highly 
+            recommend to change your password after the first time you logged into the system. That can be done by 
+            after clicking on top left corner profile icon and navigating to Account Settings while logged in. You can simply 
+            click on below link to get Started. ' . $urlToEmail;
 
-        if ($mail->send()) {
 
-            echo 'Email Sending Success';
-            exit;
+    $mail->send();
 
-        } else {
 
-            echo 'Email Sending Failed';
-            exit;
+    $string = date("Y-m-d");
+    $date = DateTime::createFromFormat("Y-m-d", $string);
+    $date = date_format($date, 'Y-m-d H:i:s');
+    $query_log_user_add = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$logged_user_id', '$date', 'User ID: $logged_user_id Added a new user (Acc Type: $acc_type) named $firstName $lastName with Employee Code: $empCode')";
+    $create_query_query_log_user_add = mysqli_query($con, $query_log_user_add);
 
-        }
+    $create_query = mysqli_query($con, $query);
+
+    if ($create_query) {
+
+        echo 1;
+
+    } else {
+
+        echo 0;
 
     }
 
 }
-
 
 ?>

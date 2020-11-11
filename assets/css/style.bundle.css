@@ -6255,9 +6255,9 @@ a.close.disabled {
 }
 
 .toast {
-    max-width: 350px;
+    max-width: 400px;
     overflow: hidden;
-    font-size: 0.875rem;
+    font-size: 2rem;
     background-color: rgba(255, 255, 255, 0.85);
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -16455,7 +16455,7 @@ code {
     z-index: 195;
     top: 2rem;
     right: 2rem;
-    width: 350px;
+    width: 400px;
     border: 0;
 }
 
@@ -19472,13 +19472,13 @@ code {
 }
 
 .toast .toast-title {
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 500;
     margin-bottom: 0.25rem;
 }
 
 .toast .toast-message {
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .toast-success {

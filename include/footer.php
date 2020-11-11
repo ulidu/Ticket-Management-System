@@ -59,61 +59,17 @@
 <!--begin::Global Theme Bundle(used by all pages) -->
 <script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
 <script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
-
-<!--end::Global Theme Bundle -->
-
-<!--begin::Page Vendors(used by this page) -->
 <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
-
-<!--end::Page Vendors -->
-
-<!--begin::Page Scripts(used by this page) -->
+<script src="assets/js/pages/components/extended/blockui.js" type="text/javascript"></script>
 <script src="assets/js/pages/dashboard.js" type="text/javascript"></script>
-
-<!--end::Page Scripts -->
-
-<!--begin::Page Vendors(used by this page) -->
 <script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
-
-<!--end::Page Vendors -->
-
-<!--begin::Page Scripts(used by this page) -->
 <script src="assets/js/pages/crud/datatables/basic/scrollable.js" type="text/javascript"></script>
-
-<!--begin::Page Scripts(used by this page) -->
 <script src="assets/js/pages/custom/user/add-user.js" type="text/javascript"></script>
-
-<!--end::Page Scripts -->
-
-<!--begin::Page Scripts(used by sweetalert) -->
 <script src="assets/js/pages/components/extended/sweetalert2.js" type="text/javascript"></script>
-
 <script src="assets/plugins/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
-
 <script src="assets/plugins/custom/jstree/jstree.bundle.js" type="text/javascript"></script>
 <script src="assets/js/pages/components/extended/treeview.js" type="text/javascript"></script>
-
-<!--
-<script>
-
-    $(document).keydown(function(event){
-        if(event.keyCode==123){
-            return false;
-        }
-        else if (event.ctrlKey && event.shiftKey && event.keyCode==73){
-            return false;
-        }
-    });
-
-    $(document).on("contextmenu",function(e){
-        e.preventDefault();
-    });
-
-</script>
--->
-
-
+<!--end::Global Theme Bundle -->
 
 </body>
-<!-- end::Body -->
 </html>

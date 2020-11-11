@@ -121,7 +121,7 @@
                                                                         style="color: #dc3545; font-size: 18px;">* </span></label>
                                                             <div class="col-lg-9 col-xl-9">
                                                                 <input class="form-control" id="emp_code"
-                                                                       name="emp_code" type="text"
+                                                                       name="emp_code" type="number"
                                                                        placeholder="Applicant's Employee Code" required>
                                                             </div>
                                                         </div>
@@ -169,7 +169,7 @@
                                                                                 class="input-group-text"><i
                                                                                     class="la la-phone"></i></span>
                                                                     </div>
-                                                                    <input id="ext" name="ext" type="text"
+                                                                    <input id="ext" name="ext" type="number"
                                                                            class="form-control"
                                                                            placeholder="Extension Number"
                                                                            aria-describedby="basic-addon1">
