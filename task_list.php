@@ -8,8 +8,8 @@
 
     <div class="row">
 
-        <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
-            <div class="kt-portlet kt-iconbox <?php if ($acc_type == 'IT Staff') { ?>kt-iconbox--warning kt-ribbon--warning <?php }else{ ?> kt-iconbox--danger kt-ribbon--danger <?php } ?> kt-iconbox--animate-slow kt-ribbon kt-ribbon--left kt-ribbon--round">
+        <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php } else { ?> class="col-3" <?php } ?> >
+            <div class="kt-portlet kt-iconbox <?php if ($acc_type == 'IT Staff') { ?>kt-iconbox--warning kt-ribbon--warning <?php } else { ?> kt-iconbox--danger kt-ribbon--danger <?php } ?> kt-iconbox--animate-slow kt-ribbon kt-ribbon--left kt-ribbon--round">
                 <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400; opacity: 0.8;">
                     Previous 3 Months
                 </div>
@@ -37,12 +37,12 @@
 
                                     date_default_timezone_set('Asia/Colombo');
 
-                                    $date=date('Y-m-d H:i:s');
-                                    $time=date('H:i:s');
+                                    $date = date('Y-m-d H:i:s');
+                                    $time = date('H:i:s');
                                     $today_d_c1 = $date;
 
                                     $d2 = date('Y-m-d', strtotime('-90 days'));
-                                    $back_3_months = $d2 . ' ' .$time;
+                                    $back_3_months = $d2 . ' ' . $time;
 
 
                                     if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
@@ -66,7 +66,7 @@
 
                                         if ($count_all_tickets == 1) {
 
-                                            if ($acc_type == 'Administrative Officer'){
+                                            if ($acc_type == 'Administrative Officer') {
 
                                                 $count_all_ap_req = "SELECT * FROM task where division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
                                                 $count_all_ap_req_run = mysqli_query($con, $count_all_ap_req);
@@ -74,7 +74,7 @@
 
                                                 printf("%d/%d Ticket", $count_all_tickets, $count_all_ap_req_tickets);
 
-                                            }else{
+                                            } else {
 
                                                 printf("%d Ticket", $count_all_tickets);
 
@@ -82,7 +82,7 @@
 
                                         } else {
 
-                                            if ($acc_type == 'Administrative Officer'){
+                                            if ($acc_type == 'Administrative Officer') {
 
                                                 $count_all_ap_req = "SELECT * FROM task where division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
                                                 $count_all_ap_req_run = mysqli_query($con, $count_all_ap_req);
@@ -90,7 +90,7 @@
 
                                                 printf("%d/%d Tickets", $count_all_tickets, $count_all_ap_req_tickets);
 
-                                            }else{
+                                            } else {
 
                                                 printf("%d Tickets", $count_all_tickets);
 
@@ -131,85 +131,85 @@
         </div>
 
         <?php if ($acc_type != 'IT Staff') { ?>
-        <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
-            <div class="kt-portlet kt-iconbox kt-iconbox--warning kt-iconbox--animate-slow kt-ribbon kt-ribbon--warning kt-ribbon--left kt-ribbon--round">
-                <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400; opacity: 0.8;">
-                    Previous 3 Months
-                </div>
-                <div class="kt-portlet__body">
-                    <div class="kt-iconbox__body">
-                        <div class="kt-iconbox__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z"
-                                          fill="#000000" opacity="0.3"/>
-                                    <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z"
-                                          fill="#000000"/>
-                                    <rect fill="#000000" opacity="0.3" x="7" y="10" width="5" height="2" rx="1"/>
-                                    <rect fill="#000000" opacity="0.3" x="7" y="14" width="9" height="2" rx="1"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="kt-iconbox__desc">
-                            <h3 class="kt-iconbox__title">
-                                <a class="kt-link" href="#">
+            <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php } else { ?> class="col-3" <?php } ?> >
+                <div class="kt-portlet kt-iconbox kt-iconbox--warning kt-iconbox--animate-slow kt-ribbon kt-ribbon--warning kt-ribbon--left kt-ribbon--round">
+                    <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400; opacity: 0.8;">
+                        Previous 3 Months
+                    </div>
+                    <div class="kt-portlet__body">
+                        <div class="kt-iconbox__body">
+                            <div class="kt-iconbox__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24"/>
+                                        <path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z"
+                                              fill="#000000" opacity="0.3"/>
+                                        <path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z"
+                                              fill="#000000"/>
+                                        <rect fill="#000000" opacity="0.3" x="7" y="10" width="5" height="2" rx="1"/>
+                                        <rect fill="#000000" opacity="0.3" x="7" y="14" width="9" height="2" rx="1"/>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="kt-iconbox__desc">
+                                <h3 class="kt-iconbox__title">
+                                    <a class="kt-link" href="#">
 
-                                    <?php
+                                        <?php
 
-                                    date_default_timezone_set('Asia/Colombo');
+                                        date_default_timezone_set('Asia/Colombo');
 
-                                    $date=date('Y-m-d H:i:s');
-                                    $time=date('H:i:s');
-                                    $today_d_c1 = $date;
+                                        $date = date('Y-m-d H:i:s');
+                                        $time = date('H:i:s');
+                                        $today_d_c1 = $date;
 
-                                    $d2 = date('Y-m-d', strtotime('-90 days'));
-                                    $back_3_months = $d2 . ' ' .$time;
+                                        $d2 = date('Y-m-d', strtotime('-90 days'));
+                                        $back_3_months = $d2 . ' ' . $time;
 
-                                    if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
+                                        if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
 
-                                        $count_all = "SELECT * FROM task where status = 'Approved' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
+                                            $count_all = "SELECT * FROM task where status = 'Approved' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
 
-                                    } elseif ($acc_type == 'Administrative Officer') {
+                                        } elseif ($acc_type == 'Administrative Officer') {
 
-                                        $count_all = "SELECT * FROM task where status = 'Approved' and division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
-
-                                    }
-
-                                    if ($count_all_run = mysqli_query($con, $count_all)) {
-
-                                        $count_all_tickets = mysqli_num_rows($count_all_run);
-
-                                        if ($count_all_tickets == 1) {
-
-                                            printf("%d Ticket", $count_all_tickets);
-
-                                        } else {
-
-                                            printf("%d Tickets", $count_all_tickets);
+                                            $count_all = "SELECT * FROM task where status = 'Approved' and division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
 
                                         }
 
-                                        mysqli_free_result($count_all_run);
+                                        if ($count_all_run = mysqli_query($con, $count_all)) {
 
-                                    }
+                                            $count_all_tickets = mysqli_num_rows($count_all_run);
 
-                                    ?>
+                                            if ($count_all_tickets == 1) {
 
-                                </a>
-                            </h3>
-                            <div class="kt-iconbox__content">
-                                Pending Assign
+                                                printf("%d Ticket", $count_all_tickets);
+
+                                            } else {
+
+                                                printf("%d Tickets", $count_all_tickets);
+
+                                            }
+
+                                            mysqli_free_result($count_all_run);
+
+                                        }
+
+                                        ?>
+
+                                    </a>
+                                </h3>
+                                <div class="kt-iconbox__content">
+                                    Pending Assign
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         <?php } ?>
 
-        <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
+        <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php } else { ?> class="col-3" <?php } ?> >
             <div class="kt-portlet kt-iconbox kt-iconbox--brand kt-iconbox--animate-slow kt-ribbon kt-ribbon--brand kt-ribbon--left kt-ribbon--round">
                 <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400; opacity: 0.8;">
                     Previous 3 Months
@@ -243,12 +243,12 @@
 
                                     date_default_timezone_set('Asia/Colombo');
 
-                                    $date=date('Y-m-d H:i:s');
-                                    $time=date('H:i:s');
+                                    $date = date('Y-m-d H:i:s');
+                                    $time = date('H:i:s');
                                     $today_d_c1 = $date;
 
                                     $d2 = date('Y-m-d', strtotime('-90 days'));
-                                    $back_3_months = $d2 . ' ' .$time;
+                                    $back_3_months = $d2 . ' ' . $time;
 
                                     if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
 
@@ -299,7 +299,7 @@
         </div>
 
 
-        <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php }else{ ?> class="col-3" <?php } ?> >
+        <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php } else { ?> class="col-3" <?php } ?> >
             <div class="kt-portlet kt-iconbox kt-iconbox--success kt-iconbox--animate-slow kt-ribbon kt-ribbon--success kt-ribbon--left kt-ribbon--round">
                 <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400; opacity: 0.8;">
                     Previous 3 Months
@@ -329,12 +329,12 @@
 
                                     date_default_timezone_set('Asia/Colombo');
 
-                                    $date=date('Y-m-d H:i:s');
-                                    $time=date('H:i:s');
+                                    $date = date('Y-m-d H:i:s');
+                                    $time = date('H:i:s');
                                     $today_d_c1 = $date;
 
                                     $d2 = date('Y-m-d', strtotime('-90 days'));
-                                    $back_3_months = $d2 . ' ' .$time;
+                                    $back_3_months = $d2 . ' ' . $time;
 
                                     if ($acc_type == 'Administrator' || $acc_type == 'Observer') {
 
@@ -399,6 +399,21 @@
             <div class="kt-portlet__head-toolbar">
                 <div class="kt-portlet__head-wrapper">
                     <div class="kt-portlet__head-actions">
+
+                        <a data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                           title="Reload" href="task_list.php" style="border-width: 18px;" class="btn btn-sm btn-icon kt-bg-light-brand btn-icon-md" aria-describedby="tooltip_pv5okq6lce">
+
+                            <span style="-webkit-animation:spin 4s linear infinite; -moz-animation:spin 4s linear infinite; animation:spin 4s linear infinite;" class="kt-svg-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect x="0" y="0" width="24" height="24"/>
+        <path d="M8.43296491,7.17429118 L9.40782327,7.85689436 C9.49616631,7.91875282 9.56214077,8.00751728 9.5959027,8.10994332 C9.68235021,8.37220548 9.53982427,8.65489052 9.27756211,8.74133803 L5.89079566,9.85769242 C5.84469033,9.87288977 5.79661753,9.8812917 5.74809064,9.88263369 C5.4720538,9.8902674 5.24209339,9.67268366 5.23445968,9.39664682 L5.13610134,5.83998177 C5.13313425,5.73269078 5.16477113,5.62729274 5.22633424,5.53937151 C5.384723,5.31316892 5.69649589,5.25819495 5.92269848,5.4165837 L6.72910242,5.98123382 C8.16546398,4.72182424 10.0239806,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 L6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,8.6862915 15.3137085,6 12,6 C10.6885336,6 9.44767246,6.42282109 8.43296491,7.17429118 Z" fill="#000000" fill-rule="nonzero"/>
+    </g>
+</svg></span>
+
+                        </a>
+                        &nbsp;
+
                         <div class="dropdown dropdown-inline">
                             <button type="button"
                                     class="btn btn-default btn-icon-sm dropdown-toggle"
@@ -442,24 +457,24 @@
                    class="table table-striped table-bordered table-hover"
                    id="kt_table_1">
                 <thead>
-                <tr style="font-size: 14px;" class="kt-label-bg-color-1">
-                    <th>No.</th>
-                    <th>Actions</th>
-                    <th>Ticket ID</th>
-                    <th>Processed Dates</th>
-                    <th>Status</th>
-                    <th>Division</th>
-                    <th>Issue</th>
-                    <th>Issue Category</th>
-                    <th>Applicant Name</th>
-                    <th>Employee Code</th>
-                    <th>Designation</th>
-                    <th>Asset Code</th>
-                    <th>Extension No.</th>
-                    <th>Approved By</th>
-                    <th>Since Approved</th>
-                    <th>Priority</th>
-                    <th>IP Address</th>
+                <tr style="font-size: 14px;" class="kt-bg-light-dark">
+                    <th class="kt-font-dark">No.</th>
+                    <th class="kt-font-dark">Actions</th>
+                    <th class="kt-font-dark">Ticket ID</th>
+                    <th class="kt-font-dark">Processed Dates</th>
+                    <th class="kt-font-dark">Status</th>
+                    <th class="kt-font-dark">Division</th>
+                    <th class="kt-font-dark">Issue</th>
+                    <th class="kt-font-dark">Issue Category</th>
+                    <th class="kt-font-dark">Applicant Name</th>
+                    <th class="kt-font-dark">Employee Code</th>
+                    <th class="kt-font-dark">Designation</th>
+                    <th class="kt-font-dark">Asset Code</th>
+                    <th class="kt-font-dark">Extension No.</th>
+                    <th class="kt-font-dark">Approved By</th>
+                    <th class="kt-font-dark">Since Approved</th>
+                    <th class="kt-font-dark">Priority</th>
+                    <th class="kt-font-dark">IP Address</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -476,8 +491,13 @@
                     $ticket_hidden = $_POST['ticket_hidden'];
 
                     $query_approving = "UPDATE task SET status='Approved', approved_by='$logged_user_id', approved_date='$date' WHERE task_id = '$ticket_hidden'";
-
                     $create_query_approving = mysqli_query($con, $query_approving);
+
+                    $query_log_ticket_approve = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$logged_user_id', '$date', 'User ID: $logged_user_id Approved the ticket with ID: $ticket_hidden')";
+                    $create_query_log_ticket_approve = mysqli_query($con, $query_log_ticket_approve);
+
+                    $query_ticket_notify = "INSERT INTO notify(task_id) VALUES('$ticket_hidden')";
+                    $create_query_ticket_notify = mysqli_query($con, $query_ticket_notify);
 
                     if ($create_query_approving) {
 
@@ -492,8 +512,10 @@
                     $ticket_hidden = $_POST['ticket_hidden'];
 
                     $query_removing = "DELETE FROM task WHERE task_id = '$ticket_hidden'";
-
                     $create_query_removing = mysqli_query($con, $query_removing);
+
+                    $query_log_ticket_reject = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$logged_user_id', '$date', 'User ID: $logged_user_id Rejected and Deleted the ticket with ID: $ticket_hidden')";
+                    $create_query_log_ticket_reject = mysqli_query($con, $query_log_ticket_reject);
 
                     if ($create_query_removing) {
 
@@ -643,6 +665,17 @@
 
                                     $(document).on('change', '#<?= 'staff' . $i ?>', function () {
 
+                                        KTApp.blockPage({
+                                            overlayColor: '#000000',
+                                            type: 'v2',
+                                            state: 'success',
+                                            message: 'Please wait...'
+                                        });
+
+                                        setTimeout(function () {
+                                            KTApp.unblockPage();
+                                        }, 2000000000);
+
                                         var staff1 = $(this).val();
                                         var logged_user_id = <?php echo $logged_user_id; ?>;
                                         var ticket_id = $(<?php echo 'row' . $i; ?>).val();
@@ -751,6 +784,17 @@
                                 $(document).ready(function () {
 
                                     $(document).on('change', '#<?= 'staff2' . $i ?>', function () {
+
+                                        KTApp.blockPage({
+                                            overlayColor: '#000000',
+                                            type: 'v2',
+                                            state: 'success',
+                                            message: 'Please wait...'
+                                        });
+
+                                        setTimeout(function () {
+                                            KTApp.unblockPage();
+                                        }, 2000000000);
 
                                         var staff2 = $(this).val();
                                         var logged_user_id = <?php echo $logged_user_id; ?>;
@@ -892,6 +936,17 @@
 
                                     $(document).on('change', '#<?= 'status_s' . $i ?>', function () {
 
+                                        KTApp.blockPage({
+                                            overlayColor: '#000000',
+                                            type: 'v2',
+                                            state: 'success',
+                                            message: 'Please wait...'
+                                        });
+
+                                        setTimeout(function () {
+                                            KTApp.unblockPage();
+                                        }, 2000000000);
+
                                         var status = $(this).val();
                                         var logged_user_id = <?php echo $logged_user_id; ?>;
                                         var ticket_id = $(<?php echo 'status' . $i; ?>).val();
@@ -1007,15 +1062,21 @@
 
                                     if ($status12 == 'Approval Required' || $status12 == 'Approved') {
 
+                                        if ($status12 == 'Approved') {
+
+                                            echo '<span style="font-weight: 500" class="kt-font-bold kt-font-brand">Ticket Approved.</span><br><br>';
+                                        }
                                         ?>
 
 
-                                        <button <?php if ($acc_type != 'Administrative Officer') { ?> hidden <?php } else {
+                                        <button <?php if ($acc_type != 'Administrative Officer' || $status12 != 'Approval Required') { ?> hidden <?php } else {
                                         } ?> onclick="
+
                                 if (confirm('Are you sure you want to approve this ticket ?')) {
             return true;
 
         } else {
+
             return false;
         }" id="submit_approve" name="submit_approve" type="submit"
                                              class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--d22 kt-badge--inline kt-badge--pill"
@@ -1045,13 +1106,11 @@
 
                                     } elseif ($status12 == 'Completed') {
 
-                                        echo '<span style="font-weight: 500" class="kt-font-bold kt-font-success">Ticket Already Completed</span>
-                            ';
+                                        echo '<span style="font-weight: 500" class="kt-font-bold kt-font-success">Ticket Already Completed</span>';
 
                                     } else {
 
-                                        echo '<span style="font-weight: 500" class="kt-font-bold kt-font-brand">Ticket is in Processing State</span>
-                            ';
+                                        echo '<span style="font-weight: 500" class="kt-font-bold kt-font-brand">Ticket is in Processing State</span>';
 
                                     }
 
@@ -1172,11 +1231,9 @@
                             echo 'Completed<br></span><span class="kt-font-bold kt-font-dark">' . $task_completed_date . '<br>'; ?>
                             </span>
 
-
                                 </div>
 
                             </div>
-
 
                         </td>
 
@@ -1302,7 +1359,100 @@
 
 <!-- end:: Content -->
 
+<?php
+
+$division_logged_in = $_SESSION['division_logged_in'];
+$acc_type_logged = $_SESSION['acc_type_logged'];
+
+?>
+
+<script>
+
+    var div_logged = '<?php echo $division_logged_in; ?>';
+    var acc_type_logged = '<?php echo $acc_type_logged; ?>';
+
+    if (acc_type_logged == 'Administrator' || acc_type_logged == 'Observer') {
+
+        setInterval(function () {
+            $.ajax({
+                url: "notify_app.php", type: "POST", async: true, cache: false, success: function (data) {
+
+                    var data_arr = data.split(" ");
+
+                    data_arr.forEach(notify_func)
+
+                    function notify_func(item, index, arr) {
+
+                        if (item != ''){
+
+                            arr[index] = item;
+                           // ajax
+
+                        }
+                    }
+
+                }
+            });
+
+        }, 1000);
+
+    }
+
+</script>
+
+
 <!-- begin:: Content -->
+
+<script>
+
+    var div_logged = '<?php echo $division_logged_in; ?>';
+
+    window.addEventListener("load", c);
+
+    function init() {
+
+        var b = document.getElementById("but"); //get the button object
+
+        b.addEventListener("click", noti, false);
+
+    }
+
+    function c() {
+
+        init();
+
+        if (window.Notification && Notification.permission !== "granted") {
+
+            Notification.requestPermission(function (status) {
+                if (Notification.permission !== status) {
+                    Notification.permission = status;
+                }
+            })
+        }
+    }
+
+    function noti() {
+
+        if (Notification.permission == "granted") {
+
+            var title = "New ticket received from " + div_logged;
+            var dts = Math.floor(Date.now());
+            var img = 'https://i.imgur.com/akcxFXw.png';
+
+            var options = {
+                body: "Name : Kusum\nDesignation : Director WP\nIssue : Software",
+                timestamp: dts,
+                icon: img
+            }
+
+            noti = new Notification(title, options);
+
+            setTimeout(noti.close.bind(noti), 36000000);
+
+        }
+
+    }
+</script>
 
 <script>
 

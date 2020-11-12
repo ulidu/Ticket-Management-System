@@ -40,6 +40,10 @@
 
         @import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
 
+        @-moz-keyframes spin { 100% { -moz-transform: rotate(-360deg); } }
+        @-webkit-keyframes spin { 100% { -webkit-transform: rotate(-360deg); } }
+        @keyframes spin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+
         .ui-select {
             width: 100%;
 
@@ -104,8 +108,10 @@ while ($rw = mysqli_fetch_assoc($run_query)) {
     $date_created = $rw['date_created'];
     $status = $rw['status'];
     $acc_type = $rw['acc_type'];
+    $acc_type_logged = $rw['acc_type'];
     $title = $rw['title'];
     $division = $rw['division'];
+    $division_logged_in = $rw['division'];
 
     $_SESSION['userID'] = $userID;
     $_SESSION['employeeCode'] = $employeeCode;
@@ -116,8 +122,11 @@ while ($rw = mysqli_fetch_assoc($run_query)) {
     $_SESSION['date_created'] = $date_created;
     $_SESSION['status'] = $status;
     $_SESSION['acc_type'] = $acc_type;
+    $_SESSION['acc_type_logged'] = $acc_type_logged;
     $_SESSION['title'] = $title;
     $_SESSION['division'] = $division;
+    $_SESSION['division_logged_in'] = $division_logged_in;
+
 
 }
 

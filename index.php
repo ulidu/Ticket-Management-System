@@ -856,15 +856,12 @@
             </div>
 
             <!--end:: Widgets/Audit Log-->
+
         </div>
-
     </div>
-
-
 </div>
 
 <!-- end:: Content -->
 </div>
-
 
 <?php include 'include/footer.php'; ?>
