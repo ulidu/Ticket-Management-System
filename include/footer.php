@@ -56,6 +56,27 @@
 
 <!-- end::Global Config -->
 
+<script>
+
+    jQuery(document).ready(function() {
+
+        $.sessionTimeout({
+            title: 'No activity since 4 hours',
+            message: 'You are about to be logged off.',
+            keepAliveUrl: '',
+            redirUrl: 'logout.php?timeout=true',
+            logoutUrl: 'logout.php',
+            warnAfter: 14400000, //warn after 4 hours
+            redirAfter: 35000, //redirect after 10 seconds,
+            ignoreUserActivity: true,
+            countdownMessage: 'Signing out in {timer} seconds.',
+            countdownBar: true
+        });
+
+    });
+
+</script>
+
 <!--begin::Global Theme Bundle(used by all pages) -->
 <script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
 <script src="assets/js/scripts.bundle.js" type="text/javascript"></script>

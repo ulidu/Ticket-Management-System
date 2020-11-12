@@ -82,7 +82,7 @@
   transition: .3s ease-in-out;
 }
 .value-list.open {
-  max-height: 220px;
+  max-height: 500px;
   overflow: auto;
 }
 .value-list li {

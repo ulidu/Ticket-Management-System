@@ -76,12 +76,24 @@ dropdownArray.forEach(item => {
     });
 });
 
+var inp1 = document.getElementById("inp1");
+var vli = document.getElementById("vli");
+
 inputField.addEventListener('focus', () => {
     inputField.placeholder = 'Type to filter';
     dropdown.classList.add('open');
     dropdownArray.forEach(dropdown => {
         dropdown.classList.remove('closed');
     });
+
+    inputField.style.top = - 390 + 'px';
+    dropdown.style.top = - 390 + 'px';
+
+    vli.append(inp1);
+    inputField.scrollIntoView(true);
+
+    inputField.focus();
+
 });
 
 inputField.addEventListener('blur', () => {
@@ -95,6 +107,8 @@ document.addEventListener('click', evt => {
     if (!isDropdown && !isInput) {
         dropdown.classList.remove('open');
     }
+    inputField.style.top = 'revert';
+    dropdown.style.top = 'revert';
 });
 
 document.addEventListener('mousedown', evt => {

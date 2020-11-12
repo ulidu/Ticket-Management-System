@@ -212,13 +212,15 @@ if ($logged_user_id != '') {
 
                             <div class="form-group">
 
-
                                 <!-- partial:index.partial.html -->
                                 <div style="margin-bottom: 15%;" class="select_fil">
 
+                                    <div style="transition: all 10s ease;" id="inp1">
                                     <input style="letter-spacing: 1px;" name="name2" autocomplete="off" id="username_login" required
                                            class="chosen-value bg-secondary" type="number"
                                            value="" placeholder="Select an Account">
+                                    </div>
+                                    <div id="vli">
                                     <ul style="z-index: 10000000" class="value-list">
 
 
@@ -251,7 +253,7 @@ if ($logged_user_id != '') {
 
 
                                     </ul>
-
+                                    </div>
                                     <!-- partial -->
                                 </div>
 

@@ -20,7 +20,17 @@ $_SESSION['acc_type'] = "";
 $_SESSION['title'] = "";
 
 session_destroy();
-header("Location: login.php"); // Or wherever you want to redirect
-exit();
+
+if ($_GET['timeout'] == "true") {
+
+    header("Location: login.php?timeout=true");
+    exit();
+
+}else{
+
+    header("Location: login.php");
+    exit();
+
+}
 
 ?>

@@ -39,7 +39,8 @@
 
 
             <!--begin::Form-->
-            <form autocomplete="off" name="user_add" id="user_add" method="post" action="" class="kt-form kt-form--label-right">
+            <form autocomplete="off" name="user_add" id="user_add" method="post" action=""
+                  class="kt-form kt-form--label-right">
                 <div class="kt-portlet__body">
 
                     <div class="row">
@@ -116,7 +117,8 @@
                                         <div class="input-group-prepend"><span class="input-group-text"><i
                                                         class="la la-qrcode"></i></span></div>
 
-                                        <input name="empCode" autocomplete="off" id="empCode" type="text" class="form-control"
+                                        <input name="empCode" autocomplete="off" id="empCode" type="text"
+                                               class="form-control"
                                                placeholder="Enter User's Employee Code" required>
                                     </div>
 
@@ -149,22 +151,26 @@
                                         <div class="kt-radio-list">
 
                                             <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                <input type="radio" value="IT Staff" id="permissions" name="permissions" checked> IT
+                                                <input type="radio" value="IT Staff" id="permissions" name="permissions"
+                                                       checked> IT
                                                 Staff
                                                 <span></span>
                                             </label>
                                             <label class="kt-radio kt-radio--bold kt-radio--danger">
-                                                <input type="radio" value="Administrator" id="permissions" name="permissions">
+                                                <input type="radio" value="Administrator" id="permissions"
+                                                       name="permissions">
                                                 Administrator
                                                 <span></span>
                                             </label>
                                             <label class="kt-radio kt-radio--bold kt-radio--warning">
-                                                <input type="radio" value="Administrative Officer" id="permissions" name="permissions">
+                                                <input type="radio" value="Administrative Officer" id="permissions"
+                                                       name="permissions">
                                                 Administrative Officer
                                                 <span></span>
                                             </label>
                                             <label class="kt-radio kt-radio--bold kt-radio--success">
-                                                <input type="radio" value="Observer" id="permissions" name="permissions"> Observer
+                                                <input type="radio" value="Observer" id="permissions"
+                                                       name="permissions"> Observer
                                                 <span></span>
                                             </label>
                                         </div>
@@ -212,7 +218,8 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend"><span class="input-group-text"><i
                                                         class="la la-unlock"></i></span></div>
-                                        <input autocomplete="new-password" type="password" name="password" id="password" class="form-control"
+                                        <input autocomplete="new-password" type="password" name="password" id="password"
+                                               class="form-control"
                                                placeholder="Enter a Password" required>
                                     </div>
 
@@ -227,7 +234,8 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend"><span class="input-group-text"><i
                                                         class="la la-unlock"></i></span></div>
-                                        <input autocomplete="new-password" type="password" name="pw_cf" id="pw_cf" class="form-control"
+                                        <input autocomplete="new-password" type="password" name="pw_cf" id="pw_cf"
+                                               class="form-control"
                                                placeholder="Re-type Password" required>
                                     </div>
 
@@ -426,7 +434,7 @@
 
     $(document).ready(function () {
 
-        $('#submitUser').click(function(e) {
+        $('#submitUser').click(function (e) {
 
             e.preventDefault();
 
@@ -454,16 +462,16 @@
                 "newestOnTop": false,
             };
 
-                KTApp.blockPage({
-                    overlayColor: '#000000',
-                    type: 'v2',
-                    state: 'success',
-                    message: 'Please wait...'
-                });
+            KTApp.blockPage({
+                overlayColor: '#000000',
+                type: 'v2',
+                state: 'success',
+                message: 'Please wait...'
+            });
 
-                setTimeout(function() {
-                    KTApp.unblockPage();
-                }, 2000000000);
+            setTimeout(function () {
+                KTApp.unblockPage();
+            }, 2000000000);
 
             if (isEmpty(firstName)) {
 
@@ -589,17 +597,18 @@
                 },
                 success: function (data) {
 
-                    if (data.toString() == 2){
+                    if (data.toString() == 2) {
 
                         KTApp.unblockPage();
                         swal.fire("User Already Exists !", "An user with same Employee code or Email already exists.", "error");
 
                     }
-                    if (data.toString() == 1){
+                    if (data.toString() == 1) {
 
                         location.href = 'user_success.php';
 
-                    }if (data.toString() == 0){
+                    }
+                    if (data.toString() == 0) {
 
                         KTApp.unblockPage();
                         swal.fire("Something went wrong !", "Failed creating the user", "error");
