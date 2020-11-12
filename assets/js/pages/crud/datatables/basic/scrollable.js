@@ -8,7 +8,7 @@ var KTDatatablesBasicScrollable = function() {
 		table.DataTable({
 			scrollY: true,
 			scrollX: true,
-			scrollCollapse: true,
+			scrollCollapse: true
 
 		});
 	};

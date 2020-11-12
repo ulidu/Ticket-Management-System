@@ -650,7 +650,8 @@
                     ?>
 
 
-                    <tr style="font-weight: 400;">
+                    <tr style="font-weight: 400;" <?php if ($status12 == 'Approved' && $acc_type == 'Administrator') { ?> class="kt-bg-light-brand" <?php }
+                    elseif ($status12 == 'Approval Required' && $acc_type == 'Administrative Officer') { ?> class="kt-bg-light-brand" <?php } ?> >
                         <td>
                             <span style="font-weight: 500"
                                   class="kt-badge kt-badge--dark kt-badge--inline kt-badge--pill"><?php echo $i; ?></span>
@@ -1388,6 +1389,36 @@ $acc_type_logged = $_SESSION['acc_type_logged'];
                             arr[index] = item;
                            // ajax
 
+
+                            if (window.Notification && Notification.permission !== "granted") {
+
+                                Notification.requestPermission(function (status) {
+                                    if (Notification.permission !== status) {
+                                        Notification.permission = status;
+                                    }
+                                })
+                            }
+
+                            if (Notification.permission == "granted") {
+
+                                var title = "New ticket received from " + item;
+                                var dts = Math.floor(Date.now());
+                                var img = 'https://i.imgur.com/akcxFXw.png';
+
+                                var options = {
+                                    body: "Name : Kusum\nDesignation : Director WP\nIssue : Software",
+                                    timestamp: dts,
+                                    icon: img
+                                }
+
+                                noti = new Notification(title, options);
+
+                                setTimeout(noti.close.bind(noti), 36000000);
+
+                            }
+
+
+
                         }
                     }
 
@@ -1403,9 +1434,8 @@ $acc_type_logged = $_SESSION['acc_type_logged'];
 
 <!-- begin:: Content -->
 
+<!--
 <script>
-
-    var div_logged = '<?php echo $division_logged_in; ?>';
 
     window.addEventListener("load", c);
 
@@ -1453,6 +1483,8 @@ $acc_type_logged = $_SESSION['acc_type_logged'];
 
     }
 </script>
+
+-->
 
 <script>
 

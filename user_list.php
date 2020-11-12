@@ -549,23 +549,23 @@
 
         <div class="kt-portlet__body kt-font-dark">
             <!--begin: Datatable -->
-            <table style="text-align: center"
+            <table style="text-align: center;"
                    class="table table-striped- table-bordered table-hover"
                    id="kt_table_1">
                 <thead>
-                <tr style="font-size: 14px;" class="kt-label-bg-color-1">
-                    <th>No.</th>
-                    <th style="min-width: 120px;">Actions</th>
-                    <th>User ID</th>
-                    <th>Employee Code</th>
-                    <th>Status</th>
-                    <th>Title</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Account Type</th>
-                    <th>Division</th>
-                    <th>Created Date</th>
+                <tr style="font-size: 14px;" class="kt-bg-light-dark">
+                    <th class="kt-font-dark">No.</th>
+                    <th style="min-width: 120px;" class="kt-font-dark">Actions</th>
+                    <th class="kt-font-dark">User ID</th>
+                    <th class="kt-font-dark">Employee Code</th>
+                    <th class="kt-font-dark">Status</th>
+                    <th class="kt-font-dark">Title</th>
+                    <th class="kt-font-dark">First Name</th>
+                    <th class="kt-font-dark">Last Name</th>
+                    <th class="kt-font-dark">Email</th>
+                    <th class="kt-font-dark">Account Type</th>
+                    <th class="kt-font-dark">Division</th>
+                    <th class="kt-font-dark">Created Date</th>
 
                 </tr>
                 </thead>
