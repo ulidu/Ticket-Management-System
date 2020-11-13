@@ -19517,6 +19517,24 @@ code {
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.125);
 }
 
+.greyed_out_deactivated {
+
+    opacity: 0.6;
+    -webkit-transition: opacity 0.2s ease-in;
+    -moz-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+}
+
+
+.greyed_out_deactivated:hover {
+
+    -webkit-transition: opacity 0.2s ease-in;
+    -moz-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+    opacity: revert;
+
+}
+
 .toast-error {
     background-color: #fd397a;
     color: #ffffff;

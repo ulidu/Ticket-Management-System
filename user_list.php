@@ -261,12 +261,16 @@
                 <div class="kt-portlet__body">
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"/>
-                                    <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z" fill="#000000" opacity="0.3"/>
-                                    <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z"
+                                          fill="#000000" opacity="0.3"/>
+                                    <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z"
+                                          fill="#000000" opacity="0.3"/>
+                                    <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z"
+                                          fill="#000000" opacity="0.3"/>
                                 </g>
                             </svg>
                         </div>
@@ -277,7 +281,7 @@
                                     <?php
 
 
-                                    $count_all = "SELECT * FROM user where acc_type='Administrator'";
+                                    $count_all = "SELECT * FROM user where status='Active' && acc_type='Administrator'";
 
 
                                     if ($count_all_run = mysqli_query($con, $count_all)) {
@@ -320,12 +324,16 @@
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"/>
-                                    <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z" fill="#000000" opacity="0.3"/>
-                                    <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z"
+                                          fill="#000000" opacity="0.3"/>
+                                    <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z"
+                                          fill="#000000" opacity="0.3"/>
+                                    <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z"
+                                          fill="#000000" opacity="0.3"/>
                                 </g>
                             </svg>
                         </div>
@@ -337,7 +345,7 @@
                                     <?php
 
 
-                                    $count_in_progress = "SELECT * FROM user where acc_type='Observer'";
+                                    $count_in_progress = "SELECT * FROM user where status='Active' && acc_type='Observer'";
 
 
                                     if ($count_in_progress_run = mysqli_query($con, $count_in_progress)) {
@@ -378,12 +386,16 @@
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"/>
-                                    <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z" fill="#000000" opacity="0.3"/>
-                                    <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z"
+                                          fill="#000000" opacity="0.3"/>
+                                    <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z"
+                                          fill="#000000" opacity="0.3"/>
+                                    <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z"
+                                          fill="#000000" opacity="0.3"/>
                                 </g>
                             </svg>
                         </div>
@@ -394,7 +406,7 @@
 
                                     <?php
 
-                                    $count_completed = "SELECT * FROM user where acc_type='IT Staff'";
+                                    $count_completed = "SELECT * FROM user where status='Active' && acc_type='IT Staff'";
 
                                     if ($count_completed_run = mysqli_query($con, $count_completed)) {
 
@@ -435,13 +447,18 @@
                     <div class="kt-iconbox__body">
                         <div class="kt-iconbox__icon">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                         <rect x="0" y="0" width="24" height="24"/>
-                                        <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"/>
-                                        <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z" fill="#000000" opacity="0.3"/>
-                                        <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z" fill="#000000" opacity="0.3"/>
+                                        <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z"
+                                              fill="#000000" opacity="0.3"/>
+                                        <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z"
+                                              fill="#000000" opacity="0.3"/>
+                                        <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z"
+                                              fill="#000000" opacity="0.3"/>
                                     </g>
                                 </svg>
                         </div>
@@ -452,7 +469,7 @@
 
                                     <?php
 
-                                    $count_completed = "SELECT * FROM user where acc_type='Administrative Officer'";
+                                    $count_completed = "SELECT * FROM user where status='Active' && acc_type='Administrative Officer'";
 
                                     if ($count_completed_run = mysqli_query($con, $count_completed)) {
 
@@ -573,6 +590,56 @@
 
                 <?php
 
+                if (isset($_POST['submit_disable'])) {
+
+                    date_default_timezone_set('Asia/Colombo');
+                    $string = date("Y-m-d");
+                    $date = DateTime::createFromFormat("Y-m-d", $string);
+                    $date = date_format($date, 'Y-m-d H:i:s');
+
+                    $user_hidden = $_POST['user_hidden'];
+
+                    $query_disable = "UPDATE user SET status='Deactivated' WHERE userID = '$user_hidden'";
+                    $create_query_disable = mysqli_query($con, $query_disable);
+
+                    $query_log_user_disable = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$logged_user_id', '$date', 'User ID: $logged_user_id Disabled the user with ID: $user_hidden')";
+                    $create_query_log_user_disable = mysqli_query($con, $query_log_user_disable);
+
+                    if ($query_disable) {
+
+                        echo '<meta http-equiv=Refresh content="0;url=user_list.php">';
+
+                    }
+
+                }
+
+                if (isset($_POST['submit_activate'])) {
+
+                    date_default_timezone_set('Asia/Colombo');
+                    $string = date("Y-m-d");
+                    $date = DateTime::createFromFormat("Y-m-d", $string);
+                    $date = date_format($date, 'Y-m-d H:i:s');
+
+                    $user_hidden = $_POST['user_hidden'];
+
+                    $query_disable = "UPDATE user SET status='Active' WHERE userID = '$user_hidden'";
+                    $create_query_disable = mysqli_query($con, $query_disable);
+
+                    $query_log_user_disable = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$logged_user_id', '$date', 'User ID: $logged_user_id Activated the user with ID: $user_hidden')";
+                    $create_query_log_user_disable = mysqli_query($con, $query_log_user_disable);
+
+                    if ($query_disable) {
+
+                        echo '<meta http-equiv=Refresh content="0;url=user_list.php">';
+
+                    }
+
+                }
+
+                ?>
+
+                <?php
+
                 $query = "select * from user order by userID desc";
                 $run_query = mysqli_query($con, $query);
 
@@ -594,7 +661,7 @@
 
                     ?>
 
-                    <tr style="font-weight: 400;">
+                    <tr <?php if ($status == 'Deactivated'){ ?> class="greyed_out_deactivated" <?php } ?> style="font-weight: 400;">
 
                         <td>
 
@@ -605,11 +672,10 @@
 
                         <td style="min-width: 120px;">
 
-                            <form name="user_actions" action="" method="post">
+                            <form name="user_edit" id="user_edit" action="" method="post">
 
-                                <input type="hidden" value="" name="ticket_hidden"
-                                       id="ticket_hidden">
-
+                                <input type="hidden" value="<?php echo $userID; ?>" name="user_hidden"
+                                       id="user_hidden">
 
                                 <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
                                         onclick="edit_g_r1()" id="edit_u" name="edit_u" type="button"
@@ -619,30 +685,44 @@
                                        class="la la-edit"></i>
                                 </button>
                                 &nbsp;
+                                <?php if ($status == 'Active'){ ?>
                                 <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
-                                        id="submit_approve" name="submit_approve"
-                                        type="submit" onclick="
-                                if (confirm('Are you sure you want to disable this user ?')) { return true; } else { return false; }"
+                                        id="submit_disable" name="submit_disable" onclick="
+                                if (confirm('Are you sure you want to deactivate this user ?')) { return true; } else { return false; }"
+                                        type="submit"
                                         class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--warn kt-badge--inline kt-badge--pill"
                                         title="Disable User">
                                     <i style="font-size: 18px; color: #ffb822; font-weight: 800;"
-                                       class="la la-minus-circle"></i>
+                                       class="la la-ban"></i>
                                 </button>
-                                &nbsp;
+                                <?php } ?>
+
+                                <?php if ($status == 'Deactivated'){ ?>
                                 <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
-                                        onclick="
-                                if (confirm('Are you sure you want to delete this user permanently ?')) { return true; } else { return false; }"
-                                        type="submit" id="submit_remove" name="submit_remove"
-                                        class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
-                                        title="Delete User Permanently">
-                                    <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
-                                       class="la la-trash"></i>
+                                        id="submit_activate" name="submit_activate" onclick="
+                                if (confirm('Are you sure you want to activate this user ?')) { return true; } else { return false; }"
+                                        type="submit"
+                                        class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--unified-success kt-badge--inline kt-badge--pill"
+                                        title="Activate User">
+                                    <i style="font-size: 18px; font-weight: 800;"
+                                       class="la la-check kt-font-success"></i>
                                 </button>
+                                <?php } ?>
 
-                                <hr>
+                            &nbsp;
+                            <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                                    onclick="
+                                if (confirm('Are you sure you want to delete this user permanently ?')) { return true; } else { return false; }"
+                                    type="submit" id="submit_remove" name="submit_remove"
+                                    class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
+                                    title="Delete User Permanently">
+                                <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
+                                   class="la la-trash"></i>
+                            </button>
 
-                                <span class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill kt-font-bold">Password Reset</span>
+                            <hr>
 
+                            <span class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill kt-font-bold">Password Reset</span>
                             </form>
 
                         </td>
@@ -650,7 +730,7 @@
                         <td><?php echo $userID; ?></td>
                         <td><?php echo $employeeCode; ?></td>
                         <td>
-                            <span class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill kt-font-bold"><?php echo $status; ?></span>
+                            <?php if ($status == 'Active'){ ?><span class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill kt-font-bold"><?php } elseif ($status == 'Deactivated'){ ?><span class="kt-badge kt-badge--dark kt-badge--inline kt-badge--pill kt-font-bold"> <?php } ?> <?php echo $status; ?></span>
                         </td>
 
                         <td><?php echo $title; ?></td>
@@ -896,8 +976,36 @@
 
 </script>
 
+<script>
+
+    function disable_confirm() {
+
+        swal.fire({
+            title: 'Do you want to disable this user ?',
+            text: 'Disabled user would not be able to login to the system.',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Disable User'
+        }).then(function (result) {
+            if (result.value) {
+                swal.fire(
+                    'Disabled !',
+                    'User has been disabled.',
+                    'success'
+                )
+
+                return true;
+
+            } else {
+
+                return false;
+
+            }
+        });
+    }
+
+</script>
 
 <!-- begin:: Content -->
-
 
 <?php include 'include/footer.php'; ?>
