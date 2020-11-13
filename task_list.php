@@ -401,13 +401,18 @@
                     <div class="kt-portlet__head-actions">
 
                         <a data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
-                           title="Reload" href="task_list.php" style="border-width: 18px;" class="btn btn-sm btn-icon kt-bg-light-brand btn-icon-md" aria-describedby="tooltip_pv5okq6lce">
+                           title="Reload" href="task_list.php" style="border-width: 18px;"
+                           class="btn btn-sm btn-icon kt-bg-light-brand btn-icon-md"
+                           aria-describedby="tooltip_pv5okq6lce">
 
-                            <span style="-webkit-animation:spin 4s linear infinite; -moz-animation:spin 4s linear infinite; animation:spin 4s linear infinite;" class="kt-svg-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <span style="-webkit-animation:spin 4s linear infinite; -moz-animation:spin 4s linear infinite; animation:spin 4s linear infinite;"
+                                  class="kt-svg-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect x="0" y="0" width="24" height="24"/>
-        <path d="M8.43296491,7.17429118 L9.40782327,7.85689436 C9.49616631,7.91875282 9.56214077,8.00751728 9.5959027,8.10994332 C9.68235021,8.37220548 9.53982427,8.65489052 9.27756211,8.74133803 L5.89079566,9.85769242 C5.84469033,9.87288977 5.79661753,9.8812917 5.74809064,9.88263369 C5.4720538,9.8902674 5.24209339,9.67268366 5.23445968,9.39664682 L5.13610134,5.83998177 C5.13313425,5.73269078 5.16477113,5.62729274 5.22633424,5.53937151 C5.384723,5.31316892 5.69649589,5.25819495 5.92269848,5.4165837 L6.72910242,5.98123382 C8.16546398,4.72182424 10.0239806,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 L6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,8.6862915 15.3137085,6 12,6 C10.6885336,6 9.44767246,6.42282109 8.43296491,7.17429118 Z" fill="#000000" fill-rule="nonzero"/>
+        <path d="M8.43296491,7.17429118 L9.40782327,7.85689436 C9.49616631,7.91875282 9.56214077,8.00751728 9.5959027,8.10994332 C9.68235021,8.37220548 9.53982427,8.65489052 9.27756211,8.74133803 L5.89079566,9.85769242 C5.84469033,9.87288977 5.79661753,9.8812917 5.74809064,9.88263369 C5.4720538,9.8902674 5.24209339,9.67268366 5.23445968,9.39664682 L5.13610134,5.83998177 C5.13313425,5.73269078 5.16477113,5.62729274 5.22633424,5.53937151 C5.384723,5.31316892 5.69649589,5.25819495 5.92269848,5.4165837 L6.72910242,5.98123382 C8.16546398,4.72182424 10.0239806,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 L6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,8.6862915 15.3137085,6 12,6 C10.6885336,6 9.44767246,6.42282109 8.43296491,7.17429118 Z"
+              fill="#000000" fill-rule="nonzero"/>
     </g>
 </svg></span>
 
@@ -650,8 +655,7 @@
                     ?>
 
 
-                    <tr style="font-weight: 400;" <?php if ($status12 == 'Approved' && $acc_type == 'Administrator') { ?> class="kt-bg-light-brand" <?php }
-                    elseif ($status12 == 'Approval Required' && $acc_type == 'Administrative Officer') { ?> class="kt-bg-light-brand" <?php } ?> >
+                    <tr style="font-weight: 400;" <?php if ($status12 == 'Approved' && $acc_type == 'Administrator') { ?> class="kt-bg-light-brand" <?php } elseif ($status12 == 'Approval Required' && $acc_type == 'Administrative Officer') { ?> class="kt-bg-light-brand" <?php } ?> >
                         <td>
                             <span style="font-weight: 500"
                                   class="kt-badge kt-badge--dark kt-badge--inline kt-badge--pill"><?php echo $i; ?></span>
@@ -1360,132 +1364,6 @@
 
 <!-- end:: Content -->
 
-<?php
-
-$division_logged_in = $_SESSION['division_logged_in'];
-$acc_type_logged = $_SESSION['acc_type_logged'];
-
-?>
-
-<script>
-
-    var div_logged = '<?php echo $division_logged_in; ?>';
-    var acc_type_logged = '<?php echo $acc_type_logged; ?>';
-
-    if (acc_type_logged == 'Administrator' || acc_type_logged == 'Observer') {
-
-        setInterval(function () {
-            $.ajax({
-                url: "notify_app.php", type: "POST", async: true, cache: false, success: function (data) {
-
-                    var data_arr = data.split(" ");
-
-                    data_arr.forEach(notify_func)
-
-                    function notify_func(item, index, arr) {
-
-                        if (item != ''){
-
-                            arr[index] = item;
-                           // ajax
-
-
-                            if (window.Notification && Notification.permission !== "granted") {
-
-                                Notification.requestPermission(function (status) {
-                                    if (Notification.permission !== status) {
-                                        Notification.permission = status;
-                                    }
-                                })
-                            }
-
-                            if (Notification.permission == "granted") {
-
-                                var title = "New ticket received from " + item;
-                                var dts = Math.floor(Date.now());
-                                var img = 'https://i.imgur.com/akcxFXw.png';
-
-                                var options = {
-                                    body: "Name : Kusum\nDesignation : Director WP\nIssue : Software",
-                                    timestamp: dts,
-                                    icon: img
-                                }
-
-                                noti = new Notification(title, options);
-
-                                setTimeout(noti.close.bind(noti), 36000000);
-
-                            }
-
-
-
-                        }
-                    }
-
-                }
-            });
-
-        }, 1000);
-
-    }
-
-</script>
-
-
-<!-- begin:: Content -->
-
-<!--
-<script>
-
-    window.addEventListener("load", c);
-
-    function init() {
-
-        var b = document.getElementById("but"); //get the button object
-
-        b.addEventListener("click", noti, false);
-
-    }
-
-    function c() {
-
-        init();
-
-        if (window.Notification && Notification.permission !== "granted") {
-
-            Notification.requestPermission(function (status) {
-                if (Notification.permission !== status) {
-                    Notification.permission = status;
-                }
-            })
-        }
-    }
-
-    function noti() {
-
-        if (Notification.permission == "granted") {
-
-            var title = "New ticket received from " + div_logged;
-            var dts = Math.floor(Date.now());
-            var img = 'https://i.imgur.com/akcxFXw.png';
-
-            var options = {
-                body: "Name : Kusum\nDesignation : Director WP\nIssue : Software",
-                timestamp: dts,
-                icon: img
-            }
-
-            noti = new Notification(title, options);
-
-            setTimeout(noti.close.bind(noti), 36000000);
-
-        }
-
-    }
-</script>
-
--->
-
 <script>
 
     setTimeout(function () {
@@ -1493,4 +1371,5 @@ $acc_type_logged = $_SESSION['acc_type_logged'];
     }, 900000);
 
 </script>
+
 <?php include 'include/footer.php'; ?>

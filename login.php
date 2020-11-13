@@ -62,6 +62,10 @@ if ($logged_user_id != '') {
 <!-- begin::Body -->
 <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
 
+
+<div id="block_login_loading" class="blockUI blockOverlay" style="z-index: 1100; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: #fff; opacity: 1; cursor: wait; position: fixed;"></div>
+<div id="block_login_loading_1" class="blockUI blockMsg blockPage" style="z-index: 1111; position: fixed; padding: 0px; margin: 0px; width: 158px; top: 50%; left: 50%; text-align: center; color: rgb(0, 0, 0); border: 0px; cursor: wait;"><div class="blockui " style="margin-left:-79px;"><span>System is loading...</span><span><div class="kt-spinner kt-spinner--v2 kt-spinner--success "></div></span></div></div>
+
 <!-- begin:: Page -->
 <div class="kt-grid kt-grid--ver kt-grid--root kt-page">
     <div class="kt-grid kt-grid--hor kt-grid--root  kt-login kt-login--v1" id="kt_login">
@@ -369,6 +373,18 @@ if ($logged_user_id != '') {
 <script src="assets/js/pages/custom/login/login-general.js" type="text/javascript"></script>
 <!--end::Global Theme Bundle -->
 
+<script>
+
+
+    window.onload = function () {
+
+        $("#block_login_loading").fadeOut();
+        $("#block_login_loading_1").fadeOut();
+
+    }
+
+
+</script>
 
 <script>
 
