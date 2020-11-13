@@ -19,6 +19,9 @@ const closeDropdown = () => {
 };
 
 inputField.addEventListener('input', () => {
+    $("#sign_in_details").css('opacity',"1");
+    inputField.style.top = 'revert';
+    dropdown.style.top = 'revert';
     dropdown.classList.add('open');
     let inputValue = inputField.value.toLowerCase();
     let valueSubstring;
@@ -86,8 +89,11 @@ inputField.addEventListener('focus', () => {
         dropdown.classList.remove('closed');
     });
 
-    inputField.style.top = - 390 + 'px';
-    dropdown.style.top = - 390 + 'px';
+    $("#sign_in_details").css('opacity',"0");
+
+
+    inputField.style.top = - 370 + 'px';
+    dropdown.style.top = - 370 + 'px';
 
     vli.append(inp1);
     inputField.scrollIntoView(true);
@@ -99,6 +105,9 @@ inputField.addEventListener('focus', () => {
 inputField.addEventListener('blur', () => {
     inputField.placeholder = 'Select an Account';
     dropdown.classList.remove('open');
+    $("#sign_in_details").css('opacity',"1");
+    inputField.style.top = 'revert';
+    dropdown.style.top = 'revert';
 });
 
 document.addEventListener('click', evt => {
@@ -106,9 +115,12 @@ document.addEventListener('click', evt => {
     const isInput = inputField.contains(evt.target);
     if (!isDropdown && !isInput) {
         dropdown.classList.remove('open');
+        inputField.style.top = 'revert';
+        dropdown.style.top = 'revert';
     }
     inputField.style.top = 'revert';
     dropdown.style.top = 'revert';
+    $("#sign_in_details").css('opacity',"1");
 });
 
 document.addEventListener('mousedown', evt => {
@@ -116,5 +128,8 @@ document.addEventListener('mousedown', evt => {
     const isInput = inputField.contains(evt.target);
     if (!isDropdown && !isInput) {
         dropdown.classList.remove('open');
+        $("#sign_in_details").css('opacity',"1");
+        inputField.style.top = 'revert';
+        dropdown.style.top = 'revert';
     }
 });

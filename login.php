@@ -124,7 +124,7 @@ if ($logged_user_id != '') {
                     <!--begin::Signin-->
                     <div class="kt-login__form">
 
-                        <div class="kt-login__title">
+                        <div id="sign_in_details" class="kt-login__title">
 
                             <img width="60%" src="assets/media/logos/giphy.gif">
                             <br> <br>
