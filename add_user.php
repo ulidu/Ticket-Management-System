@@ -107,32 +107,106 @@ if ($update_userID_hidden != '') {
 
                                         <div class="kt-radio-inline">
 
-                                            <?php if ($update_userID_hidden != '' && $title_update_get == '') {
+                                            <?php if ($update_userID_hidden != '') {
 
+                                                if ($title_update_get == 'Mr.') {
+
+                                                    ?>
+                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                        <input type="radio" value="Mr." id="title" name="title" checked>
+                                                        Mr.
+                                                        <span></span>
+                                                    </label>
+
+
+                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                        <input type="radio" value="Mrs." id="title" name="title"> Mrs.
+                                                        <span></span>
+                                                    </label>
+
+
+                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                        <input type="radio" value="Miss." id="title" name="title">
+                                                        Miss.
+                                                        <span></span>
+                                                    </label>
+                                                    <?php
+
+                                                } elseif ($title_update_get == 'Mrs.') {
+
+                                                    ?>
+
+
+                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                        <input type="radio" value="Mr." id="title" name="title"> Mr.
+                                                        <span></span>
+                                                    </label>
+
+
+                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                        <input type="radio" value="Mrs." id="title" name="title"
+                                                               checked> Mrs.
+                                                        <span></span>
+                                                    </label>
+
+
+                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                        <input type="radio" value="Miss." id="title" name="title">
+                                                        Miss.
+                                                        <span></span>
+                                                    </label>
+
+                                                    <?php
+
+                                                } elseif ($title_update_get == 'Miss.') {
+
+                                                    ?>
+                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                        <input type="radio" value="Mr." id="title" name="title"> Mr.
+                                                        <span></span>
+                                                    </label>
+
+
+                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                        <input type="radio" value="Mrs." id="title" name="title"> Mrs.
+                                                        <span></span>
+                                                    </label>
+
+
+                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                        <input type="radio" value="Miss." id="title" name="title"
+                                                               checked>
+                                                        Miss.
+                                                        <span></span>
+                                                    </label>
+
+                                                    <?php
+                                                }
 
 
                                             } else {
+                                                ?>
+                                                <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                    <input type="radio" value="Mr." id="title" name="title" checked> Mr.
+                                                    <span></span>
+                                                </label>
 
 
+                                                <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                    <input type="radio" value="Mrs." id="title" name="title"> Mrs.
+                                                    <span></span>
+                                                </label>
 
+
+                                                <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                    <input type="radio" value="Miss." id="title" name="title">
+                                                    Miss.
+                                                    <span></span>
+                                                </label>
+
+                                                <?php
                                             } ?>
-                                            <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                <input type="radio" value="Mr." id="title" name="title" checked> Mr.
-                                                <span></span>
-                                            </label>
 
-
-                                            <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                <input type="radio" value="Mrs." id="title" name="title"> Mrs.
-                                                <span></span>
-                                            </label>
-
-
-                                            <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                <input type="radio" value="Miss." id="title" name="title">
-                                                Miss.
-                                                <span></span>
-                                            </label>
 
                                         </div>
                                     </div>
@@ -146,6 +220,13 @@ if ($update_userID_hidden != '') {
                                         <div class="input-group-prepend"><span class="input-group-text"><i
                                                         class="la la-user"></i></span></div>
                                         <input name="firstName" id="firstName" type="text" class="form-control"
+
+                                            <?php if ($update_userID_hidden != '') { ?>
+
+                                                value="<?php echo $firstName_update_get; ?>"
+
+                                            <?php } ?>
+
                                                placeholder="Enter User's First Name" required>
                                     </div>
 
@@ -160,6 +241,11 @@ if ($update_userID_hidden != '') {
                                                         class="la la-user"></i></span></div>
 
                                         <input name="lastName" id="lastName" type="text" class="form-control"
+                                            <?php if ($update_userID_hidden != '') { ?>
+
+                                                value="<?php echo $lastName_update_get; ?>"
+
+                                            <?php } ?>
                                                placeholder="Enter User's Last Name" required>
                                     </div>
 
@@ -176,6 +262,11 @@ if ($update_userID_hidden != '') {
 
                                         <input name="empCode" autocomplete="off" id="empCode" type="text"
                                                class="form-control"
+                                            <?php if ($update_userID_hidden != '') { ?>
+
+                                                value="<?php echo $employeeCode_update_get; ?>"
+
+                                            <?php } ?>
                                                placeholder="Enter User's Employee Code" required>
                                     </div>
 
@@ -189,6 +280,11 @@ if ($update_userID_hidden != '') {
                                                         class="la la-at"></i></span></div>
 
                                         <input name="email" id="email" type="email" class="form-control"
+                                            <?php if ($update_userID_hidden != '') { ?>
+
+                                                value="<?php echo $email_update_get; ?>"
+
+                                            <?php } ?>
                                                placeholder="Enter User's Email Address" required>
                                     </div>
 
