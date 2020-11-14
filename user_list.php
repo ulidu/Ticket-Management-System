@@ -636,6 +636,29 @@
 
                 }
 
+                if (isset($_POST['submit_delete'])) {
+
+                    date_default_timezone_set('Asia/Colombo');
+                    $string = date("Y-m-d");
+                    $date = DateTime::createFromFormat("Y-m-d", $string);
+                    $date = date_format($date, 'Y-m-d H:i:s');
+
+                    $user_hidden = $_POST['user_hidden'];
+
+                    $query_delete = "UPDATE user SET status='Active' WHERE userID = '$user_hidden'";
+                    $create_query_delete = mysqli_query($con, $query_delete);
+
+                    $query_log_user_delete = "INSERT INTO log(log_userID, log_date_time, log_action) VALUES('$logged_user_id', '$date', 'User ID: $logged_user_id Activated the user with ID: $user_hidden')";
+                    $create_query_log_user_delete = mysqli_query($con, $query_log_user_delete);
+
+                    if ($query_disable) {
+
+                        echo '<meta http-equiv=Refresh content="0;url=user_list.php">';
+
+                    }
+
+                }
+
                 ?>
 
                 <?php
@@ -713,7 +736,7 @@
                             <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
                                     onclick="
                                 if (confirm('Are you sure you want to delete this user permanently ?')) { return true; } else { return false; }"
-                                    type="submit" id="submit_remove" name="submit_remove"
+                                    type="submit" id="submit_delete" name="submit_delete"
                                     class="btn btn-sm btn-clean btn-icon btn-icon-md kt-badge kt-badge--33 kt-badge--inline kt-badge--pill"
                                     title="Delete User Permanently">
                                 <i style="font-size: 18px; color: #dc3545; font-weight: 800;"
