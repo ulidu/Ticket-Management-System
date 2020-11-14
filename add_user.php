@@ -305,25 +305,78 @@ if ($update_userID_hidden != '') {
 
                                             <label class="kt-radio kt-radio--bold kt-radio--brand">
                                                 <input type="radio" value="IT Staff" id="permissions" name="permissions"
-                                                       checked> IT
-                                                Staff
+
+                                                    <?php if ($update_userID_hidden != '') {
+
+                                                        if ($type_update_get == 'IT Staff'){
+
+                                                            ?>
+                                                            checked
+                                                            <?php
+
+                                                        }
+                                                        ?>
+                                                    <?php }else{
+
+                                                        ?>
+                                                        checked
+                                                        <?php
+
+                                                    } ?>
+
+                                                       > IT Staff
                                                 <span></span>
                                             </label>
                                             <label class="kt-radio kt-radio--bold kt-radio--danger">
                                                 <input type="radio" value="Administrator" id="permissions"
-                                                       name="permissions">
+                                                       name="permissions"
+                                                    <?php if ($update_userID_hidden != '') {
+
+                                                           if ($type_update_get == 'Administrator'){
+
+                                                               ?>
+                                                               checked
+                                                               <?php
+
+                                                           }
+                                                           ?>
+                                                <?php } ?> >
                                                 Administrator
                                                 <span></span>
                                             </label>
                                             <label class="kt-radio kt-radio--bold kt-radio--warning">
                                                 <input type="radio" value="Administrative Officer" id="permissions"
-                                                       name="permissions">
+                                                       name="permissions"
+                                                    <?php if ($update_userID_hidden != '') {
+
+                                                        if ($type_update_get == 'Administrative Officer'){
+
+                                                            ?>
+                                                            checked
+                                                            <?php
+
+                                                        }
+                                                        ?>
+                                                    <?php } ?>
+                                                >
                                                 Administrative Officer
                                                 <span></span>
                                             </label>
                                             <label class="kt-radio kt-radio--bold kt-radio--success">
                                                 <input type="radio" value="Observer" id="permissions"
-                                                       name="permissions"> Observer
+                                                       name="permissions"
+                                                    <?php if ($update_userID_hidden != '') {
+
+                                                        if ($type_update_get == 'Observer'){
+
+                                                            ?>
+                                                            checked
+                                                            <?php
+
+                                                        }
+                                                        ?>
+                                                    <?php } ?>
+                                                > Observer
                                                 <span></span>
                                             </label>
                                         </div>
@@ -341,6 +394,9 @@ if ($update_userID_hidden != '') {
                                             <option value="" hidden="true">Select Applicant's
                                                 Division
                                             </option>
+
+
+
                                             <option value="ITS Division">ITS Division
                                             </option>
                                             <option value="Project Management Division">Project
