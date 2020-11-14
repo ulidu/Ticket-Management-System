@@ -2,7 +2,35 @@
 <?php include 'include/aside.php'; ?>
 
 <!-- begin:: Content -->
+<?php
 
+$update_userID_hidden = $_GET['update'];
+
+if ($update_userID_hidden != '') {
+
+    $query_get_data = "select * from user where userID='$update_userID_hidden'";
+    $run_query_get_data = mysqli_query($con, $query_get_data);
+
+    while ($row_get_data = mysqli_fetch_assoc($run_query_get_data)) {
+
+        $userID_update_get = $row_get_data['userID'];
+        $employeeCode_update_get = $row_get_data['employeeCode'];
+        $firstName_update_get = $row_get_data['firstName'];
+        $lastName_update_get = $row_get_data['lastName'];
+        $date_update_get = $row_get_data['date_created'];
+        $email_update_get = $row_get_data['email'];
+        $type_update_get = $row_get_data['acc_type'];
+        $status_update_get = $row_get_data['status'];
+        $password_update_get = $row_get_data['password'];
+        $title_update_get = $row_get_data['title'];
+        $division_update_get = $row_get_data['division'];
+
+
+    }
+
+}
+
+?>
 
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
@@ -18,7 +46,18 @@
 											<i class="kt-font-brand flaticon2-user-1"></i>
 										</span>
                     <h3 class="kt-portlet__head-title kt-font-brand">
-                        Add a New User</h3>&nbsp;
+
+                        <?php if ($update_userID_hidden == '') {
+
+                            echo "Add a New User";
+
+                        } else {
+
+                            echo "Update Existing User";
+
+                        } ?>
+
+                    </h3>&nbsp;
 
                 </div>
                 <div class="kt-portlet__head-toolbar">
@@ -26,8 +65,18 @@
                         <div class="kt-portlet__head-actions">
                             <div class="dropdown dropdown-inline">
                                 <a href="user_list.php" class="btn btn-brand btn-elevate btn-icon-sm">
-                                    <i class="la la-users"></i>
-                                    View all Users
+
+
+                                    <?php if ($update_userID_hidden == '') {
+
+                                        echo "<i class=\"la la-users\"></i>View all Users";
+
+                                    } else {
+
+                                        echo "<i class=\"la la-close\"></i>Cancel";
+
+                                    } ?>
+
                                 </a>
 
                             </div>
@@ -58,7 +107,15 @@
 
                                         <div class="kt-radio-inline">
 
+                                            <?php if ($update_userID_hidden != '' && $title_update_get == '') {
 
+
+
+                                            } else {
+
+
+
+                                            } ?>
                                             <label class="kt-radio kt-radio--bold kt-radio--brand">
                                                 <input type="radio" value="Mr." id="title" name="title" checked> Mr.
                                                 <span></span>
@@ -402,10 +459,28 @@
                             <div class="row">
                                 <div class="col-lg-5"></div>
                                 <div class="col-lg-7">
-                                    <button type="submit" id="submitUser" name="submitUser"
-                                            class="btn btn-brand">Submit
-                                    </button>
-                                    <button type="reset" class="btn btn-secondary">Cancel</button>
+
+
+                                    <?php if ($update_userID_hidden == '') {
+
+                                        echo "<button type=\"submit\" id=\"submitUser\" name=\"submitUser\" class=\"btn btn-brand\">Submit</button>";
+
+                                    } else {
+
+                                        echo "<button type=\"submit\" id=\"updateUser\" name=\"updateUser\" class=\"btn btn-brand\">Update</button>";
+
+                                    } ?>
+
+                                    <?php if ($update_userID_hidden == '') {
+
+                                        echo " <button type=\"reset\" class=\"btn btn-secondary\">Cancel</button>";
+
+                                    } else {
+
+                                        echo " <button type=\"button\" onclick=\"location.href='user_list.php'\" class=\"btn btn-secondary\">Cancel</button>";
+
+                                    } ?>
+
                                 </div>
                             </div>
                         </div>
