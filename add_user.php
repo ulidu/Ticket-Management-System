@@ -308,7 +308,7 @@ if ($update_userID_hidden != '') {
 
                                                     <?php if ($update_userID_hidden != '') {
 
-                                                        if ($type_update_get == 'IT Staff'){
+                                                        if ($type_update_get == 'IT Staff') {
 
                                                             ?>
                                                             checked
@@ -316,7 +316,7 @@ if ($update_userID_hidden != '') {
 
                                                         }
                                                         ?>
-                                                    <?php }else{
+                                                    <?php } else {
 
                                                         ?>
                                                         checked
@@ -324,7 +324,7 @@ if ($update_userID_hidden != '') {
 
                                                     } ?>
 
-                                                       > IT Staff
+                                                > IT Staff
                                                 <span></span>
                                             </label>
                                             <label class="kt-radio kt-radio--bold kt-radio--danger">
@@ -332,15 +332,15 @@ if ($update_userID_hidden != '') {
                                                        name="permissions"
                                                     <?php if ($update_userID_hidden != '') {
 
-                                                           if ($type_update_get == 'Administrator'){
+                                                        if ($type_update_get == 'Administrator') {
 
-                                                               ?>
-                                                               checked
-                                                               <?php
+                                                            ?>
+                                                            checked
+                                                            <?php
 
-                                                           }
-                                                           ?>
-                                                <?php } ?> >
+                                                        }
+                                                        ?>
+                                                    <?php } ?> >
                                                 Administrator
                                                 <span></span>
                                             </label>
@@ -349,7 +349,7 @@ if ($update_userID_hidden != '') {
                                                        name="permissions"
                                                     <?php if ($update_userID_hidden != '') {
 
-                                                        if ($type_update_get == 'Administrative Officer'){
+                                                        if ($type_update_get == 'Administrative Officer') {
 
                                                             ?>
                                                             checked
@@ -367,7 +367,7 @@ if ($update_userID_hidden != '') {
                                                        name="permissions"
                                                     <?php if ($update_userID_hidden != '') {
 
-                                                        if ($type_update_get == 'Observer'){
+                                                        if ($type_update_get == 'Observer') {
 
                                                             ?>
                                                             checked
@@ -402,30 +402,29 @@ if ($update_userID_hidden != '') {
 
                                             while ($row_g_div = mysqli_fetch_assoc($run_query_g_div)) {
 
-                                            $division_id = $row_g_div['division_id'];
-                                            $division_name = $row_g_div['division_name'];
+                                                $division_id = $row_g_div['division_id'];
+                                                $division_name = $row_g_div['division_name'];
 
-                                            ?>
+                                                ?>
 
                                                 <?php if ($update_userID_hidden != '') {
 
-                                                        ?>
-                                                        <option value="<?php echo $division_name; ?>"
-                                                    <?php if ($division_update_get == $division_name) { ?> selected <?php  } ?>
-                                                        ><?php echo $division_name; ?></option>
+                                                    ?>
+                                                    <option value="<?php echo $division_name; ?>"
+                                                        <?php if ($division_update_get == $division_name) { ?> selected <?php } ?>
+                                                    ><?php echo $division_name; ?></option>
 
 
-
-                                                <?php }else{
+                                                <?php } else {
                                                     ?>
 
                                                     <option value="<?php echo $division_name; ?>"><?php echo $division_name; ?></option>
 
                                                     <?php
-                                                }?>
+                                                } ?>
 
 
-                                 <?php } ?>
+                                            <?php } ?>
                                         </select>
                                     </div>
 
@@ -435,8 +434,15 @@ if ($update_userID_hidden != '') {
                             </div>
                             <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit"></div>
                             <div class="form-group row">
-                                <label class="col-lg-3 col-form-label">Password <span
-                                            style="color: #dc3545; font-size: 18px;">* </span>:</label>
+                                <label class="col-lg-3 col-form-label">Password
+
+
+                                    <span style="color: #dc3545; font-size: 18px;">
+
+ <?php if ($update_userID_hidden == '') { ?>
+     *
+ <?php } ?>
+                                    </span>:</label>
                                 <div class="col-9">
 
                                     <div class="input-group">
@@ -444,13 +450,21 @@ if ($update_userID_hidden != '') {
                                                         class="la la-unlock"></i></span></div>
                                         <input autocomplete="new-password" type="password" name="password" id="password"
                                                class="form-control"
-                                               placeholder="Enter a Password" required>
+                                               placeholder="Enter a Password"
+                                            <?php if ($update_userID_hidden == '') { ?>
+                                                required
+                                            <?php } ?>
+                                        >
                                     </div>
 
 
                                 </div>
-                                <label class="col-lg-3 col-form-label">Confirm Password <span
-                                            style="color: #dc3545; font-size: 18px;">* </span>:</label>
+                                <label class="col-lg-3 col-form-label">Confirm Password
+
+                                    <?php if ($update_userID_hidden == '') { ?>
+                                        <span style="color: #dc3545; font-size: 18px;">* </span>
+                                    <?php } ?>
+                                    :</label>
 
 
                                 <div class="col-9">
@@ -460,11 +474,19 @@ if ($update_userID_hidden != '') {
                                                         class="la la-unlock"></i></span></div>
                                         <input autocomplete="new-password" type="password" name="pw_cf" id="pw_cf"
                                                class="form-control"
-                                               placeholder="Re-type Password" required>
+                                               placeholder="Re-type Password"
+                                            <?php if ($update_userID_hidden == '') { ?>
+                                                required
+                                            <?php } ?>
+                                        >
                                     </div>
 
                                 </div>
 
+                                <?php if ($update_userID_hidden != '') { ?>
+
+                                    <span style="margin-left: 26.5%;" class="form-text text-muted">Leave it blank if you don't want to change the password.</span>
+                                <?php } ?>
 
                             </div>
 
@@ -884,6 +906,7 @@ if ($update_userID_hidden != '') {
             var division = $('#division').val();
             var password = $('#password').val();
             var pw_cf = $('#pw_cf').val();
+            var user_id_to_update = '<?php echo $update_userID_hidden; ?>';
 
             const isEmpty = str => !str.trim().length;
 
@@ -963,50 +986,53 @@ if ($update_userID_hidden != '') {
 
             }
 
-            if (isEmpty(password)) {
+            if (!isEmpty(password) || !isEmpty(pw_cf)) {
 
-                KTApp.unblockPage();
-                toastr.warning('Please enter a password.');
-                $('#password').focus();
-                return false;
-
-            }
-
-            if (isEmpty(pw_cf)) {
-
-                KTApp.unblockPage();
-                toastr.warning('Please confirm the password.');
-                $('#pw_cf').focus();
-                return false;
-
-            }
-
-            if (!isEmpty(password) && password == pw_cf) {
-
-                if (password.length < 6) {
+                if (isEmpty(password)) {
 
                     KTApp.unblockPage();
-                    swal.fire("Weak Password !", "Your password must contain at least six characters.", "warning");
-                    $('#password').focus();
-                    return false;
-
-                }
-                if (password == firstName) {
-
-                    KTApp.unblockPage();
-                    swal.fire("Confirm Password !", "Your password must be different from Username.", "warning");
+                    toastr.warning('Please enter a password.');
                     $('#password').focus();
                     return false;
 
                 }
 
-            } else {
+                if (isEmpty(pw_cf)) {
 
-                KTApp.unblockPage();
-                swal.fire("Confirm Password !", "Passwords do not match !", "warning");
-                $('#password').focus();
-                return false;
+                    KTApp.unblockPage();
+                    toastr.warning('Please confirm the password.');
+                    $('#pw_cf').focus();
+                    return false;
 
+                }
+
+                if (!isEmpty(password) && password == pw_cf) {
+
+                    if (password.length < 6) {
+
+                        KTApp.unblockPage();
+                        swal.fire("Weak Password !", "Your password must contain at least six characters.", "warning");
+                        $('#password').focus();
+                        return false;
+
+                    }
+                    if (password == firstName) {
+
+                        KTApp.unblockPage();
+                        swal.fire("Confirm Password !", "Your password must be different from Username.", "warning");
+                        $('#password').focus();
+                        return false;
+
+                    }
+
+                } else {
+
+                    KTApp.unblockPage();
+                    swal.fire("Confirm Password !", "Passwords do not match !", "warning");
+                    $('#password').focus();
+                    return false;
+
+                }
             }
 
             $.ajax({
@@ -1022,7 +1048,8 @@ if ($update_userID_hidden != '') {
                     permissions: permissions,
                     division: division,
                     password: password,
-                    logged_user_id: logged_user_id
+                    logged_user_id: logged_user_id,
+                    user_id_to_update: user_id_to_update
                 },
                 success: function (data) {
 
@@ -1032,15 +1059,27 @@ if ($update_userID_hidden != '') {
                         swal.fire("User Already Exists !", "An user with same Employee code or Email already exists.", "error");
 
                     }
-                    if (data.toString() == 1) {
 
-                        location.href = 'user_success.php';
+                    if (data.toString() == 1) {
+                        KTApp.unblockPage();
+                        swal.fire({
+
+                            title: "Updated Successfully !",
+                            text: "Selected user updated successfully.",
+                            type: "success"
+
+                        }).then(function() {
+
+                            window.location = "user_list.php";
+
+                        });
 
                     }
+
                     if (data.toString() == 0) {
 
                         KTApp.unblockPage();
-                        swal.fire("Something went wrong !", "Failed creating the user", "error");
+                        swal.fire("Something went wrong !", "Failed updating the user", "error");
 
                     }
 
