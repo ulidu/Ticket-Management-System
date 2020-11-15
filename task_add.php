@@ -143,20 +143,20 @@
                                                                     <option value="" hidden="true">Select Applicant's
                                                                         Division
                                                                     </option>
-                                                                    <option value="ITS Division">ITS Division
-                                                                    </option>
-                                                                    <option value="Project Management Division">Project
-                                                                        Management Division
-                                                                    </option>
-                                                                    <option value="Finance Division">Finance Division
-                                                                    </option>
-                                                                    <option value="Landscape Division">Landscape
-                                                                        Division
-                                                                    </option>
-                                                                    <option value="Western Province Division">Western
-                                                                        Province Division
-                                                                    </option>
-                                                                    <option value="GIS Division">GIS Division</option>
+                                                                    <?php
+
+                                                                    $query_g_div = "select * from division";
+                                                                    $run_query_g_div = mysqli_query($con, $query_g_div);
+
+                                                                    while ($row_g_div = mysqli_fetch_assoc($run_query_g_div)) {
+
+                                                                        $division_id = $row_g_div['division_id'];
+                                                                        $division_name = $row_g_div['division_name'];
+
+                                                                        ?>
+
+                                                                        <option value="<?php echo $division_name; ?>"><?php echo $division_name; ?></option>
+                                                                    <?php } ?>
                                                                 </select>
                                                             </div>
                                                         </div>

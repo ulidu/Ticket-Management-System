@@ -395,22 +395,37 @@ if ($update_userID_hidden != '') {
                                                 Division
                                             </option>
 
+                                            <?php
+
+                                            $query_g_div = "select * from division";
+                                            $run_query_g_div = mysqli_query($con, $query_g_div);
+
+                                            while ($row_g_div = mysqli_fetch_assoc($run_query_g_div)) {
+
+                                            $division_id = $row_g_div['division_id'];
+                                            $division_name = $row_g_div['division_name'];
+
+                                            ?>
+
+                                                <?php if ($update_userID_hidden != '') {
+
+                                                        ?>
+                                                        <option value="<?php echo $division_name; ?>"
+                                                    <?php if ($division_update_get == $division_name) { ?> selected <?php  } ?>
+                                                        ><?php echo $division_name; ?></option>
 
 
-                                            <option value="ITS Division">ITS Division
-                                            </option>
-                                            <option value="Project Management Division">Project
-                                                Management Division
-                                            </option>
-                                            <option value="Finance Division">Finance Division
-                                            </option>
-                                            <option value="Landscape Division">Landscape
-                                                Division
-                                            </option>
-                                            <option value="Western Province Division">Western
-                                                Province Division
-                                            </option>
-                                            <option value="GIS Division">GIS Division</option>
+
+                                                <?php }else{
+                                                    ?>
+
+                                                    <option value="<?php echo $division_name; ?>"><?php echo $division_name; ?></option>
+
+                                                    <?php
+                                                }?>
+
+
+                                 <?php } ?>
                                         </select>
                                     </div>
 
@@ -615,11 +630,11 @@ if ($update_userID_hidden != '') {
 
                                     <?php if ($update_userID_hidden == '') {
 
-                                        echo "<button type=\"submit\" id=\"submitUser\" name=\"submitUser\" class=\"btn btn-brand\">Submit</button>";
+                                        echo "<button type=\"submit\" id=\"submitUser\" name=\"submitUser\" class=\"btn btn-brand\">Add new User</button>";
 
                                     } else {
 
-                                        echo "<button type=\"submit\" id=\"updateUser\" name=\"updateUser\" class=\"btn btn-brand\">Update</button>";
+                                        echo "<button type=\"submit\" id=\"updateUser\" name=\"updateUser\" class=\"btn btn-brand\">Update User</button>";
 
                                     } ?>
 
@@ -810,6 +825,193 @@ if ($update_userID_hidden != '') {
             $.ajax({
 
                 url: "user_add_app.php",
+                method: "POST",
+                data: {
+                    title: title,
+                    firstName: firstName,
+                    lastName: lastName,
+                    empCode: empCode,
+                    email: email,
+                    permissions: permissions,
+                    division: division,
+                    password: password,
+                    logged_user_id: logged_user_id
+                },
+                success: function (data) {
+
+                    if (data.toString() == 2) {
+
+                        KTApp.unblockPage();
+                        swal.fire("User Already Exists !", "An user with same Employee code or Email already exists.", "error");
+
+                    }
+                    if (data.toString() == 1) {
+
+                        location.href = 'user_success.php';
+
+                    }
+                    if (data.toString() == 0) {
+
+                        KTApp.unblockPage();
+                        swal.fire("Something went wrong !", "Failed creating the user", "error");
+
+                    }
+
+                }
+
+            });
+
+        });
+
+        $('#updateUser').click(function (e) {
+
+            e.preventDefault();
+
+            function validateEmail(email) {
+
+                const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+                return re.test(String(email).toLowerCase());
+
+            }
+
+            var logged_user_id = '<?php echo $logged_user_id; ?>';
+            var title = $('#title').val();
+            var firstName = $('#firstName').val();
+            var lastName = $('#lastName').val();
+            var empCode = $('#empCode').val();
+            var email = $('#email').val();
+            var permissions = $('#permissions').val();
+            var division = $('#division').val();
+            var password = $('#password').val();
+            var pw_cf = $('#pw_cf').val();
+
+            const isEmpty = str => !str.trim().length;
+
+            toastr.options = {
+                "newestOnTop": false,
+            };
+
+            KTApp.blockPage({
+                overlayColor: '#000000',
+                type: 'v2',
+                state: 'success',
+                message: 'Please wait...'
+            });
+
+            setTimeout(function () {
+                KTApp.unblockPage();
+            }, 2000000000);
+
+            if (isEmpty(firstName)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please enter the first name of the user.');
+                $('#firstName').focus();
+
+                return false;
+
+            }
+            if (isEmpty(lastName)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please enter the last name of the user.');
+                $('#lastName').focus();
+                return false;
+
+            }
+
+            if (isEmpty(empCode)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please enter the Employee code of the user.');
+                $('#empCode').focus();
+                return false;
+
+            }
+
+            if (isNaN(empCode)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Employee code should be a number.');
+                $('#empCode').focus();
+                return false;
+
+            }
+
+            if (isEmpty(email)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please enter the email of the user.');
+                $('#email').focus();
+                return false;
+
+            }
+            if (!validateEmail(email)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please enter a valid email address.');
+                $('#email').focus();
+                return false;
+
+            }
+            if (isEmpty(division)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please select the division of the user.');
+                $('#division').focus();
+                return false;
+
+            }
+
+            if (isEmpty(password)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please enter a password.');
+                $('#password').focus();
+                return false;
+
+            }
+
+            if (isEmpty(pw_cf)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please confirm the password.');
+                $('#pw_cf').focus();
+                return false;
+
+            }
+
+            if (!isEmpty(password) && password == pw_cf) {
+
+                if (password.length < 6) {
+
+                    KTApp.unblockPage();
+                    swal.fire("Weak Password !", "Your password must contain at least six characters.", "warning");
+                    $('#password').focus();
+                    return false;
+
+                }
+                if (password == firstName) {
+
+                    KTApp.unblockPage();
+                    swal.fire("Confirm Password !", "Your password must be different from Username.", "warning");
+                    $('#password').focus();
+                    return false;
+
+                }
+
+            } else {
+
+                KTApp.unblockPage();
+                swal.fire("Confirm Password !", "Passwords do not match !", "warning");
+                $('#password').focus();
+                return false;
+
+            }
+
+            $.ajax({
+
+                url: "user_update_app.php",
                 method: "POST",
                 data: {
                     title: title,
