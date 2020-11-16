@@ -65,6 +65,20 @@ $_SESSION['last_action'] = time();
     <link href="assets/css/pages/support-center/home-1.css" rel="stylesheet" type="text/css"/>
     <!--end::Global Theme Styles -->
 
+    <?php
+    $link_for_wizard = $_SERVER['PHP_SELF'];
+    $link_array_wizard = explode('/', $link_for_wizard);
+    $link_wizard = end($link_array_wizard);
+
+    if ($link_wizard == 'task_add.php') { ?>
+
+        <link href="assets/css/pages/wizard/wizard-5.css" rel="stylesheet" type="text/css" />
+        <link href="assets/plugins/wizard/plugins.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="assets/plugins/wizard/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="assets/plugins/wizard/style.bundle.css" rel="stylesheet" type="text/css" />
+
+    <?php } ?>
+
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

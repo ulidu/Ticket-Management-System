@@ -31,7 +31,7 @@
                             $date = DateTime::createFromFormat("Y-m-d", $string);
                             echo $date->format("d");
                             ?></span>
-                        <i class="flaticon2-calendar-1"></i>
+                        <i class="flaticon2-calendar"></i>
                     </a>
 
                 </div>

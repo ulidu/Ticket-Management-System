@@ -15,7 +15,7 @@ $email = $_POST['email'];
 $acc_type = $_POST['permissions'];
 $password = $_POST['password'];
 $status = "Active";
-$title = $_POST['title'];
+$title_up = $_POST['title_up'];
 $user_id_to_update = $_POST['user_id_to_update'];
 $division = $_POST['division'];
 $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -35,8 +35,7 @@ if ($count_email != 0) {
 
     if ($password == '') {
 
-        $query = "UPDATE user SET firstName='$firstName', lastName='$lastName', employeeCode='$empCode', email='$email', acc_type='$acc_type', 
-    title='$title', division='$division' WHERE userID='$user_id_to_update'";
+        $query = "UPDATE user SET firstName='$firstName', lastName='$lastName', employeeCode='$empCode', email='$email', acc_type='$acc_type', title='$title_up', division='$division' WHERE userID='$user_id_to_update'";
 
         $string = date("Y-m-d");
         $date = DateTime::createFromFormat("Y-m-d", $string);
@@ -59,8 +58,7 @@ if ($count_email != 0) {
 
     } else {
 
-        $query = "UPDATE user SET firstName='$firstName', lastName='$lastName', employeeCode='$empCode', email='$email', acc_type='$acc_type', 
-password='$hash', title='$title', division='$division' WHERE userID='$user_id_to_update'";
+        $query = "UPDATE user SET firstName='$firstName', lastName='$lastName', employeeCode='$empCode', email='$email', acc_type='$acc_type', password='$hash', title='$title_up', division='$division' WHERE userID='$user_id_to_update'";
 
         $string = date("Y-m-d");
         $date = DateTime::createFromFormat("Y-m-d", $string);

@@ -109,82 +109,44 @@ if ($update_userID_hidden != '') {
 
                                             <?php if ($update_userID_hidden != '') {
 
-                                                if ($title_update_get == 'Mr.') {
-
                                                     ?>
                                                     <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                        <input type="radio" value="Mr." id="title" name="title" checked>
+                                                        <input type="radio" value="Mr." id="title_up" name="title_up"
+                                                        <?php if ($title_update_get == 'Mr.') { ?>
+                                                                checked
+                                                        <?php } ?>
+                                                        >
                                                         Mr.
                                                         <span></span>
                                                     </label>
 
 
                                                     <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                        <input type="radio" value="Mrs." id="title" name="title"> Mrs.
+                                                        <input type="radio" value="Mrs." id="title_up" name="title_up"
+                                                         <?php if ($title_update_get == 'Mrs.') { ?>
+                                                                checked
+                                                        <?php } ?>
+                                                        > Mrs.
                                                         <span></span>
                                                     </label>
 
 
                                                     <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                        <input type="radio" value="Miss." id="title" name="title">
-                                                        Miss.
-                                                        <span></span>
-                                                    </label>
-                                                    <?php
-
-                                                } elseif ($title_update_get == 'Mrs.') {
-
-                                                    ?>
-
-
-                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                        <input type="radio" value="Mr." id="title" name="title"> Mr.
-                                                        <span></span>
-                                                    </label>
-
-
-                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                        <input type="radio" value="Mrs." id="title" name="title"
-                                                               checked> Mrs.
-                                                        <span></span>
-                                                    </label>
-
-
-                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                        <input type="radio" value="Miss." id="title" name="title">
+                                                        <input type="radio" value="Miss." id="title_up" name="title_up"
+                                                         <?php if ($title_update_get == 'Miss.') { ?>
+                                                                checked
+                                                        <?php } ?>
+                                                        >
                                                         Miss.
                                                         <span></span>
                                                     </label>
 
-                                                    <?php
-
-                                                } elseif ($title_update_get == 'Miss.') {
-
-                                                    ?>
-                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                        <input type="radio" value="Mr." id="title" name="title"> Mr.
-                                                        <span></span>
-                                                    </label>
-
-
-                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                        <input type="radio" value="Mrs." id="title" name="title"> Mrs.
-                                                        <span></span>
-                                                    </label>
-
-
-                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                        <input type="radio" value="Miss." id="title" name="title"
-                                                               checked>
-                                                        Miss.
-                                                        <span></span>
-                                                    </label>
 
                                                     <?php
-                                                }
 
 
-                                            } else {
+
+                                            } elseif ($update_userID_hidden == '') {
                                                 ?>
                                                 <label class="kt-radio kt-radio--bold kt-radio--brand">
                                                     <input type="radio" value="Mr." id="title" name="title" checked> Mr.
@@ -305,78 +267,37 @@ if ($update_userID_hidden != '') {
 
                                             <label class="kt-radio kt-radio--bold kt-radio--brand">
                                                 <input type="radio" value="IT Staff" id="permissions" name="permissions"
-
-                                                    <?php if ($update_userID_hidden != '') {
-
-                                                        if ($type_update_get == 'IT Staff') {
-
-                                                            ?>
+                                                    <?php if ($type_update_get == 'IT Staff') { ?>
                                                             checked
-                                                            <?php
-
-                                                        }
-                                                        ?>
-                                                    <?php } else {
-
-                                                        ?>
-                                                        checked
-                                                        <?php
-
-                                                    } ?>
-
-                                                > IT Staff
+                                                    <?php } if ($update_userID_hidden == '') { ?> checked
+                                                    <?php } ?> > IT Staff
                                                 <span></span>
                                             </label>
                                             <label class="kt-radio kt-radio--bold kt-radio--danger">
                                                 <input type="radio" value="Administrator" id="permissions"
                                                        name="permissions"
-                                                    <?php if ($update_userID_hidden != '') {
-
-                                                        if ($type_update_get == 'Administrator') {
-
-                                                            ?>
+                                                    <?php if ($type_update_get == 'Administrator') { ?>
                                                             checked
-                                                            <?php
-
-                                                        }
-                                                        ?>
-                                                    <?php } ?> >
+                                                    <?php } ?>
+                                                >
                                                 Administrator
                                                 <span></span>
                                             </label>
                                             <label class="kt-radio kt-radio--bold kt-radio--warning">
                                                 <input type="radio" value="Administrative Officer" id="permissions"
                                                        name="permissions"
-                                                    <?php if ($update_userID_hidden != '') {
-
-                                                        if ($type_update_get == 'Administrative Officer') {
-
-                                                            ?>
+                                                    <?php if ($type_update_get == 'Administrative Officer') { ?>
                                                             checked
-                                                            <?php
-
-                                                        }
-                                                        ?>
-                                                    <?php } ?>
-                                                >
+                                                            <?php } ?> >
                                                 Administrative Officer
                                                 <span></span>
                                             </label>
                                             <label class="kt-radio kt-radio--bold kt-radio--success">
                                                 <input type="radio" value="Observer" id="permissions"
                                                        name="permissions"
-                                                    <?php if ($update_userID_hidden != '') {
-
-                                                        if ($type_update_get == 'Observer') {
-
-                                                            ?>
+                                                    <?php if ($type_update_get == 'Observer') { ?>
                                                             checked
-                                                            <?php
-
-                                                        }
-                                                        ?>
-                                                    <?php } ?>
-                                                > Observer
+                                                            <?php } ?> > Observer
                                                 <span></span>
                                             </label>
                                         </div>
@@ -694,6 +615,235 @@ if ($update_userID_hidden != '') {
 
 <!-- end:: Content -->
 </div>
+
+<script>
+
+    $(document).ready(function () {
+
+        window.title_upd =  $('input[type=radio][name=title_up]').val();
+        window.permissions_upd = $('input[type=radio][name=permissions]').val();
+
+        $('input[type=radio][name=title_up]').change(function() {
+
+            var title_upd =  this.value;
+            window.title_upd = title_upd;
+
+        });
+
+        $('input[type=radio][name=permissions]').change(function() {
+
+            var permissions_upd =  this.value;
+            window.permissions_upd = permissions_upd;
+
+        });
+
+        $('#updateUser').click(function (e) {
+
+            e.preventDefault();
+
+            function validateEmail(email) {
+
+                const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+                return re.test(String(email).toLowerCase());
+
+            }
+
+            var logged_user_id = '<?php echo $logged_user_id; ?>';
+            var title_updt =  title_upd;
+            var firstName = $('#firstName').val();
+            var lastName = $('#lastName').val();
+            var empCode = $('#empCode').val();
+            var email = $('#email').val();
+            var permissions = permissions_upd;
+            var division = $('#division').val();
+            var password = $('#password').val();
+            var pw_cf = $('#pw_cf').val();
+            var user_id_to_update = '<?php echo $update_userID_hidden; ?>';
+            const isEmpty = str => !str.trim().length;
+
+            toastr.options = {
+                "newestOnTop": false,
+            };
+
+            KTApp.blockPage({
+                overlayColor: '#000000',
+                type: 'v2',
+                state: 'success',
+                message: 'Please wait...'
+            });
+
+            setTimeout(function () {
+                KTApp.unblockPage();
+            }, 2000000000);
+
+            if (isEmpty(firstName)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please enter the first name of the user.');
+                $('#firstName').focus();
+
+                return false;
+
+            }
+            if (isEmpty(lastName)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please enter the last name of the user.');
+                $('#lastName').focus();
+                return false;
+
+            }
+
+            if (isEmpty(empCode)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please enter the Employee code of the user.');
+                $('#empCode').focus();
+                return false;
+
+            }
+
+            if (isNaN(empCode)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Employee code should be a number.');
+                $('#empCode').focus();
+                return false;
+
+            }
+
+            if (isEmpty(email)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please enter the email of the user.');
+                $('#email').focus();
+                return false;
+
+            }
+            if (!validateEmail(email)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please enter a valid email address.');
+                $('#email').focus();
+                return false;
+
+            }
+            if (isEmpty(division)) {
+
+                KTApp.unblockPage();
+                toastr.warning('Please select the division of the user.');
+                $('#division').focus();
+                return false;
+
+            }
+
+            if (!isEmpty(password) || !isEmpty(pw_cf)) {
+
+                if (isEmpty(password)) {
+
+                    KTApp.unblockPage();
+                    toastr.warning('Please enter a password.');
+                    $('#password').focus();
+                    return false;
+
+                }
+
+                if (isEmpty(pw_cf)) {
+
+                    KTApp.unblockPage();
+                    toastr.warning('Please confirm the password.');
+                    $('#pw_cf').focus();
+                    return false;
+
+                }
+
+                if (!isEmpty(password) && password == pw_cf) {
+
+                    if (password.length < 6) {
+
+                        KTApp.unblockPage();
+                        swal.fire("Weak Password !", "Your password must contain at least six characters.", "warning");
+                        $('#password').focus();
+                        return false;
+
+                    }
+                    if (password == firstName) {
+
+                        KTApp.unblockPage();
+                        swal.fire("Confirm Password !", "Your password must be different from Username.", "warning");
+                        $('#password').focus();
+                        return false;
+
+                    }
+
+                } else {
+
+                    KTApp.unblockPage();
+                    swal.fire("Confirm Password !", "Passwords do not match !", "warning");
+                    $('#password').focus();
+                    return false;
+
+                }
+            }
+
+            $.ajax({
+
+                url: "user_update_app.php",
+                method: "POST",
+                data: {
+                    title_up: title_updt,
+                    firstName: firstName,
+                    lastName: lastName,
+                    empCode: empCode,
+                    email: email,
+                    permissions: permissions,
+                    division: division,
+                    password: password,
+                    logged_user_id: logged_user_id,
+                    user_id_to_update: user_id_to_update
+                },
+                success: function (data) {
+
+                    if (data.toString() == 2) {
+
+                        KTApp.unblockPage();
+                        swal.fire("User Already Exists !", "An user with same Employee code or Email already exists.", "error");
+
+                    }
+
+                    if (data.toString() == 1) {
+                        KTApp.unblockPage();
+                        swal.fire({
+
+                            title: "Updated Successfully !",
+                            text: "Selected user updated successfully.",
+                            type: "success"
+
+                        }).then(function() {
+
+                            window.location = "user_list.php";
+
+                        });
+
+                    }
+
+                    if (data.toString() == 0) {
+
+                        KTApp.unblockPage();
+                        swal.fire("Something went wrong !", "Failed updating the user", "error");
+
+                    }
+
+                }
+
+            });
+
+        });
+
+    });
+
+</script>
+
 <script>
 
     $(document).ready(function () {
@@ -876,210 +1026,6 @@ if ($update_userID_hidden != '') {
 
                         KTApp.unblockPage();
                         swal.fire("Something went wrong !", "Failed creating the user", "error");
-
-                    }
-
-                }
-
-            });
-
-        });
-
-        $('#updateUser').click(function (e) {
-
-            e.preventDefault();
-
-            function validateEmail(email) {
-
-                const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-                return re.test(String(email).toLowerCase());
-
-            }
-
-            var logged_user_id = '<?php echo $logged_user_id; ?>';
-            var title = $('#title').val();
-            var firstName = $('#firstName').val();
-            var lastName = $('#lastName').val();
-            var empCode = $('#empCode').val();
-            var email = $('#email').val();
-            var permissions = $('#permissions').val();
-            var division = $('#division').val();
-            var password = $('#password').val();
-            var pw_cf = $('#pw_cf').val();
-            var user_id_to_update = '<?php echo $update_userID_hidden; ?>';
-
-            const isEmpty = str => !str.trim().length;
-
-            toastr.options = {
-                "newestOnTop": false,
-            };
-
-            KTApp.blockPage({
-                overlayColor: '#000000',
-                type: 'v2',
-                state: 'success',
-                message: 'Please wait...'
-            });
-
-            setTimeout(function () {
-                KTApp.unblockPage();
-            }, 2000000000);
-
-            if (isEmpty(firstName)) {
-
-                KTApp.unblockPage();
-                toastr.warning('Please enter the first name of the user.');
-                $('#firstName').focus();
-
-                return false;
-
-            }
-            if (isEmpty(lastName)) {
-
-                KTApp.unblockPage();
-                toastr.warning('Please enter the last name of the user.');
-                $('#lastName').focus();
-                return false;
-
-            }
-
-            if (isEmpty(empCode)) {
-
-                KTApp.unblockPage();
-                toastr.warning('Please enter the Employee code of the user.');
-                $('#empCode').focus();
-                return false;
-
-            }
-
-            if (isNaN(empCode)) {
-
-                KTApp.unblockPage();
-                toastr.warning('Employee code should be a number.');
-                $('#empCode').focus();
-                return false;
-
-            }
-
-            if (isEmpty(email)) {
-
-                KTApp.unblockPage();
-                toastr.warning('Please enter the email of the user.');
-                $('#email').focus();
-                return false;
-
-            }
-            if (!validateEmail(email)) {
-
-                KTApp.unblockPage();
-                toastr.warning('Please enter a valid email address.');
-                $('#email').focus();
-                return false;
-
-            }
-            if (isEmpty(division)) {
-
-                KTApp.unblockPage();
-                toastr.warning('Please select the division of the user.');
-                $('#division').focus();
-                return false;
-
-            }
-
-            if (!isEmpty(password) || !isEmpty(pw_cf)) {
-
-                if (isEmpty(password)) {
-
-                    KTApp.unblockPage();
-                    toastr.warning('Please enter a password.');
-                    $('#password').focus();
-                    return false;
-
-                }
-
-                if (isEmpty(pw_cf)) {
-
-                    KTApp.unblockPage();
-                    toastr.warning('Please confirm the password.');
-                    $('#pw_cf').focus();
-                    return false;
-
-                }
-
-                if (!isEmpty(password) && password == pw_cf) {
-
-                    if (password.length < 6) {
-
-                        KTApp.unblockPage();
-                        swal.fire("Weak Password !", "Your password must contain at least six characters.", "warning");
-                        $('#password').focus();
-                        return false;
-
-                    }
-                    if (password == firstName) {
-
-                        KTApp.unblockPage();
-                        swal.fire("Confirm Password !", "Your password must be different from Username.", "warning");
-                        $('#password').focus();
-                        return false;
-
-                    }
-
-                } else {
-
-                    KTApp.unblockPage();
-                    swal.fire("Confirm Password !", "Passwords do not match !", "warning");
-                    $('#password').focus();
-                    return false;
-
-                }
-            }
-
-            $.ajax({
-
-                url: "user_update_app.php",
-                method: "POST",
-                data: {
-                    title: title,
-                    firstName: firstName,
-                    lastName: lastName,
-                    empCode: empCode,
-                    email: email,
-                    permissions: permissions,
-                    division: division,
-                    password: password,
-                    logged_user_id: logged_user_id,
-                    user_id_to_update: user_id_to_update
-                },
-                success: function (data) {
-
-                    if (data.toString() == 2) {
-
-                        KTApp.unblockPage();
-                        swal.fire("User Already Exists !", "An user with same Employee code or Email already exists.", "error");
-
-                    }
-
-                    if (data.toString() == 1) {
-                        KTApp.unblockPage();
-                        swal.fire({
-
-                            title: "Updated Successfully !",
-                            text: "Selected user updated successfully.",
-                            type: "success"
-
-                        }).then(function() {
-
-                            window.location = "user_list.php";
-
-                        });
-
-                    }
-
-                    if (data.toString() == 0) {
-
-                        KTApp.unblockPage();
-                        swal.fire("Something went wrong !", "Failed updating the user", "error");
 
                     }
 
