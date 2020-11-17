@@ -58,7 +58,7 @@
                             <!--begin::Aside Top-->
                             <div class="d-flex flex-column-fluid flex-column px-xxl-30 px-10">
                                 <!--begin: Wizard Nav-->
-                                <div class="wizard-nav d-flex d-flex justify-content-center pt-10 pt-lg-20 pb-5">
+                                <div  class="wizard-nav d-flex d-flex justify-content-center pt-10 pt-lg-20 pb-5">
                                     <!--begin::Wizard Steps-->
                                     <div class="wizard-steps">
                                         <!--begin::Wizard Step 1 Nav-->
@@ -137,12 +137,26 @@
                                             <input type="text" class="form-control h-auto p-5 border-0 rounded-lg font-size-h6" name="firstname" placeholder="Enter your name" value="" />
                                         </div>
                                         <!--end::Form Group-->
-                                        <!--begin::Form Group-->
-                                        <div class="form-group">
-                                            <label class="font-size-h6 font-weight-bolder text-dark">Employee Code</label>
-                                            <input type="text" class="form-control h-auto p-6 border-0 rounded-lg font-size-h6" name="lastname" placeholder="Applicant's Employee Code" value="" />
+
+
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+                                                <!--end::Form Group-->
+                                                <div class="form-group">
+                                                    <label class="font-size-h6 font-weight-bolder text-dark">Employee Code</label>
+                                                    <input type="text" class="form-control h-auto p-5 border-0 rounded-lg font-size-h6" name="city" placeholder="City" value="Melbourne" />
+                                                </div>
+                                                <!--begin::Form Group-->
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <!--end::Form Group-->
+                                                <div class="form-group">
+                                                    <label class="font-size-h6 font-weight-bolder text-dark">Extension No.</label>
+                                                    <input type="text" class="form-control h-auto p-5 border-0 rounded-lg font-size-h6" name="city" placeholder="City" value="Melbourne" />
+                                                </div>
+                                                <!--end::Form Group-->
+                                            </div>
                                         </div>
-                                        <!--end::Form Group-->
 
                                         <div class="form-group">
                                             <label class="font-size-h6 font-weight-bolder text-dark">Designation</label>
@@ -151,16 +165,14 @@
 
                                         <!--end::Form Group-->
                                         <div class="form-group">
-                                            <label class="font-size-h6 font-weight-bolder text-dark">Country</label>
+                                            <label class="font-size-h6 font-weight-bolder text-dark">Division</label>
                                             <select name="country" class="form-control h-auto p-5 border-0 rounded-lg font-size-h6">
-                                                <option value="">Select</option>
-                                                <option value="AF">Afghanistan</option>
-                                                <option value="AX">Åland Islands</option>
-                                                <option value="ZM">Zambia</option>
-                                                <option value="ZW">Zimbabwe</option>
+                                                <option value="">Select Applicant's Division</option>
+
                                             </select>
                                         </div>
                                         <!--end::Form Group-->
+
 
                                     </div>
                                     <!--end: Wizard Step 1-->
@@ -310,7 +322,6 @@
 <!--begin::Global Theme Bundle(used by all pages)-->
 <script src="assets/plugins/wizard/prismjs.bundle.js"></script>
 <script src="assets/js/pages/custom/wizard/wizard-5.js"></script>
-<!--
+
 <script src="assets/plugins/wizard/plugins.bundle.js"></script>
 <script src="assets/plugins/wizard/scripts.bundle.js"></script>
--->
