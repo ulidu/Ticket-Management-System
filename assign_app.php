@@ -15,10 +15,8 @@ if (isset($_POST["staff1"])) {
     $ticket_id = $_POST['ticket_id'];
     $logged_user_id = $_POST['logged_user_id'];
 
-
     $query_select = "SELECT task_id FROM assign WHERE task_id = '$ticket_id'";
     $run_query_select = mysqli_query($con, $query_select);
-
 
     $row1 = mysqli_fetch_array($run_query_select, MYSQLI_ASSOC);
 
