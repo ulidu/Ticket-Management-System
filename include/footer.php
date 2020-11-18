@@ -157,7 +157,7 @@ $acc_type_logged = $_SESSION['acc_type_logged'];
 <script>
     function export_db_pw() {
         var txt;
-        var person = prompt("Please enter the superuser password :");
+        var person = prompt("Please enter the superuser password for exporting the database :");
         if (person != "" && person != null) {
 
             var popout = window.open('export_app.php?su='+person);
