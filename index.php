@@ -3,12 +3,9 @@
 
 <!-- begin:: Content -->
 
-
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
-
     <div class="row">
-
 
         <div style="cursor: pointer;" onclick="location.href='task_add.php';" class="col-lg-3">
             <div class="kt-portlet kt-iconbox kt-iconbox--brand kt-iconbox--animate-slower">
@@ -536,7 +533,7 @@
                 <div class="kt-portlet__head">
                     <div class="kt-portlet__head-label">
                         <h3 class="kt-portlet__head-title">
-                            Latest Log
+                            Event Log
                         </h3>
                     </div>
                     <div class="kt-portlet__head-toolbar">
@@ -557,6 +554,11 @@
                                     Month
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#kt_widget4_tab14_content" role="tab">
+                                    All
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -566,105 +568,68 @@
                             <div class="kt-scroll" data-scroll="true" data-height="400" style="height: 400px;">
                                 <div class="kt-list-timeline">
                                     <div class="kt-list-timeline__items">
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">12 new users registered</span>
-                                            <span class="kt-list-timeline__time">Just now</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">System shutdown <span
-                                                        class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">pending</span></span>
-                                            <span class="kt-list-timeline__time">14 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
-                                            <span class="kt-list-timeline__text">New invoice received</span>
-                                            <span class="kt-list-timeline__time">20 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
-                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
-                                            <span class="kt-list-timeline__time">1 hr</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
-                                            <span class="kt-list-timeline__text">System error - <a href="#"
-                                                                                                   class="kt-link">Check</a></span>
-                                            <span class="kt-list-timeline__time">2 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--brand"></span>
-                                            <span class="kt-list-timeline__text">Production server down</span>
-                                            <span class="kt-list-timeline__time">3 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">Production server up</span>
-                                            <span class="kt-list-timeline__time">5 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span href="" class="kt-list-timeline__text">New order received <span
-                                                        class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
-                                            <span class="kt-list-timeline__time">7 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">12 new users registered</span>
-                                            <span class="kt-list-timeline__time">Just now</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">System shutdown <span
-                                                        class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">pending</span></span>
-                                            <span class="kt-list-timeline__time">14 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
-                                            <span class="kt-list-timeline__text">New invoice received</span>
-                                            <span class="kt-list-timeline__time">20 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
-                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
-                                            <span class="kt-list-timeline__time">1 hr</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
-                                            <span class="kt-list-timeline__text">New invoice received</span>
-                                            <span class="kt-list-timeline__time">20 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
-                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
-                                            <span class="kt-list-timeline__time">1 hr</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
-                                            <span class="kt-list-timeline__text">System error - <a href="#"
-                                                                                                   class="kt-link">Check</a></span>
-                                            <span class="kt-list-timeline__time">2 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--brand"></span>
-                                            <span class="kt-list-timeline__text">Production server down</span>
-                                            <span class="kt-list-timeline__time">3 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">Production server up</span>
-                                            <span class="kt-list-timeline__time">5 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span href="" class="kt-list-timeline__text">New order received <span
-                                                        class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
-                                            <span class="kt-list-timeline__time">7 hrs</span>
-                                        </div>
+
+                                        <?php
+
+                                        date_default_timezone_set('Asia/Colombo');
+
+                                        $string = date("Y-m-d");
+                                        $date = DateTime::createFromFormat("Y-m-d", $string);
+
+                                        $date = date('Y-m-d H:i:s');
+                                        $time = date('H:i:s');
+                                        $today_d_c1 = $date;
+
+                                        $d2 = date('Y-m-d', strtotime('-1 day'));
+                                        $back_1_day = $d2 . ' ' . $time;
+
+                                        $event_log = "SELECT * FROM log where log_date_time between '$back_1_day' and '$today_d_c1' ORDER BY logID desc";
+                                        $run_event_log = mysqli_query($con, $event_log);
+
+                                        while ($row_event_log = mysqli_fetch_assoc($run_event_log)) {
+
+                                            $logID = $row_event_log['logID'];
+                                            $log_userID = $row_event_log['log_userID'];
+                                            $log_date_time = $row_event_log['log_date_time'];
+                                            $log_action = $row_event_log['log_action'];
+                                            $log_emp_code = $row_event_log['log_emp_code'];
+
+                                            ?>
+
+                                            <div class="kt-list-timeline__item">
+                                                <span class="kt-list-timeline__badge
+
+                                               <?php if (strpos($log_action, 'Disabled the user') !== false) { ?>
+                                                    kt-list-timeline__badge--danger
+                                               <?php } elseif (strpos($log_action, 'Updated an existing user') !== false) { ?>
+                                                    kt-list-timeline__badge--brand
+                                                <?php } elseif (strpos($log_action, 'New ticket added') !== false) { ?>
+                                                    kt-list-timeline__badge--success
+                                                <?php } elseif (strpos($log_action, 'Rejected and Deleted the ticket') !== false) { ?>
+                                                    kt-list-timeline__badge--warning
+                                                <?php } elseif (strpos($log_action, 'Updated an existing user') !== false) { ?>
+                                                    kt-list-timeline__badge--success
+                                                <?php } elseif (strpos($log_action, 're-assigned the previously assigned') !== false) { ?>
+                                                    kt-list-timeline__badge--info
+                                                <?php } else { ?>
+                                                    kt-list-timeline__badge--primary
+                                                <?php } ?> ">
+
+                                                </span>
+                                                <span href="" class="kt-list-timeline__text"><?php echo $log_action; ?>
+
+                                                    <?php if (strpos($log_action, 'Deleted') !== false) { ?>
+                                                        <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">Deleted</span>
+                                                    <?php } elseif (strpos($log_action, 'Disabled') !== false) { ?>
+                                                        <span class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Disabled</span>
+                                                    <?php } ?>
+
+                                            </span>
+                                                <span class="kt-list-timeline__time"><?php echo $log_date_time; ?> </span>
+                                            </div>
+
+                                        <?php } ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -673,89 +638,68 @@
                             <div class="kt-scroll" data-scroll="true" data-height="400" style="height: 400px;">
                                 <div class="kt-list-timeline">
                                     <div class="kt-list-timeline__items">
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
-                                            <span class="kt-list-timeline__text">New invoice received</span>
-                                            <span class="kt-list-timeline__time">20 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
-                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
-                                            <span class="kt-list-timeline__time">1 hr</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
-                                            <span class="kt-list-timeline__text">New invoice received</span>
-                                            <span class="kt-list-timeline__time">20 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">12 new users registered</span>
-                                            <span class="kt-list-timeline__time">Just now</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">System shutdown <span
-                                                        class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">pending</span></span>
-                                            <span class="kt-list-timeline__time">14 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
-                                            <span class="kt-list-timeline__text">New invoice received</span>
-                                            <span class="kt-list-timeline__time">20 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
-                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
-                                            <span class="kt-list-timeline__time">1 hr</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
-                                            <span class="kt-list-timeline__text">System error - <a href="#"
-                                                                                                   class="kt-link">Check</a></span>
-                                            <span class="kt-list-timeline__time">2 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
-                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
-                                            <span class="kt-list-timeline__time">1 hr</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
-                                            <span class="kt-list-timeline__text">New invoice received</span>
-                                            <span class="kt-list-timeline__time">20 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
-                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
-                                            <span class="kt-list-timeline__time">1 hr</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
-                                            <span class="kt-list-timeline__text">System error - <a href="#"
-                                                                                                   class="kt-link">Check</a></span>
-                                            <span class="kt-list-timeline__time">2 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--brand"></span>
-                                            <span class="kt-list-timeline__text">Production server down</span>
-                                            <span class="kt-list-timeline__time">3 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">Production server up</span>
-                                            <span class="kt-list-timeline__time">5 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span href="" class="kt-list-timeline__text">New order received <span
-                                                        class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
-                                            <span class="kt-list-timeline__time">7 hrs</span>
-                                        </div>
+
+                                        <?php
+
+                                        date_default_timezone_set('Asia/Colombo');
+
+                                        $string = date("Y-m-d");
+                                        $date = DateTime::createFromFormat("Y-m-d", $string);
+
+                                        $date = date('Y-m-d H:i:s');
+                                        $time = date('H:i:s');
+                                        $today_d_c1 = $date;
+
+                                        $d2 = date('Y-m-d', strtotime('-7 days'));
+                                        $back_7_days = $d2 . ' ' . $time;
+
+                                        $event_log = "SELECT * FROM log where log_date_time between '$back_7_days' and '$today_d_c1' ORDER BY logID desc";
+                                        $run_event_log = mysqli_query($con, $event_log);
+
+                                        while ($row_event_log = mysqli_fetch_assoc($run_event_log)) {
+
+                                            $logID = $row_event_log['logID'];
+                                            $log_userID = $row_event_log['log_userID'];
+                                            $log_date_time = $row_event_log['log_date_time'];
+                                            $log_action = $row_event_log['log_action'];
+                                            $log_emp_code = $row_event_log['log_emp_code'];
+
+                                            ?>
+
+                                            <div class="kt-list-timeline__item">
+                                                <span class="kt-list-timeline__badge
+
+                                               <?php if (strpos($log_action, 'Disabled the user') !== false) { ?>
+                                                    kt-list-timeline__badge--danger
+                                               <?php } elseif (strpos($log_action, 'Updated an existing user') !== false) { ?>
+                                                    kt-list-timeline__badge--brand
+                                                <?php } elseif (strpos($log_action, 'New ticket added') !== false) { ?>
+                                                    kt-list-timeline__badge--success
+                                                <?php } elseif (strpos($log_action, 'Rejected and Deleted the ticket') !== false) { ?>
+                                                    kt-list-timeline__badge--warning
+                                                <?php } elseif (strpos($log_action, 'Updated an existing user') !== false) { ?>
+                                                    kt-list-timeline__badge--success
+                                                <?php } elseif (strpos($log_action, 're-assigned the previously assigned') !== false) { ?>
+                                                    kt-list-timeline__badge--info
+                                                <?php } else { ?>
+                                                    kt-list-timeline__badge--primary
+                                                <?php } ?> ">
+
+                                                </span>
+                                                <span href="" class="kt-list-timeline__text"><?php echo $log_action; ?>
+
+                                                    <?php if (strpos($log_action, 'Deleted') !== false) { ?>
+                                                        <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">Deleted</span>
+                                                    <?php } elseif (strpos($log_action, 'Disabled') !== false) { ?>
+                                                        <span class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Disabled</span>
+                                                    <?php } ?>
+
+                                            </span>
+                                                <span class="kt-list-timeline__time"><?php echo $log_date_time; ?> </span>
+                                            </div>
+
+                                        <?php } ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -764,89 +708,134 @@
                             <div class="kt-scroll" data-scroll="true" data-height="400" style="height: 400px;">
                                 <div class="kt-list-timeline">
                                     <div class="kt-list-timeline__items">
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span href="" class="kt-list-timeline__text">New order received <span
-                                                        class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">urgent</span></span>
-                                            <span class="kt-list-timeline__time">7 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--brand"></span>
-                                            <span class="kt-list-timeline__text">New invoice received</span>
-                                            <span class="kt-list-timeline__time">20 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
-                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
-                                            <span class="kt-list-timeline__time">1 hr</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
-                                            <span class="kt-list-timeline__text">New invoice received</span>
-                                            <span class="kt-list-timeline__time">20 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">12 new users registered</span>
-                                            <span class="kt-list-timeline__time">Just now</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">System shutdown <span
-                                                        class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">pending</span></span>
-                                            <span class="kt-list-timeline__time">14 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
-                                            <span class="kt-list-timeline__text">New invoice received</span>
-                                            <span class="kt-list-timeline__time">20 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
-                                                        class="kt-badge kt-badge--info kt-badge--inline kt-badge--pill">settled</span></span>
-                                            <span class="kt-list-timeline__time">1 hr</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
-                                            <span class="kt-list-timeline__text">System error - <a href="#"
-                                                                                                   class="kt-link">Check</a></span>
-                                            <span class="kt-list-timeline__time">2 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
-                                                        class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill">settled</span></span>
-                                            <span class="kt-list-timeline__time">1 hr</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
-                                            <span class="kt-list-timeline__text">New invoice received</span>
-                                            <span class="kt-list-timeline__time">20 mins</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
-                                            <span class="kt-list-timeline__text">DB overloaded 80% <span
-                                                        class="kt-badge kt-badge--success kt-badge--inline kt-badge--pill">settled</span></span>
-                                            <span class="kt-list-timeline__time">1 hr</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
-                                            <span class="kt-list-timeline__text">System error - <a href="#"
-                                                                                                   class="kt-link">Check</a></span>
-                                            <span class="kt-list-timeline__time">2 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--brand"></span>
-                                            <span class="kt-list-timeline__text">Production server down</span>
-                                            <span class="kt-list-timeline__time">3 hrs</span>
-                                        </div>
-                                        <div class="kt-list-timeline__item">
-                                            <span class="kt-list-timeline__badge kt-list-timeline__badge--info"></span>
-                                            <span class="kt-list-timeline__text">Production server up</span>
-                                            <span class="kt-list-timeline__time">5 hrs</span>
-                                        </div>
+
+                                        <?php
+
+                                        date_default_timezone_set('Asia/Colombo');
+
+                                        $string = date("Y-m-d");
+                                        $date = DateTime::createFromFormat("Y-m-d", $string);
+
+                                        $date = date('Y-m-d H:i:s');
+                                        $time = date('H:i:s');
+                                        $today_d_c1 = $date;
+
+                                        $d2 = date('Y-m-d', strtotime('-30 days'));
+                                        $back_30_days = $d2 . ' ' . $time;
+
+                                        $event_log = "SELECT * FROM log where log_date_time between '$back_30_days' and '$today_d_c1' ORDER BY logID desc";
+                                        $run_event_log = mysqli_query($con, $event_log);
+
+                                        while ($row_event_log = mysqli_fetch_assoc($run_event_log)) {
+
+                                            $logID = $row_event_log['logID'];
+                                            $log_userID = $row_event_log['log_userID'];
+                                            $log_date_time = $row_event_log['log_date_time'];
+                                            $log_action = $row_event_log['log_action'];
+                                            $log_emp_code = $row_event_log['log_emp_code'];
+
+                                            ?>
+                                            <div class="kt-list-timeline__item">
+                                                <span class="kt-list-timeline__badge
+
+                                               <?php if (strpos($log_action, 'Disabled the user') !== false) { ?>
+                                                    kt-list-timeline__badge--danger
+                                               <?php } elseif (strpos($log_action, 'Updated an existing user') !== false) { ?>
+                                                    kt-list-timeline__badge--brand
+                                                <?php } elseif (strpos($log_action, 'New ticket added') !== false) { ?>
+                                                    kt-list-timeline__badge--success
+                                                <?php } elseif (strpos($log_action, 'Rejected and Deleted the ticket') !== false) { ?>
+                                                    kt-list-timeline__badge--warning
+                                                <?php } elseif (strpos($log_action, 'Updated an existing user') !== false) { ?>
+                                                    kt-list-timeline__badge--success
+                                                <?php } elseif (strpos($log_action, 're-assigned the previously assigned') !== false) { ?>
+                                                    kt-list-timeline__badge--info
+                                                <?php } else { ?>
+                                                    kt-list-timeline__badge--primary
+                                                <?php } ?> ">
+
+                                                </span>
+                                                <span href="" class="kt-list-timeline__text"><?php echo $log_action; ?>
+
+                                                    <?php if (strpos($log_action, 'Deleted') !== false) { ?>
+                                                        <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">Deleted</span>
+                                                    <?php } elseif (strpos($log_action, 'Disabled') !== false) { ?>
+                                                        <span class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Disabled</span>
+                                                    <?php } ?>
+
+                                            </span>
+                                                <span class="kt-list-timeline__time"><?php echo $log_date_time; ?> </span>
+                                            </div>
+                                        <?php } ?>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="kt_widget4_tab14_content">
+                            <div class="kt-scroll" data-scroll="true" data-height="400" style="height: 400px;">
+                                <div class="kt-list-timeline">
+                                    <div class="kt-list-timeline__items">
+
+                                        <?php
+
+                                        date_default_timezone_set('Asia/Colombo');
+
+                                        $string = date("Y-m-d");
+                                        $date = DateTime::createFromFormat("Y-m-d", $string);
+
+                                        $date = date('Y-m-d H:i:s');
+                                        $time = date('H:i:s');
+                                        $today_d_c1 = $date;
+
+                                        $d2 = date('Y-m-d', strtotime('-30 days'));
+                                        $back_30_days = $d2 . ' ' . $time;
+
+                                        $event_log = "SELECT * FROM log ORDER BY logID desc";
+                                        $run_event_log = mysqli_query($con, $event_log);
+
+                                        while ($row_event_log = mysqli_fetch_assoc($run_event_log)) {
+
+                                            $logID = $row_event_log['logID'];
+                                            $log_userID = $row_event_log['log_userID'];
+                                            $log_date_time = $row_event_log['log_date_time'];
+                                            $log_action = $row_event_log['log_action'];
+                                            $log_emp_code = $row_event_log['log_emp_code'];
+
+                                            ?>
+                                            <div class="kt-list-timeline__item">
+                                                <span class="kt-list-timeline__badge
+
+                                               <?php if (strpos($log_action, 'Disabled the user') !== false) { ?>
+                                                    kt-list-timeline__badge--danger
+                                               <?php } elseif (strpos($log_action, 'Updated an existing user') !== false) { ?>
+                                                    kt-list-timeline__badge--brand
+                                                <?php } elseif (strpos($log_action, 'New ticket added') !== false) { ?>
+                                                    kt-list-timeline__badge--success
+                                                <?php } elseif (strpos($log_action, 'Rejected and Deleted the ticket') !== false) { ?>
+                                                    kt-list-timeline__badge--warning
+                                                <?php } elseif (strpos($log_action, 'Updated an existing user') !== false) { ?>
+                                                    kt-list-timeline__badge--success
+                                                <?php } elseif (strpos($log_action, 're-assigned the previously assigned') !== false) { ?>
+                                                    kt-list-timeline__badge--info
+                                                <?php } else { ?>
+                                                    kt-list-timeline__badge--primary
+                                                <?php } ?> ">
+
+                                                </span>
+                                                <span href="" class="kt-list-timeline__text"><?php echo $log_action; ?>
+
+                                                    <?php if (strpos($log_action, 'Deleted') !== false) { ?>
+                                                        <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill">Deleted</span>
+                                                    <?php } elseif (strpos($log_action, 'Disabled') !== false) { ?>
+                                                        <span class="kt-badge kt-badge--warning kt-badge--inline kt-badge--pill">Disabled</span>
+                                                    <?php } ?>
+
+                                            </span>
+                                                <span class="kt-list-timeline__time"><?php echo $log_date_time; ?> </span>
+                                            </div>
+                                        <?php } ?>
+
                                     </div>
                                 </div>
                             </div>
@@ -854,13 +843,10 @@
                     </div>
                 </div>
             </div>
-
             <!--end:: Widgets/Audit Log-->
-
         </div>
     </div>
 </div>
-
 <!-- end:: Content -->
 </div>
 

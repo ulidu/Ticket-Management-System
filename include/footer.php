@@ -154,7 +154,20 @@ $acc_type_logged = $_SESSION['acc_type_logged'];
 
 </script>
 
+<script>
+    function export_db_pw() {
+        var txt;
+        var person = prompt("Please enter the superuser password :");
+        if (person != "" && person != null) {
 
+            var popout = window.open('export_app.php?su='+person);
+            window.setTimeout(function(){
+                popout.close();
+            }, 1000);
+
+        }
+    }
+</script>
 
 <!--begin::Global Theme Bundle(used by all pages) -->
 <?php

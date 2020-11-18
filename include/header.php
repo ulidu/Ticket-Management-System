@@ -32,6 +32,16 @@ $_SESSION['last_action'] = time();
 
 ?>
 
+<?php
+
+$download_path = 'database/tms_db_export.sql.gz';
+
+if (file_exists($download_path) && filectime($download_path) < (time()-10)){
+    unlink($download_path);
+}
+
+?>
+
 <?php date_default_timezone_set('Asia/Colombo'); ?>
 
 <!DOCTYPE html>
