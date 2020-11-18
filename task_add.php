@@ -308,20 +308,20 @@
                                         <!--begin::Section-->
                                         <h4 class="font-weight-bolder mb-3">Applicant Details :</h4>
                                         <div class="text-dark-50 font-weight-bold line-height-lg mb-8">
-                                            <div>Applicant Name : <span class="font-weight-bold kt-font-dark" id="app_name_review"></span></div>
-                                            <div>Employee Code : <span class="font-weight-bold kt-font-dark" id="emp_code_review"></span></div>
-                                            <div>Extension No. : <span class="font-weight-bold kt-font-dark" id="ext_no_review"></span></div>
-                                            <div>Designation : <span class="font-weight-bold kt-font-dark" id="designation_review"></span></div>
-                                            <div>Division : <span class="font-weight-bold kt-font-dark" id="division_review"></span></div>
+                                            <div>Applicant Name : <span class="font-weight-bold kt-font-brand font-size-h5" id="app_name_review"></span></div>
+                                            <div>Employee Code : <span class="font-weight-bold kt-font-brand font-size-h5" id="emp_code_review"></span></div>
+                                            <div>Extension No. : <span class="font-weight-bold kt-font-brand font-size-h5" id="ext_no_review"></span></div>
+                                            <div>Designation : <span class="font-weight-bold kt-font-brand font-size-h5" id="designation_review"></span></div>
+                                            <div>Division : <span class="font-weight-bold kt-font-brand font-size-h5" id="division_review"></span></div>
                                         </div>
                                         <!--end::Section-->
                                         <!--begin::Section-->
                                         <h4 class="font-weight-bolder mb-3">Issue Details :</h4>
                                         <div class="text-dark-50 font-weight-bold line-height-lg mb-8">
-                                            <div>Issue : <span class="font-weight-bold kt-font-dark" id="issue_review"></span></div>
-                                            <div>Issue Category : <span class="font-weight-bold kt-font-dark" id="issue_cat_review"></span></div>
-                                            <div>Asset Code : <span class="font-weight-bold kt-font-dark" id="asset_code_review"></span></div>
-                                            <div>Priority : <span class="font-weight-bold kt-font-dark" id="priority_review"></span></div>
+                                            <div>Issue : <span class="font-weight-bold kt-font-brand font-size-h5" id="issue_review"></span></div>
+                                            <div>Issue Category : <span class="font-weight-bold kt-font-brand font-size-h5" id="issue_cat_review"></span></div>
+                                            <div>Asset Code : <span class="font-weight-bold kt-font-brand font-size-h5" id="asset_code_review"></span></div>
+                                            <div>Priority : <span class="font-weight-bold kt-font-brand font-size-h5" id="priority_review"></span></div>
                                         </div>
                                         <!--end::Section-->
                                         <!--begin::Section-->

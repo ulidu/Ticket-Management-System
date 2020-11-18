@@ -53,6 +53,27 @@ var KTWizard5 = function () {
         // Change event
         _wizardObj.on('changed', function (wizard) {
             KTUtil.scrollTop();
+
+            var name_r = $('#name').val();
+            var emp_code_r = $('#emp_code').val();
+            var ext_r = $('#ext').val();
+            var designation_r = $('#designation').val();
+            var division_r = $('#division').val();
+            var issue_r = $('#issue').val();
+            var cat_issue_r = $('#cat_issue').val();
+            var asst_code_r = $('#asst_code').val();
+            var priority_r = $('#priority').val();
+
+            $('#app_name_review').text(name_r);
+            $('#emp_code_review').text(emp_code_r);
+            $('#ext_no_review').text(ext_r);
+            $('#designation_review').text(designation_r);
+            $('#division_review').text(division_r);
+            $('#issue_review').text(issue_r);
+            $('#issue_cat_review').text(cat_issue_r);
+            $('#asset_code_review').text(asst_code_r);
+            $('#priority_review').text(priority_r);
+
         });
 
         // Submit event
