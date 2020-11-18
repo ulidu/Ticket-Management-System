@@ -144,7 +144,7 @@
                 <div class="kt-portlet__head">
                     <div class="kt-portlet__head-label">
                         <h3 class="kt-portlet__head-title">
-                            Support Cases <small>premium clients</small>
+                            Issue Categories <small>Ticket types</small>
                         </h3>
                     </div>
                     <div class="kt-portlet__head-toolbar">
@@ -175,7 +175,7 @@
                         <div class="kt-widget16__items">
                             <div class="kt-widget16__item">
 														<span class="kt-widget16__sceduled">
-															Type
+															Category
 														</span>
                                 <span class="kt-widget16__amount">
 															Amount
@@ -183,43 +183,53 @@
                             </div>
                             <div class="kt-widget16__item">
 														<span class="kt-widget16__date">
-															EPS
+															Software
 														</span>
                                 <span class="kt-widget16__price  kt-font-brand">
-															+78,05%
+															20
 														</span>
                             </div>
                             <div class="kt-widget16__item">
 														<span class="kt-widget16__date">
-															PDO
+															Hardware
 														</span>
                                 <span class="kt-widget16__price  kt-font-success">
-															21,700
+															10
 														</span>
                             </div>
                             <div class="kt-widget16__item">
 														<span class="kt-widget16__date">
-															OPL Status
+															Networking
 														</span>
                                 <span class="kt-widget16__price  kt-font-danger">
-															Negative
+															11
 														</span>
                             </div>
                             <div class="kt-widget16__item">
 														<span class="kt-widget16__date">
-															Priority
-														</span>
-                                <span class="kt-widget16__price  kt-font-brand">
-															+500,200
-														</span>
-                            </div>
-                            <div class="kt-widget16__item">
-														<span class="kt-widget16__date">
-															Net Prifit
+															Printers
 														</span>
                                 <span class="kt-widget16__price  kt-font-warning">
-															$18,540,60
+														20
 														</span>
+                            </div>
+                            <div class="kt-widget16__item">
+														<span class="kt-widget16__date">
+															General
+														</span>
+                                <span class="kt-widget16__price  kt-font-primary">
+															8
+														</span>
+
+                            </div>
+                            <div class="kt-widget16__item">
+														<span class="kt-widget16__date">
+															Other
+														</span>
+                                <span class="kt-widget16__price  kt-font-dark">
+															8
+														</span>
+
                             </div>
                         </div>
                         <div class="kt-widget16__stats">
