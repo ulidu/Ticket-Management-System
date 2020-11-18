@@ -13,7 +13,7 @@ var KTWizard5 = function () {
         // Initialize form wizard
         _wizardObj = new KTWizard(_wizardEl, {
             startStep: 1, // initial active step number
-            clickableSteps: true  // allow step clicking
+            clickableSteps: false  // allow step clicking
         });
 
         // Validation before going to next page
@@ -33,10 +33,10 @@ var KTWizard5 = function () {
                         KTUtil.scrollTop();
                     } else {
                         Swal.fire({
-                            text: "Sorry, looks like there are some errors detected, please try again.",
+                            text: "There are some errors in your submission. Please correct them before proceeding.",
                             icon: "error",
                             buttonsStyling: false,
-                            confirmButtonText: "Ok, got it!",
+                            confirmButtonText: "OK",
                             customClass: {
                                 confirmButton: "btn font-weight-bold btn-light"
                             }
@@ -58,12 +58,13 @@ var KTWizard5 = function () {
         // Submit event
         _wizardObj.on('submit', function (wizard) {
             Swal.fire({
-                text: "All is good! Please confirm the form submission.",
-                icon: "success",
+                title: "Are you sure ?",
+                text: "Please confirm the ticket submission.",
+                icon: "warning",
                 showCancelButton: true,
                 buttonsStyling: false,
-                confirmButtonText: "Yes, submit!",
-                cancelButtonText: "No, cancel",
+                confirmButtonText: "Confirm",
+                cancelButtonText: "Cancel",
                 customClass: {
                     confirmButton: "btn font-weight-bold btn-primary",
                     cancelButton: "btn font-weight-bold btn-default"
@@ -71,16 +72,6 @@ var KTWizard5 = function () {
             }).then(function (result) {
                 if (result.value) {
                     _formEl.submit(); // Submit form
-                } else if (result.dismiss === 'cancel') {
-                    Swal.fire({
-                        text: "Your form has not been submitted!.",
-                        icon: "error",
-                        buttonsStyling: false,
-                        confirmButtonText: "Ok, got it!",
-                        customClass: {
-                            confirmButton: "btn font-weight-bold btn-primary",
-                        }
-                    });
                 }
             });
         });
@@ -93,24 +84,41 @@ var KTWizard5 = function () {
             _formEl,
             {
                 fields: {
-                    firstname: {
+                    name: {
                         validators: {
                             notEmpty: {
-                                message: 'First name is required'
+                                message: 'Applicant name is required'
                             }
                         }
                     },
-                    lastname: {
+                    emp_code: {
                         validators: {
-                            notEmpty: {
-                                message: 'Last name is required'
+                            integer : {
+                                message : 'Invalid employee code'
+                            },
+                            notEmpty : {
+                                message : 'Employee code is required'
                             }
                         }
                     },
-                    phone: {
+                    ext: {
+                        validators: {
+                            integer : {
+                                message : 'Invalid extension no.'
+                            }
+                        }
+                    },
+                    designation: {
                         validators: {
                             notEmpty: {
-                                message: 'Phone is required'
+                                message: 'Designation is required'
+                            }
+                        }
+                    },
+                    division: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Division is required'
                             }
                         }
                     }
@@ -131,45 +139,31 @@ var KTWizard5 = function () {
             _formEl,
             {
                 fields: {
-                    address1: {
+                    issue: {
                         validators: {
                             notEmpty: {
-                                message: 'Address is required'
+                                message: 'Please describe the issue in short'
                             }
                         }
                     },
-                    address2: {
+                    cat_issue: {
                         validators: {
                             notEmpty: {
-                                message: 'Address is required'
+                                message: 'Category of the issue is required'
                             }
                         }
                     },
-                    postcode: {
+                    asst_code: {
                         validators: {
                             notEmpty: {
-                                message: 'Postcode is required'
+                                message: 'Asset code is required'
                             }
                         }
                     },
-                    city: {
+                    priority: {
                         validators: {
                             notEmpty: {
-                                message: 'City is required'
-                            }
-                        }
-                    },
-                    state: {
-                        validators: {
-                            notEmpty: {
-                                message: 'State is required'
-                            }
-                        }
-                    },
-                    country: {
-                        validators: {
-                            notEmpty: {
-                                message: 'Country is required'
+                                message: 'Please select a priority'
                             }
                         }
                     }

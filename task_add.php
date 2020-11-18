@@ -122,7 +122,7 @@
                             <!--end::Title-->
                             <!--begin::Form-->
                             <div class="d-flex justify-content-center flex-row-fluid">
-                                <form class="pb-5 w-100 w-md-450px w-lg-500px" novalidate="novalidate" id="kt_form">
+                                <form action="task_add_app.php" method="post" class="pb-5 w-100 w-md-450px w-lg-500px" id="kt_form">
                                     <!--begin: Wizard Step 1-->
                                     <div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
                                         <!--begin::Title-->
@@ -362,7 +362,7 @@
                                             </button>
                                         </div>
                                         <div>
-                                            <button type="button"
+                                            <button type="submit" id="submitTicket" name="submitTicket"
                                                     class="btn btn-primary font-weight-bolder font-size-h6 pl-5 pr-8 py-4 my-3"
                                                     data-wizard-type="action-submit">Submit
                                                 <span class="svg-icon svg-icon-md ml-2">
@@ -385,7 +385,7 @@
 																	</svg>
                                                     <!--end::Svg Icon-->
 																</span></button>
-                                            <button type="button"
+                                            <button type="button" id="action_next"
                                                     class="btn btn-primary font-weight-bolder font-size-h6 pl-8 pr-4 py-4 my-3"
                                                     data-wizard-type="action-next">Next Step
                                                 <span class="svg-icon svg-icon-md ml-1">
@@ -412,6 +412,7 @@
                                     </div>
                                     <!--end: Wizard Actions-->
                                 </form>
+
                             </div>
                             <!--end::Form-->
                         </div>
@@ -432,6 +433,7 @@
 
 
 <?php include 'include/footer.php'; ?>
+
 <script>var KTAppSettings = {"breakpoints": {"sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400},
         "colors": {
             "theme": {
@@ -486,6 +488,6 @@
 <!--end::Global Config-->
 <!--begin::Global Theme Bundle(used by all pages)-->
 <script src="assets/plugins/wizard/prismjs.bundle.js"></script>
-<script src="assets/js/pages/custom/wizard/wizard-5.js"></script>
 <script src="assets/plugins/wizard/scripts.bundle.js"></script>
 <script src="assets/plugins/wizard/plugins.bundle.js"></script>
+<script src="assets/js/pages/custom/wizard/wizard-5.js"></script>

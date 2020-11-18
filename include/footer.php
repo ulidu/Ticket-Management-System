@@ -171,6 +171,8 @@ if ($link_wizard == 'task_add.php') { ?>
         });
     </script>
 
+
+
 <?php } ?>
 
 <?php
@@ -191,7 +193,6 @@ if ($link_wizard != 'task_add.php') { ?>
 <script src="assets/js/pages/dashboard.js" type="text/javascript"></script>
 <script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
 <script src="assets/js/pages/crud/datatables/basic/scrollable.js" type="text/javascript"></script>
-<script src="assets/js/pages/custom/user/add-user.js" type="text/javascript"></script>
 <script src="assets/js/pages/components/extended/sweetalert2.js" type="text/javascript"></script>
 <script src="assets/plugins/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
 <script src="assets/plugins/custom/jstree/jstree.bundle.js" type="text/javascript"></script>
