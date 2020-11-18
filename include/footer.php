@@ -154,8 +154,37 @@ $acc_type_logged = $_SESSION['acc_type_logged'];
 
 </script>
 
+
+
 <!--begin::Global Theme Bundle(used by all pages) -->
-<script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
+<?php
+
+$link_for_wizard = $_SERVER['PHP_SELF'];
+$link_array_wizard = explode('/', $link_for_wizard);
+$link_wizard = end($link_array_wizard);
+
+if ($link_wizard == 'task_add.php') { ?>
+
+    <script>
+        $(document).ready(function() {
+            $.getScript("assets/js/scripts.bundle.js");
+        });
+    </script>
+
+<?php } ?>
+
+<?php
+
+$link_for_wizard = $_SERVER['PHP_SELF'];
+$link_array_wizard = explode('/', $link_for_wizard);
+$link_wizard = end($link_array_wizard);
+
+if ($link_wizard != 'task_add.php') { ?>
+
+    <script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
+
+<?php } ?>
+
 <script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
 <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
 <script src="assets/js/pages/components/extended/blockui.js" type="text/javascript"></script>

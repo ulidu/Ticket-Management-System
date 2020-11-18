@@ -587,7 +587,7 @@
 
                     $logged_user_id = $_SESSION['logged_user_id'];
 
-                    if ($logged_user_id == '') {
+                    if ($logged_user_id == '' && $page != 'task_add.php') {
 
                         ?>
                         <div class="kt-header__topbar-user">
@@ -595,7 +595,19 @@
                                         class="la la-user font-weight-bold"></i>
                                 Login</a>
                         </div>
-                    <?php } else {
+                    <?php }elseif ($logged_user_id == '' && $page == 'task_add.php'){
+
+                        ?>
+
+                        <div class="kt-header__topbar-user">
+                            <a href="login.php" class="btn kt-bg-brand btn-font-hover-brand btn-hover-brand kt-font-light btn-brand btn-bold"><i
+                                        class="fa fa-user-circle kt-font-light kt-font-bold"></i>
+                                Login</a>
+                        </div>
+
+                        <?php
+
+                    } else {
 
                     } ?>
                 </div>
@@ -617,10 +629,17 @@
                                 echo $firstName . " " . $lastName; ?></span>
                             <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg"/>
 
+                            <?php if ($page == 'task_add.php'){ ?>
 
                             <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                             <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bolder"><i
-                                        style="font-size: 20px" class="la la-user font-weight-bold"></i></span>
+                                        style="font-size: 20px" class="fa fa-user-circle kt-font-success font-weight-bold"></i></span>
+
+                            <?php }elseif ($page != 'task_add.php'){ ?>
+                                <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bolder"><i
+                                            style="font-size: 20px" class="la la-user font-weight-bold"></i></span>
+                            <?php } ?>
+
                         </div>
                     <?php } else {
 
