@@ -13,7 +13,7 @@ var KTWizard5 = function () {
         // Initialize form wizard
         _wizardObj = new KTWizard(_wizardEl, {
             startStep: 1, // initial active step number
-            clickableSteps: false  // allow step clicking
+            clickableSteps: true  // allow step clicking
         });
 
         // Validation before going to next page

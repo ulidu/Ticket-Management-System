@@ -137,10 +137,12 @@
                                         <!--begin::Form Group-->
                                         <div class="form-group">
                                             <label class="font-size-h6 font-weight-bolder text-dark">Applicant
-                                                Name</label>
-                                            <input type="text"
-                                                   class="form-control h-auto p-5 border-0 rounded-lg font-size-h6"
-                                                   name="firstname" placeholder="Enter your name" value=""/>
+                                                Name <span style="color: #dc3545; font-size: 18px;">* </span></label>
+
+                                            <input id="name" name="name" class="form-control h-auto p-5 border-0 rounded-lg font-size-h6"
+                                                   type="text" placeholder="Enter your name"
+                                                   required>
+
                                         </div>
                                         <!--end::Form Group-->
 
@@ -149,42 +151,69 @@
                                             <div class="col-lg-6 col-md-6">
                                                 <!--end::Form Group-->
                                                 <div class="form-group">
-                                                    <label class="font-size-h6 font-weight-bolder text-dark">Employee
-                                                        Code</label>
-                                                    <input type="text"
-                                                           class="form-control h-auto p-5 border-0 rounded-lg font-size-h6"
-                                                           name="city" placeholder="City" value="Melbourne"/>
+                                                    <label class="font-size-h6 font-weight-bolder text-dark">Employee Code <span style="color: #dc3545; font-size: 18px;">* </span></label>
+
+
+                                                    <input class="form-control h-auto p-5 border-0 rounded-lg font-size-h6" id="emp_code"
+                                                           name="emp_code" type="text"
+                                                           placeholder="Eg. XXXX" required>
+
                                                 </div>
                                                 <!--begin::Form Group-->
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <!--end::Form Group-->
                                                 <div class="form-group">
+
                                                     <label class="font-size-h6 font-weight-bolder text-dark">Extension
                                                         No.</label>
-                                                    <input type="text"
+
+                                                    <input id="ext" name="ext" type="text"
                                                            class="form-control h-auto p-5 border-0 rounded-lg font-size-h6"
-                                                           name="city" placeholder="City" value="Melbourne"/>
+                                                           placeholder="Nearest telephone"
+                                                           aria-describedby="basic-addon1">
+
+
+
                                                 </div>
                                                 <!--end::Form Group-->
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="font-size-h6 font-weight-bolder text-dark">Designation</label>
-                                            <input type="text"
-                                                   class="form-control h-auto p-6 border-0 rounded-lg font-size-h6"
-                                                   name="lastname" placeholder="Enter your designation" value=""/>
+                                            <label class="font-size-h6 font-weight-bolder text-dark">Designation <span style="color: #dc3545; font-size: 18px;">* </span></label>
+
+                                            <input class="form-control h-auto p-6 border-0 rounded-lg font-size-h6" id="designation"
+                                                   name="designation" type="text"
+                                                   placeholder="Applicant's designation" required>
+
                                         </div>
 
                                         <!--end::Form Group-->
                                         <div class="form-group">
-                                            <label class="font-size-h6 font-weight-bolder text-dark">Division</label>
-                                            <select name="country"
-                                                    class="form-control h-auto p-5 border-0 rounded-lg font-size-h6">
-                                                <option value="">Select Applicant's Division</option>
-                                                <option value="sa">Select Applicant's Division</option>
+                                            <label class="font-size-h6 font-weight-bolder text-dark">Division <span style="color: #dc3545; font-size: 18px;">* </span></label>
+
+                                            <select id="division" name="division"
+                                                    class="form-control h-auto p-5 border-0 rounded-lg font-size-h6" required>
+                                                <option value="" hidden="true">Select Applicant's
+                                                    Division
+                                                </option>
+                                                <?php
+
+                                                $query_g_div = "select * from division";
+                                                $run_query_g_div = mysqli_query($con, $query_g_div);
+
+                                                while ($row_g_div = mysqli_fetch_assoc($run_query_g_div)) {
+
+                                                    $division_id = $row_g_div['division_id'];
+                                                    $division_name = $row_g_div['division_name'];
+
+                                                    ?>
+
+                                                    <option value="<?php echo $division_name; ?>"><?php echo $division_name; ?></option>
+                                                <?php } ?>
                                             </select>
+
                                         </div>
                                         <!--end::Form Group-->
 
@@ -195,20 +224,39 @@
                                     <div class="pb-5" data-wizard-type="step-content">
                                         <!--begin::Title-->
                                         <div class="pb-10 pb-lg-15">
-                                            <h3 class="font-weight-bolder text-dark font-size-h2">Address Details</h3>
-                                            <div class="text-muted font-weight-bold font-size-h4">Have a Different
-                                                Address ?
-                                                <a href="#" class="text-primary font-weight-bolder">Add Address</a>
+                                            <h3 class="font-weight-bolder text-dark font-size-h2">What's the Issue ?</h3>
+                                            <div class="text-muted font-weight-bold font-size-h4">Please tell us what went
+                                                <a href="#" class="text-primary font-weight-bolder">wrong</a>
                                             </div>
                                         </div>
                                         <!--end::Title-->
                                         <!--begin::Form Group-->
                                         <div class="form-group">
-                                            <label class="font-size-h6 font-weight-bolder text-dark">Address
-                                                Line</label>
-                                            <input type="text"
-                                                   class="form-control h-auto p-5 border-0 rounded-lg font-size-h6"
-                                                   name="address1" placeholder="Address Line 1" value="Address Line"/>
+                                            <label class="font-size-h6 font-weight-bolder text-dark">Issue <span
+                                                        style="color: #dc3545; font-size: 18px;">* </span></label>
+                                            <input id="issue" name="issue" class="form-control h-auto p-5 border-0 rounded-lg font-size-h6"
+                                                   type="text"
+                                                   placeholder="Tell us about the issue"
+                                                   required>
+                                        </div>
+                                        <!--begin::Form Group-->
+                                        <!--begin::Form Group-->
+                                        <div class="form-group">
+                                            <label class="font-size-h6 font-weight-bolder text-dark">Issue Category <span
+                                                        style="color: #dc3545; font-size: 18px;">* </span></label>
+                                            <select id="cat_issue" name="cat_issue"
+                                                    class="form-control h-auto p-5 border-0 rounded-lg font-size-h6" required>
+                                                <option value="" hidden="true">Select Category
+                                                </option>
+                                                <option value="Software Issue">Software Issue
+                                                </option>
+                                                <option value="Hardware Issue">Hardware Issue
+                                                </option>
+                                                <option value="Network Issue">Network Issue</option>
+                                                <option value="Printer Issue">Printer Issue</option>
+                                                <option value="General Issue">General Issue</option>
+                                                <option value="Other">Other</option>
+                                            </select>
                                         </div>
                                         <!--begin::Form Group-->
                                         <!--end::Row-->
@@ -216,24 +264,30 @@
                                             <div class="col-lg-6 col-md-6">
                                                 <!--end::Form Group-->
                                                 <div class="form-group">
-                                                    <label class="font-size-h6 font-weight-bolder text-dark">City</label>
-                                                    <input type="text"
+                                                    <label class="font-size-h6 font-weight-bolder text-dark">Asset Code
+                                                        <span style="color: #dc3545; font-size: 18px;">* </span></label>
+
+                                                    <input name="asst_code" id="asst_code" type="text"
                                                            class="form-control h-auto p-5 border-0 rounded-lg font-size-h6"
-                                                           name="city" placeholder="City" value="Melbourne"/>
+                                                           placeholder="Device asset code"
+                                                           aria-describedby="basic-addon1" required>
+
                                                 </div>
                                                 <!--begin::Form Group-->
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <!--end::Form Group-->
                                                 <div class="form-group">
-                                                    <label class="font-size-h6 font-weight-bolder text-dark">Country</label>
-                                                    <select name="country"
-                                                            class="form-control h-auto p-5 border-0 rounded-lg font-size-h6">
-                                                        <option value="">Select</option>
-                                                        <option value="AF">Afghanistan</option>
-                                                        <option value="AX">Åland Islands</option>
-                                                        <option value="ZM">Zambia</option>
-                                                        <option value="ZW">Zimbabwe</option>
+                                                    <label class="font-size-h6 font-weight-bolder text-dark">Priority
+                                                        <span style="color: #dc3545; font-size: 18px;">* </span></label>
+
+                                                    <select id="priority" name="priority"
+                                                            class="form-control h-auto p-5 border-0 rounded-lg font-size-h6" required>
+                                                        <option value="" hidden="true">Select Priority
+                                                        </option>
+                                                        <option class="kt-font-success font-weight-bold" value="Low">Low</option>
+                                                        <option class="kt-font-warning font-weight-bold" value="Medium">Medium</option>
+                                                        <option class="kt-font-danger font-weight-bold" value="Critical">Critical</option>
                                                     </select>
                                                 </div>
                                                 <!--end::Form Group-->
@@ -246,33 +300,35 @@
                                     <div class="pb-5" data-wizard-type="step-content">
                                         <!--begin::Title-->
                                         <div class="pb-10 pb-lg-15">
-                                            <h3 class="font-weight-bolder text-dark font-size-h2">Complete</h3>
-                                            <div class="text-muted font-weight-bold font-size-h4">Complete Your Signup
-                                                And Become A Member!
+                                            <h3 class="font-weight-bolder text-dark font-size-h2">Review</h3>
+                                            <div class="text-muted font-weight-bold font-size-h4">Review and submit your ticket !
                                             </div>
                                         </div>
                                         <!--end::Title-->
                                         <!--begin::Section-->
-                                        <h4 class="font-weight-bolder mb-3">Accoun Settings:</h4>
+                                        <h4 class="font-weight-bolder mb-3">Applicant Details :</h4>
                                         <div class="text-dark-50 font-weight-bold line-height-lg mb-8">
-                                            <div>Nick Stone</div>
-                                            <div>+12233434-34</div>
-                                            <div>nick.stone@gmail.com</div>
+                                            <div>Applicant Name : <span class="font-weight-bold kt-font-dark" id="app_name_review"></span></div>
+                                            <div>Employee Code : <span class="font-weight-bold kt-font-dark" id="emp_code_review"></span></div>
+                                            <div>Extension No. : <span class="font-weight-bold kt-font-dark" id="ext_no_review"></span></div>
+                                            <div>Designation : <span class="font-weight-bold kt-font-dark" id="designation_review"></span></div>
+                                            <div>Division : <span class="font-weight-bold kt-font-dark" id="division_review"></span></div>
                                         </div>
                                         <!--end::Section-->
                                         <!--begin::Section-->
-                                        <h4 class="font-weight-bolder mb-3">Address Details:</h4>
+                                        <h4 class="font-weight-bolder mb-3">Issue Details :</h4>
                                         <div class="text-dark-50 font-weight-bold line-height-lg mb-8">
-                                            <div>Address Line 1</div>
-                                            <div>Address Line 2</div>
-                                            <div>Melbourne 3000, VIC, Australia</div>
+                                            <div>Issue : <span class="font-weight-bold kt-font-dark" id="issue_review"></span></div>
+                                            <div>Issue Category : <span class="font-weight-bold kt-font-dark" id="issue_cat_review"></span></div>
+                                            <div>Asset Code : <span class="font-weight-bold kt-font-dark" id="asset_code_review"></span></div>
+                                            <div>Priority : <span class="font-weight-bold kt-font-dark" id="priority_review"></span></div>
                                         </div>
                                         <!--end::Section-->
                                         <!--begin::Section-->
-                                        <h4 class="font-weight-bolder mb-3">Support Channels:</h4>
+
                                         <div class="text-dark-50 font-weight-bold line-height-lg mb-8">
-                                            <div>Overnight Delivery with Regular Packaging</div>
-                                            <div>Preferred Morning (8:00AM - 11:00AM) Delivery</div>
+                                            <span style="color: #dc3545; font-size: 14px;">Please note that this ticket should be approved by the Administrative Officer in your division after the submission.</span>
+
                                         </div>
                                         <!--end::Section-->
                                     </div>

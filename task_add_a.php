@@ -275,7 +275,7 @@
 
                                                         <p>
                                                             <br>
-                                                            <span style="color: #dc3545; font-size: 14px;">- &nbsp; Note that this ticket should approved by an Authorized Officer in your division after the submission.</span>
+                                                            <span style="color: #dc3545; font-size: 14px;">- &nbsp; Note that this ticket should approved by an Administrative Officer in your division after the submission.</span>
 
                                                         </p>
                                                     </div>
