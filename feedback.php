@@ -122,7 +122,7 @@
                                     <div class="row">
                                         <div class="col-xl-3"></div>
                                         <div class="col-xl-6">
-                                            <button type="submit" id="submit" name="submit" class="btn btn-brand">Submit</button>&nbsp;
+                                            <input value="Send Feedback" id="send_feedback" name="send_feedback" type="submit" class="btn btn-brand">
                                             <button type="reset" class="btn btn-secondary">Cancel</button>
                                         </div>
                                         <div class="col-xl-3"></div>
@@ -140,31 +140,27 @@
                                     var ext_help = $("#ext_help").val();
                                     var message_help = $("#message_help").val();
 
-                                    var check_ext = Number.isInteger(ext_help);
+                                    if (ext_help != '' && isNaN(ext_help)) {
 
-                                    alert(check_ext);
-
-                                    if (ext_help != '' && (Number.isInteger(ext_help)) != true) {
-
-                                        swal.fire("Incorrect Employee No. !", "Employee code should be a number", "warning");
+                                        swal.fire("Incorrect Extension No. !", "Please enter a valid extension number", "warning");
                                         return false;
 
                                     }else {
 
                                         $.ajax({
-                                            url: "a.php",
+                                            url: "feedback_app.php",
                                             method: "POST",
                                             data: {
                                                 name_help: name_help,
-                                                name_help: name_help,
-                                                name_help: name_help
+                                                ext_help: ext_help,
+                                                message_help: message_help
                                             },
                                             success: function (data) {
                                                 //alert(data.toString());
 
                                                 if (data.toString() == 1){
 
-                                                    swal.fire("Updated Successfully !", "Account Information and Password Updated Successfully.", "success");
+                                                    swal.fire("Feedback Sent Successfully !", "Thank you for your valuable feedback", "success");
 
                                                     setTimeout(function () {
                                                         location.reload(1);
@@ -172,7 +168,7 @@
 
                                                 }else {
 
-                                                    swal.fire("Incorrect Password !", "Please Confirm Current Password", "danger");
+                                                    swal.fire("Feedback Sending Failed !", "Please check the required fields again", "danger");
 
                                                 }
 
@@ -181,9 +177,9 @@
 
                                         event.preventDefault();
 
-                                    });
+                                    }
                             });
-
+                            });
                         </script>
                         <!--end::Form-->
                     </div>
