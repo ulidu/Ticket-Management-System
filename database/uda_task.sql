@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Nov 19, 2020 at 02:05 AM
+-- Generation Time: Nov 19, 2020 at 05:19 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -61,6 +61,7 @@ INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_dat
 ('96', '14', NULL, '2020-11-12 22:04:16', '29'),
 ('90', '51', '56', '2020-11-12 12:59:25', '29'),
 ('92', '14', '22', '2020-11-02 17:03:11', '29'),
+('101', '22', NULL, '2020-11-19 15:36:36', '29'),
 ('95', '56', NULL, '2020-11-13 20:01:52', '29');
 
 -- --------------------------------------------------------
@@ -99,12 +100,23 @@ INSERT INTO `division` (`division_id`, `division_name`) VALUES
 DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE IF NOT EXISTS `feedback` (
   `feedbackID` int(200) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `feedback` varchar(200) NOT NULL,
+  `name_added` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `feedback` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `extension` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `division` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `date_feedback` varchar(200) DEFAULT NULL,
+  `client_ip` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`feedbackID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`feedbackID`, `name_added`, `feedback`, `extension`, `date_feedback`, `client_ip`) VALUES
+(6, 'etsfg', 'gdf', '5363', '2020-11-19 22:32:47', '::1'),
+(5, '', 'ffgd', '53', '2020-11-19 22:32:39', '::1'),
+(4, 'fgd', 'df', '543', '2020-11-19 21:59:11', '::1'),
+(7, '', 'dgf', '', '2020-11-19 22:32:53', '::1');
 
 -- --------------------------------------------------------
 
@@ -120,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `log` (
   `log_action` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `log_emp_code` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`logID`)
-) ENGINE=MyISAM AUTO_INCREMENT=79 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `log`
@@ -203,7 +215,9 @@ INSERT INTO `log` (`logID`, `log_userID`, `log_date_time`, `log_action`, `log_em
 (74, '29', '2020-11-18 09:36:34', 'User ID: 29 re-assigned the previously assigned ticket with ID: 97 for User ID: 14 as person No. 1', NULL),
 (77, NULL, '2020-11-18 17:39:43', 'New ticket added by rdgery in ITS Division', '324'),
 (76, NULL, '2020-11-18 16:51:53', 'New ticket added by dfg in ITS Division', '45'),
-(78, '29', '2020-11-18 21:29:35', 'User ID: 29 Deleted the ticket with ID: 97', NULL);
+(78, '29', '2020-11-18 21:29:35', 'User ID: 29 Deleted the ticket with ID: 97', NULL),
+(79, NULL, '2020-11-19 08:22:03', 'New ticket added by hr in ITS Division', '43'),
+(80, '29', '2020-11-19 15:36:36', 'User ID: 29 assigned the ticket ID: 101 for User ID : 22 as person No. 1', NULL);
 
 -- --------------------------------------------------------
 
@@ -241,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `approved_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `task_completed_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`task_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=102 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `task`
@@ -254,8 +268,9 @@ INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issu
 (90, 's', 's', '2020-10-30 11:49:11', 'd', 'Software Issue', 'Assigned', 's', 'Finance Division', '21', 'Medium', 'd', '192.168.1.2', '15', '2020-11-03 11:34:20', ''),
 (96, 'rgdegf', '34543', '2020-11-12 19:53:38', 'zdgfd', 'Software Issue', 'In Progress', 'dfhd', 'Finance Division', '4534', 'Medium', 'dsfg', '192.168.1.2', '15', '2020-11-12 19:53:45', ''),
 (91, 'sfgd', 'fd', '2020-11-01 07:47:27', 'gfh', 'Software Issue', 'Approved', 'fg', 'Finance Division', '443', 'Medium', 'hr', '192.168.1.2', '15', '2020-11-12 16:29:39', NULL),
-(100, 'rdgery', '324', '2020-11-18 17:39:43', 'fdger', 'General Issue', 'Approval Required', 'eg', 'ITS Division', '2342', 'Low', 'setr', '192.168.8.100', NULL, NULL, NULL),
-(99, 'dfg', '45', '2020-11-18 16:51:53', 'gfxdh', 'Software Issue', 'Approval Required', 'ghx', 'ITS Division', '54', 'Medium', 'fgh', '192.168.8.100', NULL, NULL, NULL);
+(101, 'hr', '43', '2020-11-19 08:22:03', 'fdg', 'Other', 'Assigned', 'sgd', 'ITS Division', '4', 'Medium', 'efg', '192.168.8.100', NULL, NULL, NULL),
+(100, 'rdgery', '324', '2020-11-18 17:39:43', 'fdger', 'General Issue', 'Completed', 'eg', 'ITS Division', '2342', 'Low', 'setr', '192.168.8.100', NULL, NULL, NULL),
+(99, 'dfg', '45', '2020-11-18 16:51:53', 'gfxdh', 'Software Issue', 'Completed', 'ghx', 'ITS Division', '54', 'Medium', 'fgh', '192.168.8.100', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
