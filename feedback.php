@@ -140,6 +140,10 @@
                                     var ext_help = $("#ext_help").val();
                                     var message_help = $("#message_help").val();
 
+                                    var check_ext = Number.isInteger(ext_help);
+
+                                    alert(check_ext);
+
                                     if (ext_help != '' && (Number.isInteger(ext_help)) != true) {
 
                                         swal.fire("Incorrect Employee No. !", "Employee code should be a number", "warning");

@@ -1077,10 +1077,10 @@
     for ($k = 15 ; $k > 0; $k--){
 
         $back_15 = date('Y-m-d', strtotime(-$k.' days'));
-        $back_15_dates = $back_15 . ' ' . $time;
+        $back_15_dates = $back_15 . ' ' . '00:00:00';
         $minus_1 = $k - 1;
         $back_15_minus_1 = date('Y-m-d', strtotime(-$minus_1.' days'));
-        $back_15_dates_minus = $back_15_minus_1 . ' ' . $time;
+        $back_15_dates_minus = $back_15_minus_1 . ' ' . '00:00:00';
 
         $back_date = date('Y-m-d', strtotime(-$k.' days'));
 
@@ -1107,6 +1107,10 @@
 
     mysqli_free_result($count_completed_t_run);
     mysqli_free_result($count_received_t_run);
+
+    //echo "console.log(".json_encode($js_array_completed).");";
+    //echo "console.log(".json_encode($js_array_received).");";
+    //echo "console.log(".json_encode($js_array_labels).");";
 
     ?>
 
