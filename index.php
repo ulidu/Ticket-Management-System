@@ -538,7 +538,7 @@
                 <div class="kt-portlet__head">
                     <div class="kt-portlet__head-label">
                         <h3 class="kt-portlet__head-title">
-                            Best Sellers
+                            Latest Feedback
                         </h3>
                     </div>
                     <div class="kt-portlet__head-toolbar">
@@ -555,102 +555,78 @@
                 <div class="kt-portlet__body">
                     <div class="tab-content">
                         <div class="tab-pane active" id="kt_widget5_tab3_content">
-                            <div class="kt-widget5">
-                                <div class="kt-widget5__item">
-                                    <div class="kt-widget5__content">
-                                        <div class="kt-widget5__pic">
-                                            <img class="kt-widget7__img" src="assets/media/products/product11.jpg"
-                                                 alt="">
-                                        </div>
-                                        <div class="kt-widget5__section">
-                                            <a href="#" class="kt-widget5__title">
-                                                Awesome Mobile App
-                                            </a>
-                                            <p class="kt-widget5__desc">
-                                                Metronic admin themes.Lorem Ipsum Amet
-                                            </p>
-                                            <div class="kt-widget5__info">
-                                                <span>Author:</span>
-                                                <span class="kt-font-info">Fly themes</span>
-                                                <span>Released:</span>
-                                                <span class="kt-font-info">23.08.17</span>
+                            <div class="kt-scroll" data-scroll="true" data-height="400" style="height: 400px;">
+                                <div class="kt-widget5">
+
+
+                                    <?php
+
+                                    date_default_timezone_set('Asia/Colombo');
+
+                                    $string = date("Y-m-d");
+                                    $date = DateTime::createFromFormat("Y-m-d", $string);
+
+                                    $date = date('Y-m-d H:i:s');
+                                    $time = date('H:i:s');
+                                    $today_d_c1 = $date;
+
+                                    $d2 = date('Y-m-d', strtotime('-30 days'));
+                                    $back_30_days = $d2 . ' ' . $time;
+
+                                    $feed_query = "SELECT * FROM feedback ORDER BY feedbackID desc";
+                                    $run_feed_query = mysqli_query($con, $feed_query);
+
+                                    while ($row_feed_query = mysqli_fetch_assoc($run_feed_query)) {
+
+                                        $feedbackID = $row_feed_query['feedbackID'];
+                                        $name_added = $row_feed_query['name_added'];
+                                        $feedback = $row_feed_query['feedback'];
+                                        $extension = $row_feed_query['extension'];
+                                        $date_feedback = $row_feed_query['date_feedback'];
+                                        $client_ip = $row_feed_query['client_ip'];
+
+                                        if ($name_added == '') {
+                                            $name_added = 'Anonymous';
+                                        }
+                                        if ($extension == '') {
+                                            $extension = 'Anonymous';
+                                        }
+
+                                        ?>
+
+
+                                        <div class="kt-widget5__item">
+                                            <div class="kt-widget5__content">
+                                                <div class="kt-widget5__pic">
+                                                    <img class="kt-widget7__img" src="assets/media/logos/fb.png"
+                                                         alt="">
+                                                </div>
+                                                <div class="kt-widget5__section">
+                                                    <a href="javascript:;" class="kt-widget5__title">
+                                                        By <?php echo $name_added; ?>
+                                                    </a>
+                                                    <p class="kt-widget5__desc">
+                                                        Message : <span class="kt-font-dark"><?php echo $feedback; ?></span>
+                                                    </p>
+                                                    <div class="kt-widget5__info">
+                                                        <span>Date and Time: </span>
+                                                        <span class="kt-font-info"> <?php echo $date_feedback; ?></span>
+                                                        <span>IP Address : </span>
+                                                        <span class="kt-font-info" style="font-family: 'Fira Code'"> <?php echo $client_ip; ?></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="kt-widget5__content">
+                                                <div class="kt-widget5__stats">
+                                                    <span class="kt-widget5__number"> <?php echo $extension; ?></span>
+                                                    <span class="kt-widget5__votes">Extension No.</span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="kt-widget5__content">
-                                        <div class="kt-widget5__stats">
-                                            <span class="kt-widget5__number">210,054</span>
-                                            <span class="kt-widget5__sales">sales</span>
-                                        </div>
-                                        <div class="kt-widget5__stats">
-                                            <span class="kt-widget5__number">1103</span>
-                                            <span class="kt-widget5__votes">votes</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="kt-widget5__item">
-                                    <div class="kt-widget5__content">
-                                        <div class="kt-widget5__pic">
-                                            <img class="kt-widget7__img" src="assets/media/products/product6.jpg"
-                                                 alt="">
-                                        </div>
-                                        <div class="kt-widget5__section">
-                                            <a href="#" class="kt-widget5__title">
-                                                Great Logo Designn
-                                            </a>
-                                            <p class="kt-widget5__desc">
-                                                Metronic admin themes.
-                                            </p>
-                                            <div class="kt-widget5__info">
-                                                <span>Author:</span>
-                                                <span class="kt-font-info">Keenthemes</span>
-                                                <span>Released:</span>
-                                                <span class="kt-font-info">23.08.17</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="kt-widget5__content">
-                                        <div class="kt-widget5__stats">
-                                            <span class="kt-widget5__number">19,200</span>
-                                            <span class="kt-widget5__sales">sales</span>
-                                        </div>
-                                        <div class="kt-widget5__stats">
-                                            <span class="kt-widget5__number">1046</span>
-                                            <span class="kt-widget5__votes">votes</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="kt-widget5__item">
-                                    <div class="kt-widget5__content">
-                                        <div class="kt-widget5__pic">
-                                            <img class="kt-widget7__img" src="assets/media/products/product10.jpg"
-                                                 alt="">
-                                        </div>
-                                        <div class="kt-widget5__section">
-                                            <a href="#" class="kt-widget5__title">
-                                                Branding Mockup
-                                            </a>
-                                            <p class="kt-widget5__desc">
-                                                Metronic bootstrap themes.
-                                            </p>
-                                            <div class="kt-widget5__info">
-                                                <span>Author:</span>
-                                                <span class="kt-font-info">Fly themes</span>
-                                                <span>Released:</span>
-                                                <span class="kt-font-info">23.08.17</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="kt-widget5__content">
-                                        <div class="kt-widget5__stats">
-                                            <span class="kt-widget5__number">24,583</span>
-                                            <span class="kt-widget5__sales">sales</span>
-                                        </div>
-                                        <div class="kt-widget5__stats">
-                                            <span class="kt-widget5__number">3809</span>
-                                            <span class="kt-widget5__votes">votes</span>
-                                        </div>
-                                    </div>
+
+
+                                    <?php } ?>
+
                                 </div>
                             </div>
                         </div>
@@ -1074,15 +1050,15 @@
     $dataset_received_tickets = array();
     $dataset_date_labels = array();
 
-    for ($k = 15 ; $k > 0; $k--){
+    for ($k = 15; $k > 0; $k--) {
 
-        $back_15 = date('Y-m-d', strtotime(-$k.' days'));
+        $back_15 = date('Y-m-d', strtotime(-$k . ' days'));
         $back_15_dates = $back_15 . ' ' . '00:00:00';
         $minus_1 = $k - 1;
-        $back_15_minus_1 = date('Y-m-d', strtotime(-$minus_1.' days'));
+        $back_15_minus_1 = date('Y-m-d', strtotime(-$minus_1 . ' days'));
         $back_15_dates_minus = $back_15_minus_1 . ' ' . '00:00:00';
 
-        $back_date = date('Y-m-d', strtotime(-$k.' days'));
+        $back_date = date('Y-m-d', strtotime(-$k . ' days'));
 
         $count_completed_t = "SELECT * FROM task where status = 'Completed' and assigned_date between '$back_15_dates' and '$back_15_minus_1'";
         $count_received_t = "SELECT * FROM task where status != 'Approval Required' and assigned_date between '$back_15_dates' and '$back_15_minus_1'";
@@ -1116,7 +1092,7 @@
 
     // Daily Tickets chart.
     // Based on Chartjs plugin - http://www.chartjs.org/
-    var dailySales = function() {
+    var dailySales = function () {
         var chartContainer = KTUtil.getByID('kt_chart_daily_sales');
 
         if (!chartContainer) {
