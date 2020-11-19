@@ -144,7 +144,7 @@
                 <div class="kt-portlet__head">
                     <div class="kt-portlet__head-label">
                         <h3 class="kt-portlet__head-title">
-                            Issue Categories <small>Ticket types</small>
+                            Issue Categories <small>Past 3 months</small>
                         </h3>
                     </div>
                     <div class="kt-portlet__head-toolbar">
@@ -158,9 +158,9 @@
 
 
                                 <li class="kt-nav__item">
-                                    <a href="#" class="kt-nav__link">
-                                        <i class="kt-nav__link-icon flaticon2-download"></i>
-                                        <span class="kt-nav__link-text">PDF</span>
+                                    <a onclick="print()" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-printer"></i>
+                                        <span class="kt-nav__link-text">Print</span>
                                     </a>
                                 </li>
 
@@ -186,7 +186,28 @@
 															Software
 														</span>
                                 <span class="kt-widget16__price  kt-font-brand">
-															20
+
+                                    <?php
+
+                                    date_default_timezone_set('Asia/Colombo');
+                                    $date = date('Y-m-d H:i:s');
+                                    $time = date('H:i:s');
+                                    $today_d_c1 = $date;
+                                    $d2 = date('Y-m-d', strtotime('-90 days'));
+                                    $back_3_months = $d2 . ' ' . $time;
+
+                                    $count_all_cat = "SELECT * FROM task where category = 'Software Issue' and assigned_date between '$back_3_months' and '$today_d_c1'";
+
+                                    if ($count_all_cat_run = mysqli_query($con, $count_all_cat)) {
+
+                                        $count_cat_software = mysqli_num_rows($count_all_cat_run);
+                                        printf("%d", $count_cat_software);
+                                        mysqli_free_result($count_all_cat_run);
+
+                                    }
+
+                                    ?>
+
 														</span>
                             </div>
                             <div class="kt-widget16__item">
@@ -194,7 +215,26 @@
 															Hardware
 														</span>
                                 <span class="kt-widget16__price  kt-font-success">
-															10
+															<?php
+
+                                                            date_default_timezone_set('Asia/Colombo');
+                                                            $date = date('Y-m-d H:i:s');
+                                                            $time = date('H:i:s');
+                                                            $today_d_c1 = $date;
+                                                            $d2 = date('Y-m-d', strtotime('-90 days'));
+                                                            $back_3_months = $d2 . ' ' . $time;
+
+                                                            $count_all_cat = "SELECT * FROM task where category = 'Hardware Issue' and assigned_date between '$back_3_months' and '$today_d_c1'";
+
+                                                            if ($count_all_cat_run = mysqli_query($con, $count_all_cat)) {
+
+                                                                $count_cat_hardware = mysqli_num_rows($count_all_cat_run);
+                                                                printf("%d", $count_cat_hardware);
+                                                                mysqli_free_result($count_all_cat_run);
+
+                                                            }
+
+                                                            ?>
 														</span>
                             </div>
                             <div class="kt-widget16__item">
@@ -202,7 +242,26 @@
 															Networking
 														</span>
                                 <span class="kt-widget16__price  kt-font-danger">
-															11
+															<?php
+
+                                                            date_default_timezone_set('Asia/Colombo');
+                                                            $date = date('Y-m-d H:i:s');
+                                                            $time = date('H:i:s');
+                                                            $today_d_c1 = $date;
+                                                            $d2 = date('Y-m-d', strtotime('-90 days'));
+                                                            $back_3_months = $d2 . ' ' . $time;
+
+                                                            $count_all_cat = "SELECT * FROM task where category = 'Network Issue' and assigned_date between '$back_3_months' and '$today_d_c1'";
+
+                                                            if ($count_all_cat_run = mysqli_query($con, $count_all_cat)) {
+
+                                                                $count_cat_network = mysqli_num_rows($count_all_cat_run);
+                                                                printf("%d", $count_cat_network);
+                                                                mysqli_free_result($count_all_cat_run);
+
+                                                            }
+
+                                                            ?>
 														</span>
                             </div>
                             <div class="kt-widget16__item">
@@ -210,7 +269,26 @@
 															Printers
 														</span>
                                 <span class="kt-widget16__price  kt-font-warning">
-														20
+														<?php
+
+                                                        date_default_timezone_set('Asia/Colombo');
+                                                        $date = date('Y-m-d H:i:s');
+                                                        $time = date('H:i:s');
+                                                        $today_d_c1 = $date;
+                                                        $d2 = date('Y-m-d', strtotime('-90 days'));
+                                                        $back_3_months = $d2 . ' ' . $time;
+
+                                                        $count_all_cat = "SELECT * FROM task where category = 'Printer Issue' and assigned_date between '$back_3_months' and '$today_d_c1'";
+
+                                                        if ($count_all_cat_run = mysqli_query($con, $count_all_cat)) {
+
+                                                            $count_cat_printer = mysqli_num_rows($count_all_cat_run);
+                                                            printf("%d", $count_cat_printer);
+                                                            mysqli_free_result($count_all_cat_run);
+
+                                                        }
+
+                                                        ?>
 														</span>
                             </div>
                             <div class="kt-widget16__item">
@@ -218,7 +296,26 @@
 															General
 														</span>
                                 <span class="kt-widget16__price  kt-font-primary">
-															8
+															<?php
+
+                                                            date_default_timezone_set('Asia/Colombo');
+                                                            $date = date('Y-m-d H:i:s');
+                                                            $time = date('H:i:s');
+                                                            $today_d_c1 = $date;
+                                                            $d2 = date('Y-m-d', strtotime('-90 days'));
+                                                            $back_3_months = $d2 . ' ' . $time;
+
+                                                            $count_all_cat = "SELECT * FROM task where category = 'General Issue' and assigned_date between '$back_3_months' and '$today_d_c1'";
+
+                                                            if ($count_all_cat_run = mysqli_query($con, $count_all_cat)) {
+
+                                                                $count_cat_general = mysqli_num_rows($count_all_cat_run);
+                                                                printf("%d", $count_cat_general);
+                                                                mysqli_free_result($count_all_cat_run);
+
+                                                            }
+
+                                                            ?>
 														</span>
 
                             </div>
@@ -227,7 +324,26 @@
 															Other
 														</span>
                                 <span class="kt-widget16__price  kt-font-dark">
-															8
+															<?php
+
+                                                            date_default_timezone_set('Asia/Colombo');
+                                                            $date = date('Y-m-d H:i:s');
+                                                            $time = date('H:i:s');
+                                                            $today_d_c1 = $date;
+                                                            $d2 = date('Y-m-d', strtotime('-90 days'));
+                                                            $back_3_months = $d2 . ' ' . $time;
+
+                                                            $count_all_cat = "SELECT * FROM task where category = 'Other' and assigned_date between '$back_3_months' and '$today_d_c1'";
+
+                                                            if ($count_all_cat_run = mysqli_query($con, $count_all_cat)) {
+
+                                                                $count_cat_other = mysqli_num_rows($count_all_cat_run);
+                                                                printf("%d", $count_cat_other);
+                                                                mysqli_free_result($count_all_cat_run);
+
+                                                            }
+
+                                                            ?>
 														</span>
 
                             </div>
@@ -238,18 +354,31 @@
                                 </div>
                             </div>
                             <div class="kt-widget16__legends">
-                                <div class="kt-widget16__legend">
-                                    <span class="kt-widget16__bullet kt-bg-info"></span>
-                                    <span class="kt-widget16__stat">20% Margins</span>
+                                <div style="margin-bottom: -5px;" class="kt-widget16__legend">
+                                    <span class="kt-widget16__bullet kt-bg-brand"></span>
+                                    <span class="kt-widget16__stat kt-font-sm">Software</span>
                                 </div>
-                                <div class="kt-widget16__legend">
+                                <div style="margin-bottom: -5px;" class="kt-widget16__legend">
                                     <span class="kt-widget16__bullet kt-bg-success"></span>
-                                    <span class="kt-widget16__stat">80% Profit</span>
+                                    <span class="kt-widget16__stat kt-font-sm">Hardware</span>
                                 </div>
-                                <div class="kt-widget16__legend">
+                                <div style="margin-bottom: -5px;" class="kt-widget16__legend">
                                     <span class="kt-widget16__bullet kt-bg-danger"></span>
-                                    <span class="kt-widget16__stat">10% Lost</span>
+                                    <span class="kt-widget16__stat kt-font-sm">Networking</span>
                                 </div>
+                                <div style="margin-bottom: -5px;" class="kt-widget16__legend">
+                                    <span class="kt-widget16__bullet kt-bg-warning"></span>
+                                    <span class="kt-widget16__stat kt-font-sm">Printer</span>
+                                </div>
+                                <div style="margin-bottom: -5px;" class="kt-widget16__legend">
+                                    <span class="kt-widget16__bullet kt-bg-primary"></span>
+                                    <span class="kt-widget16__stat kt-font-sm">General</span>
+                                </div>
+                                <div style="margin-bottom: -5px;" class="kt-widget16__legend">
+                                    <span class="kt-widget16__bullet kt-bg-dark"></span>
+                                    <span class="kt-widget16__stat kt-font-sm">Other</span>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -271,14 +400,14 @@
                                 <div class="kt-widget14">
                                     <div class="kt-widget14__header kt-margin-b-30">
                                         <h3 class="kt-widget14__title">
-                                            Daily Tickets
+                                            Daily Tickets for 3 Weeks
                                         </h3>
                                         <span class="kt-widget14__desc">
 															Check out each column for more details
 														</span>
 
                                     </div>
-                                    <div class="kt-widget14__chart" style="height:180px;">
+                                    <div class="kt-widget14__chart" style="height:215px;">
                                         <canvas id="kt_chart_daily_sales"></canvas>
                                     </div>
                                 </div>
@@ -861,3 +990,192 @@
 </div>
 
 <?php include 'include/footer.php'; ?>
+
+<script>
+
+    // Support Tickets Chart.
+    // Based on Morris plugin - http://morrisjs.github.io/morris.js/
+    var supportCases = function () {
+        if ($('#kt_chart_support_tickets').length == 0) {
+            return;
+        }
+
+        var software_tickets = <?php echo $count_cat_software; ?>;
+        var hardware_tickets = <?php echo $count_cat_hardware; ?>;
+        var network_tickets = <?php echo $count_cat_network; ?>;
+        var printer_tickets = <?php echo $count_cat_printer; ?>;
+        var general_tickets = <?php echo $count_cat_general; ?>;
+        var other_tickets = <?php echo $count_cat_other; ?>;
+
+        var total_tickets = software_tickets + hardware_tickets + network_tickets + printer_tickets + general_tickets + other_tickets;
+
+        var software_percentage = (software_tickets / total_tickets) * 100;
+        var hardware_percentage = (hardware_tickets / total_tickets) * 100;
+        var network_percentage = (network_tickets / total_tickets) * 100;
+        var printer_percentage = (printer_tickets / total_tickets) * 100;
+        var general_percentage = (general_tickets / total_tickets) * 100;
+        var other_percentage = (other_tickets / total_tickets) * 100;
+
+        Morris.Donut({
+            element: 'kt_chart_support_tickets',
+            data: [{
+                label: "Other %",
+                value: other_percentage.toFixed(1)
+            },
+                {
+                    label: "General %",
+                    value: general_percentage.toFixed(1)
+                },
+                {
+                    label: "Printers %",
+                    value: printer_percentage.toFixed(1)
+                },
+                {
+                    label: "Networking %",
+                    value: network_percentage.toFixed(1)
+                },
+                {
+                    label: "Hardware %",
+                    value: hardware_percentage.toFixed(1)
+                },
+                {
+                    label: "Software %",
+                    value: software_percentage.toFixed(1)
+                }
+            ],
+            labelColor: '#a7a7c2',
+            colors: [
+                KTApp.getStateColor('dark'),
+                KTApp.getStateColor('primary'),
+                KTApp.getStateColor('warning'),
+                KTApp.getStateColor('danger'),
+                KTApp.getStateColor('success'),
+                KTApp.getStateColor('brand')
+            ]
+            //formatter: function (x) { return x + "%"}
+        });
+    }
+
+</script>
+
+<script>
+
+    <?php
+
+    date_default_timezone_set('Asia/Colombo');
+    $date = date('Y-m-d H:i:s');
+    $time = date('H:i:s');
+    $today_d_c1 = $date;
+    $d2 = date('Y-m-d', strtotime('-15 days'));
+    $back_15_days = $d2 . ' ' . $time;
+    $back_15_days_wt = $d2;
+
+    $dataset_completed_tickets = array();
+    $dataset_received_tickets = array();
+    $dataset_date_labels = array();
+
+    for ($k = 15 ; $k > 0; $k--){
+
+        $back_15 = date('Y-m-d', strtotime(-$k.' days'));
+        $back_15_dates = $back_15 . ' ' . $time;
+        $minus_1 = $k - 1;
+        $back_15_minus_1 = date('Y-m-d', strtotime(-$minus_1.' days'));
+        $back_15_dates_minus = $back_15_minus_1 . ' ' . $time;
+
+        $back_date = date('Y-m-d', strtotime(-$k.' days'));
+
+        $count_completed_t = "SELECT * FROM task where status = 'Completed' and assigned_date between '$back_15_dates' and '$back_15_minus_1'";
+        $count_received_t = "SELECT * FROM task where status != 'Approval Required' and assigned_date between '$back_15_dates' and '$back_15_minus_1'";
+
+        if ($count_completed_t_run = mysqli_query($con, $count_completed_t)) {
+            $completed_tickets_to_push = mysqli_num_rows($count_completed_t_run);
+            array_push($dataset_completed_tickets, $completed_tickets_to_push);
+        }
+
+        if ($count_received_t_run = mysqli_query($con, $count_received_t)) {
+            $received_tickets_to_push = mysqli_num_rows($count_received_t_run);
+            array_push($dataset_received_tickets, $received_tickets_to_push);
+        }
+
+        array_push($dataset_date_labels, $back_date);
+
+    }
+
+    $js_array_completed = json_encode($dataset_completed_tickets);
+    $js_array_received = json_encode($dataset_received_tickets);
+    $js_array_labels = json_encode($dataset_date_labels);
+
+    mysqli_free_result($count_completed_t_run);
+    mysqli_free_result($count_received_t_run);
+
+    ?>
+
+    // Daily Tickets chart.
+    // Based on Chartjs plugin - http://www.chartjs.org/
+    var dailySales = function() {
+        var chartContainer = KTUtil.getByID('kt_chart_daily_sales');
+
+        if (!chartContainer) {
+            return;
+        }
+
+        var chartData = {
+            labels: <?php echo $js_array_labels; ?>,
+            datasets: [{
+                label: 'Completed Tickets',
+                backgroundColor: KTApp.getStateColor('success'),
+                data: <?php echo $js_array_completed; ?>,
+                type: 'line'
+            }, {
+                label: 'Received Tickets',
+                backgroundColor: 'rgba(217,223,250,0.56)',
+                data: <?php echo $js_array_received; ?>,
+                type: 'line'
+            }]
+        };
+
+        var chart = new Chart(chartContainer, {
+            type: 'bar',
+            data: chartData,
+            options: {
+                title: {
+                    display: false,
+                },
+                tooltips: {
+                    intersect: false,
+                    mode: 'nearest',
+                    xPadding: 10,
+                    yPadding: 10,
+                    caretPadding: 10
+                },
+                legend: {
+                    display: true
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                barRadius: 4,
+                scales: {
+                    xAxes: [{
+                        display: false,
+                        gridLines: false,
+                        stacked: true
+                    }],
+                    yAxes: [{
+                        display: false,
+                        stacked: false,
+                        gridLines: false
+                    }]
+                },
+                layout: {
+                    padding: {
+                        left: 0,
+                        right: 0,
+                        top: 0,
+                        bottom: 0
+                    }
+                }
+            }
+        });
+    }
+
+</script>

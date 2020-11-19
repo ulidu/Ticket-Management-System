@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Nov 13, 2020 at 01:38 AM
+-- Generation Time: Nov 19, 2020 at 02:05 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -60,7 +60,35 @@ INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_dat
 ('84', '22', '14', '2020-10-28 15:08:36', '29'),
 ('96', '14', NULL, '2020-11-12 22:04:16', '29'),
 ('90', '51', '56', '2020-11-12 12:59:25', '29'),
-('92', '14', '22', '2020-11-02 17:03:11', '29');
+('92', '14', '22', '2020-11-02 17:03:11', '29'),
+('95', '56', NULL, '2020-11-13 20:01:52', '29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `division`
+--
+
+DROP TABLE IF EXISTS `division`;
+CREATE TABLE IF NOT EXISTS `division` (
+  `division_id` int(200) NOT NULL AUTO_INCREMENT,
+  `division_name` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`division_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `division`
+--
+
+INSERT INTO `division` (`division_id`, `division_name`) VALUES
+(1, 'ITS Division'),
+(2, 'Project Management Division'),
+(3, 'Finance Division'),
+(4, 'Landscape Division'),
+(5, 'Western Province Division'),
+(6, 'CMR Division'),
+(7, 'GIS Division'),
+(8, 'PPM Division');
 
 -- --------------------------------------------------------
 
@@ -92,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `log` (
   `log_action` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `log_emp_code` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`logID`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=79 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `log`
@@ -109,7 +137,73 @@ INSERT INTO `log` (`logID`, `log_userID`, `log_date_time`, `log_action`, `log_em
 (8, '15', '2020-11-12 19:46:09', 'User ID: 15 Approved the ticket with ID: 95', NULL),
 (9, NULL, '2020-11-12 19:53:38', 'New ticket added by rgdegf in Finance Division', '34543'),
 (10, '15', '2020-11-12 19:53:45', 'User ID: 15 Approved the ticket with ID: 96', NULL),
-(11, '29', '2020-11-12 22:04:16', 'User ID: 29 assigned the ticket ID: 96 for User ID : 14 as person No. 1', NULL);
+(11, '29', '2020-11-12 22:04:16', 'User ID: 29 assigned the ticket ID: 96 for User ID : 14 as person No. 1', NULL),
+(12, NULL, '2020-11-13 15:11:21', 'New ticket added by fasliya in Finance Division', '245653653'),
+(13, '15', '2020-11-13 15:11:55', 'User ID: 15 Approved the ticket with ID: 97', NULL),
+(14, '29', '2020-11-13 20:01:46', 'User ID: 29 assigned the ticket ID: 97 for User ID : 51 as person No. 1', NULL),
+(15, '29', '2020-11-13 20:01:52', 'User ID: 29 assigned the ticket ID: 95 for User ID : 56 as person No. 1', NULL),
+(16, '29', '2020-11-13 21:05:14', 'User ID: 29 Disabled the user with ID: 55', NULL),
+(17, '29', '2020-11-13 21:05:45', 'User ID: 29 Disabled the user with ID: 55', NULL),
+(18, '29', '2020-11-13 21:06:31', 'User ID: 29 Disabled the user with ID: 55', NULL),
+(19, '29', '2020-11-13 22:21:01', 'User ID: 29 Disabled the user with ID: 55', NULL),
+(20, '29', '2020-11-13 22:21:04', 'User ID: 29 Disabled the user with ID: 55', NULL),
+(21, '29', '2020-11-13 22:21:12', 'User ID: 29 Disabled the user with ID: 54', NULL),
+(22, '29', '2020-11-13 22:22:55', 'User ID: 29 Disabled the user with ID: 55', NULL),
+(23, '29', '2020-11-13 22:23:40', 'User ID: 29 Disabled the user with ID: 55', NULL),
+(24, '29', '2020-11-13 22:23:41', 'User ID: 29 Disabled the user with ID: 57', NULL),
+(25, '29', '2020-11-13 22:32:20', 'User ID: 29 Disabled the user with ID: 55', NULL),
+(26, '29', '2020-11-13 22:33:29', 'User ID: 29 Disabled the user with ID: 56', NULL),
+(27, '29', '2020-11-13 22:34:25', 'User ID: 29 Disabled the user with ID: 56', NULL),
+(28, '29', '2020-11-13 22:34:30', 'User ID: 29 Disabled the user with ID: 55', NULL),
+(29, '29', '2020-11-13 22:39:47', 'User ID: 29 Disabled the user with ID: 55', NULL),
+(30, '29', '2020-11-13 22:42:09', 'User ID: 29 Disabled the user with ID: 55', NULL),
+(31, '29', '2020-11-13 22:43:49', 'User ID: 29 Disabled the user with ID: 55', NULL),
+(32, '29', '2020-11-13 23:54:58', 'User ID: 29 Activated the user with ID: 55', NULL),
+(33, '29', '2020-11-14 08:13:13', 'User ID: 29 Disabled the user with ID: 50', NULL),
+(34, '29', '2020-11-14 15:50:55', 'User ID: 29 Deleted the user with ID: 34', NULL),
+(35, '29', '2020-11-14 16:22:39', 'User ID: 29 Disabled the user with ID: 51', NULL),
+(36, '29', '2020-11-14 16:22:49', 'User ID: 29 Activated the user with ID: 51', NULL),
+(37, '29', '2020-11-15 22:39:54', 'User ID: 29 Updated an existing user with Employee Code: 6464435 named t hdf', NULL),
+(38, '29', '2020-11-15 22:40:44', 'User ID: 29 Updated an existing user with Employee Code: 6464435 named t hdf', NULL),
+(39, '29', '2020-11-15 22:58:43', 'User ID: 29 Updated an existing user with Employee Code: 6464435 named t hdf', NULL),
+(40, '29', '2020-11-15 23:01:26', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(41, '29', '2020-11-15 23:01:46', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(42, '29', '2020-11-15 23:03:51', 'User ID: 29 Updated an existing user with Employee Code: 6464647 named jghjg ghj', NULL),
+(43, '29', '2020-11-15 23:04:08', 'User ID: 29 Updated an existing user with Employee Code: 6464647 named jghjg ghj', NULL),
+(44, '29', '2020-11-15 23:04:20', 'User ID: 29 Updated an existing user with Employee Code: 6464647 named jghjg ghj', NULL),
+(45, '29', '2020-11-15 23:05:05', 'User ID: 29 Updated an existing user with Employee Code: 6464647 named abc d', NULL),
+(46, '29', '2020-11-15 23:11:05', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(47, '29', '2020-11-15 23:12:56', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(48, '29', '2020-11-16 07:14:10', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(49, '29', '2020-11-16 17:14:47', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(50, '29', '2020-11-16 17:15:46', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(51, '29', '2020-11-16 17:18:44', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(52, '29', '2020-11-16 17:19:37', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(53, '29', '2020-11-16 17:21:54', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(54, '29', '2020-11-16 17:22:17', 'User ID: 29 Updated an existing user with Employee Code: 6464647 named abc d', NULL),
+(55, '29', '2020-11-16 17:23:33', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(56, '29', '2020-11-16 17:25:41', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(57, '29', '2020-11-16 17:25:57', 'User ID: 29 Updated an existing user with Employee Code: 6464 named f sdf', NULL),
+(58, '29', '2020-11-16 17:57:22', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(59, '29', '2020-11-16 17:57:37', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(60, '29', '2020-11-16 17:58:15', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(61, '29', '2020-11-16 18:03:25', 'User ID: 29 Updated an existing user with Employee Code: 6464647 named abc d', NULL),
+(62, '29', '2020-11-16 18:03:45', 'User ID: 29 Updated an existing user with Employee Code: 6464647 named abc d', NULL),
+(63, '29', '2020-11-16 18:03:53', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(64, '29', '2020-11-16 18:05:01', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(65, '29', '2020-11-16 18:05:10', 'User ID: 29 Updated an existing user with Employee Code: 6464647 named abc d', NULL),
+(66, '29', '2020-11-16 18:05:17', 'User ID: 29 Updated an existing user with Employee Code: 6464 named f sdf', NULL),
+(67, '29', '2020-11-16 18:05:27', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(68, '29', '2020-11-16 18:09:44', 'User ID: 29 Updated an existing user with Employee Code: 6464647 named abc d', NULL),
+(69, '29', '2020-11-16 18:27:10', 'User ID: 29 Updated an existing user with Employee Code: 4238567 named dfs fsfs', NULL),
+(70, '29', '2020-11-16 18:44:54', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(71, '29', '2020-11-16 18:46:15', 'User ID: 29 Updated an existing user with Employee Code: 12389 named abc xy', NULL),
+(72, '29', '2020-11-16 18:46:25', 'User ID: 29 Updated an existing user with Employee Code: 4238567 named dfs fsfs', NULL),
+(73, '29', '2020-11-16 18:58:50', 'User ID: 29 Updated an existing user with Employee Code: 4238567 named dfs fsfs', NULL),
+(74, '29', '2020-11-18 09:36:34', 'User ID: 29 re-assigned the previously assigned ticket with ID: 97 for User ID: 14 as person No. 1', NULL),
+(77, NULL, '2020-11-18 17:39:43', 'New ticket added by rdgery in ITS Division', '324'),
+(76, NULL, '2020-11-18 16:51:53', 'New ticket added by dfg in ITS Division', '45'),
+(78, '29', '2020-11-18 21:29:35', 'User ID: 29 Deleted the ticket with ID: 97', NULL);
 
 -- --------------------------------------------------------
 
@@ -121,14 +215,6 @@ DROP TABLE IF EXISTS `notify`;
 CREATE TABLE IF NOT EXISTS `notify` (
   `task_id` varchar(200) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `notify`
---
-
-INSERT INTO `notify` (`task_id`) VALUES
-('95'),
-('96');
 
 -- --------------------------------------------------------
 
@@ -147,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `status` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `designation` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `division` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `extension_no` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `extension_no` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `priority` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `asset_code` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `ip_address` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -155,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `approved_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `task_completed_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`task_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `task`
@@ -164,10 +250,12 @@ CREATE TABLE IF NOT EXISTS `task` (
 INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issue`, `category`, `status`, `designation`, `division`, `extension_no`, `priority`, `asset_code`, `ip_address`, `approved_by`, `approved_date`, `task_completed_date`) VALUES
 (84, 'hgh', 'hg', '2020-10-28 14:17:32', 'gh', 'Software Issue', 'Completed', 'hg', 'Finance Division', 'h', 'Medium', 'ghf', '192.168.1.2', '15', '2020-10-28 14:18:01', '2020-11-02 16:49:16'),
 (92, 'rt', 'sfgh', '2020-11-01 13:24:30', 'fgh', 'Software Issue', 'Completed', 'fgh', 'Finance Division', '545', 'Medium', 'gh', '192.168.1.2', '15', '2020-11-01 14:20:13', '2020-11-02 17:04:51'),
-(95, 'adf', '43543', '2020-11-12 19:45:57', 'fdgd', 'Software Issue', 'Approved', 'dzgd', 'Finance Division', '4540', 'Medium', 'ftj', '192.168.1.2', '15', '2020-11-12 19:46:09', NULL),
+(95, 'adf', '43543', '2020-11-12 19:45:57', 'fdgd', 'Software Issue', 'Assigned', 'dzgd', 'Finance Division', '4540', 'Medium', 'ftj', '192.168.1.2', '15', '2020-11-12 19:46:09', NULL),
 (90, 's', 's', '2020-10-30 11:49:11', 'd', 'Software Issue', 'Assigned', 's', 'Finance Division', '21', 'Medium', 'd', '192.168.1.2', '15', '2020-11-03 11:34:20', ''),
 (96, 'rgdegf', '34543', '2020-11-12 19:53:38', 'zdgfd', 'Software Issue', 'In Progress', 'dfhd', 'Finance Division', '4534', 'Medium', 'dsfg', '192.168.1.2', '15', '2020-11-12 19:53:45', ''),
-(91, 'sfgd', 'fd', '2020-11-01 07:47:27', 'gfh', 'Software Issue', 'Approved', 'fg', 'Finance Division', '443', 'Medium', 'hr', '192.168.1.2', '15', '2020-11-12 16:29:39', NULL);
+(91, 'sfgd', 'fd', '2020-11-01 07:47:27', 'gfh', 'Software Issue', 'Approved', 'fg', 'Finance Division', '443', 'Medium', 'hr', '192.168.1.2', '15', '2020-11-12 16:29:39', NULL),
+(100, 'rdgery', '324', '2020-11-18 17:39:43', 'fdger', 'General Issue', 'Approval Required', 'eg', 'ITS Division', '2342', 'Low', 'setr', '192.168.8.100', NULL, NULL, NULL),
+(99, 'dfg', '45', '2020-11-18 16:51:53', 'gfxdh', 'Software Issue', 'Approval Required', 'ghx', 'ITS Division', '54', 'Medium', 'fgh', '192.168.8.100', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -205,28 +293,26 @@ INSERT INTO `user` (`userID`, `employeeCode`, `firstName`, `lastName`, `email`, 
 (31, '1', 'Fathima', 'Fasliya', 'fazy.hfb@gmail.com', '$2y$10$2aCg1/WAlkI.7Fc2mNmVmurGke36djrvYEvV9UyDuubPgbK5VhM9a', '2020-10-22 09:15:12', 'Active', 'Administrative Officer', 'Mrs.', 'Project Management Division'),
 (32, '53', 'Nalika', 'Damayanthi', 'nalikadamayanthi333@gmail.com', '$2y$10$I6wp1AYR/15QRv/Yd5Lp..aKye8n59cVR/kUlw6zJ08ei.biInAfu', '2020-11-01 13:13:57', 'Active', 'Observer', 'Mr.', 'Project Management Division'),
 (33, '324', 'thd', 'fh', 'jb@jkh.com', '$2y$10$I9Knf6sbaZZPHsCd9QDqgO09pSoHORgk4spSwnWEK7ikFHWd67SzS', '2020-11-01 13:15:37', 'Active', 'Administrator', 'Mr.', 'Project Management Division'),
-(34, '32', 'db', 'fgd', 'fhdh@gh.com', '$2y$10$c74MiGbke4zXpq85rZAqw.qKZTH8F2c9nk5UhXe3399epBqPgUQLu', '2020-11-08 16:40:25', 'Active', 'Observer', 'Mrs.', 'ITS Division'),
 (35, '2', 'fgd', 'fgdz', 'sg@d.com', '$2y$10$34nn03/jVD4VIaa5LevwJ.ahmDo2vzgStoi5HUSaqIi4iY/M6rePi', '2020-11-08 16:43:10', 'Active', 'Observer', 'Mr.', 'ITS Division'),
-(36, '123', 'ulidu', 't', 'ulidutheerake@gmail.com', '$2y$10$3VZGQZxN.i0KzITs.5v3ROCCs7UWOKRks2Rjd.oN09bi9h29cs5Ky', '2020-11-08 18:15:22', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
+(36, '123564', 'ulidu', 't', 'ulidutheerake@gmail.com', '$2y$10$3VZGQZxN.i0KzITs.5v3ROCCs7UWOKRks2Rjd.oN09bi9h29cs5Ky', '2020-11-08 18:15:22', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
 (37, '5', 'fg', 'gh', 'udatmsproject@gmail.com', '$2y$10$p02Wgu2ib7j/UcMyNNDPue61H7tZcfk8h0FtKS1RSSmv8hX7Euvge', '2020-11-08 18:37:01', 'Active', 'IT Staff', 'Mrs.', 'ITS Division'),
 (38, '34', 'gfd', 'fghd', 'ulidutheerake@gmail.com', '$2y$10$O3BeTeoKEmGVZS3w8aCz1uh2Aj2ukw1nX1/7O5yjMezgAzZt0FbsK', '2020-11-08 18:48:06', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
-(39, '1234', 'Sumiiii', 'Wijeeee', 'weelasanthi@gmail.com', '$2y$10$/ZjMZS2QLfkvjgSacpFeDO72yQbys4g0JgNQfUYgPflbmc5d/j5IW', '2020-11-08 18:51:44', 'Active', 'Administrator', 'Mrs.', 'ITS Division'),
+(39, '123454', 'Sumiiii', 'Wijeeee', 'weelasanthi@gmail.com', '$2y$10$/ZjMZS2QLfkvjgSacpFeDO72yQbys4g0JgNQfUYgPflbmc5d/j5IW', '2020-11-08 18:51:44', 'Active', 'Administrator', 'Mrs.', 'ITS Division'),
 (40, '0123', 'd', 'fgd', 'ulidutheerake@gmail.com', '$2y$10$ofsxP.hM/X8tMvVXHIjWJezphRMUtK0sbffIFDFSe6.2Z0XPsXCIq', '2020-11-08 18:52:51', 'Active', 'Administrator', 'Mr.', 'ITS Division'),
-(41, '0123', 'K', 'Gunathilake', 'kgunathilake333@gmail.com', '$2y$10$DMfAI5dY0nP2VVQSEStzMeDYn55Nl.UfqzmyJkj9HRoQvz4bL7Tpq', '2020-11-08 18:54:17', 'Active', 'Administrator', 'Mr.', 'ITS Division'),
-(42, '1234', 'Bimidu', 'Gunathilake', 'bimidugunathilake@gmail.com', '$2y$10$38reRge66gK9zQrJlF1oc.90YXStHcRfoihv..IhZNd3DhtZdotAe', '2020-11-08 18:55:21', 'Active', 'Administrator', 'Mr.', 'ITS Division'),
+(41, '01234', 'K', 'Gunathilake', 'kgunathilake333@gmail.com', '$2y$10$DMfAI5dY0nP2VVQSEStzMeDYn55Nl.UfqzmyJkj9HRoQvz4bL7Tpq', '2020-11-08 18:54:17', 'Active', 'Administrator', 'Mr.', 'ITS Division'),
+(42, '123444564e5', 'Bimidu', 'Gunathilake', 'bimidugunathilake@gmail.com', '$2y$10$38reRge66gK9zQrJlF1oc.90YXStHcRfoihv..IhZNd3DhtZdotAe', '2020-11-08 18:55:21', 'Active', 'Administrator', 'Mr.', 'ITS Division'),
 (43, '0153', 'Fathima', 'Fasliya', 'fazy.hfb@gmail.com', '$2y$10$G5HiqX2V/QJPIkYLVegPPu0i5Ho.Kz.vTDs3NraxpDo8n8ICGmP66', '2020-11-08 22:01:06', 'Active', 'Administrator', 'Miss.', 'ITS Division'),
-(44, 'dfg', 'fgd', 'fd', 'fgdz@rc.com', '$2y$10$JL1FB6Iw332MiQuJiOxX0u5YEq/SLti6qoGWxqYE0e.JCu3WsHUby', '2020-11-08 22:28:53', 'Active', 'Administrator', 'Miss.', 'ITS Division'),
-(45, '0123', 'f', 'fgd', 'f@d.com', '$2y$10$JeGPQ5Eap7mO4/5HajxVUulk0AprT9zNSU8tRpBgVGA1BHzcvljca', '2020-11-08 22:32:40', 'Active', 'Administrator', 'Mr.', 'ITS Division'),
+(45, '012345', 'f', 'fgd', 'f@d.com', '$2y$10$JeGPQ5Eap7mO4/5HajxVUulk0AprT9zNSU8tRpBgVGA1BHzcvljca', '2020-11-08 22:32:40', 'Active', 'Administrator', 'Mr.', 'ITS Division'),
 (46, '454356467547', 'vkjhvg', 'sfgsdrg', 'ulidutheerake@gmail.com', '$2y$10$iXP6ZMoJeEgGObG22K/Gc.aPU9gEil4zU.FaCSSibNpieriOpc3US', '2020-11-11 14:50:39', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
-(47, '8678685', 'zfghrsth', 'fgserg', 'ulidutheerake@gmail.com', '$2y$10$F.FPONCpCrHIGGBI9JcxVuJGmH4liPlgnN/Yxjt8cVQYycmEpKn4S', '2020-11-11 14:59:21', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
-(48, '8678685', 'zfghrsth', 'fgserg', 'ulidutheerake@gmail.com', '$2y$10$cCl3dq7lKaGIFeQPI0jJ8uzVbla91WEjDQvObn06JJ3Rz77bwivfS', '2020-11-11 15:02:22', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
-(49, '8678685', 'zfghrsth', 'fgserg', 'ulidutheerake@gmail.com', '$2y$10$hIPFQd2lvJiw39O8P9FV/ekwEhvOYw0MMHZVCY9L1dqRWyRathPJi', '2020-11-11 15:02:30', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
-(50, '6464', 'f', 'sdf', 'fsd@fs.com', '$2y$10$F5yDTBzG.IAzmxIvmDyQwurzSUIlol24sTRMGfjfLI/O5g3.WVHDK', '2020-11-11 15:03:05', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
+(47, '8678685576567', 'zfghrsth', 'fgserg', 'ulidutheerake@gmail.com', '$2y$10$F.FPONCpCrHIGGBI9JcxVuJGmH4liPlgnN/Yxjt8cVQYycmEpKn4S', '2020-11-11 14:59:21', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
+(48, '867868556', 'zfghrsth', 'fgserg', 'ulidutheerake@gmail.com', '$2y$10$cCl3dq7lKaGIFeQPI0jJ8uzVbla91WEjDQvObn06JJ3Rz77bwivfS', '2020-11-11 15:02:22', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
+(49, '86786', 'zfghrsth', 'fgserg', 'ulidutheerake@gmail.com', '$2y$10$hIPFQd2lvJiw39O8P9FV/ekwEhvOYw0MMHZVCY9L1dqRWyRathPJi', '2020-11-11 15:02:30', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
+(50, '6464', 'f', 'sdf', 'fsd@fs.com', '$2y$10$F5yDTBzG.IAzmxIvmDyQwurzSUIlol24sTRMGfjfLI/O5g3.WVHDK', '2020-11-11 15:03:05', 'Deactivated', 'IT Staff', 'Mr.', 'ITS Division'),
 (51, '232423', 'fgdz', 'fg', 'dfsd@dsf.com', '$2y$10$u8UXouYXPZZxsYpByqZPxez7wG4kYf0R6nIQWtEhAajuuS0jv3LXm', '2020-11-11 15:04:20', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
 (52, '353454', 'fgsdzfg', 'fdgdt', 'ulidutheerake@gmail.com', '$2y$10$YtenZfAZOghWC8gJKstRQuohHsMJNHBdAkP3JzdfbFwekFrzNWNUC', '2020-11-11 15:12:45', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
-(53, '4238567', 'dfs', 'fsfs', 'ulidutheerake@gmail.com', '$2y$10$r1pTgBTJw2uFDGBfywTja.Kk11SCNFi94gOjksoYSSwQ79r4A3EXu', '2020-11-11 15:14:42', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
-(54, '6464', 't', 'hdf', 'dgs@gfsd.com', '$2y$10$c0BpcNYzb20LXGSkMB5ip.l8McLcgZ6Cgw6.yU7afkeXzUsajs8oe', '2020-11-11 15:27:53', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
-(55, '6464', 'jghjg', 'ghj', 'af@sf.com', '$2y$10$dk1FI1X.LoQau8VNemR7TOqY4QktNscAAFv2weIYo8EoOrnvoQ3SS', '2020-11-11 15:30:59', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
+(53, '4238567', 'dfs', 'fsfs', 'h@gmail.com', '$2y$10$r1pTgBTJw2uFDGBfywTja.Kk11SCNFi94gOjksoYSSwQ79r4A3EXu', '2020-11-11 15:14:42', 'Active', 'Observer', 'Miss.', 'ITS Division'),
+(54, '12389', 'abc', 'xy', 'abc@xy.com', '$2y$10$c0BpcNYzb20LXGSkMB5ip.l8McLcgZ6Cgw6.yU7afkeXzUsajs8oe', '2020-11-11 15:27:53', 'Active', 'IT Staff', 'Mr.', 'CMR Division'),
+(55, '6464647', 'abc', 'd', 'af@sf.com', '$2y$10$yeNUwxH2oBeJGbTyAW9LYOmPoU93ojjxLF6lgjDWv2wSG3Ied6rU2', '2020-11-11 15:30:59', 'Active', 'IT Staff', 'Mrs.', 'GIS Division'),
 (56, '546547457', 'gsg', 'sdg', 'uliduthegerake@gmail.com', '$2y$10$2nVG5Abn5BeDlV.okzEMEuON4kpf4eNXkMuBHA0bRH7EU2RWFlfXy', '2020-11-11 15:37:13', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
 (57, '4534535', 'sda', 'afe', 'ulidutheerahke@gmail.com', '$2y$10$1Qg6q.JZC/cKe7gHW6k81edjDAMwix6Ut4D5QQDysi.dv6VdDD4GO', '2020-11-11 15:52:37', 'Active', 'IT Staff', 'Mr.', 'ITS Division');
 COMMIT;

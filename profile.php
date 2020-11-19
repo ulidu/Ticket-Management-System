@@ -1,12 +1,6 @@
 <?php include 'include/header.php'; ?>
 <?php include 'include/aside.php'; ?>
 
-<?php
-
-
-
-?>
-
 <!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 

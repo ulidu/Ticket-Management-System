@@ -2,6 +2,7 @@
     "require": {
         "phpmailer/phpmailer": "^6.1",
       "ext-mysqli": "*",
-      "ext-sockets": "*"
+      "ext-sockets": "*",
+      "ext-json": "*"
     }
 }
