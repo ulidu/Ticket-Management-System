@@ -423,6 +423,15 @@
 
                 }
 
+                if (isset($_POST['reset_pw_u'])) {
+
+                    $user_hidden = $_POST['user_hidden'];
+                    $url_user_reset = '0;url=add_user.php?update='.$user_hidden;
+
+                    echo "<meta http-equiv=Refresh content='".$url_user_reset."'>";
+
+                }
+
                 ?>
 
                 <?php
@@ -510,7 +519,13 @@
 
                                 <hr>
 
-                                <span class="kt-badge kt-badge--brand kt-badge--inline kt-badge--pill kt-font-bold">Password Reset</span>
+                                <button data-skin="dark" data-toggle="kt-tooltip" data-placement="top"
+                                        id="reset_pw_u" name="reset_pw_u" type="submit"
+                                        class="btn kt-badge kt-badge--brand kt-badge--inline kt-badge--pill kt-font-bold"
+                                        title="Password Reset">
+                                    Password Reset
+                                </button>
+
                             </form>
 
                         </td>
