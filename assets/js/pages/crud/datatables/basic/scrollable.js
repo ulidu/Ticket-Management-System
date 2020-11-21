@@ -8,8 +8,16 @@ var KTDatatablesBasicScrollable = function() {
 		table.DataTable({
 			scrollY: true,
 			scrollX: true,
-			scrollCollapse: true
+			scrollCollapse: true,
+			dom: 'Bfrtip',
+			buttons: ['pageLength',
 
+				{ extend: 'copy', className: 'btn-brand' },
+				{ extend: 'csv', className: 'btn-brand' },
+				{ extend: 'excel', className: 'btn-brand' },
+				{ extend: 'pdf', className: 'btn-brand' },
+				{ extend: 'print', className: 'btn-brand' }
+			]
 		});
 	};
 

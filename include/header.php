@@ -156,6 +156,7 @@ $run_query = mysqli_query($con, $Row);
 while ($rw = mysqli_fetch_assoc($run_query)) {
 
     $userID = $rw['userID'];
+    $user_id_logged = $rw['userID'];
     $employeeCode = $rw['employeeCode'];
     $firstName = $rw['firstName'];
     $lastName = $rw['lastName'];
@@ -170,6 +171,7 @@ while ($rw = mysqli_fetch_assoc($run_query)) {
     $division_logged_in = $rw['division'];
 
     $_SESSION['userID'] = $userID;
+    $_SESSION['user_id_logged'] = $user_id_logged;
     $_SESSION['employeeCode'] = $employeeCode;
     $_SESSION['firstName'] = $firstName;
     $_SESSION['lastName'] = $lastName;
