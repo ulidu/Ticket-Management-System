@@ -7,9 +7,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jquery" level="application" />
-    <orderEntry type="library" name="@babel/standalone" level="application" />
-    <orderEntry type="library" name="jquery" level="application" />
-    <orderEntry type="library" name="animate.css" level="application" />
+    <orderEntry type="library" exported="" name="jquery" level="application" />
+    <orderEntry type="library" exported="" name="@babel/standalone" level="application" />
+    <orderEntry type="library" exported="" name="jquery" level="application" />
+    <orderEntry type="library" exported="" name="animate.css" level="application" />
   </component>
 </module>
