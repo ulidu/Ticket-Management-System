@@ -34,7 +34,7 @@ if (isset($_POST["staff1"])) {
 
             $query_status = "UPDATE task SET status='Assigned' where task_id='$ticket_id'";
 
-        }else{
+        } else {
 
             $query_status = "UPDATE task SET status='Approved' where task_id='$ticket_id'";
 
@@ -49,7 +49,7 @@ if (isset($_POST["staff1"])) {
 
             $query_status = "UPDATE task SET status='Assigned' where task_id='$ticket_id'";
 
-        }else{
+        } else {
 
             $query_status = "UPDATE task SET status='Approved' where task_id='$ticket_id'";
 
