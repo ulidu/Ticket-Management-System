@@ -9,7 +9,10 @@ $update_userID_hidden = $_GET['update'];
 if ($update_userID_hidden != '') {
 
     $query_get_data = "select * from user where userID='$update_userID_hidden'";
-    $run_query_get_data = mysqli_query($con, $query_get_data);
+
+    if (!empty($con)) {
+        $run_query_get_data = mysqli_query($con, $query_get_data);
+    }
 
     while ($row_get_data = mysqli_fetch_assoc($run_query_get_data)) {
 
