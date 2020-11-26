@@ -109,41 +109,40 @@ if ($update_userID_hidden != '') {
 
                                             <?php if ($update_userID_hidden != '') {
 
-                                                    ?>
-                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                        <input type="radio" value="Mr." id="title_up" name="title_up"
+                                                ?>
+                                                <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                    <input type="radio" value="Mr." id="title_up" name="title_up"
                                                         <?php if ($title_update_get == 'Mr.') { ?>
-                                                                checked
+                                                            checked
                                                         <?php } ?>
-                                                        >
-                                                        Mr.
-                                                        <span></span>
-                                                    </label>
+                                                    >
+                                                    Mr.
+                                                    <span></span>
+                                                </label>
 
 
-                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                        <input type="radio" value="Mrs." id="title_up" name="title_up"
-                                                         <?php if ($title_update_get == 'Mrs.') { ?>
-                                                                checked
+                                                <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                    <input type="radio" value="Mrs." id="title_up" name="title_up"
+                                                        <?php if ($title_update_get == 'Mrs.') { ?>
+                                                            checked
                                                         <?php } ?>
-                                                        > Mrs.
-                                                        <span></span>
-                                                    </label>
+                                                    > Mrs.
+                                                    <span></span>
+                                                </label>
 
 
-                                                    <label class="kt-radio kt-radio--bold kt-radio--brand">
-                                                        <input type="radio" value="Miss." id="title_up" name="title_up"
-                                                         <?php if ($title_update_get == 'Miss.') { ?>
-                                                                checked
+                                                <label class="kt-radio kt-radio--bold kt-radio--brand">
+                                                    <input type="radio" value="Miss." id="title_up" name="title_up"
+                                                        <?php if ($title_update_get == 'Miss.') { ?>
+                                                            checked
                                                         <?php } ?>
-                                                        >
-                                                        Miss.
-                                                        <span></span>
-                                                    </label>
+                                                    >
+                                                    Miss.
+                                                    <span></span>
+                                                </label>
 
 
-                                                    <?php
-
+                                                <?php
 
 
                                             } elseif ($update_userID_hidden == '') {
@@ -268,8 +267,9 @@ if ($update_userID_hidden != '') {
                                             <label class="kt-radio kt-radio--bold kt-radio--brand">
                                                 <input type="radio" value="IT Staff" id="permissions" name="permissions"
                                                     <?php if ($type_update_get == 'IT Staff') { ?>
-                                                            checked
-                                                    <?php } if ($update_userID_hidden == '') { ?> checked
+                                                        checked
+                                                    <?php }
+                                                    if ($update_userID_hidden == '') { ?> checked
                                                     <?php } ?> > IT Staff
                                                 <span></span>
                                             </label>
@@ -277,7 +277,7 @@ if ($update_userID_hidden != '') {
                                                 <input type="radio" value="Administrator" id="permissions"
                                                        name="permissions"
                                                     <?php if ($type_update_get == 'Administrator') { ?>
-                                                            checked
+                                                        checked
                                                     <?php } ?>
                                                 >
                                                 Administrator
@@ -287,8 +287,8 @@ if ($update_userID_hidden != '') {
                                                 <input type="radio" value="Administrative Officer" id="permissions"
                                                        name="permissions"
                                                     <?php if ($type_update_get == 'Administrative Officer') { ?>
-                                                            checked
-                                                            <?php } ?> >
+                                                        checked
+                                                    <?php } ?> >
                                                 Administrative Officer
                                                 <span></span>
                                             </label>
@@ -296,8 +296,8 @@ if ($update_userID_hidden != '') {
                                                 <input type="radio" value="Observer" id="permissions"
                                                        name="permissions"
                                                     <?php if ($type_update_get == 'Observer') { ?>
-                                                            checked
-                                                            <?php } ?> > Observer
+                                                        checked
+                                                    <?php } ?> > Observer
                                                 <span></span>
                                             </label>
                                         </div>
@@ -620,19 +620,19 @@ if ($update_userID_hidden != '') {
 
     $(document).ready(function () {
 
-        window.title_upd =  $('input[type=radio][name=title_up]').val();
+        window.title_upd = $('input[type=radio][name=title_up]').val();
         window.permissions_upd = $('input[type=radio][name=permissions]').val();
 
-        $('input[type=radio][name=title_up]').change(function() {
+        $('input[type=radio][name=title_up]').change(function () {
 
-            var title_upd =  this.value;
+            var title_upd = this.value;
             window.title_upd = title_upd;
 
         });
 
-        $('input[type=radio][name=permissions]').change(function() {
+        $('input[type=radio][name=permissions]').change(function () {
 
-            var permissions_upd =  this.value;
+            var permissions_upd = this.value;
             window.permissions_upd = permissions_upd;
 
         });
@@ -649,7 +649,7 @@ if ($update_userID_hidden != '') {
             }
 
             var logged_user_id = '<?php echo $logged_user_id; ?>';
-            var title_updt =  title_upd;
+            var title_updt = title_upd;
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
             var empCode = $('#empCode').val();
@@ -819,7 +819,7 @@ if ($update_userID_hidden != '') {
                             text: "Selected user updated successfully.",
                             type: "success"
 
-                        }).then(function() {
+                        }).then(function () {
 
                             window.location = "user_list.php";
 
