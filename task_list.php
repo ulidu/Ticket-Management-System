@@ -419,37 +419,6 @@
                         </a>
                         &nbsp;
 
-                        <div class="dropdown dropdown-inline">
-                            <button type="button"
-                                    class="btn btn-default btn-icon-sm dropdown-toggle"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false">
-                                <i class="la la-download"></i>
-                                Export
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <ul class="kt-nav">
-                                    <li class="kt-nav__section kt-nav__section--first">
-                                        <span class="kt-nav__section-text">Choose an option</span>
-                                    </li>
-                                    <li class="kt-nav__item">
-                                        <a onclick="window.print()"
-                                           class="kt-nav__link">
-                                            <i class="kt-nav__link-icon la la-print"></i>
-                                            <span class="kt-nav__link-text">Print</span>
-                                        </a>
-                                    </li>
-                                    <li class="kt-nav__item">
-                                        <a onclick="generate()"
-                                           class="kt-nav__link">
-                                            <i class="kt-nav__link-icon la la-file-pdf-o"></i>
-                                            <span class="kt-nav__link-text">PDF</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
