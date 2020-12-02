@@ -12,13 +12,17 @@ $logged_user_id = $_POST['logged_user_id'];
 if ($c_pass_up == '') {
 
     $query_details = "UPDATE user SET firstName = '$fname_up', lastName = '$lname_up', email = '$email_up' WHERE userID = '$logged_user_id'";
-    $create_query_details = mysqli_query($con, $query_details);
+    if (!empty($con)) {
+        $create_query_details = mysqli_query($con, $query_details);
+    }
 
 
 } else if ($c_pass_up !== '') {
 
     $sql1 = "SELECT userID, password FROM user where userID='$logged_user_id'";
-    $run_query1 = mysqli_query($con, $sql1);
+    if (!empty($con)) {
+        $run_query1 = mysqli_query($con, $sql1);
+    }
 
     while ($pw = mysqli_fetch_assoc($run_query1)) {
 
