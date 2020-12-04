@@ -172,6 +172,7 @@ $user_id_logged = $_SESSION['user_id_logged'];
                 Notification.permission = status;
             }
         })
+
     }
 
     if (acc_type_logged == 'Administrative Officer' && Notification.permission == "granted") {
