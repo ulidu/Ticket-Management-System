@@ -10,7 +10,9 @@ $date = DateTime::createFromFormat("Y-m-d", $string);
 $date = date_format($date, 'Y-m-d H:i:s');
 
 $query_clear_recovery = "DELETE FROM account_recovery WHERE expires < '$date'";
-$run_query_clear_recovery = mysqli_query($con, $query_clear_recovery);
+if (isset($con)) {
+    $run_query_clear_recovery = mysqli_query($con, $query_clear_recovery);
+}
 
 $logged_user_id = $_SESSION['logged_user_id'];
 
@@ -95,7 +97,7 @@ if ($logged_user_id != '') {
                         </div>
                         <div class="kt-login__menu">
 
-                            <a style="color: #595d6e;" href="#" class="kt-link">Contact</a>
+                            <a style="color: #595d6e;" href="feedback.php" class="kt-link">Contact</a>
                         </div>
                     </div>
                 </div>

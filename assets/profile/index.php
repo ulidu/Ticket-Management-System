@@ -1,251 +1,166 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en" class="no-js one-page-layout sound-effects" data-audio-tick="audio/tick.mp3"
+      data-click-ripple-animation="yes">
 <head>
 
-   <!--- basic page needs
-   ================================================== -->
-   <meta charset="utf-8">
-	<title>I'm ULIDU</title>
-	<meta name="description" content="">  
-	<meta name="author" content="">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ULIDU T - Web Developer">
+    <meta name="author" content="ULIDU T">
+    <meta name="theme-color" content="#1755cf"/>
 
-   <!-- mobile specific metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ULIDU T</title>
 
- 	<!-- CSS
-   ================================================== -->
-   <link rel="stylesheet" href="css/base.css">  
-   <link rel="stylesheet" href="css/main.css">
-   <link rel="stylesheet" href="css/vendor.css">     
+    <!-- FAV and TOUCH ICONS -->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="images/ico/apple-touch-icon.png">
 
-   <!-- script
-   ================================================== -->   
-	<script src="js/modernizr.js"></script>
-	<script src="js/pace.min.js"></script>
+    <!-- FONTS -->
+    <link rel="stylesheet" href="css/fonts/jost/jost.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 
-   <!-- favicons
-	================================================== -->
-	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="manifest" href="favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
 
+    <!-- STYLES -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="js/nprogress/nprogress.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery.magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts/fontello/css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/768.css">
+
+
+    <!-- INITIAL SCRIPTS -->
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/demo2.css">
 </head>
 
-<body id="top">
+<body>
+<!-- .home-wrap -->
+<div class="home-wrap">
 
-   
-   <section id="intro">   
+    <!-- HOME BG IMAGE -->
+    <div class="home-bg" style="background-image: url(images/home/cover2.jpg)"></div>
+    <!-- HOME BG IMAGE -->
 
-   	<div class="intro-overlay"></div>	
+    <!-- HOME BG LOGO -->
+    <div class="home-bg-logo">
+        <img src="images/home/icon-bg2.svg" alt="icon"/>
+    </div>
+    <!-- HOME BG LOGO -->
 
-   	<div class="intro-content">
-   		<div class="row">
+    <!-- .home-menu -->
+    <nav class="home-menu">
+        <a href="about.html" data-slug="about">
+            <span class="item-name">About</span>
+        </a>
+        <a href="resume.html" data-slug="resume">
+            <span class="item-name">Resume</span>
+        </a>
+        <a href="portfolio.html" data-slug="portfolio" id="portfolio-link">
+            <span class="item-name">Portfolio</span>
+        </a>
+        <a href="blog-latest.html" data-slug="blog">
+            <span class="item-name">Blog</span>
+        </a>
+        <a href="contact.html" data-slug="contact">
+            <span class="item-name">Contact</span>
+        </a>
+    </nav>
+    <!-- .home-menu -->
 
-   			<div class="col-twelve">
+    <!-- .home-heading -->
+    <div class="home-heading">
 
-	   			<h5>Hello, World.</h5>
-	   			<h1>I'M ULIDU T.</h1>
+        <!-- .home-logo -->
+        <div class="home-logo">
+            <p class="home-job-title">Fashion Designer</p>
 
-	   			<p class="intro-position">
-	   				<span>PHP Developer</span>
-	   				<span>UI/UX Designer</span> 
-	   			</p>
-
-	   			<a class="button stroke smoothscroll" href="#contact" title="">More About Me</a>
-
-	   		</div>  
-   			
-   		</div>   		 		
-   	</div> <!-- /intro-content --> 
-
-   	<ul class="intro-social">        
-         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-         <li><a href="#"><i class="fa fa-github"></i></a></li>
-    
-      </ul> <!-- /intro-social -->      	
-
-   </section> <!-- /intro -->
-
-
-   <!-- about section
-   ================================================== -->
-    
-
-
-   
-   <!-- contact
-   ================================================== -->
-	<section id="contact">
-
-		<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>Contact</h5>
-   			<h1>I'd Love To Hear From You.</h1>
-
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
-
-   		</div> 
-   	</div> <!-- /section-intro -->
-
-   	<div class="row contact-form">
-
-   		<div class="col-twelve">
-
-            <!-- form -->
-            <form name="contactForm" id="contactForm" method="post" action="">
-      			<fieldset>
-
-                  <div class="form-field">
- 						   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
-                  </div>
-                  <div class="form-field">
-	      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
-	               </div>
-                  <div class="form-field">
-	     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
-	               </div>                       
-                  <div class="form-field">
-	                 	<textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
-	               </div>                      
-                 <div class="form-field">
-                     <button class="submitform">Submit</button>
-                     <div id="submit-loader">
-                        <div class="text-loader">Sending...</div>                             
-       				      <div class="s-loader">
-								  	<div class="bounce1"></div>
-								  	<div class="bounce2"></div>
-								  	<div class="bounce3"></div>
-								</div>
-							</div>
-                  </div>
-
-      			</fieldset>
-      		</form> <!-- Form End -->
-
-            <!-- contact-warning -->
-            <div id="message-warning">            	
-            </div>            
-            <!-- contact-success -->
-      		<div id="message-success">
-               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-      		</div>
-
-         </div> <!-- /col-twelve -->
-   		
-   	</div> <!-- /contact-form -->
-
-   	<div class="row contact-info">
-
-   		<div class="col-four tab-full">
-
-   			<div class="icon">
-   				<i class="icon-pin"></i>
-   			</div>
-
-   			<h5>Where to find me</h5>
-
-   			<p>
-            1600 Amphitheatre Parkway<br>
-            Mountain View, CA<br>
-            94043 US
+            <p class="home-marquee">
+                Building creative websites for the world's people. Always in search
+                of the great user experience.
+                Building creative websites for the world's people. Always in search
+                of the great user experience.
             </p>
 
-   		</div>
+            <i class="home-logo-left "><span>Fashion</span></i>
+            <i class="home-logo-center">
+                    <span class="home-icon">
+                        <img src="images/home/icon2.svg" alt="icon"/>
+                    </span>
+                <span class="home-text-container">
+                        <span class="home-text-container-placeholder">Ella Matthews</span>
+                    </span>
+                <span class="home-text">Ella Matthews</span>
+            </i>
+            <i class="home-logo-right"><span>Designer</span></i>
+        </div>
+        <!-- .home-logo -->
+    </div>
+    <!-- .home-heading -->
 
-   		<div class="col-four tab-full collapse">
+    <!-- .home-social -->
+    <p class="home-social">
+        <a class="social-link facebook" href="#"></a>
+        <a class="social-link github" href="#"></a>
+    </p>
+    <!-- .home-social -->
 
-   			<div class="icon">
-   				<i class="icon-mail"></i>
-   			</div>
+    <!-- .home-footer -->
+    <p class="home-footer">&copy; 2020 ULIDU T</p>
+    <!-- .home-footer -->
 
-   			<h5>Email Me At</h5>
+    <!-- FULL SCREEN TOGGLE -->
+    <div class="full-screen-wrap">
+        <div class="top-left"></div>
+        <div class="top-left-horiz"></div>
+        <div class="top-right"></div>
+        <div class="top-right-horiz"></div>
+        <div class="bottom-left"></div>
+        <div class="bottom-left-horiz"></div>
+        <div class="bottom-right"></div>
+        <div class="bottom-right-horiz"></div>
+    </div>
+    <!-- FULL SCREEN TOGGLE -->
 
-   			<p>someone@kardswebsite.com<br>
-			   	info@kardswebsite.com			     
-			   </p>
+</div>
+<!-- .home-wrap -->
 
-   		</div>
+<!-- .one-page-content-->
+<div class="one-page-content">
 
-   		<div class="col-four tab-full">
+    <a href="/" class="close-page">
+        <span class="close-text"></span>
+    </a>
 
-   			<div class="icon">
-   				<i class="icon-phone"></i>
-   			</div>
+    <div class="content-wrap"></div>
 
-   			<h5>Call Me At</h5>
-
-   			<p>Phone: (+63) 555 1212<br>
-			   	Mobile: (+63) 555 0100<br>
-			     	Fax: (+63) 555 0101
-			   </p>
-
-   		</div>
-   		
-   	</div> <!-- /contact-info -->
-		
-	</section> <!-- /contact -->
+</div>
+<!-- .one-page-content-->
 
 
-   <!-- footer
-   ================================================== -->
+<!-- page transition overlays -->
+<div class="overlay overlay-1"></div>
+<div class="overlay overlay-2"></div>
+<!-- page transition overlays -->
 
-   <footer>
-     	<div class="row">
+<!-- PORTFOLIO SINGLE AJAX CONTENT CONTAINER -->
+<div class="p-overlay"></div>
+<div class="p-overlay"></div>
 
-     		<div class="col-six tab-full pull-right social">
-
-     			<ul class="footer-social">        
-			      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-			      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-			      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-			      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-			      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			   </ul> 
-	      		
-	      </div>
-
-      	<div class="col-six tab-full">
-	      	<div class="copyright">
-		        	<span>© Copyright Kards 2016.</span> 
-		        	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>	         	
-		         </div>		                  
-	      	</div>
-
-	      	<div id="go-top">
-		         <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
-		      </div>
-
-      	</div> <!-- /row -->     	
-   </footer>  
-
-   <div id="preloader"> 
-    	<div id="loader"></div>
-   </div> 
-
-   <!-- Java Script
-   ================================================== --> 
-   <script src="js/jquery-2.1.3.min.js"></script>
-   <script src="js/plugins.js"></script>
-   <script src="js/main.js"></script>
+<!-- SCRIPTS -->
+<script src="js/tween-max.js"></script>
+<script src="js/jquery-address.js"></script>
+<script src="js/nprogress/nprogress.js"></script>
+<script src="js/jquery-isotope.js"></script>
+<script src="js/imagesloaded.js"></script>
+<script src="js/jquery-fitvids.js"></script>
+<script src="js/jquery.magnific-popup/jquery-magnific-popup.js"></script>
+<script src="js/jquery-easing.js"></script>
+<script src="js/jquery-validate.js"></script>
+<script src="js/resize-sensor.js"></script>
+<script src="js/jquery-sticky-sidebar.js"></script>
+<script src="js/main.js"></script>
 
 </body>
-
 </html>
