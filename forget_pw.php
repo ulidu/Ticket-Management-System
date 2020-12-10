@@ -15,7 +15,9 @@ $email = $_POST['email'];
 
 
 $query_check_email = "SELECT * FROM user WHERE email = '$email' and status='Active'";
-$run_query_check_email = mysqli_query($con, $query_check_email);
+    if (isset($con)) {
+        $run_query_check_email = mysqli_query($con, $query_check_email);
+    }
 
 $count_email = mysqli_num_rows($run_query_check_email);
 
@@ -70,9 +72,9 @@ if ($count_email == 0) {
     } catch (Exception $e) {
     }
 
-    //$url_of_host = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
+    $url_of_host = 'https://tmsuda.000webhostapp.com'; // (tochange) Testing - Free hosting
 
-    $url_of_host = 'http://localhost/Ticket%20Management%20System'; // Testing - Localhost
+    //$url_of_host = 'http://localhost/Ticket%20Management%20System'; // Testing - Localhost
     $url_of_host_mail_images = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
 
     $urlToEmail = $url_of_host.'/forget.php?'.http_build_query([

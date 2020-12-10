@@ -49,9 +49,9 @@ if ($count_email != 0) {
 
     $query = "INSERT INTO user(firstName, lastName, employeeCode, email, acc_type, password, date_created, status, title, division) VALUES('$firstName','$lastName','$empCode','$email','$acc_type','$hash','$date','$status','$title','$division')";
 
-//$url_of_host = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
+$url_of_host = 'https://tmsuda.000webhostapp.com'; // (tochange) Testing - Free hosting
 
-    $url_of_host = 'http://localhost/Ticket%20Management%20System'; // Testing - Localhost
+    //$url_of_host = 'http://localhost/Ticket%20Management%20System'; // Testing - Localhost
     $url_of_host_mail_images = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
 
     $urlToEmail = $url_of_host;

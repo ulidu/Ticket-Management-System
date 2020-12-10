@@ -3,7 +3,9 @@
 include 'include/db.php';
 
 $res = "SELECT t.* FROM task t, notify_ao n WHERE n.task_id = t.task_id";
-$res_run = mysqli_query($con, $res);
+if (isset($con)) {
+    $res_run = mysqli_query($con, $res);
+}
 
 while ($row_res = mysqli_fetch_assoc($res_run)) {
 

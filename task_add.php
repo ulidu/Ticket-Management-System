@@ -201,7 +201,9 @@
                                                 <?php
 
                                                 $query_g_div = "select * from division";
-                                                $run_query_g_div = mysqli_query($con, $query_g_div);
+                                                if (isset($con)) {
+                                                    $run_query_g_div = mysqli_query($con, $query_g_div);
+                                                }
 
                                                 while ($row_g_div = mysqli_fetch_assoc($run_query_g_div)) {
 
