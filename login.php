@@ -249,7 +249,7 @@ if ($logged_user_id != '') {
                                             ?>
                                             <li
                                                 <?php if ($acc_type == 'Administrator'){ ?>style="color: #ffb822;"
-                                                <?php }elseif ($acc_type == 'Observer'){ ?>style="color: #282a3c;"<?php } else {
+                                                <?php }elseif ($acc_type == 'Observer'){ ?>style="color: #34bfa3;"<?php } else {
                                             } ?>
                                                 value="<?php echo $userID; ?>"><?php echo $firstName . " " . $lastName . ' | ' . $employeeCode . " " . "-" . " " . $acc_type; ?>
                                             </li>

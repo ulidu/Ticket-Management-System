@@ -8,7 +8,9 @@
 
     <div class="row">
 
-        <div <?php if ($acc_type == 'IT Staff') { ?> class="col-4" <?php } else { ?> class="col-3" <?php } ?> >
+        <div <?php if (!empty($acc_type)) {
+            if ($acc_type == 'IT Staff') { ?> class="col-4" <?php } else { ?> class="col-3" <?php }
+        } ?> >
             <div class="kt-portlet kt-iconbox <?php if ($acc_type == 'IT Staff') { ?>kt-iconbox--warning kt-ribbon--warning <?php } else { ?> kt-iconbox--danger kt-ribbon--danger <?php } ?> kt-iconbox--animate-slow kt-ribbon kt-ribbon--left kt-ribbon--round">
                 <div class="kt-ribbon__target" style="top: 8px; right: -2px; font-weight: 400; opacity: 0.8;">
                     Previous 3 Months
@@ -51,55 +53,61 @@
 
                                     } elseif ($acc_type == 'Administrative Officer') {
 
-                                        $count_all = "SELECT * FROM task where status != 'Approval Required' and division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
+                                        if (!empty($division)) {
+                                            $count_all = "SELECT * FROM task where status != 'Approval Required' and division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
+                                        }
 
                                     } elseif ($acc_type == 'IT Staff') {
 
-                                        $count_all = "SELECT * FROM assign a, task t where a.task_id = t.task_id AND (a.userID='$logged_user_id' or a.userID_2_opt='$logged_user_id') AND  t.assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY a.task_id";
+                                        if (!empty($logged_user_id)) {
+                                            $count_all = "SELECT * FROM assign a, task t where a.task_id = t.task_id AND (a.userID='$logged_user_id' or a.userID_2_opt='$logged_user_id') AND  t.assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY a.task_id";
+                                        }
 
                                     }
 
 
-                                    if ($count_all_run = mysqli_query($con, $count_all)) {
+                                    if (!empty($con)) {
+                                        if ($count_all_run = mysqli_query($con, $count_all)) {
 
-                                        $count_all_tickets = mysqli_num_rows($count_all_run);
+                                            $count_all_tickets = mysqli_num_rows($count_all_run);
 
-                                        if ($count_all_tickets == 1) {
+                                            if ($count_all_tickets == 1) {
 
-                                            if ($acc_type == 'Administrative Officer') {
+                                                if ($acc_type == 'Administrative Officer') {
 
-                                                $count_all_ap_req = "SELECT * FROM task where division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
-                                                $count_all_ap_req_run = mysqli_query($con, $count_all_ap_req);
-                                                $count_all_ap_req_tickets = mysqli_num_rows($count_all_ap_req_run);
+                                                    $count_all_ap_req = "SELECT * FROM task where division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
+                                                    $count_all_ap_req_run = mysqli_query($con, $count_all_ap_req);
+                                                    $count_all_ap_req_tickets = mysqli_num_rows($count_all_ap_req_run);
 
-                                                printf("%d/%d Ticket", $count_all_tickets, $count_all_ap_req_tickets);
+                                                    printf("%d/%d Ticket", $count_all_tickets, $count_all_ap_req_tickets);
 
-                                            } else {
+                                                } else {
 
-                                                printf("%d Ticket", $count_all_tickets);
+                                                    printf("%d Ticket", $count_all_tickets);
 
-                                            }
-
-                                        } else {
-
-                                            if ($acc_type == 'Administrative Officer') {
-
-                                                $count_all_ap_req = "SELECT * FROM task where division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
-                                                $count_all_ap_req_run = mysqli_query($con, $count_all_ap_req);
-                                                $count_all_ap_req_tickets = mysqli_num_rows($count_all_ap_req_run);
-
-                                                printf("%d/%d Tickets", $count_all_tickets, $count_all_ap_req_tickets);
+                                                }
 
                                             } else {
 
-                                                printf("%d Tickets", $count_all_tickets);
+                                                if ($acc_type == 'Administrative Officer') {
+
+                                                    $count_all_ap_req = "SELECT * FROM task where division='$division' and assigned_date between '$back_3_months' and '$today_d_c1' ORDER BY task_id";
+                                                    $count_all_ap_req_run = mysqli_query($con, $count_all_ap_req);
+                                                    $count_all_ap_req_tickets = mysqli_num_rows($count_all_ap_req_run);
+
+                                                    printf("%d/%d Tickets", $count_all_tickets, $count_all_ap_req_tickets);
+
+                                                } else {
+
+                                                    printf("%d Tickets", $count_all_tickets);
+
+                                                }
 
                                             }
+
+                                            mysqli_free_result($count_all_run);
 
                                         }
-
-                                        mysqli_free_result($count_all_run);
-
                                     }
 
                                     ?>
