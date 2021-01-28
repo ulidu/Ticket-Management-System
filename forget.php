@@ -222,7 +222,9 @@ if ($logged_user_id != '') {
                             $date_e_check = date('Y-m-d H:i:s');
 
                             $query_for = "SELECT * FROM account_recovery WHERE selector = '$selector' AND expires >= '$date_e_check'";
-                            $run_query_for = mysqli_query($con, $query_for);
+                            if (!empty($con)) {
+                                $run_query_for = mysqli_query($con, $query_for);
+                            }
 
                             while ($row_query_for = mysqli_fetch_assoc($run_query_for)) {
 

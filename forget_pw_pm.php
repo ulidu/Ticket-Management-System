@@ -31,7 +31,9 @@ if (isset($_POST["email"])) {
 
 
     $query_check_email = "SELECT * FROM user WHERE email = '$email' and status='Active'";
-    $run_query_check_email = mysqli_query($con, $query_check_email);
+    if (!empty($con)) {
+        $run_query_check_email = mysqli_query($con, $query_check_email);
+    }
 
     $count_email = mysqli_num_rows($run_query_check_email);
 
@@ -60,7 +62,9 @@ if (isset($_POST["email"])) {
             $_SESSION['firstName'] = $firstName;
             $_SESSION['lastName'] = $lastName;
             $_SESSION['status'] = $status;
-            $_SESSION['acc_type'] = $acc_type;
+            if (!empty($acc_type)) {
+                $_SESSION['acc_type'] = $acc_type;
+            }
             $_SESSION['title'] = $title;
             $_SESSION['division'] = $division;
 
@@ -86,9 +90,9 @@ if (isset($_POST["email"])) {
         } catch (Exception $e) {
         }
 
-        $url_of_host = 'https://tmsuda.000webhostapp.com'; // (tochange) Testing - Free hosting
+        //$url_of_host = 'https://tmsuda.000webhostapp.com'; // (tochange) Testing - Free hosting
 
-        //$url_of_host = 'http://localhost/Ticket%20Management%20System'; // Testing - Localhost
+        $url_of_host = 'http://localhost/Ticket%20Management%20System'; // Testing - Localhost
         $url_of_host_mail_images = 'https://tmsuda.000webhostapp.com'; // Testing - Free hosting
 
         $urlToEmail = $url_of_host.'/forget.php?'.http_build_query([
