@@ -16,7 +16,9 @@ $client_ip_add = $_SERVER['REMOTE_ADDR'];
 if ($message_help != '') {
 
     $query_feedback = "INSERT INTO feedback(name_added, feedback, extension, date_feedback, client_ip) VALUES ('$name_help', '$message_help', '$ext_help', '$date', '$client_ip_add')";
-    $create_query_feedback = mysqli_query($con, $query_feedback);
+    if (!empty($con)) {
+        $create_query_feedback = mysqli_query($con, $query_feedback);
+    }
 
     echo 1;
 
