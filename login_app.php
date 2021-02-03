@@ -3,7 +3,9 @@
 session_start();
 include 'include/db.php';
 
-$emp_code_enter = mysqli_real_escape_string($con, $_POST['name']);
+if (!empty($con)) {
+    $emp_code_enter = mysqli_real_escape_string($con, $_POST['name']);
+}
 
 $sql_code_enter = "SELECT userID, employeeCode FROM user where status='Active' && employeeCode='$emp_code_enter'";
 $run_query_code_enter = mysqli_query($con, $sql_code_enter);
