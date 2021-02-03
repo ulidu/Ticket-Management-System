@@ -16,7 +16,9 @@ if (isset($_POST["staff2"])) {
 
 
     $query_select = "SELECT task_id FROM assign WHERE task_id = '$ticket_id'";
-    $run_query_select = mysqli_query($con, $query_select);
+    if (!empty($con)) {
+        $run_query_select = mysqli_query($con, $query_select);
+    }
 
 
     $row1 = mysqli_fetch_array($run_query_select, MYSQLI_ASSOC);
