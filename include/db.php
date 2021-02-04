@@ -3,7 +3,7 @@
 // DB Configuration
 $db['db_host'] = 'localhost';
 $db['db_username'] = 'root';
-$db['db_password'] = '';
+$db['db_password'] = 'root';
 $db['db_name'] = 'uda_task';
 $db['db_port'] = '3308';
 
