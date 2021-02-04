@@ -36,7 +36,9 @@ $division = $_POST['division'];
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $query_check_e = "SELECT * FROM user WHERE email = '$email' or employeeCode = '$empCode'";
-$run_query_check_e = mysqli_query($con, $query_check_e);
+if (!empty($con)) {
+    $run_query_check_e = mysqli_query($con, $query_check_e);
+}
 
 $count_email = mysqli_num_rows($run_query_check_e);
 
