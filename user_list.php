@@ -39,22 +39,24 @@
                                     $count_all = "SELECT * FROM user where status='Active' && acc_type='Administrator'";
 
 
-                                    if ($count_all_run = mysqli_query($con, $count_all)) {
+                                    if (!empty($con)) {
+                                        if ($count_all_run = mysqli_query($con, $count_all)) {
 
-                                        $count_all_tickets = mysqli_num_rows($count_all_run);
+                                            $count_all_tickets = mysqli_num_rows($count_all_run);
 
-                                        if ($count_all_tickets == 1) {
+                                            if ($count_all_tickets == 1) {
 
-                                            printf("%d User", $count_all_tickets);
+                                                printf("%d User", $count_all_tickets);
 
-                                        } else {
+                                            } else {
 
-                                            printf("%d Users", $count_all_tickets);
+                                                printf("%d Users", $count_all_tickets);
+
+                                            }
+
+                                            mysqli_free_result($count_all_run);
 
                                         }
-
-                                        mysqli_free_result($count_all_run);
-
                                     }
 
                                     ?>

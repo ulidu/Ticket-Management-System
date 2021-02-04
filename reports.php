@@ -14,43 +14,35 @@
                 <div class="kt-portlet__head kt-portlet__space-x">
                     <div class="kt-portlet__head-label">
                         <h3 class="kt-portlet__head-title kt-font-light">
-                            Total Tikcets
+                            Total Tickets
                         </h3>
                     </div>
                     <div class="kt-portlet__head-toolbar">
                         <a href="#" class="btn btn-outline-light btn-sm btn-bold dropdown-toggle" data-toggle="dropdown">
-                            March, 2019
+                            All Reports
                         </a>
                         <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right">
                             <ul class="kt-nav">
                                 <li class="kt-nav__item">
                                     <a href="#" class="kt-nav__link">
                                         <i class="kt-nav__link-icon flaticon2-line-chart"></i>
-                                        <span class="kt-nav__link-text">Reports</span>
+                                        <span class="kt-nav__link-text">Reports Type 1</span>
                                     </a>
                                 </li>
                                 <li class="kt-nav__item">
                                     <a href="#" class="kt-nav__link">
-                                        <i class="kt-nav__link-icon flaticon2-send"></i>
-                                        <span class="kt-nav__link-text">Messages</span>
+                                        <i class="kt-nav__link-icon flaticon2-line-chart"></i>
+                                        <span class="kt-nav__link-text">Reports Type 2</span>
                                     </a>
-                                </li>
-                                <li class="kt-nav__item">
+                                </li><li class="kt-nav__item">
                                     <a href="#" class="kt-nav__link">
-                                        <i class="kt-nav__link-icon flaticon2-pie-chart-1"></i>
-                                        <span class="kt-nav__link-text">Charts</span>
+                                        <i class="kt-nav__link-icon flaticon2-line-chart"></i>
+                                        <span class="kt-nav__link-text">Reports Type 3</span>
                                     </a>
-                                </li>
-                                <li class="kt-nav__item">
+                                </li><li class="kt-nav__item">
                                     <a href="#" class="kt-nav__link">
-                                        <i class="kt-nav__link-icon flaticon2-avatar"></i>
-                                        <span class="kt-nav__link-text">Members</span>
-                                    </a>
-                                </li>
-                                <li class="kt-nav__item">
-                                    <a href="#" class="kt-nav__link">
-                                        <i class="kt-nav__link-icon flaticon2-settings"></i>
-                                        <span class="kt-nav__link-text">Settings</span>
+                                        <i class="kt-nav__link-icon flaticon2-line-chart"></i>
+                                        <span class="kt-nav__link-text">Reports Type 4</span>
                                     </a>
                                 </li>
                             </ul>
@@ -62,7 +54,37 @@
                         <div class="kt-widget27__visual">
                             <img src="assets/media/bg/bg-8.jpg" alt="">
                             <h3 class="kt-widget27__title">
-                                <span><span></span>256 Tickets</span>
+                                <span><span></span>
+
+                                     <?php
+
+
+                                     $count_all = "SELECT task_id FROM task";
+
+
+                                     if (!empty($con)) {
+                                         if ($count_all_run = mysqli_query($con, $count_all)) {
+
+                                             $count_all_tickets = mysqli_num_rows($count_all_run);
+
+                                             if ($count_all_tickets == 1) {
+
+                                                 printf("%d Ticket", $count_all_tickets);
+
+                                             } else {
+
+                                                 printf("%d Tickets", $count_all_tickets);
+
+                                             }
+
+                                             mysqli_free_result($count_all_run);
+
+                                         }
+                                     }
+
+                                     ?>
+
+                                </span>
                             </h3>
                             <div class="kt-widget27__btn">
                                 <span class="btn btn-pill btn-light btn-elevate btn-bold">No. of all tickets submitted so far</span>
@@ -71,16 +93,16 @@
                         <div class="kt-widget27__container kt-portlet__space-x">
                             <ul class="nav nav-pills nav-fill" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="pill" href="#kt_personal_income_quater_1">Quater 1</a>
+                                    <a class="nav-link active" data-toggle="pill" href="#kt_personal_income_quater_1">Quarter 1</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="pill" href="#kt_personal_income_quater_2">Quater 2</a>
+                                    <a class="nav-link" data-toggle="pill" href="#kt_personal_income_quater_2">Quarter 2</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="pill" href="#kt_personal_income_quater_3">Quater 3</a>
+                                    <a class="nav-link" data-toggle="pill" href="#kt_personal_income_quater_3">Quarter 3</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="pill" href="#kt_personal_income_quater_4">Quater 4</a>
+                                    <a class="nav-link" data-toggle="pill" href="#kt_personal_income_quater_4">Quarter 4</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
