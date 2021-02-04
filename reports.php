@@ -116,9 +116,9 @@
                                                 <!--begin::Thead-->
                                                 <thead>
                                                 <tr>
-                                                    <td>Application</td>
-                                                    <td>Status</td>
-                                                    <td class="kt-align-right">Total</td>
+                                                    <td>Categories</td>
+                                                    <td>Total</td>
+                                                    <td class="kt-align-right">Percentage</td>
                                                 </tr>
                                                 </thead>
 
