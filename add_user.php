@@ -651,7 +651,9 @@ if ($update_userID_hidden != '') {
 
             }
 
-            var logged_user_id = '<?php echo $logged_user_id; ?>';
+            var logged_user_id = '<?php if (!empty($logged_user_id)) {
+                echo $logged_user_id;
+            } ?>';
             var title_updt = title_upd;
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
@@ -868,7 +870,7 @@ if ($update_userID_hidden != '') {
             var lastName = $('#lastName').val();
             var empCode = $('#empCode').val();
             var email = $('#email').val();
-            var permissions = $('#permissions').val();
+            var permissions = permissions_upd;
             var division = $('#division').val();
             var password = $('#password').val();
             var pw_cf = $('#pw_cf').val();
