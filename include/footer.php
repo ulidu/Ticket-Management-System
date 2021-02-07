@@ -180,11 +180,11 @@ $user_id_logged = $_SESSION['user_id_logged'];
         setInterval(function () {
             $.ajax({
 
-                url: "notify_app_ao.php", type: "POST", async: true, cache: false, success: function (data) {
+                url: "notify_app_ao.php", type: "POST", data:{logged_divi:div_logged}, async: true, cache: false, success: function (response) {
 
-                    if (Notification.permission == "granted" && data != '') {
+                    if (Notification.permission == "granted" && response != '') {
 
-                        var data_arr_big = data.split("{||next_rec||}");
+                        var data_arr_big = response.split("{||next_rec||}");
                         data_arr_big.forEach(notify_func)
 
                         function notify_func(item, index, arr) {
@@ -205,7 +205,7 @@ $user_id_logged = $_SESSION['user_id_logged'];
                                 var designation_n = data_arr_sm[2];
                                 var division_n = data_arr_sm[3];
 
-                                var title = "New ticket received from " + division_n;
+                                var title = "New ticket to approve from your" + division_n;
                                 var dts = Math.floor(Date.now());
                                 var img = 'https://i.imgur.com/akcxFXw.png';
 
