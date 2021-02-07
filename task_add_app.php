@@ -27,8 +27,10 @@ $status = "Approval Required";
 $query = "INSERT INTO task(assigned_by, emp_code, assigned_date, issue, category, status, designation, division, extension_no, priority, asset_code, ip_address) VALUES('$name','$emp_code','$date','$issue','$cat_issue','$status','$designation','$division','$ext','$priority','$asst_code','$localAddr')";
 $querylog_taskadd = "INSERT INTO log(log_emp_code, log_date_time, log_action) VALUES('$emp_code', '$date', 'New ticket added by $name in $division')";
 
+$random_id_before = rand(1000, 100000000);
+$random_id = $emp_code+$random_id_before;
 
-$query_ticket_notify = "INSERT INTO notify(division_ao_notify) VALUES('$division')";
+$query_ticket_notify = "INSERT INTO notify_ao(random_id, assigned_by_ao_notify, issue_ao_notify, designation_ao_notify, division_ao_notify) VALUES('$random_id', '$name', '$issue', '$designation', '$division')";
 
 if (isset($con)) {
     $create_query_ticket_notify = mysqli_query($con, $query_ticket_notify);
