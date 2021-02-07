@@ -18,7 +18,9 @@ while ($row_res = mysqli_fetch_assoc($res_run)) {
     echo $assigned_by_notify.'{|same_rec|}'.$issue_notify.'{|same_rec|}'.$designation_notify.'{|same_rec|}'.$division_notify.'{||next_rec||}';
 
     $res_delete = "DELETE FROM notify WHERE task_id = '$ticket_id_notify'";
-    $res_delete_run = mysqli_query($con, $res_delete);
+    if (!empty($con)) {
+        $res_delete_run = mysqli_query($con, $res_delete);
+    }
 
 }
 
