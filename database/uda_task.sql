@@ -1,22 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3308
--- Generation Time: Nov 21, 2020 at 01:55 AM
--- Server version: 8.0.18
--- PHP Version: 7.4.0
+-- Host: localhost:3308
+-- Generation Time: Feb 07, 2021 at 04:49 PM
+-- Server version: 5.7.32
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `uda_task`
@@ -28,13 +20,12 @@ SET time_zone = "+00:00";
 -- Table structure for table `account_recovery`
 --
 
-DROP TABLE IF EXISTS `account_recovery`;
-CREATE TABLE IF NOT EXISTS `account_recovery` (
-  `userID` varchar(200) DEFAULT NULL,
-  `selector` varchar(200) DEFAULT NULL,
-  `token` varchar(200) DEFAULT NULL,
-  `expires` varchar(200) DEFAULT NULL,
-  `email_reset` varchar(200) DEFAULT NULL
+CREATE TABLE `account_recovery` (
+                                    `userID` varchar(200) DEFAULT NULL,
+                                    `selector` varchar(200) DEFAULT NULL,
+                                    `token` varchar(200) DEFAULT NULL,
+                                    `expires` varchar(200) DEFAULT NULL,
+                                    `email_reset` varchar(200) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -43,13 +34,12 @@ CREATE TABLE IF NOT EXISTS `account_recovery` (
 -- Table structure for table `assign`
 --
 
-DROP TABLE IF EXISTS `assign`;
-CREATE TABLE IF NOT EXISTS `assign` (
-  `task_id` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `userID` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `userID_2_opt` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `assigned_to_user_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `assigned_by` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
+CREATE TABLE `assign` (
+                          `task_id` varchar(200) DEFAULT NULL,
+                          `userID` varchar(200) DEFAULT NULL,
+                          `userID_2_opt` varchar(200) DEFAULT NULL,
+                          `assigned_to_user_date` varchar(200) DEFAULT NULL,
+                          `assigned_by` varchar(200) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -62,7 +52,8 @@ INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_dat
 ('90', '51', '56', '2020-11-12 12:59:25', '29'),
 ('92', '14', '22', '2020-11-02 17:03:11', '29'),
 ('101', '22', NULL, '2020-11-19 15:36:36', '29'),
-('95', '56', NULL, '2020-11-13 20:01:52', '29');
+('95', '56', NULL, '2020-11-13 20:01:52', '29'),
+('102', '14', NULL, '2021-02-06 19:21:43', '29');
 
 -- --------------------------------------------------------
 
@@ -70,12 +61,10 @@ INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_dat
 -- Table structure for table `division`
 --
 
-DROP TABLE IF EXISTS `division`;
-CREATE TABLE IF NOT EXISTS `division` (
-  `division_id` int(200) NOT NULL AUTO_INCREMENT,
-  `division_name` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`division_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+CREATE TABLE `division` (
+                            `division_id` int(200) NOT NULL,
+                            `division_name` varchar(200) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `division`
@@ -97,16 +86,14 @@ INSERT INTO `division` (`division_id`, `division_name`) VALUES
 -- Table structure for table `feedback`
 --
 
-DROP TABLE IF EXISTS `feedback`;
-CREATE TABLE IF NOT EXISTS `feedback` (
-  `feedbackID` int(200) NOT NULL AUTO_INCREMENT,
-  `name_added` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `feedback` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `extension` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `date_feedback` varchar(200) DEFAULT NULL,
-  `client_ip` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`feedbackID`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+CREATE TABLE `feedback` (
+                            `feedbackID` int(200) NOT NULL,
+                            `name_added` varchar(200) DEFAULT NULL,
+                            `feedback` varchar(200) DEFAULT NULL,
+                            `extension` varchar(200) DEFAULT NULL,
+                            `date_feedback` varchar(200) DEFAULT NULL,
+                            `client_ip` varchar(200) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `feedback`
@@ -124,15 +111,13 @@ INSERT INTO `feedback` (`feedbackID`, `name_added`, `feedback`, `extension`, `da
 -- Table structure for table `log`
 --
 
-DROP TABLE IF EXISTS `log`;
-CREATE TABLE IF NOT EXISTS `log` (
-  `logID` int(200) NOT NULL AUTO_INCREMENT,
-  `log_userID` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `log_date_time` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `log_action` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `log_emp_code` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`logID`)
-) ENGINE=MyISAM AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+CREATE TABLE `log` (
+                       `logID` int(200) NOT NULL,
+                       `log_userID` varchar(200) DEFAULT NULL,
+                       `log_date_time` varchar(200) DEFAULT NULL,
+                       `log_action` varchar(200) DEFAULT NULL,
+                       `log_emp_code` varchar(200) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `log`
@@ -217,7 +202,18 @@ INSERT INTO `log` (`logID`, `log_userID`, `log_date_time`, `log_action`, `log_em
 (76, NULL, '2020-11-18 16:51:53', 'New ticket added by dfg in ITS Division', '45'),
 (78, '29', '2020-11-18 21:29:35', 'User ID: 29 Deleted the ticket with ID: 97', NULL),
 (79, NULL, '2020-11-19 08:22:03', 'New ticket added by hr in ITS Division', '43'),
-(80, '29', '2020-11-19 15:36:36', 'User ID: 29 assigned the ticket ID: 101 for User ID : 22 as person No. 1', NULL);
+(80, '29', '2020-11-19 15:36:36', 'User ID: 29 assigned the ticket ID: 101 for User ID : 22 as person No. 1', NULL),
+(81, '29', '2021-02-06 11:47:04', 'User ID: 29 Added a new user (Acc Type: IT Staff) named abc xy with Employee Code: 151', NULL),
+(82, '29', '2021-02-06 11:47:30', 'User ID: 29 Activated the user with ID: 50', NULL),
+(83, NULL, '2021-02-06 11:54:40', 'New ticket added by amare in ITS Division', '65'),
+(84, '29', '2021-02-06 11:56:16', 'User ID: 29 Added a new user (Acc Type: IT Staff) named amare sfg with Employee Code: 444', NULL),
+(85, '29', '2021-02-06 12:11:13', 'User ID: 29 Added a new user (Acc Type: IT Staff) named gfh fgh with Employee Code: 561', NULL),
+(86, '29', '2021-02-06 19:07:40', 'User ID: 29 Added a new user (Acc Type: Administrative Officer) named am a with Employee Code: 111', NULL),
+(87, '61', '2021-02-06 19:16:23', 'User ID: 61 Approved the ticket with ID: 102', NULL),
+(88, '29', '2021-02-06 19:21:43', 'User ID: 29 assigned the ticket ID: 102 for User ID : 14 as person No. 1', NULL),
+(89, NULL, '2021-02-07 21:01:50', 'New ticket added by fas1 in Project Management Division', '123'),
+(90, NULL, '2021-02-07 21:06:50', 'New ticket added by zdfg in Landscape Division', '23423'),
+(91, NULL, '2021-02-07 22:10:33', 'New ticket added by gdth in ITS Division', '345');
 
 -- --------------------------------------------------------
 
@@ -225,10 +221,30 @@ INSERT INTO `log` (`logID`, `log_userID`, `log_date_time`, `log_action`, `log_em
 -- Table structure for table `notify`
 --
 
-DROP TABLE IF EXISTS `notify`;
-CREATE TABLE IF NOT EXISTS `notify` (
-  `task_id` varchar(200) DEFAULT NULL
+CREATE TABLE `notify` (
+    `task_id` varchar(200) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `notify`
+--
+
+INSERT INTO `notify` (`task_id`) VALUES
+('801420');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notify_ao`
+--
+
+CREATE TABLE `notify_ao` (
+                             `random_id` varchar(200) DEFAULT NULL,
+                             `assigned_by_ao_notify` varchar(200) DEFAULT NULL,
+                             `issue_ao_notify` varchar(200) DEFAULT NULL,
+                             `designation_ao_notify` varchar(200) DEFAULT NULL,
+                             `division_ao_notify` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -236,26 +252,24 @@ CREATE TABLE IF NOT EXISTS `notify` (
 -- Table structure for table `task`
 --
 
-DROP TABLE IF EXISTS `task`;
-CREATE TABLE IF NOT EXISTS `task` (
-  `task_id` double NOT NULL AUTO_INCREMENT,
-  `assigned_by` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `emp_code` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `assigned_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `issue` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `category` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `status` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `designation` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `division` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `extension_no` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `priority` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `asset_code` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `ip_address` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `approved_by` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `approved_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `task_completed_date` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  PRIMARY KEY (`task_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=102 DEFAULT CHARSET=utf8;
+CREATE TABLE `task` (
+                        `task_id` double NOT NULL,
+                        `assigned_by` varchar(200) NOT NULL,
+                        `emp_code` varchar(200) NOT NULL,
+                        `assigned_date` varchar(200) NOT NULL,
+                        `issue` varchar(200) NOT NULL,
+                        `category` varchar(200) NOT NULL,
+                        `status` varchar(200) NOT NULL,
+                        `designation` varchar(200) NOT NULL,
+                        `division` varchar(200) NOT NULL,
+                        `extension_no` varchar(200) DEFAULT NULL,
+                        `priority` varchar(200) NOT NULL,
+                        `asset_code` varchar(200) NOT NULL,
+                        `ip_address` varchar(200) NOT NULL,
+                        `approved_by` varchar(200) DEFAULT NULL,
+                        `approved_date` varchar(200) DEFAULT NULL,
+                        `task_completed_date` varchar(200) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `task`
@@ -270,7 +284,11 @@ INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issu
 (91, 'sfgd', 'fd', '2020-11-01 07:47:27', 'gfh', 'Software Issue', 'Approved', 'fg', 'Finance Division', '443', 'Medium', 'hr', '192.168.1.2', '15', '2020-11-12 16:29:39', NULL),
 (101, 'hr', '43', '2020-11-19 08:22:03', 'fdg', 'Other', 'Assigned', 'sgd', 'ITS Division', '4', 'Medium', 'efg', '192.168.8.100', NULL, NULL, NULL),
 (100, 'rdgery', '324', '2020-11-18 17:39:43', 'fdger', 'General Issue', 'Completed', 'eg', 'ITS Division', '2342', 'Low', 'setr', '192.168.8.100', NULL, NULL, NULL),
-(99, 'dfg', '45', '2020-11-18 16:51:53', 'gfxdh', 'Software Issue', 'Completed', 'ghx', 'ITS Division', '54', 'Medium', 'fgh', '192.168.8.100', NULL, NULL, NULL);
+(99, 'dfg', '45', '2020-11-18 16:51:53', 'gfxdh', 'Software Issue', 'Completed', 'ghx', 'ITS Division', '54', 'Medium', 'fgh', '192.168.8.100', NULL, NULL, NULL),
+(102, 'amare', '65', '2021-02-06 11:54:40', 'bjhs', 'Software Issue', 'Assigned', 'Dg', 'ITS Division', '120', 'Medium', 'dfsfs', '192.168.8.100', '61', '2021-02-06 19:16:23', NULL),
+(103, 'fas1', '123', '2021-02-07 21:01:50', 'sfdf', 'Software Issue', 'Approval Required', 'sdf', 'Project Management Division', '120', 'Low', 'sfg', '192.168.1.30', NULL, NULL, NULL),
+(104, 'zdfg', '23423', '2021-02-07 21:06:50', 'dtghsert', 'Hardware Issue', 'Approval Required', 'wafe', 'Landscape Division', '120', 'Low', 'drgaer', '192.168.1.30', NULL, NULL, NULL),
+(105, 'gdth', '345', '2021-02-07 22:10:33', 'cxhdfh', 'Software Issue', 'Approval Required', 'Dg', 'ITS Division', '344', 'Low', 'dgrd', '192.168.1.30', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -278,21 +296,19 @@ INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issu
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
-  `userID` int(11) NOT NULL AUTO_INCREMENT,
-  `employeeCode` varchar(200) NOT NULL,
-  `firstName` varchar(200) NOT NULL,
-  `lastName` varchar(200) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `password` varchar(200) NOT NULL,
-  `date_created` varchar(200) NOT NULL,
-  `status` varchar(200) NOT NULL,
-  `acc_type` varchar(200) NOT NULL,
-  `title` varchar(200) NOT NULL,
-  `division` varchar(200) NOT NULL,
-  PRIMARY KEY (`userID`)
-) ENGINE=MyISAM AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+CREATE TABLE `user` (
+                        `userID` int(11) NOT NULL,
+                        `employeeCode` varchar(200) NOT NULL,
+                        `firstName` varchar(200) NOT NULL,
+                        `lastName` varchar(200) NOT NULL,
+                        `email` varchar(200) NOT NULL,
+                        `password` varchar(200) NOT NULL,
+                        `date_created` varchar(200) NOT NULL,
+                        `status` varchar(200) NOT NULL,
+                        `acc_type` varchar(200) NOT NULL,
+                        `title` varchar(200) NOT NULL,
+                        `division` varchar(200) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
@@ -322,16 +338,83 @@ INSERT INTO `user` (`userID`, `employeeCode`, `firstName`, `lastName`, `email`, 
 (47, '8678685576567', 'zfghrsth', 'fgserg', 'ulidutheerake@gmail.com', '$2y$10$F.FPONCpCrHIGGBI9JcxVuJGmH4liPlgnN/Yxjt8cVQYycmEpKn4S', '2020-11-11 14:59:21', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
 (48, '867868556', 'zfghrsth', 'fgserg', 'ulidutheerake@gmail.com', '$2y$10$cCl3dq7lKaGIFeQPI0jJ8uzVbla91WEjDQvObn06JJ3Rz77bwivfS', '2020-11-11 15:02:22', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
 (49, '86786', 'zfghrsth', 'fgserg', 'ulidutheerake@gmail.com', '$2y$10$hIPFQd2lvJiw39O8P9FV/ekwEhvOYw0MMHZVCY9L1dqRWyRathPJi', '2020-11-11 15:02:30', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
-(50, '6464', 'f', 'sdf', 'fsd@fs.com', '$2y$10$F5yDTBzG.IAzmxIvmDyQwurzSUIlol24sTRMGfjfLI/O5g3.WVHDK', '2020-11-11 15:03:05', 'Deactivated', 'IT Staff', 'Mr.', 'ITS Division'),
+(50, '6464', 'f', 'sdf', 'fsd@fs.com', '$2y$10$F5yDTBzG.IAzmxIvmDyQwurzSUIlol24sTRMGfjfLI/O5g3.WVHDK', '2020-11-11 15:03:05', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
 (51, '232423', 'fgdz', 'fg', 'dfsd@dsf.com', '$2y$10$u8UXouYXPZZxsYpByqZPxez7wG4kYf0R6nIQWtEhAajuuS0jv3LXm', '2020-11-11 15:04:20', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
 (52, '353454', 'fgsdzfg', 'fdgdt', 'ulidutheerake@gmail.com', '$2y$10$YtenZfAZOghWC8gJKstRQuohHsMJNHBdAkP3JzdfbFwekFrzNWNUC', '2020-11-11 15:12:45', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
 (53, '4238567', 'dfs', 'fsfs', 'h@gmail.com', '$2y$10$r1pTgBTJw2uFDGBfywTja.Kk11SCNFi94gOjksoYSSwQ79r4A3EXu', '2020-11-11 15:14:42', 'Active', 'Observer', 'Miss.', 'ITS Division'),
 (54, '12389', 'abc', 'xy', 'abc@xy.com', '$2y$10$c0BpcNYzb20LXGSkMB5ip.l8McLcgZ6Cgw6.yU7afkeXzUsajs8oe', '2020-11-11 15:27:53', 'Active', 'IT Staff', 'Mr.', 'CMR Division'),
 (55, '6464647', 'abc', 'd', 'af@sf.com', '$2y$10$yeNUwxH2oBeJGbTyAW9LYOmPoU93ojjxLF6lgjDWv2wSG3Ied6rU2', '2020-11-11 15:30:59', 'Active', 'IT Staff', 'Mrs.', 'GIS Division'),
 (56, '546547457', 'gsg', 'sdg', 'uliduthegerake@gmail.com', '$2y$10$2nVG5Abn5BeDlV.okzEMEuON4kpf4eNXkMuBHA0bRH7EU2RWFlfXy', '2020-11-11 15:37:13', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
-(57, '4534535', 'sda', 'afe', 'ulidutheerahke@gmail.com', '$2y$10$1Qg6q.JZC/cKe7gHW6k81edjDAMwix6Ut4D5QQDysi.dv6VdDD4GO', '2020-11-11 15:52:37', 'Active', 'IT Staff', 'Mr.', 'ITS Division');
-COMMIT;
+(57, '4534535', 'sda', 'afe', 'ulidutheerahke@gmail.com', '$2y$10$1Qg6q.JZC/cKe7gHW6k81edjDAMwix6Ut4D5QQDysi.dv6VdDD4GO', '2020-11-11 15:52:37', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
+(58, '151', 'abc', 'xy', 'zdf@das.com', '$2y$10$YqQF64WXocrDN1QfVfrlOOr7/dKRBN5ivP75pLLkHogN0.OUYq.AC', '2021-02-06 11:46:58', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
+(59, '444', 'amare', 'sfg', 'asda@bhjk.com', '$2y$10$d.R6Ih1LFak5W4nZz/Stp.yVrdO.Xbj9lP9EE7eX6DBvdjYKXaR7G', '2021-02-06 11:56:11', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
+(60, '561', 'gfh', 'fgh', 'dfg@dfs.com', '$2y$10$v7fOiDE9.VTmlPO0xQ74leHhYWDDnOeDwk0k/RDH/1mZeyuyRoq0q', '2021-02-06 12:11:07', 'Active', 'IT Staff', 'Mr.', 'ITS Division'),
+(61, '111', 'am', 'a', 'am@am.com', '$2y$10$GAgoSZM12e.3zenFJWJJR.sSfVlJ7xEj5iA.Q1HtjRkHSWMCkpCwa', '2021-02-06 19:07:35', 'Active', 'Administrative Officer', 'Mr.', 'ITS Division');
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `division`
+--
+ALTER TABLE `division`
+    ADD PRIMARY KEY (`division_id`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+    ADD PRIMARY KEY (`feedbackID`);
+
+--
+-- Indexes for table `log`
+--
+ALTER TABLE `log`
+    ADD PRIMARY KEY (`logID`);
+
+--
+-- Indexes for table `task`
+--
+ALTER TABLE `task`
+    ADD PRIMARY KEY (`task_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+    ADD PRIMARY KEY (`userID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `division`
+--
+ALTER TABLE `division`
+    MODIFY `division_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+    MODIFY `feedbackID` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `log`
+--
+ALTER TABLE `log`
+    MODIFY `logID` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+
+--
+-- AUTO_INCREMENT for table `task`
+--
+ALTER TABLE `task`
+    MODIFY `task_id` double NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+    MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
