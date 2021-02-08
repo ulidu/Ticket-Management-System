@@ -101,7 +101,7 @@ $user_id_logged = $_SESSION['user_id_logged'];
         })
     }
 
-    if (acc_type_logged == 'Administrator' && Notification.permission == "granted" || acc_type_logged == 'Observer' && Notification.permission == "granted") {
+    if (acc_type_logged == 'Administrator' && Notification.permission == "granted") {
 
         setInterval(function () {
             $.ajax({
@@ -231,6 +231,79 @@ $user_id_logged = $_SESSION['user_id_logged'];
 
 </script>
 <!-- Administrative Officer Notify : End -->
+
+<!-- IT Staff Notify : Begin -->
+<script>
+
+    var user_id_logged = '<?php echo $user_id_logged; ?>';
+    var div_logged = '<?php echo $division_logged_in; ?>';
+    var acc_type_logged = '<?php echo $acc_type_logged; ?>';
+
+    if (window.Notification && Notification.permission !== "granted") {
+
+        Notification.requestPermission(function (status) {
+            if (Notification.permission !== status) {
+                Notification.permission = status;
+            }
+        })
+    }
+
+    if (acc_type_logged == 'IT Staff' && Notification.permission == "granted") {
+
+        setInterval(function () {
+            $.ajax({
+
+                url: "notify_app_staff.php", type: "POST", async: true, cache: false, success: function (data) {
+
+                    if (Notification.permission == "granted" && data != '') {
+
+                        var data_arr_big = data.split("{||next_rec||}");
+                        data_arr_big.forEach(notify_func)
+
+                        function notify_func(item, index, arr) {
+                            if (item != '') {
+                                arr[index] = item;
+
+                                var data_arr_sm = item.split("{|same_rec|}");
+                                data_arr_sm.forEach(notify_func_sm)
+
+                                function notify_func_sm(item, index, arr) {
+                                    if (item != '') {
+                                        arr[index] = item;
+                                    }
+                                }
+
+                                var assigned_name_n = data_arr_sm[0];
+                                var issue_n = data_arr_sm[1];
+                                var designation_n = data_arr_sm[2];
+                                var division_n = data_arr_sm[3];
+
+                                var title = "New ticket received from " + division_n;
+                                var dts = Math.floor(Date.now());
+                                var img = 'https://i.imgur.com/akcxFXw.png';
+
+                                var options = {
+                                    body: "Name : " + assigned_name_n + "\nDesignation : " + designation_n + "\nIssue : " + issue_n,
+                                    timestamp: dts,
+                                    icon: img
+                                }
+
+                                noti = new Notification(title, options);
+
+                                setTimeout(noti.close.bind(noti), 36000000);
+
+                            }
+                        }
+                    }
+                }
+            });
+
+        }, 5000);
+
+    }
+
+</script>
+<!-- IT Staff Notify : End -->
 
 <script>
     function export_db_pw() {
