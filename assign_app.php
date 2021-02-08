@@ -15,6 +15,11 @@ if (isset($_POST["staff1"])) {
     $ticket_id = $_POST['ticket_id'];
     $logged_user_id = $_POST['logged_user_id'];
 
+    $query_ticket_notify_staff = "INSERT INTO notify_staff(task_id, user_id_selected) VALUES('$ticket_id', '$user_ID_selected')";
+    if (!empty($con)) {
+        $create_query_ticket_notify = mysqli_query($con, $query_ticket_notify_staff);
+    }
+
     $query_select = "SELECT task_id FROM assign WHERE task_id = '$ticket_id'";
 
     if (!empty($con)) {

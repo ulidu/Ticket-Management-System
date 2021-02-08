@@ -2,7 +2,7 @@
 
 include 'include/db.php';
 
-$res = "SELECT t.* FROM task t, notify n WHERE n.task_id = t.task_id";
+$res = "SELECT t.* FROM task t, notify_staff n WHERE n.task_id = t.task_id";
 
 if (!empty($con)) {
     $res_run = mysqli_query($con, $res);
