@@ -7,7 +7,7 @@
 
     <!--Begin::Section-->
     <div class="row">
-        <div class="col-xl-4">
+        <div class="col-xl-12">
 
             <!--begin:: Widgets/Personal Income-->
             <div class="kt-portlet kt-portlet--fit kt-portlet--head-lg kt-portlet--head-overlay kt-portlet--height-fluid">
