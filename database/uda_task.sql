@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3308
--- Generation Time: Feb 07, 2021 at 04:49 PM
+-- Generation Time: Feb 10, 2021 at 07:11 AM
 -- Server version: 5.7.32
 -- PHP Version: 7.4.12
 
@@ -51,9 +51,10 @@ INSERT INTO `assign` (`task_id`, `userID`, `userID_2_opt`, `assigned_to_user_dat
 ('96', '14', NULL, '2020-11-12 22:04:16', '29'),
 ('90', '51', '56', '2020-11-12 12:59:25', '29'),
 ('92', '14', '22', '2020-11-02 17:03:11', '29'),
-('101', '22', NULL, '2020-11-19 15:36:36', '29'),
+('101', '36', NULL, '2021-02-08 12:04:03', '29'),
 ('95', '56', NULL, '2020-11-13 20:01:52', '29'),
-('102', '14', NULL, '2021-02-06 19:21:43', '29');
+('102', '36', '14', '2021-02-08 12:00:35', '29'),
+('91', '36', NULL, '2021-02-08 11:41:33', '29');
 
 -- --------------------------------------------------------
 
@@ -213,7 +214,12 @@ INSERT INTO `log` (`logID`, `log_userID`, `log_date_time`, `log_action`, `log_em
 (88, '29', '2021-02-06 19:21:43', 'User ID: 29 assigned the ticket ID: 102 for User ID : 14 as person No. 1', NULL),
 (89, NULL, '2021-02-07 21:01:50', 'New ticket added by fas1 in Project Management Division', '123'),
 (90, NULL, '2021-02-07 21:06:50', 'New ticket added by zdfg in Landscape Division', '23423'),
-(91, NULL, '2021-02-07 22:10:33', 'New ticket added by gdth in ITS Division', '345');
+(91, NULL, '2021-02-07 22:10:33', 'New ticket added by gdth in ITS Division', '345'),
+(92, '29', '2021-02-08 11:41:33', 'User ID: 29 assigned the ticket ID: 91 for User ID : 36 as person No. 1', NULL),
+(93, '29', '2021-02-08 11:56:12', 'User ID: 29 re-assigned the previously assigned ticket with ID: 102 for User ID: 22 as person No. 1', NULL),
+(94, '29', '2021-02-08 11:56:22', 'User ID: 29 assigned the ticket ID: 102 for User ID : 14 as person No. 2', NULL),
+(95, '29', '2021-02-08 12:00:35', 'User ID: 29 re-assigned the previously assigned ticket with ID: 102 for User ID: 36 as person No. 1', NULL),
+(96, '29', '2021-02-08 12:04:03', 'User ID: 29 re-assigned the previously assigned ticket with ID: 101 for User ID: 36 as person No. 1', NULL);
 
 -- --------------------------------------------------------
 
@@ -245,6 +251,24 @@ CREATE TABLE `notify_ao` (
                              `designation_ao_notify` varchar(200) DEFAULT NULL,
                              `division_ao_notify` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notify_staff`
+--
+
+CREATE TABLE `notify_staff` (
+                                `task_id` varchar(200) DEFAULT NULL,
+                                `user_id_selected` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `notify_staff`
+--
+
+INSERT INTO `notify_staff` (`task_id`, `user_id_selected`) VALUES
+('101', '36');
 
 -- --------------------------------------------------------
 
@@ -281,7 +305,7 @@ INSERT INTO `task` (`task_id`, `assigned_by`, `emp_code`, `assigned_date`, `issu
 (95, 'adf', '43543', '2020-11-12 19:45:57', 'fdgd', 'Software Issue', 'Assigned', 'dzgd', 'Finance Division', '4540', 'Medium', 'ftj', '192.168.1.2', '15', '2020-11-12 19:46:09', NULL),
 (90, 's', 's', '2020-10-30 11:49:11', 'd', 'Software Issue', 'Assigned', 's', 'Finance Division', '21', 'Medium', 'd', '192.168.1.2', '15', '2020-11-03 11:34:20', ''),
 (96, 'rgdegf', '34543', '2020-11-12 19:53:38', 'zdgfd', 'Software Issue', 'In Progress', 'dfhd', 'Finance Division', '4534', 'Medium', 'dsfg', '192.168.1.2', '15', '2020-11-12 19:53:45', ''),
-(91, 'sfgd', 'fd', '2020-11-01 07:47:27', 'gfh', 'Software Issue', 'Approved', 'fg', 'Finance Division', '443', 'Medium', 'hr', '192.168.1.2', '15', '2020-11-12 16:29:39', NULL),
+(91, 'sfgd', 'fd', '2020-11-01 07:47:27', 'gfh', 'Software Issue', 'Assigned', 'fg', 'Finance Division', '443', 'Medium', 'hr', '192.168.1.2', '15', '2020-11-12 16:29:39', NULL),
 (101, 'hr', '43', '2020-11-19 08:22:03', 'fdg', 'Other', 'Assigned', 'sgd', 'ITS Division', '4', 'Medium', 'efg', '192.168.8.100', NULL, NULL, NULL),
 (100, 'rdgery', '324', '2020-11-18 17:39:43', 'fdger', 'General Issue', 'Completed', 'eg', 'ITS Division', '2342', 'Low', 'setr', '192.168.8.100', NULL, NULL, NULL),
 (99, 'dfg', '45', '2020-11-18 16:51:53', 'gfxdh', 'Software Issue', 'Completed', 'ghx', 'ITS Division', '54', 'Medium', 'fgh', '192.168.8.100', NULL, NULL, NULL),
@@ -405,7 +429,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-    MODIFY `logID` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+    MODIFY `logID` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT for table `task`
